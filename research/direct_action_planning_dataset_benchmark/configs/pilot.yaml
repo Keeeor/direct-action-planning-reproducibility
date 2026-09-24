@@ -1,0 +1,38 @@
+tier: external_baselines_pilot_v1
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [96.0]
+seeds: [410]
+gamma: 0.99
+training_steps: 4096
+rollout_steps: 256
+update_epochs: 2
+minibatch_size: 128
+hidden_dim: 64
+selection_seed_offset: 40000003
+evaluation_seed_offset: 50000003
+selection_episodes_per_domain: 1
+evaluation_episodes_per_domain: 2
+branch_episodes_per_domain: 4
+bftq_iterations: 3
+bftq_epochs_per_iteration: 1
+dap_collection_episodes_per_domain: 6
+dap_validation_episodes_per_domain: 2
+dap_fvi_iterations: 5
+dap_refresh_iterations: 3
+dap_model_epochs: 6
+methods:
+  - reactive_threshold
+  - pid_budget_autoscaler
+  - causal_mpc
+  - lyapunov_dpp
+  - double_dqn
+  - a2c
+  - ppo
+  - ppo_lagrangian
+  - pid_lagrangian
+  - p3o
+  - budgeted_fitted_q
+  - cpo
+  - structured_dap_selected
+

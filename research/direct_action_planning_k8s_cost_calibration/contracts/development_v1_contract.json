@@ -1,0 +1,192 @@
+{
+  "schema": "dap.k8s.cost_calibration_audit.v1",
+  "status": "PASS",
+  "phase": "development_training_validation",
+  "frozen_at": "2026-08-10T04:09:40.327862+00:00",
+  "authorization_id": "reproducibility-package",
+  "prior_formal_v2_outcomes_accessed": true,
+  "new_locked_replay_outcomes_accessed": false,
+  "config_path": "research/direct_action_planning_k8s_cost_calibration/configs/development_v1.yaml",
+  "config_sha256": "sha256:7f7097d37e293a043a6d175c35971d560abfe271027601f7b9471ab0e398ea0c",
+  "source_inventory": {
+    "sha256": "sha256:12f1e151f0b6c40c6735f57d9e9ced5a74b058bd547d39bd9a6851e4162aa7ea",
+    "files": [
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/__init__.py",
+        "sha256": "sha256:c6f28a942d6f9e0c32da23f5b6109835edf82bdf23496de4dda743e9b562c9e4"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/audit.py",
+        "sha256": "sha256:bdee92a5ce623c4e98d261309ac5249710bef2599256ddb6e80bae88c7d7bf42"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/model.py",
+        "sha256": "sha256:13d95144282a600e03a5bf4bdc6746cbcb767de6e0ad6e6d1c1d3cd8ce0e1374"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/selection.py",
+        "sha256": "sha256:ea76cfa7de4e3af81a1e6d6da1f2aacae3b3428224a17f56f5c8bf2139b1b6d5"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/training.py",
+        "sha256": "sha256:1c5722ef8cfe1e0bd5311a2e5b6d8c5dcebc6da0b4e11616d62b7bafa7b05612"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_audit.py",
+        "sha256": "sha256:48e739b867426eb87919a77a8849c30f4b38be5c7671566c570d6a248910f2dc"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_model.py",
+        "sha256": "sha256:eaa6505756a63d7114fee2e86551a6eecedee6f3e9a9b19c81b6f4c858ab6bf4"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_selection.py",
+        "sha256": "sha256:d50398ff0fb63f504110a4ad42376f66650d8024065717ec2dde11873eebab0e"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_training.py",
+        "sha256": "sha256:d6026c54ea11024c8582b374849d414da6cf5bb87004951cbef0ee030764ef45"
+      }
+    ]
+  },
+  "inherited_core_inventory": {
+    "sha256": "sha256:a71982f678dffdd50057ec3ad33e0246a3a19ced8b63a241021d6ba248ad8ba8",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_prototype/controller/action_mapper.py",
+        "sha256": "sha256:a0b9fcf64c857851da336a977c5515bcc0a8b26635b041bcc2525dbe439514c9"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/controller/checkpoint_loader.py",
+        "sha256": "sha256:e2639e1eac4cb71384db8c45cef8425b360d3b6a689c934001d5cb9f92d35961"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/workload/trace_converter.py",
+        "sha256": "sha256:2adb498dfcd75983a2d705df937ed0d4be2c22c69fc5628e2949a220b4065ba2"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/planner.py",
+        "sha256": "sha256:26672ebfa6a3d775c13bc3affa09d08c76f634510b9cfa037297dfd9a008be50"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/prototype_api.py",
+        "sha256": "sha256:791a4a61a874d500075cf358e129563fcf54cb74976a784c20e15f56d13ba1cb"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime_audit.py",
+        "sha256": "sha256:4275185eb52e90aa9f4dbe3fcaf6bd2d213f3b47ee596550afdf2574c5f7ddb6"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/simulation.py",
+        "sha256": "sha256:93edf1d835dbc1c34d09638aa9acbef3736c02eccf5d183d7fb2f25b08ab8e8f"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/training.py",
+        "sha256": "sha256:53d34301eeba620be5c57a6f22a8cef7ac511b196ac155c5aa35e6bd2a63748a"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/transition.py",
+        "sha256": "sha256:052b109a0bbdfa15150475b6fa0e8532d95a65821e849212b22c3a4edfa6414b"
+      }
+    ]
+  },
+  "plan_inventory": {
+    "sha256": "sha256:dd4f73c72cd7a5db44027114bb969812935643a09a7db0db4fa9f5917e173639",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/PLAN.md",
+        "sha256": "sha256:6859f803d7f4d12ce3069733f4c97545b67c64d7c99cf871328e0f2891d6e393"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/PREREGISTRATION.md",
+        "sha256": "sha256:14e60abbd4be686408208290873c14522923db5949ead8b8c258d2b4926550e8"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/contracts/failure_tree_report.json",
+        "sha256": "sha256:0638c9f459db878de1c63162ccbbbf5359b7a651dddb0640007196b0ff7a251b"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/contracts/plan_findings.json",
+        "sha256": "sha256:83ee14677e4b72674a98a2ed2f1f2796bffc382e036a930db05ebdef49b7a895"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/experiment_matrix.md",
+        "sha256": "sha256:d0a6dc4974070eabcbba71a7a2f9a2fe88844e747bddc0abd56ba053d1553525"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/failure-tree.json",
+        "sha256": "sha256:ad89373506517f9d2ac1660060628baededb9a9894217494e29436f675495601"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/plan_spec.json",
+        "sha256": "sha256:6d1c1576449d3492292d62b510f30a7a3960472e2944eacacca2e1731a1709a0"
+      }
+    ]
+  },
+  "input_inventory": {
+    "sha256": "sha256:42075bf8301452e0c4d051a7166efc7568d9da7ae311df801672ab281429a9e6",
+    "files": [
+      {
+        "path": "data/metadata/gentd26/dataset.json",
+        "sha256": "sha256:8d818c0193c3c42ab47269691f3d6578a852c34176ea8ed319b72e16c0292b77"
+      },
+      {
+        "path": "data/processed/gentd26/txt2img.npz",
+        "sha256": "sha256:455f28fd9deb2ea18ee267797f4690fe5e208eaf4efda5d67fb1671b2ca1e233"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/calibration/system_model.json",
+        "sha256": "sha256:3c0053cd23734174144bb46bde47968a21e740b26da0202718351ce9f9c6df15"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/contracts/formal_v2_runtime_contract.json",
+        "sha256": "sha256:a94bf9587d55545495ceccaca8a9fd6cb5a3cb9f24d18f837b3b77658578232c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/checkpoints_v2/gentd_inference/models.pt",
+        "sha256": "sha256:f4d73998a6ce8d768386d3c3fedfc7f1e30fb01cc206e4c945c14d1e81ae1a2f"
+      }
+    ]
+  },
+  "frozen_formal_v2_evidence": {
+    "runtime_contract_sha256": "a94bf9587d55545495ceccaca8a9fd6cb5a3cb9f24d18f837b3b77658578232c",
+    "checkpoint_sha256": "f4d73998a6ce8d768386d3c3fedfc7f1e30fb01cc206e4c945c14d1e81ae1a2f",
+    "trace_sha256": "455f28fd9deb2ea18ee267797f4690fe5e208eaf4efda5d67fb1671b2ca1e233",
+    "metadata_sha256": "8d818c0193c3c42ab47269691f3d6578a852c34176ea8ed319b72e16c0292b77"
+  },
+  "test_evidence": {
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/direct_action_planning_k8s_cost_calibration",
+      "tests/direct_action_planning_k8s_service_repair",
+      "research/direct_action_planning_k8s_prototype/tests/test_action_and_budget.py",
+      "research/direct_action_planning_k8s_prototype/tests/test_state_collector.py",
+      "tests/test_budget_accounting.py",
+      "tests/test_no_future_leakage.py"
+    ],
+    "exit_code": 0,
+    "stdout": ".................................................                        [100%]\n49 passed in 0.91s\n",
+    "stderr": ""
+  },
+  "environment": {
+    "python": "3.11.6 | packaged by conda-forge | (main, Oct  3 2023, 10:40:35) [GCC 12.3.0]",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.4",
+    "torch": "2.11.0+cu130",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 5090"
+  },
+  "semantic_assertions": {
+    "core_observation_unchanged": "VERIFIED_BY_INHERITED_HASH",
+    "core_action_set_unchanged": "VERIFIED_BY_CONFIG_AND_INHERITED_HASH",
+    "branch_mechanics_unchanged": "VERIFIED_BY_GOLD_TEST",
+    "hard_budget_mask_unchanged": "VERIFIED_BY_INHERITED_HASH_AND_TEST",
+    "value_architecture_unchanged": "VERIFIED_BY_INHERITED_HASH",
+    "kubernetes_path_unchanged": "NOT_USED_DURING_DEVELOPMENT",
+    "only_existing_cost_coefficient_exposed": "VERIFIED_BY_GOLD_TEST",
+    "activity_stratified_selector_frozen": "VERIFIED_BY_TEST"
+  }
+}

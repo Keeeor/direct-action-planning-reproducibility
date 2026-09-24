@@ -1,0 +1,89 @@
+tier: direct_action_planning_value_refresh_minimal
+device: cpu
+torch_threads: 1
+environment:
+  horizon: 16
+  max_budget: 12
+  max_queue: 6
+  gamma: 0.99
+  action_costs: [0, 1, 2, 3]
+  action_capacity: [1, 2, 3, 4]
+budgets: [4, 8, 12]
+scenarios: [early_burst, late_burst, periodic]
+seed_split:
+  train: [25, 26, 27, 28, 29]
+  validation: [30, 31, 32, 33, 34]
+  test: [35, 36, 37, 38, 39]
+predecessor_seed_map:
+  repair_offset: -20
+  controlled_offset: -15
+evaluation_episodes: 40
+collection_episodes: 12
+causal:
+  oracle_relative_gain_floor: 0.50
+  repaired_oracle_regret_ceiling: 0.011012244134329758
+value_training:
+  learning_rate: 0.08
+  max_epochs: 500
+  patience: 20
+  rank_margin: 0.002
+  exact_tolerance: 1.0e-8
+  source_weights:
+    D0: 0.40
+    D1: 0.25
+    controlled: 0.20
+    fresh_aggregation: 0.15
+  losses:
+    value: 1.0
+    anchor: 0.10
+    mono: 0.20
+    rank: 1.0
+  full_state_d0_fraction: 1.0
+  high_value_quantile: 0.75
+alternating:
+  max_rounds: 3
+  stop_after_nonimproving_rounds: 2
+  minimum_validation_improvement: 1.0e-6
+  transition_epochs: 300
+  transition_patience: 40
+  transition_hidden_dim: 32
+  transition_learning_rate: 0.01
+  transition_train_crn_samples_per_state: 48
+  transition_validation_crn_samples_per_state: 16
+  close_gap_ceiling: 0.05
+  priority_weight_ceiling: 6.0
+  transition_losses:
+    state: 1.0
+    effect: 2.0
+    q: 4.0
+    rank: 2.0
+    rank_margin: 0.02
+gate:
+  frozen_D1_regret_ceiling: 0.011012244134329758
+  oracle_gain_recovery_floor: 0.70
+  wins_required_of_15: 10
+  burst_seed_wins_required_each: 4
+  agreement_loss_vs_learned_value_ceiling: 0.03
+  material_anchor_value_mae_increase: 0.02
+  material_anchor_ranking_loss: 0.02
+  material_completion_loss: 0.01
+  material_slo_increase: 0.01
+  material_uncompensated_cost_increase_fraction: 0.05
+  loso_reversal_fraction: 0.10
+statistics:
+  alpha: 0.05
+  correction: benjamini_hochberg
+  paired_unit: scenario_seed
+expansion:
+  budgets: [2, 4, 6, 8, 12]
+  synthetic_scenarios: 8
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_full_ablation: true
+  run_value_source_sensitivity: true
+  run_multistep_K_sensitivity: true
+  run_alternation_sensitivity: true
+  run_cross_scenario: true
+  run_public_trace: true
+  run_paired_statistics: true
+  run_pareto: true
+  run_compute_analysis: true

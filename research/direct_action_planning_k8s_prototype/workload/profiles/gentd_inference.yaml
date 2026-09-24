@@ -1,0 +1,8 @@
+name: gentd_inference
+dataset: gentd26
+domain: txt2img
+target_peak_rps: 80.0
+max_rps: 140.0
+training_quantile: 0.99
+service_profile: gentd_inference
+slo_seconds: 1.0

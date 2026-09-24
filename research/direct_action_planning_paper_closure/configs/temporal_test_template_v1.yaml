@@ -1,0 +1,20 @@
+tier: paper_closure_temporal_test_v1
+manifest_schema: stage2.dap_paper_closure.temporal_test.v1
+matrix_row_id: FRONTIER-01-TEMPORAL
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 72.0, 96.0, 120.0, 144.0]
+seeds: [820, 821, 822, 823, 824, 825, 826, 827, 828, 829]
+seed_role: randomness_estimation
+gamma: 0.99
+evaluation_episodes_per_domain: 5
+test_seed_offset: 1700000119
+capacity_training_quantile: 0.95
+dap_tier: paper_closure_core_v1
+baseline_tier: paper_closure_baselines_v2_parallel
+dap_config: research/direct_action_planning_paper_closure/configs/core_frontier_v1.yaml
+baseline_config: research/direct_action_planning_paper_closure/configs/baselines_frontier_v2_parallel.yaml
+historical_test_access:
+  project_wide_first_access: false
+  prior_ledger: results/direct_action_planning_dataset_validation/gate_v1/FINAL_TEST_LEDGER.json
+  prior_status: finalized

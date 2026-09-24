@@ -1,0 +1,54 @@
+tier: sensitivity
+device: cpu
+torch_threads: 1
+deterministic_evaluation: false
+environment: {horizon: 128, base_arrival_rate: 6.0, base_capacity: 5.0, slo_latency: 3.0, burst_scale: 2.4}
+training:
+  total_steps: 51200
+  rollout_steps: 512
+  learning_rate: 0.0003
+  update_epochs: 4
+  minibatch_size: 256
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_coef: 0.2
+  value_coef: 0.5
+  cost_value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  global_lambda_lr: 0.05
+  balance_coef: 0.1
+  smooth_coef: 0.01
+  allocator_entropy_coef: 0.001
+  use_balance_loss: true
+  use_smooth_loss: true
+  use_global_lambda: true
+  use_local_constraint: true
+  hidden_dim: 64
+train_scenarios: [stable, periodic, early_burst, late_burst, multi_burst, gradual, abrupt]
+eval_scenarios: [stable, periodic, early_burst, late_burst, multi_burst, gradual, abrupt, ood_burst]
+evaluation_episodes: 3
+budgets: [110.0, 220.0, 330.0]
+seeds: [20, 21, 22]
+methods: [cdba]
+method_options:
+  cdba: {eta: 1.0, min_multiplier: 0.25, max_multiplier: 4.0}
+variant_options:
+  default_reference: {}
+  eta_0p5: {eta: 0.5}
+  eta_1p5: {eta: 1.5}
+  eta_2p0: {eta: 2.0}
+  balance_0p05: {balance_coef: 0.05}
+  balance_0p2: {balance_coef: 0.2}
+  smooth_0p001: {smooth_coef: 0.001}
+  smooth_0p05: {smooth_coef: 0.05}
+  lambda_lr_0p02: {global_lambda_lr: 0.02}
+  lambda_lr_0p1: {global_lambda_lr: 0.1}
+  benefit_diminishing:
+    environment: {capacity_deltas: [0.0, 0.8, 1.7, 3.4]}
+  benefit_linear:
+    environment: {capacity_deltas: [0.0, 1.0, 2.0, 4.0]}
+  benefit_superlinear:
+    environment: {capacity_deltas: [0.0, 1.2, 2.8, 6.0]}
+  cost_more_convex:
+    environment: {action_costs: [0.0, 1.0, 3.0, 7.0]}

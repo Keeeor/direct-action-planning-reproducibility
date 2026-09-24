@@ -1,0 +1,355 @@
+{
+  "schema": "dap.k8s.service_repair_runtime_audit.v1",
+  "status": "PASS",
+  "phase": "formal",
+  "frozen_at": "2026-08-09T15:57:52.628723+00:00",
+  "authorization_id": "reproducibility-package",
+  "results_observed": false,
+  "config_path": "research/direct_action_planning_k8s_service_repair/configs/formal_v2.yaml",
+  "config_sha256": "sha256:48ef6b9798293ce4577795c8b112e9ba4bbf8a3b87e30f9ead764c8704e73ec4",
+  "runtime_inventory": {
+    "sha256": "sha256:e86ba7f72beaa91ab61fc26dcdfcae681fda4ed0515a35efcdaa30b4b191ef77",
+    "files": [
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/audit.py",
+        "sha256": "sha256:d7b45999efc26cb0f8aaec6c6547aa9b0f79fbdc7c20d02f8c6a733b7367e6e2"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/collector.py",
+        "sha256": "sha256:4f8f2175841fafc9264e2262a1df209fadd2d544f3eefebbb13a3570df1dcc64"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/perturbations.py",
+        "sha256": "sha256:59394e6117eed2c9422ba0752eff6ae6f93c4d12c96848673d577826ce8806be"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/planner.py",
+        "sha256": "sha256:26672ebfa6a3d775c13bc3affa09d08c76f634510b9cfa037297dfd9a008be50"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/prototype_api.py",
+        "sha256": "sha256:791a4a61a874d500075cf358e129563fcf54cb74976a784c20e15f56d13ba1cb"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runner.py",
+        "sha256": "sha256:ef13299d8463ebab73735675e8df0c6496b1bce0a1d4f1fa522bf12b6d4c2045"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime.py",
+        "sha256": "sha256:d74e4ea599dcc5b96ec25187d227f69772a8505f7c93c6b792b4a5b064460403"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime_audit.py",
+        "sha256": "sha256:4275185eb52e90aa9f4dbe3fcaf6bd2d213f3b47ee596550afdf2574c5f7ddb6"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/transition.py",
+        "sha256": "sha256:052b109a0bbdfa15150475b6fa0e8532d95a65821e849212b22c3a4edfa6414b"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_audit.py",
+        "sha256": "sha256:c3e3ed09636569d0b3ba25db52a13953d0db645226da2c06089bbf2ae3776c1f"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_collector.py",
+        "sha256": "sha256:f5cc3ea75aabbc63fdb1529a7d1ea628f448f5a620b7ac94e1fafb5ee588a649"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_perturbations.py",
+        "sha256": "sha256:eef0ecf40568eb7c0a283890a184ecb80a9ce62068db688ee283bc14e8333c1e"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_planner.py",
+        "sha256": "sha256:69c00ac292ab856319ce0adee784d26cd13d22b14ebb66cec094de3d167e3507"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_runner.py",
+        "sha256": "sha256:d8797d6ac09c2cbe7bad092fb40462abfeb5476c60ec7b262604c60a50819dbb"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_runtime.py",
+        "sha256": "sha256:25a84b3789e39a2251a1d6ed7439295fb0e93edd1b1988265d76f75662403a36"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_simulation.py",
+        "sha256": "sha256:acbaa563a2adc4475125c298896d3ab2b44da1ff876d51fecd4cf830d3b8e3ba"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_training.py",
+        "sha256": "sha256:1a4ceae7f1a2dd1a0738abba4c91f59ce49cf61a9d7d1d85254f5c473870a550"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_transition.py",
+        "sha256": "sha256:2ccbd1536e20d18557b36346fc0a3ef27c3f6781729574b4e9654518c71b63a2"
+      }
+    ]
+  },
+  "input_inventory": {
+    "sha256": "sha256:df6056a2a625fc75ce6fef5f929af816c7d6e51196a2014f91b29099c2171836",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/deployment.yaml",
+        "sha256": "sha256:b40469b2b2b08b0359e0e07e184aa319f25b0a136b8dc3eeb813758186adabd6"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/hpa/hpa.yaml",
+        "sha256": "sha256:eec5739f7b5db7ef06445b0f5035420cdf4a0498bccb7526c5ecb2e61845044b"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/keda/scaledobject.yaml",
+        "sha256": "sha256:48e5e721d04cb29f01175ef9f5f3226b55bfd4486e094a5724a7e515ec683027"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/keda/vendor/keda-2.16.1.yaml",
+        "sha256": "sha256:4f4f3965a0653370fbcee2169003a73b772cad3e64f033774f4fdaae704883fc"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/kind-config.yaml",
+        "sha256": "sha256:455f318ad2da7c01f1f9e132978a144585f992cbb790d6e4da4de29ce3665ccf"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/metrics-server/metrics-server.yaml",
+        "sha256": "sha256:d78234211dfb881c54afed86875060b5390fc6ec2665eadf55c08efb3a90909e"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/namespace.yaml",
+        "sha256": "sha256:7b0c0988dcfc124b8d12a926016b7dae56422412d79e16aa78062fd512020bd2"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/prometheus/kustomization.yaml",
+        "sha256": "sha256:aebd39630bed9fc7d9785bd77c11256bebcb6b58ecc366030e5a9d640a69d0e3"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/prometheus/prometheus.yaml",
+        "sha256": "sha256:2f3c46df5b32043a22bd2f334617eeab526c5e2e284592360ad541da74f498b1"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/rbac.yaml",
+        "sha256": "sha256:073c472d9d03bccc25ec354769da2714680479b8e4c2c18838612102347a1735"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/service.yaml",
+        "sha256": "sha256:8560e2fc38853b915bc29c52b93231bc1d1371475ddcd848f0a7463f5e7cc8b5"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/calibration/system_model.json",
+        "sha256": "sha256:3c0053cd23734174144bb46bde47968a21e740b26da0202718351ce9f9c6df15"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/prototype_checkpoints_v3/azure_http/models.pt",
+        "sha256": "sha256:fe3268e5d8f1d810423d9159ff13fa89e5e101a64872563e42ac207073297d36"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/prototype_checkpoints_v3/gentd_inference/models.pt",
+        "sha256": "sha256:65fc54958369c2a29c3d495686ee3ecd2ae98e605cef5c65c58c08af215d2b3b"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/contracts/development_v2_contract.json",
+        "sha256": "sha256:2ad528dac5c9b7846ecffbdfc09bcf079fc136a6e41fb7fc81644d8a712845a8"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/checkpoints_v2/azure_http/models.pt",
+        "sha256": "sha256:fa9741d134baf3fe244917e3f228619562482b4d0fb09682583fc1d707e87d7d"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/checkpoints_v2/gentd_inference/models.pt",
+        "sha256": "sha256:f4d73998a6ce8d768386d3c3fedfc7f1e30fb01cc206e4c945c14d1e81ae1a2f"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080921.jsonl",
+        "sha256": "sha256:6535757005f93da0e6816a5a193707a5f43b1d685a62f0e4e0e9187f7266db9c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080921.jsonl.manifest.json",
+        "sha256": "sha256:918e3e35958d8cd71342b0a153f3460a6946c3af3f5d97103179c8084052f5d0"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080922.jsonl",
+        "sha256": "sha256:d6edbe3004b0a57b9d5dc86a001ad4bbc5835e42f27cefb6d9978198de86b2c2"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080922.jsonl.manifest.json",
+        "sha256": "sha256:7c31d106fc749fcb06d2ea537c9e0b42211e64c77fbfd0035369cd75a76df63f"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080923.jsonl",
+        "sha256": "sha256:50d540a82af74f242919e664fd7130241367b1d18f65899cf813fe49875c1ffc"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080923.jsonl.manifest.json",
+        "sha256": "sha256:6d9292eb818abc14b2821dfe7f2f80fdf8e83b249bb8b11cbabc99483338411f"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080924.jsonl",
+        "sha256": "sha256:1a9808c75bd3354995fd565a46e7cfdfe641c8923d901c13d6a331ad3255e79e"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080924.jsonl.manifest.json",
+        "sha256": "sha256:d8e956ab56a8eada0c8206a295894078699115d4a177a037463a898b28599596"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080925.jsonl",
+        "sha256": "sha256:de3c832d479b2bdb3e17a111bb8662ea85250e664d2bb7fe144d7e49b84f03ef"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080925.jsonl.manifest.json",
+        "sha256": "sha256:4dbd4265adc299acc3b3cf8569b04fe6956c102fdaf7ab1d93efa8d4e3acd01e"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080926.jsonl",
+        "sha256": "sha256:5c310500a93ae2ab0be621673d41f06ab0f65495b90090ea9dac102b21027359"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080926.jsonl.manifest.json",
+        "sha256": "sha256:3be3be29ba4e0bf9c853425210879850eae9ee40a01d18143c8bc301624ce509"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080927.jsonl",
+        "sha256": "sha256:693b1612b24f12553a97464ee69f538f3cd1f399729ac704ce915d994676c33e"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080927.jsonl.manifest.json",
+        "sha256": "sha256:d15551584e2269db92110ea92c7eb725bec3791af7aaae36d747cd82f57eb048"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080928.jsonl",
+        "sha256": "sha256:4c056ea4da502b452a47c65d17f2bf7282e9d5754c7b0da9a60179439a8bbbbe"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080928.jsonl.manifest.json",
+        "sha256": "sha256:2de10175c48f8f4fb6b7ca35cd0289daa80d373ab0ad00e5d202c06fdac4bdd2"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080929.jsonl",
+        "sha256": "sha256:83333e9936389c9333a84ecb005efd6cebada28c44eab97edf948e096fee4c7c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080929.jsonl.manifest.json",
+        "sha256": "sha256:22d19df60e7c57b0ef38a11399b5bad64465802d2981104200ff285cc4bcd709"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080930.jsonl",
+        "sha256": "sha256:a6b925fc3281f481a5cd1974770003ef2d17f2605ee96c2857019b71ed0adfb2"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/azure_http/test__seed2026080930.jsonl.manifest.json",
+        "sha256": "sha256:8a449d7cf48797efeea9b239b25f1efc35e27ffbb2e6a729961e804fe93759eb"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080921.jsonl",
+        "sha256": "sha256:18bfe233234df05894a94fb4d6dbb8eb18af08433abff6890486b40ff47927c1"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080921.jsonl.manifest.json",
+        "sha256": "sha256:114dc30e8009525d924b412cfc37bd7da5c5de0510ba819872cc0cc97bd501e8"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080922.jsonl",
+        "sha256": "sha256:fbe17b423c6f860ee4112b4f598aa4497e6764ca8b9980c56c3b0575f56fabfe"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080922.jsonl.manifest.json",
+        "sha256": "sha256:caac6836968a83ba6cec604c7f465246c5a8c416382730890ca237ce64c5baa9"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080923.jsonl",
+        "sha256": "sha256:44f14608fa01b0eb7c7481de6d18174b04b435f027f501134022da267be8af37"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080923.jsonl.manifest.json",
+        "sha256": "sha256:c97b239c267a966cddf3969175e35026e686ad18869af5879117f64f50f2d4fd"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080924.jsonl",
+        "sha256": "sha256:f1ff3e60703394b3914d0c9d4b0a8d3a7be113f8f289035839ba86fbb11064b8"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080924.jsonl.manifest.json",
+        "sha256": "sha256:a987af79a0f36c7a50bf3c6b3c9197fe334359f61f1079bd7e0ba427016d15af"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080925.jsonl",
+        "sha256": "sha256:c60930ea40ee77c23292b312e67d9db80c14cafaafc2029090fccda384cf8cfd"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080925.jsonl.manifest.json",
+        "sha256": "sha256:1f0b4846207bcf75b1c19ae4b24cfb19ba1a405869bf83246f8f4cb8e3adbcdd"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080926.jsonl",
+        "sha256": "sha256:2834ad8462ea0e4ef66891e2f0759b359895ce647e5bae6440554c89e18b1a30"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080926.jsonl.manifest.json",
+        "sha256": "sha256:d44fc7cf1e7219f5b9ef9bb98b5e4635305d8874c9a8d33d877bfe235a982745"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080927.jsonl",
+        "sha256": "sha256:59aace6ae5c983b9ea5c57a08b44f8d70ad1465a40417c23ae278e5cc9bc7fe2"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080927.jsonl.manifest.json",
+        "sha256": "sha256:1cf9704f64cd95dad80c1f92ebb584de9fbfec5807b2e9b9aa9cf5bbdb7ade28"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080928.jsonl",
+        "sha256": "sha256:a6b1d1eb9805c2ecf9b1b4cc9c765fc24d8cc98aa041d76c97d9d759fd375c03"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080928.jsonl.manifest.json",
+        "sha256": "sha256:b04bb18abf88cc759e42fe404cea9bd89cfef7d3bdcdbbc44b344e9f77e16f53"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080929.jsonl",
+        "sha256": "sha256:b2c197f44ebdb86e846ed5ba155131e39eea37cc842944320af6c6419ec3011a"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080929.jsonl.manifest.json",
+        "sha256": "sha256:dcdad58ad08b670e5a34630cab5244449cec92a795006d1a3f80d4c8458db253"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080930.jsonl",
+        "sha256": "sha256:80203af66307e0be74a4d24ff9e95cc39ee0f15256a184ea2b324951e59a8b4c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/results/request_plans/formal_v1/gentd_inference/test__seed2026080930.jsonl.manifest.json",
+        "sha256": "sha256:d9f7955b707cd195b26997ba9ef572f81b1ba56585ecee069eb083ed49df32fa"
+      }
+    ]
+  },
+  "development_contract_sha256": "sha256:2ad528dac5c9b7846ecffbdfc09bcf079fc136a6e41fb7fc81644d8a712845a8",
+  "container_image": "dap-k8s-service:local",
+  "container_image_digest": "sha256:e3719f9fc00024f7f94a0f3ba26af0a4d8b6ce27290b9ab0cc3bf1ea5cb341a3",
+  "plan_count": 20,
+  "test_evidence": {
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/direct_action_planning_k8s_service_repair",
+      "research/direct_action_planning_k8s_prototype/tests/test_action_and_budget.py",
+      "research/direct_action_planning_k8s_prototype/tests/test_state_collector.py",
+      "tests/direct_action_planning_k8s_robustness/test_perturbations.py",
+      "tests/direct_action_planning_k8s_robustness/test_connectivity.py",
+      "tests/test_budget_accounting.py",
+      "tests/test_no_future_leakage.py"
+    ],
+    "exit_code": 0,
+    "stdout": ".........................................                                [100%]\n41 passed in 0.79s\n",
+    "stderr": ""
+  },
+  "semantic_assertions": {
+    "runtime_uses_separate_model_and_safety_ready": "VERIFIED_BY_TEST",
+    "stale_observation_preserves_current_safety_ready": "VERIFIED_BY_TEST",
+    "service_utilization_and_ewma_live_adapter": "VERIFIED_BY_TEST",
+    "readiness_restoration_required": true,
+    "per_seed_activity_strata_match_plan_manifests": "VERIFIED_BY_AUDIT",
+    "method_completion_matching_is_exact": {
+      "exact": true,
+      "retry": true,
+      "reject_repaired_prefix": true,
+      "reject_malformed_retry": true
+    }
+  }
+}

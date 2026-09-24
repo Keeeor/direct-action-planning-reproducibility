@@ -1,0 +1,39 @@
+tier: trace_formal
+device: cpu
+torch_threads: 1
+deterministic_evaluation: false
+trace:
+  processed_dir: data/processed/azure_functions_2019
+  domains: [http, async]
+environment:
+  horizon: 128
+  base_capacity: 5.0
+  slo_latency: 3.0
+  action_costs: [0.0, 1.0, 2.0, 4.0]
+training:
+  total_steps: 102400
+  rollout_steps: 512
+  learning_rate: 0.0003
+  update_epochs: 4
+  minibatch_size: 256
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_coef: 0.2
+  value_coef: 0.5
+  cost_value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  global_lambda_lr: 0.05
+  hidden_dim: 64
+  q_value_coef: 0.5
+evaluation_episodes: 5
+budgets: [110.0, 165.0, 220.0, 275.0, 330.0]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+methods: [b4_joint_hard, dsp_a, dsp_b]
+dsp:
+  alpha: 1.0
+  delta_budget_ratio: 0.0121212121
+  monotonic_coef: 100.0
+  actor_use_budget_state: true
+  actor_use_horizon: true
+  fixed_shadow_price: null

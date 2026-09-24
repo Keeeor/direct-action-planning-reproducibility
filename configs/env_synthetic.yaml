@@ -1,0 +1,11 @@
+horizon: 128
+base_arrival_rate: 6.0
+base_capacity: 5.0
+slo_latency: 3.0
+burst_scale: 2.4
+scenarios: [stable, periodic, early_burst, late_burst, multi_burst, gradual, abrupt, ood_burst]
+actions:
+  - {name: no_op, cost: 0.0, capacity_delta: 0.0}
+  - {name: scale_small, cost: 1.0, capacity_delta: 1.0}
+  - {name: scale_medium, cost: 2.0, capacity_delta: 2.2}
+  - {name: scale_large, cost: 4.0, capacity_delta: 4.8}

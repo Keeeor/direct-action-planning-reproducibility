@@ -1,0 +1,25 @@
+tier: external_baselines_smoke_v3
+datasets: [azure2019, gentd26]
+horizon: 32
+budgets: [48.0]
+seeds: [310]
+training_steps: 2048
+rollout_steps: 256
+update_epochs: 2
+minibatch_size: 128
+hidden_dim: 64
+evaluation_episodes_per_domain: 1
+evaluation_seed_offset: 50000003
+methods:
+  - reactive_threshold
+  - pid_budget_autoscaler
+  - causal_mpc
+  - lyapunov_dpp
+  - double_dqn
+  - budgeted_fitted_q
+  - cpo
+  - a2c
+  - ppo
+  - ppo_lagrangian
+  - pid_lagrangian
+  - p3o

@@ -1,0 +1,60 @@
+tier: direct_action_planning_repair_minimal_validation
+device: cpu
+torch_threads: 1
+environment:
+  horizon: 16
+  max_budget: 12
+  max_queue: 6
+  gamma: 0.99
+  action_costs: [0, 1, 2, 3]
+  action_capacity: [1, 2, 3, 4]
+budgets: [4, 8, 12]
+scenarios: [early_burst, late_burst, periodic]
+seeds: [5, 6, 7, 8, 9]
+evaluation_episodes: 40
+diagnostic:
+  frozen_run: results/direct_action_planning/minimal_v1
+  tie_tolerance: 1.0e-9
+repair:
+  loss_weights_status: frozen_after_phase_0_diagnosis_before_training
+  hidden_dim: 32
+  learning_rate: 0.01
+  max_epochs: 300
+  patience: 40
+  train_crn_samples_per_state: 48
+  validation_crn_samples_per_state: 16
+  lambda_state: 1.0
+  lambda_effect: 2.0
+  lambda_Q: 4.0
+  lambda_rank: 2.0
+  rank_margin: 0.02
+  close_gap_ceiling: 0.05
+  priority_weight_ceiling: 6.0
+  ensemble_members: 5
+  ensemble_uncertainty_multiplier: 1.0
+  ensemble_minimum_margin: 0.02
+  max_aggregation_rounds: 3
+  stop_after_nonimproving_rounds: 2
+  aggregation_probe_episodes: 10
+  frozen_dsp_checkpoint_seed_map: {5: 0, 6: 1, 7: 2, 8: 3, 9: 4}
+continuation_gate:
+  agreement_loss_vs_learned_value_ceiling: 0.03
+  regret_reduction_vs_old_model_floor: 0.40
+  burst_seed_wins_required_each: 4
+  material_completion_loss: 0.01
+  material_slo_increase: 0.01
+  material_uncompensated_cost_increase_fraction: 0.05
+  high_regret_error_reduction_floor: 0.30
+  loso_regret_reversal_fraction: 0.10
+  fallback_rate_ceiling: 0.35
+stopping_gate:
+  persistent_agreement_loss_ceiling: 0.05
+expansion:
+  budgets: [2, 4, 6, 8, 12]
+  synthetic_scenarios: 8
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_full_ablation: true
+  run_aggregation_sensitivity: true
+  run_model_error_flip_analysis: true
+  run_cross_scenario: true
+  run_public_trace: true

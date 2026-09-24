@@ -1,0 +1,301 @@
+{
+  "schema": "dap.k8s.pareto_validation_runtime_audit.v1",
+  "status": "PASS",
+  "phase": "validation_a3",
+  "frozen_at": "2026-08-11T07:34:41.023623+00:00",
+  "authorization_id": "reproducibility-package",
+  "stage_two_results_accessed": false,
+  "config_path": "research/direct_action_planning_k8s_pareto_calibration/configs/validation_a3.yaml",
+  "config_sha256": "sha256:6c00bca3bc074fbc5b490aa4a60b598be9f3d5f047b6e3c9fef4541bdbfc4f6f",
+  "source_inventory": {
+    "sha256": "sha256:a94a79071e0a6f756ba3c01d25ad05261b5c0b144a168be81dd804ed55651ac6",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_prototype/experiments/run_system_trial.py",
+        "sha256": "sha256:170285f5b01e64d7f2456e2dc1f236b97aedb49a8e91e275af068226231a62ea"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/model.py",
+        "sha256": "sha256:13d95144282a600e03a5bf4bdc6746cbcb767de6e0ad6e6d1c1d3cd8ce0e1374"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runner.py",
+        "sha256": "sha256:9b52dbc01c3e4c218efc8e4f9aebc068af9f3e45bfa8cfafbfbd08adfb561bc0"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runtime.py",
+        "sha256": "sha256:e5ac148a6ab44303aeec3790c9aea9844eaa075440fce163c5875f945328f80d"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_pareto_calibration/protocol.py",
+        "sha256": "sha256:16d892690dfe1eb00efca36bee0c6b721bbc2c7e3ce44698274b1dcbc251230a"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_pareto_calibration/runner.py",
+        "sha256": "sha256:5431d865c5a04bed68415dd118c846e641870ad53f2e9a25ea22ed871b348d2f"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_pareto_calibration/runtime.py",
+        "sha256": "sha256:264e3cb50cfbe69a0ca6e913f7db1aa99c2cc69d19fa32d035e4e1040cf74c9f"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_pareto_validation/__init__.py",
+        "sha256": "sha256:480dd56b4937476e446c4c0f95a3679802ce2ad1ed23b62ea36d5824dd815043"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_pareto_validation/protocol.py",
+        "sha256": "sha256:9e6c10555f499b3bee3cac9dd42e4fc448eecfa63256287e2eafa8dc69f813f1"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_pareto_validation/runner.py",
+        "sha256": "sha256:2beea85e5c9aa95eee03e670ea65267563cb87ed6c69215d35d2a026bb0c6adb"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_pareto_validation/runtime_audit.py",
+        "sha256": "sha256:cb9a74c28c6517aec4dbac0d6b598fcf3127048753ad65b1b4bf7e8ac9fe8523"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/collector.py",
+        "sha256": "sha256:4f8f2175841fafc9264e2262a1df209fadd2d544f3eefebbb13a3570df1dcc64"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/planner.py",
+        "sha256": "sha256:26672ebfa6a3d775c13bc3affa09d08c76f634510b9cfa037297dfd9a008be50"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/prototype_api.py",
+        "sha256": "sha256:791a4a61a874d500075cf358e129563fcf54cb74976a784c20e15f56d13ba1cb"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime.py",
+        "sha256": "sha256:d74e4ea599dcc5b96ec25187d227f69772a8505f7c93c6b792b4a5b064460403"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/transition.py",
+        "sha256": "sha256:052b109a0bbdfa15150475b6fa0e8532d95a65821e849212b22c3a4edfa6414b"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_pareto_validation/test_protocol.py",
+        "sha256": "sha256:25aafeb1db4ea1f99b6cf8c2dd626ac143b5e48db3a0f3de0018ceba84a29926"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_pareto_validation/test_runner.py",
+        "sha256": "sha256:a64da1949a186c9775285a49035031dfb04c543aa81f01ec1d145c0818e3414f"
+      }
+    ]
+  },
+  "plan_inventory": {
+    "sha256": "sha256:ca3309db88d0382158cbed0ee62a962e523c62ec4c121fce060c88dc9326df27",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/PLAN.md",
+        "sha256": "sha256:d5a9950dc6bfad0f26969073a1116311b6120898b124074dc917d794a6f32566"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/VALIDATION_DECISIONS.md",
+        "sha256": "sha256:b737e7ee82bd688a47fc1aa7b1f4200d244fd0e67a672e9790703ba301c05aab"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/VALIDATION_PROTOCOL.md",
+        "sha256": "sha256:7485a3c691e26d2937ac1eee3b6798f42af81e74c19e7c8e9456abef43211071"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/configs/validation_a3.yaml",
+        "sha256": "sha256:6c00bca3bc074fbc5b490aa4a60b598be9f3d5f047b6e3c9fef4541bdbfc4f6f"
+      }
+    ]
+  },
+  "input_inventory": {
+    "sha256": "sha256:ccb919b8d4abece2bb2733cace0affa11e08741f387865c14ce431cf3246950a",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/contracts/development_v2_contract.json",
+        "sha256": "sha256:c7b97c4502edf89889fff1a84b59b6ddf406c630589448a7ba1d6bc222a38784"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/results/checkpoints_v2/gentd_inference/models.pt",
+        "sha256": "sha256:8c9ab4d5419856e23d4d71b1bba5efcc7e0cc639f7d7d9bc87b799c65ba62a2c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/contracts/screen_a3_runtime_contract.json",
+        "sha256": "sha256:d76a4649d7e0cab10ddf5429fac18ac4dacadb3d5acf6d6612ad7109b629b4d0"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/analysis/screen_a3_v1/analysis_audit.json",
+        "sha256": "sha256:441550f1af04e466bbbe7c05fe05658d8b06ab0f4f21bee935a16a2099056bb0"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/analysis/screen_a3_v1/integrity_report.json",
+        "sha256": "sha256:cf3e8f94cbc8b64ba17d9d07e03e2f8ffc567531d46ed9d4c3f9c3e00eca9fbe"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/analysis/screen_a3_v1/screen_ranking.json",
+        "sha256": "sha256:65cfa9d886d9eb0db2f8fa70ce9237dfe495d643df071b4c5048c9b91b8820cb"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081401.jsonl",
+        "sha256": "sha256:603f73fca3fec3fe4b01fbbd4d9eb9cccea105b5e8e669462177ebe2c45a756c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081401.jsonl.manifest.json",
+        "sha256": "sha256:f45e4962368e19efd9c63d6b05dab07a011b80df240f1e2c6a48cd1385f583d8"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081402.jsonl",
+        "sha256": "sha256:0082b24b34018518a1382e63bfef4cf40abd8f6b4a59b886d8a9b35a3a18d568"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081402.jsonl.manifest.json",
+        "sha256": "sha256:14eaf93660cf49a7fc29a7381f27a4387038d5933bf0fd65114d0bb0f36df0d8"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081403.jsonl",
+        "sha256": "sha256:fe03a818550c9e76b94d89c2a6efa9567b03180b37f7ba97f839f99229a87ee5"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081403.jsonl.manifest.json",
+        "sha256": "sha256:2161bd05702ee81a6aa18d6e314df97fa05e0b9f3f5c04194eb0eefe1d50b82f"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081404.jsonl",
+        "sha256": "sha256:a73cf1526e3b2a650a3f3accefef021b64cc3f89abe5ccbdf7bd031f0689c915"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081404.jsonl.manifest.json",
+        "sha256": "sha256:1865d7bf08ec308dd42e0318c4dd1fa2a57c07eb1c75d9597dae1c2fde4c00e5"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081405.jsonl",
+        "sha256": "sha256:7c880b7daaf5254b2761456b7852bb012819d0b07c414d78b182bfaa8484558f"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081405.jsonl.manifest.json",
+        "sha256": "sha256:4f676499ea828adae79562a39521286d48adef46c992499011ff3cb551bf5f3d"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081406.jsonl",
+        "sha256": "sha256:0c063725aa1dffb8cc470184f336c68ed5f16323f2e3a803b0c0d715a65db121"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_pareto_calibration/results/request_plans/validation_a3/gentd_inference/validation__seed2026081406.jsonl.manifest.json",
+        "sha256": "sha256:1f3d26bf4590416115169b3cfc4a56e69a876788963fd7041fed47bfa4edea2f"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/deployment.yaml",
+        "sha256": "sha256:b40469b2b2b08b0359e0e07e184aa319f25b0a136b8dc3eeb813758186adabd6"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/hpa/hpa.yaml",
+        "sha256": "sha256:eec5739f7b5db7ef06445b0f5035420cdf4a0498bccb7526c5ecb2e61845044b"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/keda/scaledobject.yaml",
+        "sha256": "sha256:48e5e721d04cb29f01175ef9f5f3226b55bfd4486e094a5724a7e515ec683027"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/keda/vendor/keda-2.16.1.yaml",
+        "sha256": "sha256:4f4f3965a0653370fbcee2169003a73b772cad3e64f033774f4fdaae704883fc"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/kind-config.yaml",
+        "sha256": "sha256:455f318ad2da7c01f1f9e132978a144585f992cbb790d6e4da4de29ce3665ccf"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/metrics-server/metrics-server.yaml",
+        "sha256": "sha256:d78234211dfb881c54afed86875060b5390fc6ec2665eadf55c08efb3a90909e"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/namespace.yaml",
+        "sha256": "sha256:7b0c0988dcfc124b8d12a926016b7dae56422412d79e16aa78062fd512020bd2"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/prometheus/kustomization.yaml",
+        "sha256": "sha256:aebd39630bed9fc7d9785bd77c11256bebcb6b58ecc366030e5a9d640a69d0e3"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/prometheus/prometheus.yaml",
+        "sha256": "sha256:2f3c46df5b32043a22bd2f334617eeab526c5e2e284592360ad541da74f498b1"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/rbac.yaml",
+        "sha256": "sha256:073c472d9d03bccc25ec354769da2714680479b8e4c2c18838612102347a1735"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/service.yaml",
+        "sha256": "sha256:8560e2fc38853b915bc29c52b93231bc1d1371475ddcd848f0a7463f5e7cc8b5"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/calibration/system_model.json",
+        "sha256": "sha256:3c0053cd23734174144bb46bde47968a21e740b26da0202718351ce9f9c6df15"
+      }
+    ]
+  },
+  "development_contract_sha256": "sha256:c7b97c4502edf89889fff1a84b59b6ddf406c630589448a7ba1d6bc222a38784",
+  "checkpoint_evidence": {
+    "checkpoint_sha256": "sha256:8c9ab4d5419856e23d4d71b1bba5efcc7e0cc639f7d7d9bc87b799c65ba62a2c",
+    "development_contract_sha256": "sha256:c7b97c4502edf89889fff1a84b59b6ddf406c630589448a7ba1d6bc222a38784",
+    "cost_weight": 1.5,
+    "continuation_weight": 0.0,
+    "tie_margin": 0.0,
+    "checks": {
+      "schema": true,
+      "profile": true,
+      "core": true,
+      "cost_weight": true,
+      "continuation": true,
+      "tie_margin": true,
+      "iteration": true,
+      "selection_status": true,
+      "forecast": true,
+      "gamma": true,
+      "development_contract": true
+    }
+  },
+  "stage_one_selection": {
+    "screen_ranking_sha256": "sha256:65cfa9d886d9eb0db2f8fa70ce9237dfe495d643df071b4c5048c9b91b8820cb",
+    "screen_integrity_sha256": "sha256:cf3e8f94cbc8b64ba17d9d07e03e2f8ffc567531d46ed9d4c3f9c3e00eca9fbe",
+    "advanced_candidates": [
+      "dap_cont_0p05",
+      "dap_cont_0p10"
+    ]
+  },
+  "container_image": "dap-k8s-service:local",
+  "container_image_digest": "sha256:e3719f9fc00024f7f94a0f3ba26af0a4d8b6ce27290b9ab0cc3bf1ea5cb341a3",
+  "plan_count": 6,
+  "test_evidence": {
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/direct_action_planning_k8s_pareto_validation",
+      "tests/direct_action_planning_k8s_pareto_calibration",
+      "tests/direct_action_planning_k8s_cost_calibration",
+      "tests/direct_action_planning_k8s_service_repair",
+      "research/direct_action_planning_k8s_prototype/tests/test_action_and_budget.py",
+      "research/direct_action_planning_k8s_prototype/tests/test_state_collector.py",
+      "tests/test_budget_accounting.py",
+      "tests/test_no_future_leakage.py"
+    ],
+    "exit_code": 0,
+    "stdout": "........................................................................ [ 84%]\n.............                                                            [100%]\n85 passed in 1.05s\n",
+    "stderr": ""
+  },
+  "environment": {
+    "python": "3.11.6 | packaged by conda-forge | (main, Oct  3 2023, 10:40:35) [GCC 12.3.0]",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.4",
+    "torch": "2.11.0+cu130",
+    "cuda_available": true
+  },
+  "semantic_assertions": {
+    "base_checkpoint_hash_frozen": "sha256:8c9ab4d5419856e23d4d71b1bba5efcc7e0cc639f7d7d9bc87b799c65ba62a2c",
+    "only_stage_one_top_two": [
+      "dap_cont_0p05",
+      "dap_cont_0p10"
+    ],
+    "cost_weight_fixed_1_5": true,
+    "only_continuation_scalar_varies": true,
+    "paired_fresh_plans_and_rotated_order": "VERIFIED_BY_CONFIG_AND_MANIFEST"
+  }
+}

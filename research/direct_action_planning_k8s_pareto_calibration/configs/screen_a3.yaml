@@ -1,0 +1,64 @@
+schema: dap.k8s.pareto_calibration_runtime.v1
+mode: screen_a3
+source_split: validation
+horizon_steps: 32
+control_interval_seconds: 5
+budget_seconds: 256
+seeds: [2026081301, 2026081302, 2026081303, 2026081304]
+methods: [dap_cont_0p05, dap_cont_0p10, dap_cont_0p20, dap_cont_0p35, dap_cont_0p50, threshold]
+method_rotation_offsets: [0, 2, 4, 1]
+continuation_candidates:
+  dap_cont_0p05: 0.05
+  dap_cont_0p10: 0.10
+  dap_cont_0p20: 0.20
+  dap_cont_0p35: 0.35
+  dap_cont_0p50: 0.50
+max_attempts: 2
+inherited_development_contract: ../../direct_action_planning_k8s_cost_calibration/contracts/development_v2_contract.json
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  image: dap-k8s-service:local
+controller_defaults:
+  horizon_steps: 32
+  control_interval_seconds: 5
+  base_replicas: 1
+  native_scale_down_reserve_seconds: 45
+paths:
+  system_model: ../../direct_action_planning_k8s_prototype/results/calibration/system_model.json
+  plan_root: ../results/request_plans/screen_a3
+  run_root: ../results/runs/screen_a3
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+profile:
+  name: gentd_inference
+  dataset: gentd26
+  domain: txt2img
+  checkpoint: ../../direct_action_planning_k8s_cost_calibration/results/checkpoints_v2/gentd_inference/models.pt
+  slo_seconds: 1.0
+  capacity_per_pod_rps: 29.97526124225415
+  target_peak_rps: 80
+  max_rps: 140
+  training_quantile: 0.99
+  activity_quantiles: [0.65, 0.80, 0.90, 1.00]
+workload:
+  client_timeout_seconds: 15
+  connection_limit: 512
+monitor:
+  interval_seconds: 1
+baseline_parameters:
+  threshold:
+    queue_small: 8
+    queue_medium: 32
+    queue_large: 96
+readiness:
+  baseline_initial_delay_seconds: 1
+selection:
+  completion_loss_max: 0.01
+  slo_increase_max: 0.02
+  ready_cost_increase_seconds_max: 10.0
+  advance_count: 2

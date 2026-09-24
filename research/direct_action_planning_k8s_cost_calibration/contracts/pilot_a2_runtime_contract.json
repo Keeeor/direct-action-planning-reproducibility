@@ -1,0 +1,257 @@
+{
+  "schema": "dap.k8s.cost_calibration_runtime_audit.v1",
+  "status": "PASS",
+  "phase": "pilot_a2",
+  "frozen_at": "2026-08-10T04:53:05.985042+00:00",
+  "authorization_id": "reproducibility-package",
+  "prior_results_accessed": true,
+  "a2_system_results_accessed": false,
+  "config_path": "research/direct_action_planning_k8s_cost_calibration/configs/pilot_a2.yaml",
+  "config_sha256": "sha256:ecdb04b6533b0f8428bc273bb4dc8a3f452f2e0b3e33e64fdeb4fecee064b87f",
+  "runtime_inventory": {
+    "sha256": "sha256:e28e56cb300bcc75eb16ea9b8fed248feae1c7856e50e39fdcbdbb8629052a24",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_prototype/experiments/run_system_trial.py",
+        "sha256": "sha256:170285f5b01e64d7f2456e2dc1f236b97aedb49a8e91e275af068226231a62ea"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/audit.py",
+        "sha256": "sha256:bdee92a5ce623c4e98d261309ac5249710bef2599256ddb6e80bae88c7d7bf42"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/model.py",
+        "sha256": "sha256:13d95144282a600e03a5bf4bdc6746cbcb767de6e0ad6e6d1c1d3cd8ce0e1374"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runner.py",
+        "sha256": "sha256:9b52dbc01c3e4c218efc8e4f9aebc068af9f3e45bfa8cfafbfbd08adfb561bc0"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runtime.py",
+        "sha256": "sha256:e5ac148a6ab44303aeec3790c9aea9844eaa075440fce163c5875f945328f80d"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runtime_audit.py",
+        "sha256": "sha256:98d1380f906f6386c9d6010daae7afa58f9ee48669426628a40c40fef95de150"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/collector.py",
+        "sha256": "sha256:4f8f2175841fafc9264e2262a1df209fadd2d544f3eefebbb13a3570df1dcc64"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/planner.py",
+        "sha256": "sha256:26672ebfa6a3d775c13bc3affa09d08c76f634510b9cfa037297dfd9a008be50"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/prototype_api.py",
+        "sha256": "sha256:791a4a61a874d500075cf358e129563fcf54cb74976a784c20e15f56d13ba1cb"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime.py",
+        "sha256": "sha256:d74e4ea599dcc5b96ec25187d227f69772a8505f7c93c6b792b4a5b064460403"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime_audit.py",
+        "sha256": "sha256:4275185eb52e90aa9f4dbe3fcaf6bd2d213f3b47ee596550afdf2574c5f7ddb6"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/transition.py",
+        "sha256": "sha256:052b109a0bbdfa15150475b6fa0e8532d95a65821e849212b22c3a4edfa6414b"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_audit.py",
+        "sha256": "sha256:48e739b867426eb87919a77a8849c30f4b38be5c7671566c570d6a248910f2dc"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_audit_v2.py",
+        "sha256": "sha256:e7c17ee32013e235148afbe48d0e7dd1baac3888930fc9a1fafbf11ea7a28afd"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_model.py",
+        "sha256": "sha256:eaa6505756a63d7114fee2e86551a6eecedee6f3e9a9b19c81b6f4c858ab6bf4"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_runner.py",
+        "sha256": "sha256:777d4c50a6116a1c4a2627b4e702f2a62c5a4b9e411a0b17cc85d9aca4521c6e"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_runtime.py",
+        "sha256": "sha256:6040e3acc5b57c2d5b8ce997d5a9efa1d3359c232d53e567e4828ad7e9051432"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_runtime_audit.py",
+        "sha256": "sha256:17c2c4befd18f610b9924c59ba838be017133695b3f718f37d3358d5a4fdaf28"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_selection.py",
+        "sha256": "sha256:d50398ff0fb63f504110a4ad42376f66650d8024065717ec2dde11873eebab0e"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_cost_calibration/test_training.py",
+        "sha256": "sha256:d6026c54ea11024c8582b374849d414da6cf5bb87004951cbef0ee030764ef45"
+      }
+    ]
+  },
+  "plan_inventory": {
+    "sha256": "sha256:62871950faec780f075b633624f70ba201936cc7bca3e919b650a9a55bfca6af",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/A2_PROTOCOL.md",
+        "sha256": "sha256:7285e5f8d2897e39af4a96d34362797b305e43abc7de12bfab9faf1d3dc4a84e"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/contracts/failure_tree_report_a2.json",
+        "sha256": "sha256:15aab21e3e56357020a5e75ca6a7509edec59f6589aa5882bf9d2a8fc72a0336"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/contracts/plan_findings_a2.json",
+        "sha256": "sha256:90fd5d84f6915fe188cff3dfb23acbb21463bd88d11c7fd1d0610ce44f4bda9f"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/experiment_matrix_a2.md",
+        "sha256": "sha256:1f9b9f3743b50dd193a204dc6cdd4c947f4136564e49334fbbfe024862a0e753"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/failure-tree-a2.json",
+        "sha256": "sha256:74271c4c7429d01899bc72d239e9ed64ea2fe626133e5cb045e485f1278c169c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/plan_spec_a2.json",
+        "sha256": "sha256:d872ff0a43819272859735b76ba54f1fb14f73734f080a0c9c0c864693fa9b1e"
+      }
+    ]
+  },
+  "input_inventory": {
+    "sha256": "sha256:9945726ae925a304c97650249da512f8fbbf749b7f5c4749086e991e1e529919",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/contracts/development_v2_contract.json",
+        "sha256": "sha256:c7b97c4502edf89889fff1a84b59b6ddf406c630589448a7ba1d6bc222a38784"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/results/checkpoints_v2/gentd_inference/models.pt",
+        "sha256": "sha256:8c9ab4d5419856e23d4d71b1bba5efcc7e0cc639f7d7d9bc87b799c65ba62a2c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/results/request_plans/pilot_a2/gentd_inference/validation__seed2026081201.jsonl",
+        "sha256": "sha256:6a4d509f8a8126244529d3920c9763a7646b36cd167bf56cfeb81de8e81419d0"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/results/request_plans/pilot_a2/gentd_inference/validation__seed2026081201.jsonl.manifest.json",
+        "sha256": "sha256:a362aa2b6d5bf04d25f148d0ba2f1363e106998a428b94d1e0a30b38d84d6e1c"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/results/request_plans/pilot_a2/gentd_inference/validation__seed2026081202.jsonl",
+        "sha256": "sha256:6957dda608b47d69b672d699043cce6f8542a52f926b98b252cd233718dca7fe"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_cost_calibration/results/request_plans/pilot_a2/gentd_inference/validation__seed2026081202.jsonl.manifest.json",
+        "sha256": "sha256:3b4cf8176c82dc3113f35ff198329d2f2bb49b73918f739669a5584b3a5e3d13"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/deployment.yaml",
+        "sha256": "sha256:b40469b2b2b08b0359e0e07e184aa319f25b0a136b8dc3eeb813758186adabd6"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/hpa/hpa.yaml",
+        "sha256": "sha256:eec5739f7b5db7ef06445b0f5035420cdf4a0498bccb7526c5ecb2e61845044b"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/keda/scaledobject.yaml",
+        "sha256": "sha256:48e5e721d04cb29f01175ef9f5f3226b55bfd4486e094a5724a7e515ec683027"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/keda/vendor/keda-2.16.1.yaml",
+        "sha256": "sha256:4f4f3965a0653370fbcee2169003a73b772cad3e64f033774f4fdaae704883fc"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/kind-config.yaml",
+        "sha256": "sha256:455f318ad2da7c01f1f9e132978a144585f992cbb790d6e4da4de29ce3665ccf"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/metrics-server/metrics-server.yaml",
+        "sha256": "sha256:d78234211dfb881c54afed86875060b5390fc6ec2665eadf55c08efb3a90909e"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/namespace.yaml",
+        "sha256": "sha256:7b0c0988dcfc124b8d12a926016b7dae56422412d79e16aa78062fd512020bd2"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/prometheus/kustomization.yaml",
+        "sha256": "sha256:aebd39630bed9fc7d9785bd77c11256bebcb6b58ecc366030e5a9d640a69d0e3"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/prometheus/prometheus.yaml",
+        "sha256": "sha256:2f3c46df5b32043a22bd2f334617eeab526c5e2e284592360ad541da74f498b1"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/rbac.yaml",
+        "sha256": "sha256:073c472d9d03bccc25ec354769da2714680479b8e4c2c18838612102347a1735"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/kubernetes/service.yaml",
+        "sha256": "sha256:8560e2fc38853b915bc29c52b93231bc1d1371475ddcd848f0a7463f5e7cc8b5"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/calibration/system_model.json",
+        "sha256": "sha256:3c0053cd23734174144bb46bde47968a21e740b26da0202718351ce9f9c6df15"
+      }
+    ]
+  },
+  "development_contract_sha256": "sha256:c7b97c4502edf89889fff1a84b59b6ddf406c630589448a7ba1d6bc222a38784",
+  "checkpoint_evidence": {
+    "checkpoint_sha256": "sha256:8c9ab4d5419856e23d4d71b1bba5efcc7e0cc639f7d7d9bc87b799c65ba62a2c",
+    "development_contract_sha256": "sha256:c7b97c4502edf89889fff1a84b59b6ddf406c630589448a7ba1d6bc222a38784",
+    "cost_weight": 1.5,
+    "continuation_weight": 0.0,
+    "tie_margin": 0.0,
+    "checks": {
+      "schema": true,
+      "profile": true,
+      "core": true,
+      "cost_weight": true,
+      "continuation": true,
+      "tie_margin": true,
+      "iteration": true,
+      "selection_status": true,
+      "forecast": true,
+      "gamma": true,
+      "development_contract": true
+    }
+  },
+  "container_image": "dap-k8s-service:local",
+  "container_image_digest": "sha256:e3719f9fc00024f7f94a0f3ba26af0a4d8b6ce27290b9ab0cc3bf1ea5cb341a3",
+  "plan_count": 2,
+  "test_evidence": {
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/direct_action_planning_k8s_cost_calibration",
+      "tests/direct_action_planning_k8s_service_repair",
+      "research/direct_action_planning_k8s_prototype/tests/test_action_and_budget.py",
+      "research/direct_action_planning_k8s_prototype/tests/test_state_collector.py",
+      "tests/test_budget_accounting.py",
+      "tests/test_no_future_leakage.py"
+    ],
+    "exit_code": 0,
+    "stdout": "...........................................................              [100%]\n59 passed in 0.95s\n",
+    "stderr": ""
+  },
+  "environment": {
+    "python": "3.11.6 | packaged by conda-forge | (main, Oct  3 2023, 10:40:35) [GCC 12.3.0]",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.4",
+    "torch": "2.11.0+cu130",
+    "cuda_available": true
+  },
+  "semantic_assertions": {
+    "checkpoint_is_frozen_diagnostic_candidate": true,
+    "continuation_weight_is_zero": true,
+    "cost_weight_is_1_5": true,
+    "hard_mask_and_controller_loop_inherited": "VERIFIED_BY_HASH_AND_TEST",
+    "paired_activity_plans": "VERIFIED_BY_MANIFEST"
+  }
+}

@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Generated datasets and experiment outputs
+data/raw/
+data/processed/
+results/
+logs/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Local tooling and reports
+.coverage
+htmlcov/
+.ruff_cache/

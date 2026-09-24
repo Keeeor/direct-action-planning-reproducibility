@@ -1,0 +1,38 @@
+tier: frozen_model_temporal_test_v1
+manifest_schema: stage2.dap_frozen_temporal_test.v1
+matrix_row_id: TEST-01
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 96.0, 144.0]
+seeds: [820, 821, 822, 823, 824]
+seed_role: randomness_estimation
+gamma: 0.99
+evaluation_split: test
+evaluation_episodes_per_domain: 5
+test_seed_offset: 1700000071
+capacity_training_quantile: 0.95
+dap_tier: dataset_specific_stabilization_core_v4
+baseline_tier: dataset_specific_baselines_core_v1
+dap_config_sha256: sha256:b94d81d3d02286fb5cd8ef968cd57b3d30d89e7445038200946f71ef3f49d023
+baseline_config_sha256: sha256:3aec3ad3087b50194950a6e1d61b5d478947d50de6bf877cde5087424212cf22
+dap_checkpoint_set_sha256: sha256:07ab16157b9e0edc59a6b376dd67e9949f9ad1841e3f85bd9750b06798a4465c
+baseline_checkpoint_set_sha256: sha256:2bbb1ff358ddedd21b97e6d6b897343da6efd333eedff1a1a61bad6d56def370
+primary_methods:
+  - dap_calibrated
+  - double_dqn
+  - ppo
+  - ppo_lagrangian
+  - cpo
+  - p3o
+  - budgeted_fitted_q
+supplementary_methods:
+  - a2c
+  - pid_lagrangian
+internal_ablations:
+  - dap_immediate
+historical_test_access:
+  project_wide_first_access: false
+  prior_ledger: results/direct_action_planning_dataset_validation/gate_v1/FINAL_TEST_LEDGER.json
+  prior_status: finalized
+  prior_completed_units: 30
+

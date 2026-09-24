@@ -1,0 +1,93 @@
+tier: direct_action_planning_support_adaptation_minimal
+device: cpu
+torch_threads: 1
+environment:
+  horizon: 16
+  max_budget: 12
+  max_queue: 6
+  gamma: 0.99
+  action_costs: [0, 1, 2, 3]
+  action_capacity: [1, 2, 3, 4]
+budgets: [4, 8, 12]
+seed_split:
+  train: [60, 61, 62, 63, 64]
+  validation: [65, 66, 67, 68, 69]
+  test: [70, 71, 72, 73, 74]
+predecessor_model_seeds: [5, 6, 7, 8, 9]
+scenario_split:
+  train_interpolation:
+    - {id: train_01, base_load: 1.40, burst_start: 0.18, burst_amplitude: 0.30, burst_duration: 0.16, period: 0.26, periodic_amplitude: 0.08}
+    - {id: train_02, base_load: 1.55, burst_start: 0.28, burst_amplitude: 0.50, burst_duration: 0.22, period: 0.34, periodic_amplitude: 0.18}
+    - {id: train_03, base_load: 1.75, burst_start: 0.40, burst_amplitude: 0.25, burst_duration: 0.28, period: 0.42, periodic_amplitude: 0.32}
+    - {id: train_04, base_load: 1.95, burst_start: 0.55, burst_amplitude: 0.60, burst_duration: 0.18, period: 0.30, periodic_amplitude: 0.24}
+    - {id: train_05, base_load: 2.15, burst_start: 0.70, burst_amplitude: 0.42, burst_duration: 0.24, period: 0.46, periodic_amplitude: 0.12}
+    - {id: train_06, base_load: 1.50, burst_start: 0.62, burst_amplitude: 0.20, burst_duration: 0.30, period: 0.38, periodic_amplitude: 0.40}
+    - {id: train_07, base_load: 1.85, burst_start: 0.22, burst_amplitude: 0.65, burst_duration: 0.20, period: 0.48, periodic_amplitude: 0.28}
+    - {id: train_08, base_load: 2.05, burst_start: 0.35, burst_amplitude: 0.35, burst_duration: 0.14, period: 0.24, periodic_amplitude: 0.36}
+    - {id: train_09, base_load: 1.65, burst_start: 0.48, burst_amplitude: 0.55, burst_duration: 0.26, period: 0.44, periodic_amplitude: 0.04}
+    - {id: train_10, base_load: 2.25, burst_start: 0.75, burst_amplitude: 0.28, burst_duration: 0.12, period: 0.36, periodic_amplitude: 0.20}
+  validation_interpolation:
+    - {id: val_01, base_load: 1.60, burst_start: 0.32, burst_amplitude: 0.40, burst_duration: 0.19, period: 0.28, periodic_amplitude: 0.30}
+    - {id: val_02, base_load: 1.90, burst_start: 0.58, burst_amplitude: 0.48, burst_duration: 0.27, period: 0.40, periodic_amplitude: 0.10}
+    - {id: val_03, base_load: 2.10, burst_start: 0.44, burst_amplitude: 0.22, burst_duration: 0.21, period: 0.32, periodic_amplitude: 0.38}
+  test_interpolation:
+    - {id: interp_01, base_load: 1.45, burst_start: 0.52, burst_amplitude: 0.38, burst_duration: 0.23, period: 0.35, periodic_amplitude: 0.26}
+    - {id: interp_02, base_load: 1.80, burst_start: 0.25, burst_amplitude: 0.58, burst_duration: 0.17, period: 0.45, periodic_amplitude: 0.14}
+    - {id: interp_03, base_load: 2.00, burst_start: 0.66, burst_amplitude: 0.32, burst_duration: 0.29, period: 0.27, periodic_amplitude: 0.34}
+    - {id: interp_04, base_load: 2.20, burst_start: 0.38, burst_amplitude: 0.46, burst_duration: 0.15, period: 0.39, periodic_amplitude: 0.06}
+  boundary:
+    - {id: boundary_01, base_load: 1.40, burst_start: 0.15, burst_amplitude: 0.20, burst_duration: 0.12, period: 0.24, periodic_amplitude: 0.00}
+    - {id: boundary_02, base_load: 2.25, burst_start: 0.75, burst_amplitude: 0.65, burst_duration: 0.30, period: 0.48, periodic_amplitude: 0.40}
+    - {id: boundary_03, base_load: 1.40, burst_start: 0.75, burst_amplitude: 0.65, burst_duration: 0.12, period: 0.48, periodic_amplitude: 0.00}
+    - {id: boundary_04, base_load: 2.25, burst_start: 0.15, burst_amplitude: 0.20, burst_duration: 0.30, period: 0.24, periodic_amplitude: 0.40}
+  extrapolation:
+    - {id: extra_01, base_load: 1.10, burst_start: 0.10, burst_amplitude: 0.10, burst_duration: 0.10, period: 0.20, periodic_amplitude: 0.00}
+    - {id: extra_02, base_load: 2.65, burst_start: 0.85, burst_amplitude: 0.82, burst_duration: 0.38, period: 0.60, periodic_amplitude: 0.58}
+    - {id: extra_03, base_load: 1.25, burst_start: 0.88, burst_amplitude: 0.72, burst_duration: 0.36, period: 0.55, periodic_amplitude: 0.52}
+    - {id: extra_04, base_load: 2.50, burst_start: 0.05, burst_amplitude: 0.75, burst_duration: 0.09, period: 0.18, periodic_amplitude: 0.50}
+original_loso: [early_burst, late_burst, periodic]
+collection:
+  train_episodes_per_scenario: 36
+  validation_episodes_per_scenario: 18
+  calibration_episodes: 96
+  evaluation_episodes: 30
+training:
+  hidden_dim: 32
+  learning_rate: 0.004
+  max_epochs: 220
+  patience: 30
+  rank_states_per_scenario: 96
+  losses:
+    pooled: {value: 1.0, anchor: 0.0, mono: 0.0, rank: 0.0}
+    joint: {value: 1.0, anchor: 0.10, mono: 0.20, rank: 1.0}
+adaptation:
+  ratios: [0.0, 0.01, 0.05, 0.10, 0.20]
+  prefix_fraction: 0.25
+  adapter: linear
+  max_trainable_parameters: 256
+  learning_rate: 0.02
+  max_epochs: 160
+  patience: 25
+  anchor_weight: 0.25
+  rank_weight: 1.0
+gate:
+  support_spearman_floor: 0.20
+  low_support_regret_share_floor: 0.35
+  interpolation_improvement_required_fraction: 0.60
+  recovery_5pct_floor: 0.50
+  recovery_10pct_floor: 0.70
+  wins_required_of_15: 10
+  material_anchor_mae_increase: 0.02
+  material_in_domain_regret_increase: 0.002
+  material_completion_loss: 0.01
+  material_slo_increase: 0.01
+  material_cost_increase_fraction: 0.05
+statistics:
+  paired_unit: scenario_model_seed
+  bootstrap_draws: 10000
+  correction: benjamini_hochberg
+expansion:
+  budgets: [2, 4, 6, 8, 12]
+  scenarios: 8
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_public_trace: true

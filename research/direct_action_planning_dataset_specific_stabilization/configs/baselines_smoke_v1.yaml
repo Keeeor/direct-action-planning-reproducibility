@@ -1,0 +1,41 @@
+tier: dataset_specific_baselines_smoke_v1
+manifest_schema: stage2.dap_dataset_specific_stabilization.baselines.v1
+matrix_row_id: EXT-SMOKE-01
+datasets: [gentd26]
+horizon: 16
+budgets: [8.0]
+seeds: [819]
+seed_role: fixed_repro
+gamma: 0.99
+training_steps: 256
+methods:
+  - double_dqn
+  - ppo
+  - ppo_lagrangian
+  - cpo
+  - p3o
+  - budgeted_fitted_q
+  - a2c
+  - pid_lagrangian
+primary_methods:
+  - double_dqn
+  - ppo
+  - ppo_lagrangian
+  - cpo
+  - p3o
+  - budgeted_fitted_q
+supplementary_methods:
+  - a2c
+  - pid_lagrangian
+evaluation_split: validation_eval
+evaluation_episodes_per_domain: 1
+evaluation_seed_offset: 90000049
+capacity_training_quantile: 0.95
+slo_constraint_rate: 0.25
+rollout_steps: 64
+update_epochs: 1
+minibatch_size: 32
+hidden_dim: 16
+branch_episodes_per_domain: 2
+bftq_iterations: 2
+bftq_epochs_per_iteration: 1

@@ -1,0 +1,58 @@
+tier: direct_action_value_selection_minimal_validation
+device: cpu
+torch_threads: 1
+environment:
+  horizon: 16
+  max_budget: 12
+  max_queue: 6
+  gamma: 0.99
+  action_costs: [0, 1, 2, 3]
+  action_capacity: [1, 2, 3, 4]
+budgets: [4, 8, 12]
+scenarios: [early_burst, late_burst, periodic]
+seeds: [0, 1, 2, 3, 4]
+evaluation_episodes: 40
+branch_data:
+  k: 1
+  replications_per_state: 8
+  q_star_training_label: false
+  common_random_numbers_across_actions: true
+  split_by_t:
+    train: [0, 1, 2, 7, 8, 13, 14, 15]
+    validation: [4, 5]
+    test: [10, 11]
+    embargo: [3, 6, 9, 12]
+models:
+  polynomial_degree: 2
+  ridge: 0.001
+  rank_beta: 1.0
+  rank_margin: 0.10
+  ensemble_members: 5
+  small_q_gap: 0.10
+continuation_gate:
+  paired_budget_seed_wins_required: 8
+  learned_value_agreement_loss_ceiling: 0.02
+  burst_seed_wins_required_each: 3
+  material_completion_loss: 0.01
+  material_slo_increase: 0.01
+  loso_agreement_deficit_ceiling: 0.02
+  loso_regret_excess_ceiling: 0.05
+  uncertainty_error_auroc_floor: 0.60
+  uncertainty_error_spearman_floor: 0.10
+diagnostic_ladder:
+  - data_coverage
+  - label_noise
+  - action_budget_encoding
+  - regression_scale
+  - rank_beta
+  - high_value_action_imbalance
+  - near_tie_weighting
+expansion:
+  budgets: [2, 4, 6, 8, 12]
+  synthetic_scenarios: 8
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_ablations: true
+  run_data_scale_sensitivity: true
+  run_label_noise_sensitivity: true
+  run_cross_scenario_generalization: true
+  run_public_trace: true

@@ -1,0 +1,30 @@
+schema: dap.k8s.prototype_training_config.v1
+seed: 20260808
+system_model: results/calibration/system_model.json
+checkpoint_root: results/prototype_checkpoints_v3
+horizon_steps: 64
+control_interval_seconds: 10
+budgets_seconds: [512, 1024, 1664]
+gamma: 0.98
+train_episodes: 16
+validation_episodes: 6
+forecaster_epochs: 60
+fvi_iterations: 8
+candidate_iterations: [2, 4, 7]
+fvi_epochs_per_iteration: 2
+continuation_weights: [0.5, 1.0]
+learning_rate: 0.001
+hidden_dim: 64
+profiles:
+  azure_http:
+    dataset: azure2019
+    domain: http
+    target_peak_rps: 300
+    max_rps: 480
+    slo_seconds: 0.25
+  gentd_inference:
+    dataset: gentd26
+    domain: txt2img
+    target_peak_rps: 80
+    max_rps: 140
+    slo_seconds: 1.0

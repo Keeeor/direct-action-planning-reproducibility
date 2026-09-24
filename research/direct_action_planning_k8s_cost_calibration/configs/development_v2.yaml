@@ -1,0 +1,53 @@
+schema: dap.k8s.cost_calibration_development.v2
+seed: 202608101
+horizon_steps: 32
+control_interval_seconds: 5
+budgets_seconds: [128, 256, 416]
+selection_budget_seconds: 256
+gamma: 0.98
+train_episodes: 24
+validation_activity_quantiles: [0.55, 0.60, 0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95, 1.00]
+validation_replicates: 2
+validation_seeds: [2026081101, 2026081102, 2026081103, 2026081104, 2026081105, 2026081106, 2026081107, 2026081108, 2026081109, 2026081110, 2026081111, 2026081112, 2026081113, 2026081114, 2026081115, 2026081116, 2026081117, 2026081118, 2026081119, 2026081120]
+forecaster_epochs: 60
+fvi_iterations: 8
+candidate_iterations: [2, 4, 7]
+fvi_epochs_per_iteration: 2
+cost_weights: [0.80, 1.00, 1.25, 1.50, 2.00]
+continuation_weights: [0.000, 0.025, 0.050, 0.075, 0.100]
+tie_margins: [0.00]
+forecast_strategy: causal_envelope
+forecast_multiplier: 1.10
+learning_rate: 0.001
+hidden_dim: 64
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+baseline_parameters:
+  threshold: [8, 32, 96]
+selection_guards:
+  global_completion_loss_max: 0.01
+  global_slo_increase_max: 0.02
+  low_activity_quantile_max: 0.70
+  low_activity_cost_increase_seconds_max: 20.0
+  high_activity_quantile_min: 0.90
+  high_activity_completion_loss_max: 0.01
+  high_activity_slo_increase_max: 0.02
+  global_cost_increase_seconds_floor: 10.0
+  global_cost_relative_increase_max: 0.05
+paths:
+  system_model: research/direct_action_planning_k8s_prototype/results/calibration/system_model.json
+  frozen_formal_v2_contract: research/direct_action_planning_k8s_service_repair/contracts/formal_v2_runtime_contract.json
+  frozen_formal_v2_checkpoint: research/direct_action_planning_k8s_service_repair/results/checkpoints_v2/gentd_inference
+  checkpoint_root: research/direct_action_planning_k8s_cost_calibration/results/checkpoints_v2
+profile:
+  name: gentd_inference
+  dataset: gentd26
+  domain: txt2img
+  target_peak_rps: 80
+  max_rps: 140
+  slo_seconds: 1.0
+  primary_comparator: threshold
+

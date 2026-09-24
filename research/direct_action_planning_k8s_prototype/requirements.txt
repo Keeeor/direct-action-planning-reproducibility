@@ -1,0 +1,11 @@
+aiohttp>=3.10,<4
+hypothesis>=6.100
+kubernetes>=30,<36
+numpy>=2.0
+pandas>=2.2
+prometheus-client>=0.20
+PyYAML>=6.0
+pytest>=8.0
+scipy>=1.13
+torch>=2.4
+

@@ -1,0 +1,20 @@
+tier: pds_adp_temporal_test_v1_locked
+manifest_schema: stage2.dap_pds_adp.temporal_test.v1_locked
+matrix_row_id: FSE-PDS-TEMPORAL-01
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 72.0, 96.0, 120.0, 144.0]
+seeds: [820, 821, 822, 823, 824, 825, 826, 827, 828, 829]
+seed_role: randomness_estimation
+gamma: 0.99
+evaluation_episodes_per_domain: 5
+test_seed_offset: 1700000119
+capacity_training_quantile: 0.95
+methods: [dap_calibrated, pds_adp]
+dap_tier: paper_closure_core_v2_locked
+pds_tier: pds_adp_formal_v1
+historical_test_access:
+  project_wide_first_access: false
+  prior_ledger: results/direct_action_planning_dataset_validation/gate_v1/FINAL_TEST_LEDGER.json
+  prior_status: finalized
+  interpretation: locked temporal re-evaluation, not an untouched project holdout

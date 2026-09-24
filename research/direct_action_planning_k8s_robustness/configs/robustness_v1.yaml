@@ -1,0 +1,66 @@
+schema: dap.k8s.robustness_config.v1
+tier: k8s_robustness_v1_locked
+method: dap
+source_split: test
+horizon_steps: 64
+control_interval_seconds: 10
+seeds: [20260901, 20260902, 20260903]
+budget_name: medium
+budget_seconds: 1024
+conditions:
+  observation_lag_1:
+    kind: observation_lag
+    lag_cycles: 1
+  metric_dropout_10pct:
+    kind: metric_dropout
+    fraction: 0.10
+    exact_events_per_run: 6
+  readiness_delay_5s:
+    kind: pod_readiness_delay
+    baseline_initial_delay_seconds: 1
+    perturbed_initial_delay_seconds: 6
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  image: dap-k8s-service:local
+controller_defaults:
+  horizon_steps: 64
+  control_interval_seconds: 10
+  base_replicas: 1
+  native_scale_down_reserve_seconds: 45
+paths:
+  prototype_root: ../../direct_action_planning_k8s_prototype
+  system_model: ../../direct_action_planning_k8s_prototype/results/calibration/system_model.json
+  plan_root: ../../direct_action_planning_k8s_prototype/results/request_plans/formal
+  reference_run_root: ../../direct_action_planning_k8s_prototype/results/runs/formal
+  run_root: ../results/runs/k8s_robustness_v1_locked
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+profiles:
+  azure_http:
+    checkpoint: ../../direct_action_planning_k8s_prototype/results/prototype_checkpoints_v3/azure_http/models.pt
+    slo_seconds: 0.25
+    capacity_per_pod_rps: 233.90924048217514
+  gentd_inference:
+    checkpoint: ../../direct_action_planning_k8s_prototype/results/prototype_checkpoints_v3/gentd_inference/models.pt
+    slo_seconds: 1.0
+    capacity_per_pod_rps: 29.97526124225415
+workload:
+  azure_http:
+    client_timeout_seconds: 10
+    connection_limit: 512
+  gentd_inference:
+    client_timeout_seconds: 15
+    connection_limit: 512
+monitor:
+  interval_seconds: 1
+baseline_parameters:
+  static_replicas: 2
+  threshold:
+    queue_small: 8
+    queue_medium: 32
+    queue_large: 96

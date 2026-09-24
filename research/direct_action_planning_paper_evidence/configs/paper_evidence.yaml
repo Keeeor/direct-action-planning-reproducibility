@@ -1,0 +1,28 @@
+tier: paper_evidence_core_v1
+sensitivity_tier: paper_evidence_sensitivity_v1
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 96.0, 144.0]
+seeds: [520, 521, 522, 523, 524]
+gamma: 0.99
+evaluation_gamma: 0.99
+collection_episodes_per_domain: 24
+validation_episodes_per_domain: 6
+selection_episodes_per_domain: 2
+evaluation_episodes_per_domain: 5
+fvi_iterations: 18
+refresh_iterations: 8
+model_epochs: 24
+hidden_dim: 64
+anchor_weight: 0.05
+selection_seed_offset: 60000011
+evaluation_seed_offset: 70000013
+evaluation_split: validation
+sensitivity_dataset: gentd26
+sensitivity_budget: 96.0
+sensitivity:
+  hidden_dim: [32, 64, 128]
+  collection_episodes_per_domain: [6, 12, 24, 48]
+  anchor_weight: [0.0, 0.01, 0.05, 0.1]
+  forecast_multiplier: [0.75, 0.9, 1.0, 1.1, 1.25]
+  gamma: [0.95, 0.99, 1.0]

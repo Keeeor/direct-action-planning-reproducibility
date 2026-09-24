@@ -1,0 +1,35 @@
+schema: dap.k8s.integration_trial_config.v1
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  image: dap-k8s-service:local
+controller_defaults:
+  horizon_steps: 4
+  control_interval_seconds: 10
+  base_replicas: 1
+paths:
+  system_model: ../../results/calibration/system_model.json
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+profiles:
+  azure_http:
+    checkpoint: ../../results/prototype_checkpoints_v3/azure_http/models.pt
+    slo_seconds: 0.25
+    capacity_per_pod_rps: 200
+  gentd_inference:
+    checkpoint: ../../results/prototype_checkpoints_v3/gentd_inference/models.pt
+    slo_seconds: 1.0
+    capacity_per_pod_rps: 30
+workload:
+  azure_http: {client_timeout_seconds: 10, connection_limit: 512}
+  gentd_inference: {client_timeout_seconds: 15, connection_limit: 512}
+baseline_parameters:
+  static_replicas: 2
+  threshold:
+    queue_small: 8
+    queue_medium: 32
+    queue_large: 96

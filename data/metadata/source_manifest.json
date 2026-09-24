@@ -1,0 +1,32 @@
+{
+  "azure_functions_2019": {
+    "source": "https://github.com/Azure/AzurePublicDataset",
+    "dataset_page": "https://github.com/Azure/AzurePublicDataset/blob/master/AzureFunctionsDataset2019.md",
+    "download": "https://github.com/Azure/AzurePublicDataset/releases/download/dataset-functions-2019/azurefunctions_dataset2019_azurefunctions-dataset2019.tar.xz",
+    "license": "CC BY 4.0",
+    "raw_directory": "data/raw/azure_functions_2019",
+    "preprocessors": [
+      "scripts/preprocess_azure_trace.py",
+      "scripts/preprocess_azure_bursty.py"
+    ],
+    "expected_files": "invocations_per_function_md.anon.d01.csv through invocations_per_function_md.anon.d14.csv"
+  },
+  "gentd26": {
+    "source": "https://github.com/alibaba/clusterdata",
+    "upstream_revision": "0d0f3f1efdbf1add6a7bcc63676eafbd1eb11f71",
+    "raw_directory": "data/raw/gentd26",
+    "preprocessor": "scripts/preprocess_gentd26.py",
+    "raw_files_redistributed": false,
+    "expected_files": [
+      "README.md",
+      "qps.tar.gz",
+      "lora_request_trace.csv",
+      "queue_size_raw_anon.tar.gz",
+      "queue_rt_raw_anon.tar.gz",
+      "pod_gpu_duty_cycle_anon.tar.gz",
+      "pod_gpu_memory_used_bytes_anon.tar.gz",
+      "pod_memory_util_anon.tar.gz",
+      "pipeline_inference_data_anon.tar.gz"
+    ]
+  }
+}

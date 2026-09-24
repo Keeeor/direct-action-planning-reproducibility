@@ -1,0 +1,36 @@
+tier: direct_action_planning_minimal_validation
+device: cpu
+torch_threads: 1
+environment:
+  horizon: 16
+  max_budget: 12
+  max_queue: 6
+  gamma: 0.99
+  action_costs: [0, 1, 2, 3]
+  action_capacity: [1, 2, 3, 4]
+budgets: [4, 8, 12]
+scenarios: [early_burst, late_burst, periodic]
+seeds: [0, 1, 2, 3, 4]
+evaluation_episodes: 40
+learning:
+  transition_samples_per_state_action: 64
+  transition_probability_smoothing: 0.25
+  value_source: empirical_model_bellman
+  exact_values_are_training_labels: false
+  leave_one_scenario_out_diagnostic: true
+continuation_gate:
+  oracle_action_agreement_floor: 0.999
+  oracle_q_regret_ceiling: 1.0e-10
+  paired_budget_seed_wins_required: 8
+  burst_seed_wins_required_each: 3
+  material_completion_loss: 0.01
+  material_slo_increase: 0.01
+  learned_model_agreement_loss_ceiling: 0.05
+  learned_model_regret_increase_ceiling: 0.05
+expansion:
+  budgets: [2, 4, 6, 8, 12]
+  synthetic_scenarios: 8
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_ablations: true
+  run_model_error_sensitivity: true
+  run_public_trace: true

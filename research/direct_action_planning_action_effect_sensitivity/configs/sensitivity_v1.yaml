@@ -1,0 +1,13 @@
+tier: action_effect_sensitivity_v1
+source_tier: paper_closure_core_v2_locked
+datasets: [azure2019, gentd26]
+budgets: [48.0, 96.0, 144.0]
+seeds: [825, 826, 827, 828, 829]
+horizon: 64
+gamma: 0.99
+capacity_training_quantile: 0.95
+evaluation_split: validation_eval
+evaluation_episodes_per_domain: 5
+evaluation_seed_offset: 90000049
+capacity_factors: [0.90, 0.95, 1.00, 1.05, 1.10]
+hidden_dim: 64

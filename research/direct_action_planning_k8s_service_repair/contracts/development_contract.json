@@ -1,0 +1,182 @@
+{
+  "schema": "dap.k8s.service_repair_audit.v1",
+  "status": "PASS",
+  "phase": "development_training_validation",
+  "frozen_at": "2026-08-09T15:03:24.097799+00:00",
+  "authorization_id": "reproducibility-package",
+  "results_observed": false,
+  "config_path": "research/direct_action_planning_k8s_service_repair/configs/development.yaml",
+  "config_sha256": "sha256:bef7ce715d1ff6137eab53b4df85a1c81532d4e7a98048adbe1388bcf74177f3",
+  "source_inventory": {
+    "sha256": "sha256:fb3a510852169bd6c1415acc1e5b16dcb8ea062e4f510b751b565d9a157c3729",
+    "files": [
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/__init__.py",
+        "sha256": "sha256:44f9d2716c10de6c59152d1858db6148bf7aed2ad629a96cf22fca012e75320a"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/audit.py",
+        "sha256": "sha256:be1dce90866bd4074d9f95e5730c2732b623e06cc35cbf8da1ba42f48fc31a3c"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/collector.py",
+        "sha256": "sha256:4f8f2175841fafc9264e2262a1df209fadd2d544f3eefebbb13a3570df1dcc64"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/planner.py",
+        "sha256": "sha256:c514ddf36c41ff77c4dbf44d0fbef5c28deee56c1a9460a2c8fa0ac99f971be5"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/prototype_api.py",
+        "sha256": "sha256:791a4a61a874d500075cf358e129563fcf54cb74976a784c20e15f56d13ba1cb"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/simulation.py",
+        "sha256": "sha256:93edf1d835dbc1c34d09638aa9acbef3736c02eccf5d183d7fb2f25b08ab8e8f"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/training.py",
+        "sha256": "sha256:1493f11cb69f6a6cc29f67123d193f89bc93d9f6f6ad43eea6a94059689fe364"
+      },
+      {
+        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/transition.py",
+        "sha256": "sha256:052b109a0bbdfa15150475b6fa0e8532d95a65821e849212b22c3a4edfa6414b"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_audit.py",
+        "sha256": "sha256:c3e3ed09636569d0b3ba25db52a13953d0db645226da2c06089bbf2ae3776c1f"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_collector.py",
+        "sha256": "sha256:f5cc3ea75aabbc63fdb1529a7d1ea628f448f5a620b7ac94e1fafb5ee588a649"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_planner.py",
+        "sha256": "sha256:b76667af4cefa02a4700ab467e0394e142896e482de678f2534cec5e6d491ece"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_simulation.py",
+        "sha256": "sha256:acbaa563a2adc4475125c298896d3ab2b44da1ff876d51fecd4cf830d3b8e3ba"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_training.py",
+        "sha256": "sha256:1a4ceae7f1a2dd1a0738abba4c91f59ce49cf61a9d7d1d85254f5c473870a550"
+      },
+      {
+        "path": "tests/direct_action_planning_k8s_service_repair/test_transition.py",
+        "sha256": "sha256:2ccbd1536e20d18557b36346fc0a3ef27c3f6781729574b4e9654518c71b63a2"
+      }
+    ]
+  },
+  "plan_inventory": {
+    "sha256": "sha256:354fbb7a11a939932e88df29bfb5f9cf8e7f7e18f7ac72589f8def579f2e7297",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/PLAN.md",
+        "sha256": "sha256:52dfbe2f80ec177177fe8fee6eb611407fa7610529b1258742489ff61ea08892"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/PREREGISTRATION.md",
+        "sha256": "sha256:61cb553362a835fccfb36c9967e42be50c4edee68d4256740d46997d90424bc9"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/contracts/failure_tree_report.json",
+        "sha256": "sha256:db09ab75c575e923ea520b7972104beff2aa1c8580d0d4beb2a1e51a43ebaad4"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/contracts/plan_findings.json",
+        "sha256": "sha256:dfc516183134591a6844fd4b482e571c03a24c21320b69e0818ef81a1ad63359"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/experiment_matrix.md",
+        "sha256": "sha256:dca4ad5aa16b33d6851d9994f9192d70c14cf812987adae678c8924e711af500"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/failure-tree.json",
+        "sha256": "sha256:d4b43c323fdff5f8974fa0783a6189a92d21f8941ad960b4ca564d3842f8dcff"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_service_repair/plan_spec.json",
+        "sha256": "sha256:5c08b11f387196758a53b2f096df5d21f4f166505547168bcf1abb487cfdabf6"
+      }
+    ]
+  },
+  "data_inventory": {
+    "sha256": "sha256:e754e649376304aac26fac880c90fde34875bffbf31773ec762007a36bc131e7",
+    "files": [
+      {
+        "path": "data/metadata/gentd26/dataset.json",
+        "sha256": "sha256:8d818c0193c3c42ab47269691f3d6578a852c34176ea8ed319b72e16c0292b77"
+      },
+      {
+        "path": "data/processed/azure_functions_2019/http.npz",
+        "sha256": "sha256:c09df8400dc04c2bdf6d5ddb529ca705579264454be4b13167397fc0be88e664"
+      },
+      {
+        "path": "data/processed/azure_functions_2019/preprocessing.json",
+        "sha256": "sha256:70615bd5e5b7607acf7d325ff5c78e3dd217217907c1f0ab84133209119fee2f"
+      },
+      {
+        "path": "data/processed/gentd26/txt2img.npz",
+        "sha256": "sha256:455f28fd9deb2ea18ee267797f4690fe5e208eaf4efda5d67fb1671b2ca1e233"
+      }
+    ]
+  },
+  "legacy_input_inventory": {
+    "sha256": "sha256:9e93b89e272233edcfc9451af20885550744d6d9564fa69fe085cc5cd6cce61b",
+    "files": [
+      {
+        "path": "research/direct_action_planning_k8s_prototype/controller/budget_tracker.py",
+        "sha256": "sha256:390f52ebd749c4a47e188bfb3b116797608e95e40af4dddcbc99248b1dc1e79a"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/controller/checkpoint_loader.py",
+        "sha256": "sha256:e2639e1eac4cb71384db8c45cef8425b360d3b6a689c934001d5cb9f92d35961"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/calibration/system_model.json",
+        "sha256": "sha256:3c0053cd23734174144bb46bde47968a21e740b26da0202718351ce9f9c6df15"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/prototype_checkpoints_v3/azure_http/models.pt",
+        "sha256": "sha256:fe3268e5d8f1d810423d9159ff13fa89e5e101a64872563e42ac207073297d36"
+      },
+      {
+        "path": "research/direct_action_planning_k8s_prototype/results/prototype_checkpoints_v3/gentd_inference/models.pt",
+        "sha256": "sha256:65fc54958369c2a29c3d495686ee3ecd2ae98e605cef5c65c58c08af215d2b3b"
+      }
+    ]
+  },
+  "test_evidence": {
+    "argv": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/direct_action_planning_k8s_service_repair",
+      "research/direct_action_planning_k8s_prototype/tests/test_action_and_budget.py",
+      "research/direct_action_planning_k8s_prototype/tests/test_state_collector.py",
+      "tests/direct_action_planning_k8s_robustness/test_perturbations.py",
+      "tests/test_budget_accounting.py",
+      "tests/test_no_future_leakage.py"
+    ],
+    "exit_code": 0,
+    "stdout": "...............................                                          [100%]\n31 passed in 0.75s\n",
+    "stderr": ""
+  },
+  "environment": {
+    "python": "3.11.6 | packaged by conda-forge | (main, Oct  3 2023, 10:40:35) [GCC 12.3.0]",
+    "platform": "Linux-7.0.0-28-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.4",
+    "torch": "2.11.0+cu130",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA GeForce RTX 5090"
+  },
+  "semantic_assertions": {
+    "closed_loop_selection_uses_controller_forecast": "VERIFIED_BY_TEST",
+    "effective_and_next_ready_are_distinct": "VERIFIED_BY_TEST",
+    "one_feasibility_function": "VERIFIED_BY_SOURCE_AND_TEST",
+    "current_ready_has_independent_safety_channel": "VERIFIED_BY_TEST",
+    "service_utilization_and_ewma_match": "VERIFIED_BY_TEST"
+  }
+}

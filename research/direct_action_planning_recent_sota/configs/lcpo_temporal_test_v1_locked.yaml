@@ -1,0 +1,17 @@
+tier: recent_sota_lcpo_temporal_test_v1_locked
+manifest_schema: stage2.dap_recent_sota.temporal_test.v1_locked
+matrix_row_id: RECENT-SOTA-LCPO-TEMPORAL
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 72.0, 96.0, 120.0, 144.0]
+seeds: [820, 821, 822, 823, 824, 825, 826, 827, 828, 829]
+seed_role: randomness_estimation
+gamma: 0.99
+evaluation_episodes_per_domain: 5
+test_seed_offset: 1700000119
+capacity_training_quantile: 0.95
+development_config: research/direct_action_planning_recent_sota/configs/lcpo_frontier_v1_locked.yaml
+historical_test_access:
+  project_wide_first_access: false
+  prior_ledger: results/direct_action_planning_dataset_validation/gate_v1/FINAL_TEST_LEDGER.json
+  post_hoc_extension: true

@@ -1,0 +1,41 @@
+tier: direct_action_value_selection_full_validation
+device: cpu
+torch_threads: 1
+gamma: 0.99
+budgets: [110.0, 165.0, 220.0, 275.0, 330.0]
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+train_scenarios: [stable, periodic, early_burst, late_burst, multi_burst, gradual, abrupt]
+eval_scenarios: [stable, periodic, early_burst, late_burst, multi_burst, gradual, abrupt, ood_burst]
+evaluation_episodes: 5
+synthetic_source_config: research/dynamic_shadow_price/configs/synthetic_joint.yaml
+trace_source_config: research/dynamic_shadow_price/configs/trace_joint.yaml
+branch_data:
+  k: 1
+  label: immediate_reward_plus_gamma_frozen_b4_value
+  all_feasible_actions: true
+  common_random_numbers_across_actions: true
+  synthetic_episodes_per_scenario_budget:
+    train: 3
+    validation: 1
+    test: 1
+  trace_windows_per_domain_budget:
+    train: 3
+    validation: 1
+    test: 1
+models:
+  ridge: 0.01
+  rank_beta: 1.0
+  rank_margin: 0.10
+  ensemble_members: 5
+  small_q_gap: 0.10
+ablations:
+  rank_beta: [0.0, 0.25, 1.0, 4.0]
+  ensemble_members: [1, 3, 5]
+data_scale_fractions: [0.25, 0.5, 1.0]
+label_noise_standard_deviations: [0.0, 0.1, 0.25]
+full_stop_gate:
+  minimum_non_dominated_budget_scenario_seed_fraction: 0.60
+  maximum_mean_completion_loss: 0.01
+  maximum_mean_slo_increase: 0.01
+  require_positive_reward_difference: true
+  require_synthetic_and_public_non_reversal: true

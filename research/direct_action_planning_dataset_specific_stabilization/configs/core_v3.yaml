@@ -1,0 +1,31 @@
+tier: dataset_specific_stabilization_core_v3
+manifest_schema: stage2.dap_dataset_specific_stabilization.core.v3
+matrix_row_id: STABILIZATION-CORE-V3
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 96.0, 144.0]
+seeds: [820, 821, 822, 823, 824]
+seed_role: randomness_estimation
+gamma: 0.99
+collection_episodes_per_domain: 24
+validation_episodes_per_domain: 6
+selection_episodes_per_domain: 4
+evaluation_episodes_per_domain: 5
+fvi_iterations: 18
+candidate_iterations: [0, 2, 4, 6, 8, 10, 12, 14, 16, 17]
+continuation_weights: [0.0, 0.25, 0.5, 0.75, 1.0]
+epochs_per_iteration: 2
+model_epochs: 24
+hidden_dim: 64
+learning_rate: 0.001
+value_target_scale_mode: train_reward_rms_sqrt_horizon
+zero_initialize_value_output: true
+selection_seed_offset: 80000023
+evaluation_seed_offset: 90000049
+model_validation_split: validation_fit
+selection_split: validation_select
+evaluation_split: validation_eval
+selection_guardrails:
+  completion_tolerance: 0.005
+  slo_tolerance: 0.01
+  cost_budget_fraction: 0.10

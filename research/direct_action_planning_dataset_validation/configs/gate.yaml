@@ -1,0 +1,34 @@
+tier: gate_v1
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 96.0, 144.0]
+seeds: [100, 101, 102, 103, 104]
+gamma: 0.99
+collection_episodes_per_domain: 24
+validation_collection_episodes_per_domain: 6
+evaluation_episodes_per_domain: 5
+fvi_iterations: 18
+refresh_iterations: 8
+model_epochs: 24
+hidden_dim: 64
+b4:
+  total_steps: 20480
+  rollout_steps: 512
+  learning_rate: 0.0003
+  update_epochs: 4
+  minibatch_size: 256
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_coef: 0.2
+  value_coef: 0.5
+  cost_value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  global_lambda_lr: 0.05
+  balance_coef: 0.0
+  smooth_coef: 0.0
+  allocator_entropy_coef: 0.0
+  use_balance_loss: false
+  use_smooth_loss: false
+  use_global_lambda: true
+  use_local_constraint: false

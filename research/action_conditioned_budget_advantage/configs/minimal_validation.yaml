@@ -1,0 +1,31 @@
+tier: acba_minimal_validation
+device: cpu
+torch_threads: 1
+environment:
+  horizon: 16
+  max_budget: 12
+  max_queue: 6
+  gamma: 0.99
+  action_costs: [0, 1, 2, 3]
+  action_capacity: [1, 2, 3, 4]
+budgets: [4, 8, 12]
+scenarios: [early_burst, late_burst, periodic]
+seeds: [0, 1, 2, 3, 4]
+branch_horizons: [1, 5, 10, 20]
+branch_oracle_bootstrap: true
+evaluation_episodes: 40
+acba:
+  alpha: 1.0
+  training_branch_horizon: 10
+  hidden_dim: 64
+  learning_rate: 0.001
+  training_epochs: 120
+  batch_size: 512
+  ranking_margin: 0.05
+  ranking_coef: 0.5
+  ppo_finetune_steps: 20480
+  ppo_rollout_steps: 256
+continuation_gate:
+  paired_budget_seed_wins_required: 8
+  burst_seed_wins_required: 3
+  high_risk_balanced_accuracy_floor: 0.5

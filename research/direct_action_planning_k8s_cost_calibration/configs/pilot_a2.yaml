@@ -1,0 +1,53 @@
+schema: dap.k8s.cost_calibration_runtime.v1
+mode: pilot_a2
+source_split: validation
+horizon_steps: 32
+control_interval_seconds: 5
+budget_seconds: 256
+seeds: [2026081201, 2026081202]
+methods: [dap_calibrated, threshold]
+max_attempts: 1
+development_contract: ../contracts/development_v2_contract.json
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  image: dap-k8s-service:local
+controller_defaults:
+  horizon_steps: 32
+  control_interval_seconds: 5
+  base_replicas: 1
+  native_scale_down_reserve_seconds: 45
+paths:
+  system_model: ../../direct_action_planning_k8s_prototype/results/calibration/system_model.json
+  plan_root: ../results/request_plans/pilot_a2
+  run_root: ../results/runs/pilot_a2
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+profile:
+  name: gentd_inference
+  dataset: gentd26
+  domain: txt2img
+  checkpoint: ../results/checkpoints_v2/gentd_inference/models.pt
+  slo_seconds: 1.0
+  capacity_per_pod_rps: 29.97526124225415
+  target_peak_rps: 80
+  max_rps: 140
+  training_quantile: 0.99
+  activity_quantiles: [0.60, 0.95]
+workload:
+  client_timeout_seconds: 15
+  connection_limit: 512
+monitor:
+  interval_seconds: 1
+baseline_parameters:
+  threshold:
+    queue_small: 8
+    queue_medium: 32
+    queue_large: 96
+readiness:
+  baseline_initial_delay_seconds: 1
+

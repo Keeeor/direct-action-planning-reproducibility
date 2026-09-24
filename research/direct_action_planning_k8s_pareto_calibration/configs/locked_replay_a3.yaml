@@ -1,0 +1,63 @@
+schema: dap.k8s.pareto_locked_replay_runtime.v1
+mode: locked_replay_a3
+source_split: test
+horizon_steps: 32
+control_interval_seconds: 5
+budget_seconds: 256
+seeds: [2026081501, 2026081502, 2026081503, 2026081504, 2026081505, 2026081506, 2026081507, 2026081508, 2026081509, 2026081510, 2026081511, 2026081512, 2026081513, 2026081514, 2026081515, 2026081516, 2026081517, 2026081518, 2026081519, 2026081520]
+methods: [dap_cont_0p05, threshold]
+method_rotation_offsets: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
+continuation_candidates:
+  dap_cont_0p05: 0.05
+max_attempts: 2
+inherited_development_contract: ../../direct_action_planning_k8s_cost_calibration/contracts/development_v2_contract.json
+validation_selection: ../results/analysis/validation_a3_v1/validation_decision.json
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  image: dap-k8s-service:local
+controller_defaults:
+  horizon_steps: 32
+  control_interval_seconds: 5
+  base_replicas: 1
+  native_scale_down_reserve_seconds: 45
+paths:
+  system_model: ../../direct_action_planning_k8s_prototype/results/calibration/system_model.json
+  plan_root: ../results/request_plans/locked_replay_a3
+  run_root: ../results/runs/locked_replay_a3
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+profile:
+  name: gentd_inference
+  dataset: gentd26
+  domain: txt2img
+  checkpoint: ../../direct_action_planning_k8s_cost_calibration/results/checkpoints_v2/gentd_inference/models.pt
+  slo_seconds: 1.0
+  capacity_per_pod_rps: 29.97526124225415
+  target_peak_rps: 80
+  max_rps: 140
+  training_quantile: 0.99
+  activity_quantiles: [0.55, 0.55, 0.60, 0.60, 0.65, 0.65, 0.70, 0.70, 0.75, 0.75, 0.80, 0.80, 0.85, 0.85, 0.90, 0.90, 0.95, 0.95, 1.00, 1.00]
+workload:
+  client_timeout_seconds: 15
+  connection_limit: 512
+monitor:
+  interval_seconds: 1
+baseline_parameters:
+  threshold:
+    queue_small: 8
+    queue_medium: 32
+    queue_large: 96
+readiness:
+  baseline_initial_delay_seconds: 1
+analysis:
+  bootstrap_draws: 20000
+  bootstrap_seed: 2026081102
+  completion_loss_margin: 0.01
+  slo_increase_margin: 0.02
+  ready_cost_increase_seconds_margin: 10.0
+  family_correction: holm

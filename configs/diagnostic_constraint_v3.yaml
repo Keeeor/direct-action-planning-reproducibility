@@ -1,0 +1,35 @@
+tier: diagnostic
+device: cpu
+torch_threads: 1
+deterministic_evaluation: false
+environment: {horizon: 128, base_arrival_rate: 6.0, base_capacity: 5.0, slo_latency: 3.0, burst_scale: 2.4}
+training:
+  total_steps: 25600
+  rollout_steps: 512
+  learning_rate: 0.0003
+  update_epochs: 4
+  minibatch_size: 256
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_coef: 0.2
+  value_coef: 0.5
+  cost_value_coef: 0.5
+  entropy_coef: 0.01
+  max_grad_norm: 0.5
+  global_lambda_lr: 0.05
+  balance_coef: 0.1
+  smooth_coef: 0.01
+  allocator_entropy_coef: 0.001
+  use_balance_loss: true
+  use_smooth_loss: true
+  use_global_lambda: true
+  use_local_constraint: true
+  hidden_dim: 64
+train_scenarios: [stable, periodic, early_burst, late_burst, multi_burst, gradual, abrupt]
+eval_scenarios: [stable, periodic, late_burst, multi_burst, ood_burst]
+evaluation_episodes: 5
+budgets: [110.0, 220.0, 330.0]
+seeds: [0, 1, 2]
+methods: [b3_lagrangian, b4_budget_state, cdba]
+method_options:
+  cdba: {eta: 1.0, min_multiplier: 0.25, max_multiplier: 4.0}

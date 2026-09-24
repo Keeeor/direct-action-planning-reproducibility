@@ -1,0 +1,35 @@
+tier: recent_sota_lcpo_frontier_v1_locked
+manifest_schema: stage2.dap_recent_sota.lcpo.v1
+matrix_row_id: RECENT-SOTA-LCPO-FRONTIER
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 72.0, 96.0, 120.0, 144.0]
+seeds: [820, 821, 822, 823, 824, 825, 826, 827, 828, 829]
+seed_role: randomness_estimation
+gamma: 0.99
+training_steps: 102400
+batch_size: 200
+hidden_dim: 64
+gae_lambda: 0.9
+policy_learning_rate: 0.0004
+value_learning_rate: 0.001
+entropy_max: 0.03
+auto_target_entropy: 0.1
+entropy_learning_rate: 0.001
+recent_kl_limit: 0.1
+anchor_kl_limit: 0.0001
+damping: 0.1
+cg_steps: 15
+max_backtracks: 10
+recent_window: 200
+reservoir_capacity: 1024
+ood_log_likelihood_threshold: -6.0
+context_indices: [0, 1, 10]
+covariance_ridge: 0.001
+solve_dual: false
+evaluation_split: validation_eval
+evaluation_episodes_per_domain: 5
+capacity_training_quantile: 0.95
+evaluation_seed_offset: 90000049
+upstream_commit: aeb93563cbd6ede13e145381ec3f90e0ac840c41
+upstream_archive_sha256: 80995fc206277a7d01f7e13d3c6b021b77b2211d507a25fc6217a65c5b342008

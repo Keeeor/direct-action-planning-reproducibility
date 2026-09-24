@@ -1,0 +1,22 @@
+schema: dap.k8s.dap_smoke_config.v1
+seed: 20260809
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  node_port: 30080
+controller:
+  profile: gentd_inference
+  total_budget_seconds: 120
+  horizon_steps: 4
+  control_interval_seconds: 10
+  slo_seconds: 1.0
+  capacity_per_pod_rps: 30
+  base_replicas: 1
+paths:
+  checkpoint: ../../results/prototype_checkpoints/gentd_inference/models.pt
+  system_model: ../../results/calibration/system_model.json
+workload:
+  rps: 80
+  client_timeout_seconds: 15
+  connection_limit: 512

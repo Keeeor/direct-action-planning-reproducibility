@@ -1,0 +1,18 @@
+tier: external_baselines_method_fidelity_v1
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 96.0, 144.0]
+seeds: [420, 421, 422, 423, 424]
+gamma: 0.99
+training_steps: 102400
+rollout_steps: 512
+update_epochs: 4
+minibatch_size: 256
+hidden_dim: 64
+selection_seed_offset: 40000003
+evaluation_seed_offset: 50000003
+selection_episodes_per_domain: 2
+evaluation_episodes_per_domain: 5
+methods:
+  - causal_mpc
+  - p3o

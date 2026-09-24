@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dap-worker
+  namespace: dap-k8s-prototype
+  labels:
+    app.kubernetes.io/name: dap-worker
+spec:
+  selector:
+    app.kubernetes.io/name: dap-worker
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
+      nodePort: 30080
+  # NodePort makes each HTTP connection traverse kube-proxy and endpoint
+  # selection. It is used by the host-side real trace replayer; an in-cluster
+  # replayer may instead use the same ClusterIP service name.
+  type: NodePort

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dap-k8s-prototype
+  labels:
+    app.kubernetes.io/part-of: dap-k8s-prototype
+

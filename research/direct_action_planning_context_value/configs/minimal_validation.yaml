@@ -1,0 +1,67 @@
+tier: direct_action_planning_context_value_minimal
+device: cpu
+torch_threads: 1
+environment:
+  horizon: 16
+  max_budget: 12
+  max_queue: 6
+  gamma: 0.99
+  action_costs: [0, 1, 2, 3]
+  action_capacity: [1, 2, 3, 4]
+budgets: [4, 8, 12]
+scenarios: [early_burst, late_burst, periodic]
+seed_split:
+  train: [40, 41, 42, 43, 44]
+  validation: [45, 46, 47, 48, 49]
+  test: [50, 51, 52, 53, 54]
+predecessor_model_seeds: [5, 6, 7, 8, 9]
+history_windows: [4, 8, 16, 32]
+collection:
+  episodes_per_source: 48
+  sources: [D0, D1, controlled, fresh_aggregation]
+  source_weights:
+    D0: 0.40
+    D1: 0.25
+    controlled: 0.20
+    fresh_aggregation: 0.15
+training:
+  hidden_dim: 48
+  gru_hidden_dim: 24
+  learning_rate: 0.003
+  max_epochs: 240
+  patience: 25
+  batch_size: 512
+  rank_states: 96
+  validation_rank_states: 384
+  validation_interval: 5
+  rank_margin: 0.002
+  losses:
+    value: 1.0
+    anchor: 0.10
+    mono: 0.20
+    rank: 1.0
+evaluation_episodes: 40
+aliasing:
+  near_linf_radius: 0.15
+  material_q_gap: 1.0e-8
+  future_window: 4
+gate:
+  oracle_all_scenarios_required: true
+  oracle_gain_recovery_floor: 0.70
+  wins_required_of_15: 10
+  material_reversal_absolute: 0.0005
+  material_reversal_fraction: 0.10
+  in_domain_regret_increase_ceiling: 0.002
+  material_completion_loss: 0.01
+  material_slo_increase: 0.01
+  material_uncompensated_cost_increase_fraction: 0.05
+  leakage_required: true
+statistics:
+  paired_unit: heldout_scenario_model_seed
+  bootstrap_draws: 10000
+  correction: benjamini_hochberg
+expansion:
+  budgets: [2, 4, 6, 8, 12]
+  synthetic_scenarios: 8
+  seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  run_public_trace: true

@@ -1,0 +1,25 @@
+schema: dap.k8s.smoke_config.v1
+mode: smoke
+seed: 20260806
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  image: dap-k8s-service:local
+  node_port: 30080
+service:
+  profile: gentd_inference
+  nominal_capacity_per_pod_rps: 35.0
+workload:
+  duration_seconds: 40.0
+  rps: 120.0
+  client_timeout_seconds: 15.0
+  connection_limit: 512
+  force_close_connections: true
+metrics:
+  poll_interval_seconds: 0.5
+scaling_schedule:
+  - {offset_seconds: 0.0, replicas: 1}
+  - {offset_seconds: 10.0, replicas: 3}
+  - {offset_seconds: 20.0, replicas: 5}
+  - {offset_seconds: 30.0, replicas: 1}

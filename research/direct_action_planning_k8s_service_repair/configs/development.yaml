@@ -1,0 +1,42 @@
+schema: dap.k8s.service_repair_development.v1
+seed: 202608091
+horizon_steps: 32
+control_interval_seconds: 5
+budgets_seconds: [128, 256, 416]
+selection_budget_seconds: 256
+gamma: 0.98
+train_episodes: 24
+validation_episodes: 10
+forecaster_epochs: 60
+fvi_iterations: 8
+candidate_iterations: [2, 4, 7]
+fvi_epochs_per_iteration: 2
+continuation_weights: [0.25, 0.50, 0.75, 1.00]
+tie_margins: [0.00, 0.01, 0.03, 0.05]
+learning_rate: 0.001
+hidden_dim: 64
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+baseline_parameters:
+  threshold: [8, 32, 96]
+paths:
+  system_model: research/direct_action_planning_k8s_prototype/results/calibration/system_model.json
+  checkpoint_root: research/direct_action_planning_k8s_service_repair/results/checkpoints_v1
+profiles:
+  azure_http:
+    dataset: azure2019
+    domain: http
+    target_peak_rps: 300
+    max_rps: 480
+    slo_seconds: 0.25
+    primary_comparator: mpc_4
+  gentd_inference:
+    dataset: gentd26
+    domain: txt2img
+    target_peak_rps: 80
+    max_rps: 140
+    slo_seconds: 1.0
+    primary_comparator: threshold

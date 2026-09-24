@@ -1,0 +1,8 @@
+name: azure_http
+dataset: azure2019
+domain: http
+target_peak_rps: 300.0
+max_rps: 480.0
+training_quantile: 0.99
+service_profile: azure_http
+slo_seconds: 0.25

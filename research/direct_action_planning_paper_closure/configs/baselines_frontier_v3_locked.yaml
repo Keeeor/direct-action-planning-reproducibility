@@ -1,0 +1,42 @@
+tier: paper_closure_baselines_v3_locked
+manifest_schema: stage2.dap_paper_closure.baselines.v3_locked
+matrix_row_id: FRONTIER-01-RL-LOCKED
+expected_code_tree_sha256: sha256:14b39b42755580aa94b1d7344eb7965225b690cc03ea062a69154184224c69e7
+datasets: [azure2019, gentd26]
+horizon: 64
+budgets: [48.0, 72.0, 96.0, 120.0, 144.0]
+seeds: [820, 821, 822, 823, 824, 825, 826, 827, 828, 829]
+seed_role: randomness_estimation
+gamma: 0.99
+training_steps: 102400
+methods:
+  - double_dqn
+  - ppo
+  - ppo_lagrangian
+  - cpo
+  - p3o
+  - budgeted_fitted_q
+  - a2c
+  - pid_lagrangian
+primary_methods:
+  - double_dqn
+  - ppo
+  - ppo_lagrangian
+  - cpo
+  - p3o
+  - budgeted_fitted_q
+supplementary_methods:
+  - a2c
+  - pid_lagrangian
+evaluation_split: validation_eval
+evaluation_episodes_per_domain: 5
+evaluation_seed_offset: 90000049
+capacity_training_quantile: 0.95
+slo_constraint_rate: 0.25
+rollout_steps: 512
+update_epochs: 4
+minibatch_size: 256
+hidden_dim: 64
+branch_episodes_per_domain: 16
+bftq_iterations: 8
+bftq_epochs_per_iteration: 2

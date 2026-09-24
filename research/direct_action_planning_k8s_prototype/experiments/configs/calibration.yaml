@@ -1,0 +1,27 @@
+schema: dap.k8s.calibration_config.v1
+seed: 20260807
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-k8s-prototype
+  deployment: dap-worker
+  node_port: 30080
+capacity_profiles:
+  azure_http:
+    replicas: [1, 2, 3, 5]
+    rates_rps: [120, 300, 480]
+    duration_seconds: 8
+    client_timeout_seconds: 10
+    connection_limit: 512
+    nominal_capacity_per_pod_rps: 150
+  gentd_inference:
+    replicas: [1, 2, 3, 5]
+    rates_rps: [30, 80, 140]
+    duration_seconds: 8
+    client_timeout_seconds: 15
+    connection_limit: 512
+    nominal_capacity_per_pod_rps: 35
+startup_profiles: [azure_http, gentd_inference]
+startup_targets: [2, 3, 5]
+startup_repeats: 3
+startup_timeout_seconds: 120
+startup_poll_seconds: 0.2

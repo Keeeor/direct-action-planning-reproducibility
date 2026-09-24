@@ -1,0 +1,32 @@
+tier: paper_closure_controls_v2_budget_horizon
+manifest_schema: stage2.dap_paper_closure.controls.v2
+matrix_row_id: ABL-02-BUDGET-HORIZON
+source_tier: paper_closure_core_v1
+dap_source_config: research/direct_action_planning_paper_closure/configs/core_frontier_v1.yaml
+datasets: [azure2019, gentd26]
+budgets: [48.0, 96.0, 144.0]
+seeds: [825, 826, 827, 828, 829]
+horizon: 64
+gamma: 0.99
+capacity_training_quantile: 0.95
+training_split: train
+validation_split: validation_fit
+evaluation_split: validation_eval
+collection_episodes_per_domain: 24
+validation_episodes_per_domain: 6
+evaluation_episodes_per_domain: 5
+model_epochs: 24
+hidden_dim: 64
+evaluation_seed_offset: 90000049
+masked_value_iterations: 18
+masked_value_candidate_iterations: [0, 2, 4, 6, 8, 10, 12, 14, 16, 17]
+methods:
+  - dap_full
+  - dap_immediate_structured
+  - mpc_2
+  - mpc_4
+  - mpc_8
+  - dap_black_box_transition
+  - dap_actor_distilled
+  - dap_no_budget_horizon
+
