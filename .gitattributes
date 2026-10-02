@@ -1,4 +1,4 @@
-evidence/** -text
-frozen/** -text
-paper/** -text
-research/fse2027_revision_20261002/** -text
+evidence/** -text whitespace=cr-at-eol
+frozen/** -text whitespace=cr-at-eol
+paper/** -text whitespace=cr-at-eol
+research/fse2027_revision_20261002/** -text whitespace=cr-at-eol
