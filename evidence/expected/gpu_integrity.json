@@ -1,0 +1,13 @@
+{
+  "cells": 100,
+  "episodes": 3000,
+  "matched_DAP_episodes": 1000,
+  "maximum_baseline_difference": {
+    "discounted_return": 4.547473508864641e-13,
+    "completion_ratio": 8.881784197001252e-16,
+    "slo_violation_rate": 0.0,
+    "total_cost": 0.0
+  },
+  "maximum_overspend": 0.0,
+  "models_selected_before_test": true
+}

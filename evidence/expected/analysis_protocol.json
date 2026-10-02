@@ -1,0 +1,22 @@
+{
+  "schema": "dap.fse2027.analysis.v1",
+  "script_sha256": "a0e4ce01d232b89f8665ec1853ee676357eea0ce673baa4dddac258e8692e106",
+  "trace_primary": [
+    "discounted_return",
+    "completion_ratio",
+    "slo_violation_rate",
+    "total_cost"
+  ],
+  "live_primary": [
+    "completion_rate",
+    "failure_or_slo_rate",
+    "ready_replica_seconds"
+  ],
+  "live_definition": "Failure-or-SLO counts every unsuccessful HTTP request as a violation, including fast failures; measured successful-request p95 is descriptive and excludes failed requests. Original latency-only SLO rate retained separately.",
+  "primary_unit": "training seed for traces; request plan for live; budgets and episodes aggregated within units; ten paired units per dataset/profile",
+  "bootstrap": 20000,
+  "seed": 20261002,
+  "exact_sign_flip": 1024,
+  "Holm": "one family per study across datasets/profiles, comparators and primary metrics",
+  "completion_rule": "Only complete predefined matrices are analyzed; failed attempts retained independently."
+}

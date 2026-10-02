@@ -1,0 +1,24 @@
+{
+  "schema": "dap.fse2027.guard_measurements.v1",
+  "scope": "Direct scale requests on one shared kind node, without a dedicated foreground workload; Ready cost and Pod lifetime are separate quantities.",
+  "script_sha256": "567fc758dd5f52e62bf481bc176d4db99a36c56dcce45f7c24ad878c4ee78c1f",
+  "records": 60,
+  "profiles": {
+    "azure_http": {
+      "calibration_n": 15,
+      "validation_n": 15,
+      "empirical_guard_seconds": 3.0677309970051283,
+      "validation_exceedances": 0,
+      "validation_max_ready_withdrawal_seconds": 1.8469374449996394,
+      "validation_max_pod_deletion_seconds": 2.5301733890009928
+    },
+    "gentd_inference": {
+      "calibration_n": 15,
+      "validation_n": 15,
+      "empirical_guard_seconds": 3.014569113001926,
+      "validation_exceedances": 0,
+      "validation_max_ready_withdrawal_seconds": 1.8671249020044343,
+      "validation_max_pod_deletion_seconds": 2.5490784760040697
+    }
+  }
+}

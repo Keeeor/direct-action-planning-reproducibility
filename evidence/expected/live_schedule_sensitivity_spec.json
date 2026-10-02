@@ -1,0 +1,10 @@
+{
+  "schema": "dap.fse2027.live_schedule_sensitivity.v1",
+  "specified_utc": "2026-10-02T10:28:36Z",
+  "excluded_seeds": [
+    2026100201,
+    2026100202
+  ],
+  "rationale": "Both plan seeds had runs started before the scheduler prefix-collision correction. Selection uses timing only, not any controller outcome.",
+  "scope": "Descriptive eight-plan sensitivity; fixed ten-plan primary analysis unchanged; no new significance tests."
+}

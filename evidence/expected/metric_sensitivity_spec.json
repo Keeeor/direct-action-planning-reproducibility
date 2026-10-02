@@ -1,0 +1,8 @@
+{
+  "status": "completed",
+  "scope": "Exploratory descriptive aggregation audit; primary endpoint unchanged; no inferential claims.",
+  "trigger": "Conservation audit identified zero-demand episodes and clipped queue overflow.",
+  "source_sha256": "765f9d18c8280c254b4f4eef0a7172949036bbc1bb8e877fe244a072450825f3",
+  "script_sha256": "f077db1e8edbd97fb745e0a0be48ce73e00652b6212a10e35e542e0d71c0328c",
+  "utc": "2026-10-02T10:10:53.159990+00:00"
+}

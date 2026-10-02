@@ -17,3 +17,13 @@ checkpoints/
 .coverage
 htmlcov/
 .ruff_cache/
+
+# Recomputed evidence and local manuscript build files
+evidence/reproduced/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk

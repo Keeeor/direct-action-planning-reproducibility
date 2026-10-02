@@ -1,0 +1,154 @@
+{
+  "schema": "dap.fse2027.deadline_revision.v1",
+  "created_utc": "2026-10-02T08:57:27.962401+00:00",
+  "deadline_utc": "2026-10-03T11:59:59Z",
+  "internal_delivery_target_utc": "2026-10-03T08:00:00Z",
+  "purpose": "Address review questions with auditable, append-only experiments and appropriately scoped paper claims.",
+  "integrity": {
+    "retain_all_outcomes": true,
+    "no_significance_based_stopping": true,
+    "historical_test_arrays_previously_accessed": true,
+    "trace_interpretation": "Frozen-checkpoint temporal re-evaluation, not an untouched holdout.",
+    "existing_results_and_checkpoints_read_only": true,
+    "infrastructure_failures": "Retain failed attempt; retry at most once for infrastructure or implementation faults with cause recorded, never for unfavorable outcomes.",
+    "uncompleted_cells": "Report explicitly; do not describe a partial matrix as complete."
+  },
+  "trace": {
+    "datasets": [
+      "azure2019",
+      "gentd26"
+    ],
+    "budgets": [
+      48,
+      72,
+      96,
+      120,
+      144
+    ],
+    "seeds": [
+      820,
+      821,
+      822,
+      823,
+      824,
+      825,
+      826,
+      827,
+      828,
+      829
+    ],
+    "horizon": 64,
+    "gamma": 0.99,
+    "episodes_per_domain": 5,
+    "test_seed_offset": 1700000119,
+    "capacity_training_quantile": 0.95,
+    "methods": [
+      "dap",
+      "immediate",
+      "pds_adp",
+      "mpc_4",
+      "mpc_8"
+    ],
+    "primary_comparisons": [
+      "dap-immediate",
+      "dap-pds_adp",
+      "dap-mpc_8"
+    ],
+    "primary_metrics": [
+      "discounted_return",
+      "completion_ratio",
+      "slo_violation_rate",
+      "total_cost"
+    ],
+    "metric_audit": [
+      "step_clearance",
+      "served",
+      "arrivals",
+      "overflow",
+      "final_queue",
+      "conservation_residual",
+      "fifo_p95_wait_steps"
+    ],
+    "threads_per_worker": 1,
+    "maximum_workers": 4,
+    "source_dap_tier": "paper_closure_core_v2_locked",
+    "source_pds_tier": "pds_adp_formal_v1"
+  },
+  "contract_study": {
+    "planners": [
+      "dap",
+      "pds_adp"
+    ],
+    "monitors": [
+      "ordinary_log",
+      "standard_assertions",
+      "full_contract"
+    ],
+    "require_identical_clean_actions": true,
+    "faults": [
+      "branch_forecast_mismatch",
+      "postcost_budget_error",
+      "nonmaximal_selection",
+      "target_mapping_error",
+      "delivery_override",
+      "ledger_omission",
+      "stale_cycle_context",
+      "coherent_wrong_model"
+    ],
+    "negative_control": "coherent_wrong_model is outside record-consistency guarantees and must not be represented as guaranteed detectable.",
+    "injection": "Faults applied during branch construction, selection, adapter delivery, or ledger update; oracle recorded independently of monitor input.",
+    "report": [
+      "activated_fault_count",
+      "detection_by_fault",
+      "false_positives",
+      "correct_localization",
+      "monitor_overhead"
+    ]
+  },
+  "live": {
+    "namespace": "dap-fse-revision-20261002",
+    "profiles": [
+      "azure_http",
+      "gentd_inference"
+    ],
+    "horizon_steps": 32,
+    "control_interval_seconds": 5,
+    "request_plan_seeds": [
+      2026100201,
+      2026100202,
+      2026100203,
+      2026100204,
+      2026100205,
+      2026100206,
+      2026100207,
+      2026100208,
+      2026100209,
+      2026100210
+    ],
+    "budgets_seconds": [
+      128,
+      256
+    ],
+    "methods": [
+      "dap",
+      "immediate",
+      "mpc_4",
+      "dap_guard45"
+    ],
+    "expected_runs": 160,
+    "paired_plans": true,
+    "method_order": "Cyclic rotation by plan seed, reversed on alternate budgets.",
+    "parameters": "Reuse frozen profile-specific checkpoints and load conversion; no test-outcome tuning.",
+    "calibration_before_runs": "Measure requested-interval plus Ready-tail costs in isolated namespace; record assumptions and freeze guard selection before live results.",
+    "scope": "Single shared-node calibrated workload replay; no production or cross-cluster claim."
+  },
+  "statistics": {
+    "trace_unit": "Training seed, with budgets and episodes aggregated within seed for primary dataset-level contrasts.",
+    "live_unit": "Request plan, paired across methods; budgets are repeated conditions, not independent samples.",
+    "bootstrap_resamples": 20000,
+    "bootstrap_seed": 20261002,
+    "confidence_level": 0.95,
+    "primary_tests": "Two-sided paired exact sign-flip; Holm correction within each registered study's primary comparison family.",
+    "all_per_cell_results_retained": true
+  }
+}

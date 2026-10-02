@@ -1,0 +1,34 @@
+{
+  "schema": "dap.fse2027.scheduler_fix.v1",
+  "utc": "2026-10-02T10:23:34.988716+00:00",
+  "cause": "Prefix collision: dap completion checks also matched dap_guard45.",
+  "fix": "Exact run-id or numbered-attempt matching; no policy/model/metric/budget/plan changes.",
+  "wrapper_sha256": "6afac0ee189cd4d1454ba06b88033cdef24c6dfb247751f1f40328d52309dab7",
+  "original_runner_sha256": "02bb6142f9160af1fc9ad807eb49c06ef300acce262d7c62ab10e99b212a6f8a",
+  "completed_before_fix": [
+    "azure_http__b128__s2026100201__dap",
+    "azure_http__b128__s2026100201__dap_guard45",
+    "azure_http__b128__s2026100201__immediate",
+    "azure_http__b128__s2026100201__mpc_4",
+    "azure_http__b128__s2026100202__immediate",
+    "azure_http__b256__s2026100201__dap_guard45",
+    "azure_http__b256__s2026100201__immediate",
+    "azure_http__b256__s2026100201__mpc_4",
+    "azure_http__b256__s2026100202__dap",
+    "azure_http__b256__s2026100202__dap_guard45",
+    "azure_http__b256__s2026100202__immediate",
+    "azure_http__b256__s2026100202__mpc_4",
+    "gentd_inference__b128__s2026100201__dap",
+    "gentd_inference__b128__s2026100201__dap_guard45",
+    "gentd_inference__b128__s2026100201__immediate",
+    "gentd_inference__b128__s2026100201__mpc_4",
+    "gentd_inference__b256__s2026100201__dap_guard45",
+    "gentd_inference__b256__s2026100201__immediate",
+    "gentd_inference__b256__s2026100201__mpc_4"
+  ],
+  "incomplete_before_fix": [
+    "azure_http__b128__s2026100202__mpc_4"
+  ],
+  "order_deviation": "Missing cells are filled at the beginning of resumed schedule. Report the deviation and a descriptive sensitivity omitting pre-fix plan seeds.",
+  "retain_all_existing_runs": true
+}

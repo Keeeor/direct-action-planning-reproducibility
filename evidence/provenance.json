@@ -1,0 +1,56 @@
+[
+  {
+    "file": "expected\\live_integrity.json",
+    "source_sha256": "1503f401218a2e3b9ccead059805db6046c15b30294597bc23c03cf06036f19b",
+    "derivative_sha256": "1503f401218a2e3b9ccead059805db6046c15b30294597bc23c03cf06036f19b",
+    "transformation": "Exact copy."
+  },
+  {
+    "file": "expected\\live_means_by_budget.csv",
+    "source_sha256": "c1092c7d5612f4eb56e0eee2d83265f39e3dc89598e93a94fdf36175a9fd75bb",
+    "derivative_sha256": "c1092c7d5612f4eb56e0eee2d83265f39e3dc89598e93a94fdf36175a9fd75bb",
+    "transformation": "Exact copy."
+  },
+  {
+    "file": "expected\\live_paired.csv",
+    "source_sha256": "e4e74bac92da0c281905e0bc5428ffbc3e1b15ffd16a231327442585a58907d3",
+    "derivative_sha256": "e4e74bac92da0c281905e0bc5428ffbc3e1b15ffd16a231327442585a58907d3",
+    "transformation": "Exact copy."
+  },
+  {
+    "file": "data\\live_run_metrics.csv",
+    "source_sha256": "efa2f5cfe1fcca62cca603d96d0d331472adf4470c2db859a6ac374310e6ba6b",
+    "derivative_sha256": "62fb26ae67ac97733ad0e80bb1d4bd3b90ae2ec7bb4b30e2b9ab381f0d545169",
+    "transformation": "Replace private absolute run_directory with live_runs/<run name>; other fields unchanged."
+  },
+  {
+    "file": "expected\\live_schedule_sensitivity_descriptive.csv",
+    "source_sha256": "249e32f837cdd453a83687209b3a6040b8d3f2d503fb80bc117beefa97a8d593",
+    "derivative_sha256": "249e32f837cdd453a83687209b3a6040b8d3f2d503fb80bc117beefa97a8d593",
+    "transformation": "Exact copy."
+  },
+  {
+    "file": "expected\\live_schedule_sensitivity_spec.json",
+    "source_sha256": "a40b771872f9a25c22e1863574a2b03867b7c5e53c6a44b90ed91e37671681f9",
+    "derivative_sha256": "a40b771872f9a25c22e1863574a2b03867b7c5e53c6a44b90ed91e37671681f9",
+    "transformation": "Exact copy."
+  },
+  {
+    "file": "expected\\live_seed_means.csv",
+    "source_sha256": "c7c5272b45a0d0ce088aa3020c8dbd34468ee693b058e7d74e0fd7e24867e294",
+    "derivative_sha256": "c7c5272b45a0d0ce088aa3020c8dbd34468ee693b058e7d74e0fd7e24867e294",
+    "transformation": "Exact copy."
+  },
+  {
+    "file": "protocols\\live_config.yaml",
+    "source_sha256": "c832be71fd55aea938d6c832bf408df846eef6ffcc596cf67e2a621930b424a3",
+    "derivative_sha256": "930ba54dd460ede24e3a1bb61b0432a1ef60ad90f99ce6db2a8f9100410b92e1",
+    "transformation": "Replace absolute private project root with PROJECT_ROOT/; other configuration and recorded metadata unchanged."
+  },
+  {
+    "file": "protocols\\scheduler_restart_boundary.json",
+    "source_sha256": "06d4baa4d03faf6be55bf4b9e469e0863e243a35864dfeba11b1b0d32c2db7ab",
+    "derivative_sha256": "e7c596d9b8463440687a77e525c4d69916ff49c5994c7719f3342af91a9f6ba2",
+    "transformation": "Replace absolute private project root with PROJECT_ROOT/; other configuration and recorded metadata unchanged."
+  }
+]

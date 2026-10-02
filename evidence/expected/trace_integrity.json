@@ -1,0 +1,9 @@
+{
+  "cells": 100,
+  "episodes": 5000,
+  "steps": 320000,
+  "maximum_mass_residual": 1.3073986337985845e-12,
+  "maximum_overspend": 0.0,
+  "new_untouched_holdout": false,
+  "inputs_sha256": "794a143a74e906bfdeba44a5e775b95b6b040eee6482d9fe964a6ffed468c9d4"
+}

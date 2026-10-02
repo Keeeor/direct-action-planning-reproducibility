@@ -1,0 +1,12 @@
+{
+  "verified_paired_contrasts": {
+    "trace": 24,
+    "gpu": 16,
+    "feature_control": 8,
+    "live": 18
+  },
+  "total_contrasts": 66,
+  "numeric_tolerance": 1e-10,
+  "live_runs": 160,
+  "schedule_sensitivity_reproduced": true
+}

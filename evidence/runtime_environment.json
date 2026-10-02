@@ -1,0 +1,24 @@
+{
+  "python": "3.11.6",
+  "system": "Linux",
+  "machine": "x86_64",
+  "packages": {
+    "numpy": "2.4.4",
+    "pandas": "3.0.3",
+    "scipy": "1.17.1",
+    "torch": "2.11.0",
+    "PyYAML": "6.0.3",
+    "aiohttp": "3.13.5"
+  },
+  "kubernetes_server": "v1.35.1",
+  "worker_resources": {
+    "requests": {
+      "cpu": "250m",
+      "memory": "96Mi"
+    },
+    "limits": {
+      "cpu": "1",
+      "memory": "256Mi"
+    }
+  }
+}

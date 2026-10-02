@@ -2,14 +2,43 @@
 
 This package contains the source code, data-preprocessing code, experiment configurations, Kubernetes prototype code, and unit tests used for the finite-budget scheduling study. It is prepared for anonymous repository review.
 
-The package intentionally excludes training logs, generated result tables and figures, model checkpoints, raw/processed dataset arrays, paper sources, historical audit reports, completed gate/lock records, and author metadata. Generated outputs are ignored by `.gitignore`.
+The package includes the self-contained manuscript, complete matched-study
+statistics, experiment scripts, frozen model weights, and integrity records.
+Raw/processed trace arrays are acquired through the documented upstream sources.
+Local training outputs remain ignored by `.gitignore`.
+
+## Paper and evidence
+
+- `paper/main.pdf`: the current manuscript (18 body pages; Data Availability on page 19).
+- `paper/`: LaTeX source, figures, tables, and official ACM template files.
+- `evidence/`: all 66 matched statistical contrasts, complete episode/run outcomes,
+  selected continuation weights, raw fault results, 60 lifecycle measurements,
+  original native-controller comparisons, protocols, and checksums.
+- `frozen/frozen_checkpoints.zip`: 409 archived model files at their original
+  relative paths, with per-file and archive hashes in `frozen/manifest.json`.
+- `research/fse2027_revision_20261002/`: execution and analysis scripts for the
+  matched studies.
+
+Recompute and verify the complete matched statistics from the repository root:
+
+```bash
+python -m pip install numpy pandas
+python -X utf8 evidence/reproduce_statistics.py
+```
+
+The statistical reproduction uses the packaged outcomes and does not require
+training or a live cluster. For frozen-checkpoint experiment reruns, restore the
+weights with `python -m zipfile -e frozen/frozen_checkpoints.zip .`, then acquire
+and preprocess the public traces and configure the destination cluster as
+described below. The paper's methods, metric definitions, study sizes, controller
+settings, and principal results are all included in its main text.
 
 ## Layout
 
 - `src/`: installable Python package, environments, models, planners, baselines, analysis, and evaluation code.
 - `scripts/`: preprocessing, training, evaluation, diagnostics, and figure-generation entry points.
 - `configs/`: synthetic and trace experiment configurations.
-- `research/*/configs/` and `research/*/contracts/`: protocol configurations and execution contracts used by the paper experiments. Historical findings, audit reports, and completed result gates are omitted.
+- `research/*/configs/` and `research/*/contracts/`: protocol configurations and execution contracts used by the paper experiments. The matched-study integrity records and fixed protocols are retained under `evidence/`.
 - `research/direct_action_planning_k8s_prototype/`: Kubernetes controller, workload, calibration, and deployment manifests needed by the live-control experiments.
 - `data/README.md` and `data/metadata/source_manifest.json`: dataset acquisition and preprocessing instructions.
 - `tests/`: self-contained unit and contract tests that do not require the omitted result artifacts.

@@ -1,0 +1,20 @@
+{
+  "schema": "dap.fse2027.feature_control.v1",
+  "created_utc": "2026-10-02T09:51:51.461063+00:00",
+  "reason": "Isolate the feature-mask effect from initialization and CPU/GPU training variation; added before inspecting paired ablation outcomes.",
+  "original_GPU_source_sha256": "e95cb192c752d29c7b813bc97d70e1f5cfb76c0125c49f0f958edf98dc12eb52",
+  "script_sha256": "2b78d8f0b53d906ef0218779dea6d81a1b18841a824173ff6bc4b2133307eb9a",
+  "cells": 100,
+  "baseline": "full_budget_horizon_retrained",
+  "comparator": "no_budget_horizon",
+  "seed": "training_seed+7 for both arms",
+  "selection": "same original DAP frozen round and continuation scalar, no reselection",
+  "controlled": "same data, normalization, initial weights, optimization order, GPU and training length; only feature mask entries12,13 differ",
+  "primary_endpoints": [
+    "discounted_return",
+    "completion_ratio",
+    "slo_violation_rate",
+    "total_cost"
+  ],
+  "statistics": "ten training-seed blocks; aggregate repeated budgets/windows; 20000 bootstrap draws seed20261002; exact sign flip; Holm across2datasets x4metrics"
+}

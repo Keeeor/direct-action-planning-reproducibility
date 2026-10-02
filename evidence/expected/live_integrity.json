@@ -1,0 +1,1612 @@
+{
+  "runs": 160,
+  "requests": 3390344,
+  "decisions": 5120,
+  "maximum_ledger_violation": 0.0,
+  "deadline_misses": 0,
+  "all_request_counts_reconciled": true,
+  "all_sampled_ledgers_recomputed": true,
+  "all_feasible_argmax_mappings_verified": true,
+  "details": [
+    {
+      "run": "azure_http__b128__s2026100201__dap",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 68.3900393189906,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "ff93bb0edf7fcb41aa0cde2386524f139c4efc51faf016aa07eb40bd8bb25829",
+      "actions_sha256": "ffab18336448ef0ce9a25ed563366e0efbfa829bf6f52358a6939ac2b581a5f6"
+    },
+    {
+      "run": "azure_http__b128__s2026100201__dap_guard45",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 566,
+      "recomputed_cost": 63.813552034021995,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "291602b36eb23eb0ac6a2756324e6cf07a9638891c809a7c15cb1b7a08eab7c4",
+      "actions_sha256": "70d40fb90a15ef7d2079674d50099cc5bdb15e993d2461b471d45de579ba3bae"
+    },
+    {
+      "run": "azure_http__b128__s2026100201__immediate",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 562,
+      "recomputed_cost": 120.38713410898345,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "2f1f8d25ff73b35db21daf4baa48408e1171f023d69c56feca62fe6bd7a64842",
+      "actions_sha256": "d0b8c4fa3bce68bb695a0bf0f65e31ac5f44028956bbbc4c2dae93a6b0fb1a75"
+    },
+    {
+      "run": "azure_http__b128__s2026100201__mpc_4",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 568,
+      "recomputed_cost": 122.14759834796132,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "6be1be46f38a61404993a7ef37e1874e72265d6a1dfd837528a8279048644cbf",
+      "actions_sha256": "06d6e469665b7e059f504e26e689a72d49666a7450c9d5f0e8788f5d3bf38e3b"
+    },
+    {
+      "run": "azure_http__b128__s2026100202__dap",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 60.09586534501432,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "620df094433aa0f19d023632494378c19146a0226d69bd853a8b8d6f72da3b7e",
+      "actions_sha256": "95907adc37a9db371963a2e7742621b80e141404b68b49a2912ddbbb40f4f580"
+    },
+    {
+      "run": "azure_http__b128__s2026100202__dap_guard45",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 54.932075629985775,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "bd0e333b1b7b6b71d9ea76958914d3a19c8ed7f21804433c2469bdeb910c2904",
+      "actions_sha256": "cf7152e712905dfe60025e34c48a7a23bea1453f586726ab5fa627813cebaa00"
+    },
+    {
+      "run": "azure_http__b128__s2026100202__immediate",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 119.8881743190068,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "d11775c893398017701217f8bf15d810086b748dae59d18268af4581f68a69d4",
+      "actions_sha256": "1dfe45087ba1c26f3d53f1422a602928d81a166c0789fadc57896c32215c8fb2"
+    },
+    {
+      "run": "azure_http__b128__s2026100202__mpc_4__attempt2",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 99.76510517101269,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "68c6c70c18237f6ab086e05e949071b08f62eec9a2543610c4e2f1928eab7e2e",
+      "actions_sha256": "b6a2425156817bee54556f1a81c134c75681e7667eb32dc3e676d2ad464c0e8e"
+    },
+    {
+      "run": "azure_http__b128__s2026100203__dap",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 578,
+      "recomputed_cost": 49.944526950930594,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "0a731a78436cb96ba1c437a843a04a8f4219d728138ea756f4733c74afe49a31",
+      "actions_sha256": "ed4763125abdcd712a3f4d74aba7d984d1606ed2313c2223cf62aa849ac103dd"
+    },
+    {
+      "run": "azure_http__b128__s2026100203__dap_guard45",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 583,
+      "recomputed_cost": 49.10830749900197,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "284fe56dea3ca9c4a3fa6e3c3359b446bb13d520d76242858d75dc9dfb036deb",
+      "actions_sha256": "cc5667cef0993fe6d26de632dafae560d94c965c9ae6444549a52002c2f15478"
+    },
+    {
+      "run": "azure_http__b128__s2026100203__immediate",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 122.00143386409036,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "99ccde5730024f6e37404f759d475d322b90ef4dd7ac6cdbe7f99687cf658581",
+      "actions_sha256": "d2206041eee64e88721ee00ce8f0d505f7fc8fd08b31129ad315ff9e05ea9061"
+    },
+    {
+      "run": "azure_http__b128__s2026100203__mpc_4",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 105.22808813804295,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "60f92553c1363cf9a91b2ebd43d4ad49d42ece705fc14e52f3af782adfc967d8",
+      "actions_sha256": "f2e3091754b3c9df1a6dfe141ef7b94fda9cb2653a8426f329c8a01c520db665"
+    },
+    {
+      "run": "azure_http__b128__s2026100204__dap",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 59.30848321397207,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "ff6c30748f8d7d7e7a6fc8975a8a387ffa88266ed70ae5daa43cdc67453f0d3c",
+      "actions_sha256": "a1c152e3f2f72db3394302c9781495d70067ed93e440387bcb97eafa1eb6133e"
+    },
+    {
+      "run": "azure_http__b128__s2026100204__dap_guard45",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 587,
+      "recomputed_cost": 36.36762232503679,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "42eaeb174195e2bf6764dda91e11299e84f8576b2373b10583fab523eb967e6e",
+      "actions_sha256": "95284debabd3be2e08451f42a41df1fe63ebb04f2696414b8baa6f45eef1fdbd"
+    },
+    {
+      "run": "azure_http__b128__s2026100204__immediate",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 582,
+      "recomputed_cost": 109.75205188294058,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "e4f5c0d41f3a584c7840f81f781bf6de4e3a39c6eafa87818e61852b5ed7e45a",
+      "actions_sha256": "4025bb3ae6dfa4e465b588eefcdd56b3a64bda19af67ce634c5f52f39346fcb5"
+    },
+    {
+      "run": "azure_http__b128__s2026100204__mpc_4",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 581,
+      "recomputed_cost": 85.89495403700857,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "836a7d22f4ae72ede09866f8cf413111475f45845f6dd83ce4e9ca2da8594dc6",
+      "actions_sha256": "72dc517765c4ac531b627fdcc866951d9110303160aa3931e5b61d451b543df3"
+    },
+    {
+      "run": "azure_http__b128__s2026100205__dap",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 581,
+      "recomputed_cost": 42.742082951052,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "955eed7cb5b5e6367aca0e139ed18b068791ce8e2bc870c02549dafdb9456ecc",
+      "actions_sha256": "63feb91e912c76a717f342c4fbe2bd9a37ad457515ab0a02fe5b2c6c49ed50c8"
+    },
+    {
+      "run": "azure_http__b128__s2026100205__dap_guard45",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 587,
+      "recomputed_cost": 44.2936475030001,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "0a84e0572280bbb08d55df6d7a7d2ce54e58908a5713ee96194430c3d4082e4a",
+      "actions_sha256": "8d9594fd2e569b54745e840a809ebf7dbe11a370e62fb5349e36f808bbf7fa4d"
+    },
+    {
+      "run": "azure_http__b128__s2026100205__immediate",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 106.69499997202365,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "06afedc59d1211f2e54c356ee71de0760f9cd8cbba34b2fa4b57e864a0be0baf",
+      "actions_sha256": "06e5504f1b41db43a60d7be6e127cf894d29436b9d4343563d15ad1b3e6d1d33"
+    },
+    {
+      "run": "azure_http__b128__s2026100205__mpc_4",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 581,
+      "recomputed_cost": 91.5225552849297,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "1ee1c56ddf33c0d96fd1ef1a9a25bf18d8015ae3873e8cf8190ec91ca90cceb4",
+      "actions_sha256": "e6826142cd29608d27a6173bc58707d30deb18cd020928247c0dabfd61c0b4cb"
+    },
+    {
+      "run": "azure_http__b128__s2026100206__dap",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 35.54258638499596,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "bd1b3f77b5b5f09b31c0bc41d6f6f3f6a46eb65a863189a5034ab4ec434e2b94",
+      "actions_sha256": "648bcce70dc17e524b4f83d8cc75e24e5a3bfef7c98a3cb0c1432469750d6cf7"
+    },
+    {
+      "run": "azure_http__b128__s2026100206__dap_guard45",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 582,
+      "recomputed_cost": 33.33684011499281,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "aca09e0874d6f36aecbb1bc60937e714ae8da6964d4c22705e358d75c3b8c1ac",
+      "actions_sha256": "74b9bdc83b6ea43697498ac6ce225d0fb0a0588c556fd281f83ad65108d7a109"
+    },
+    {
+      "run": "azure_http__b128__s2026100206__immediate",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 104.96433582197642,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "fa5a7f421de245d7d5bd396ab4efbda351d6f7dab5f9b67d12564da17ba6434a",
+      "actions_sha256": "e4e6a0b92ec83fe6fecf56e47d333787c8400e46f48d656572e5bd29324450c2"
+    },
+    {
+      "run": "azure_http__b128__s2026100206__mpc_4",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 90.24339359697478,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "bd62e9eebe2fbe52c31b0e43375fa96aa61640a62fad2c5b9435526394a46d6a",
+      "actions_sha256": "c947735f3a5bab2c67c49e7df1a92fb4ec678bd34ee452556f168c5661cbe037"
+    },
+    {
+      "run": "azure_http__b128__s2026100207__dap",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 561,
+      "recomputed_cost": 68.74498966394458,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "bf7f314a5e96c42f1216a293673f75490e986ea6171135e896527a7cd5e20312",
+      "actions_sha256": "3964fdba2ee107c7ac63959ce8e2f653b1bf0e97843d7d2d50c4e5b59d169e36"
+    },
+    {
+      "run": "azure_http__b128__s2026100207__dap_guard45",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 568,
+      "recomputed_cost": 63.02601227897685,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "901a8e79b99e03b7fcc1cf8bc19be4337057a432a203dbb25643051e37be5ea5",
+      "actions_sha256": "3c204f0022df94322120c63c4fe2092a44c54eaaba99fadf2a518c4886355524"
+    },
+    {
+      "run": "azure_http__b128__s2026100207__immediate",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 567,
+      "recomputed_cost": 122.35931626895035,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "9e1541279a167043afd9b2b217336b5a621e4ce69ddc44e408a423f2b7b4df7c",
+      "actions_sha256": "661bd25e1810af9667477617ec4052f9f1cd862e7d5b68c3278a088b3935aa6f"
+    },
+    {
+      "run": "azure_http__b128__s2026100207__mpc_4",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 578,
+      "recomputed_cost": 124.94939016795252,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "f9fb303000766cd92e6c6dd3948b53093d424e65698caead5bd93ff06bb268b9",
+      "actions_sha256": "a2468487b913fd30d29d2e3825376900b9d0ca1c037d819ceca4ad0cb25f4eb8"
+    },
+    {
+      "run": "azure_http__b128__s2026100208__dap",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 78.06807111599483,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "a731ee6c158bcf02958ccb91230aa84c6f1d9c65c31e5fae708d4742eeea9241",
+      "actions_sha256": "ee7f1134e7f3c616f364300a9b4ec7d34561813831649e4394b9dd87fe1e27dd"
+    },
+    {
+      "run": "azure_http__b128__s2026100208__dap_guard45",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 59.08752109196212,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "70ffc268d2023b906a67541c06d2ce851c7368b6f6db647b310c481a426f3bb1",
+      "actions_sha256": "e4ef85da1be8bd79fbd79678a3dbe23186e674076470d1a023639639b47cbab2"
+    },
+    {
+      "run": "azure_http__b128__s2026100208__immediate",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 122.5936972440104,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "159c270fa98fb0cd6c7512f5aa4409cc95d72a8522fe296afd4d8b66d02c4909",
+      "actions_sha256": "3ceeba4cf29e4db7cba05b4824b4e72a15a980780625729f5274d0fa010e65e3"
+    },
+    {
+      "run": "azure_http__b128__s2026100208__mpc_4",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 122.16594571797759,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "0b8202590f6c8685ebfbdbea2603eed217e97b425451b335e928a2e5f11f2e98",
+      "actions_sha256": "1468831de3677fa05ce4c047878a9f18af877e0023b25edbb210ae08e1461f97"
+    },
+    {
+      "run": "azure_http__b128__s2026100209__dap",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 72.67326881203917,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "9a56eac89eca7d1cc2ad987e1408ae14f64293d3d9827b96d8eb144fe940b448",
+      "actions_sha256": "938a7dba9944dedd56c3f8fc7fd058f3882a1f0d6d5c56e04107edc88e600433"
+    },
+    {
+      "run": "azure_http__b128__s2026100209__dap_guard45",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 63.82226473704213,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "5c1480ff6350a72a5a1c876ae20bb5e73c32ea1c482b10e7d59e63b19421f425",
+      "actions_sha256": "73bbda6823adc51b08e16a3197b8fc7e4267e49f7a8831aaed0e5d3089bb7246"
+    },
+    {
+      "run": "azure_http__b128__s2026100209__immediate",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 122.29948915104615,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "c4f139dd538d0291e935bab2ee1d080e47b1ae89a5208a48a5f091daba2bb1dd",
+      "actions_sha256": "5536ac4677dddb824800c2e4b8718fc687af337e30fa1cb3c9f72a3b3d88754f"
+    },
+    {
+      "run": "azure_http__b128__s2026100209__mpc_4",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 123.60591331700562,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "8d3dfb878f21e81d1fd09ab73be31c2c1fb2d31f461a99950ebe005370251a4b",
+      "actions_sha256": "cc9764d46087fb3006ca94ae2e2ac33cbad4268eb67ac7fc0d9205b56bef7e52"
+    },
+    {
+      "run": "azure_http__b128__s2026100210__dap",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 60.51500204898184,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "f959e3f86a60ccdb867d6bd3fb005fff24180a44c9904dedd736e8ee20cde598",
+      "actions_sha256": "3bde733658673b873cf06da79ac744fb6c22245f4a876865036560059948447e"
+    },
+    {
+      "run": "azure_http__b128__s2026100210__dap_guard45",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 581,
+      "recomputed_cost": 55.655018047982594,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "af995c32a276469e0075e3048c1abda67d69438912b7681a2c2ba75556a3cdad",
+      "actions_sha256": "78b3241a3cc0b912d6b87525406baec512540a2960a99df88ffc67c21844e686"
+    },
+    {
+      "run": "azure_http__b128__s2026100210__immediate",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 122.2535385179799,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "69656835d7046905329d312f51d166add4401c812e167f077f329b364fd02e2a",
+      "actions_sha256": "17721cfffaf92c5b96f60893627a6067170f24635a957c8276a7fac6429046dd"
+    },
+    {
+      "run": "azure_http__b128__s2026100210__mpc_4",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 123.78725530095107,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "5b2e830253146d95644e7da131de333191bff354a76848a0ea58fd4d7f44fe0e",
+      "actions_sha256": "c5111d6a9a5becaa0c1f21b704dd54be8dfbcefad32642a72239e43977635b84"
+    },
+    {
+      "run": "azure_http__b256__s2026100201__dap",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 54.50677676401392,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "b35c624c4ffea7400d550c2b736c47b0fa94c55c9d7b653ec586ac5e375100b2",
+      "actions_sha256": "a4d0160d267b8cbf65eecf95ddd92718b085380181b09e8db2711c8068abde8f"
+    },
+    {
+      "run": "azure_http__b256__s2026100201__dap_guard45",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 72.97815704799723,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "daf1d54427f518ed644f01450ea0db9250ad23e70e8e9969ee750f92f78ba51c",
+      "actions_sha256": "007a19c8c200b3b82c8e761ae9944255f81f9240e3a127dc9ceb710a0e3d6a08"
+    },
+    {
+      "run": "azure_http__b256__s2026100201__immediate",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 560,
+      "recomputed_cost": 221.8058569140485,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "e30ee933576d8e549dedaefd65798fcc79913b3a2df1dc86b0bfa5873c2f2b33",
+      "actions_sha256": "c3bd66b9c2a5daa7bfc01cab9c8a6eeb59cf2c28af0bacb05e0e7d8fbac85c88"
+    },
+    {
+      "run": "azure_http__b256__s2026100201__mpc_4",
+      "request_count": 35785,
+      "action_count": 32,
+      "ledger_samples": 564,
+      "recomputed_cost": 220.16845118104538,
+      "plan_sha256": "sha256:7918402a7187ebc1b7d541032e8a2ddac20f607bc48e451b5cd036f94bfe0f66",
+      "raw_requests_sha256": "e936b8cf8571a4c7f127b977bd18794efe893cd9b23768b797419267f9567116",
+      "actions_sha256": "b1e5a65c91d62407dd84131afd0835b20cb81a8d0f70f6298cb41f85cbb64797"
+    },
+    {
+      "run": "azure_http__b256__s2026100202__dap",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 60.72315778698248,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "c10b8109c42787dd555c6e4afa1b1e3b06c738095a4d3917ffe373b849ef9978",
+      "actions_sha256": "0c75bf807fee38c24c2bfe8f325b779ae21459ce841af3e360f12475de558ca2"
+    },
+    {
+      "run": "azure_http__b256__s2026100202__dap_guard45",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 53.390928397042444,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "7c6839412d8127f78b2c40aec40c7604e8b46ca123c072521eac1d2afd6cc9a7",
+      "actions_sha256": "e3d4bf2212065acca4c37e25464854994027f13c644756c4b4c55bfc03c33343"
+    },
+    {
+      "run": "azure_http__b256__s2026100202__immediate",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 127.39446889298415,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "202fb51fd2ecd715f1ed50daf720cce411f59d5f91fd3c9925d2e25b286d2db9",
+      "actions_sha256": "c6e5101adae63204fa51d22a80979d5d46cf6268569f483996e3611a4bd20e79"
+    },
+    {
+      "run": "azure_http__b256__s2026100202__mpc_4",
+      "request_count": 36242,
+      "action_count": 32,
+      "ledger_samples": 582,
+      "recomputed_cost": 101.75801393599977,
+      "plan_sha256": "sha256:e60edc34579553bb4014ef979bdccc7e55de2ba400ecb4ecb195e019615bc58a",
+      "raw_requests_sha256": "e7d91a7af42f768d5e76bf8aba2a1efdcb5274f3b7506b7a433bd4ba48f82e42",
+      "actions_sha256": "cf1eeb447b29a24562420a174020bb2095a1541f852b1a106309d5f6b75f1dbe"
+    },
+    {
+      "run": "azure_http__b256__s2026100203__dap",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 51.67227218601329,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "6d294bb81af8c09568c48feb50b1f9064beae6cf4bc397365a722f501eed1e29",
+      "actions_sha256": "14307ef64248455b8b52df9d2f55cfb3930fdd8322403a7fca106a00086d0714"
+    },
+    {
+      "run": "azure_http__b256__s2026100203__dap_guard45",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 49.5855238759832,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "5bc54c2169137314e14b5673ced6d8360d22b4ed16964d00315b67acf25a4632",
+      "actions_sha256": "63e02bf8b8fe68f81f74fb932334e6276febd920e9a637feedf0c51f3e761965"
+    },
+    {
+      "run": "azure_http__b256__s2026100203__immediate",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 148.83310191414785,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "97a8e0c94093c65825e0f95bd292bd8251cfa3da516fa41b0c688268460bda78",
+      "actions_sha256": "f74319545e7d143b2a17a1c4e72bbc302df3fa0aaca46db0816f083bde8918cf"
+    },
+    {
+      "run": "azure_http__b256__s2026100203__mpc_4",
+      "request_count": 36672,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 150.3321150198026,
+      "plan_sha256": "sha256:d2447098a0f068f102e2c3959d764defe2f5cbe58a7ccf0d4af7a6f532f29714",
+      "raw_requests_sha256": "030dc457416638d840263e714af2d63c60a1408dc089edc7e621bd63a43e2e15",
+      "actions_sha256": "d8f3174416cdb27268d61ca2f220e491fa01691e2e327e85ebfa2f92901d9e6f"
+    },
+    {
+      "run": "azure_http__b256__s2026100204__dap",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 578,
+      "recomputed_cost": 42.615768525982276,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "89b30eb49ee6a9cce1c61d3903ebaed04daaaab6b868bcd5193cfcd976bd05db",
+      "actions_sha256": "266fc7c6de113397ac250e1af2b1c1cd70aa0844ced86964d7eadecca86a2322"
+    },
+    {
+      "run": "azure_http__b256__s2026100204__dap_guard45",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 581,
+      "recomputed_cost": 40.06977051201102,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "d1e412075f02e11b652319ff0a61ddcb381df04596a41190732c13e73a7a5bc2",
+      "actions_sha256": "fb34a62ab50c49bc4e6d03608ee20da94a3b6e58bea9081f95fbc860d9b80bc7"
+    },
+    {
+      "run": "azure_http__b256__s2026100204__immediate",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 578,
+      "recomputed_cost": 123.47595319208631,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "fd22624449131b2777f8d19c31a01e282ed30b4aed7435abbdad69fda0a91cb3",
+      "actions_sha256": "4045e5617429100753047b9e9e59b46192c9342db14b0c158d99a2e6c0845541"
+    },
+    {
+      "run": "azure_http__b256__s2026100204__mpc_4",
+      "request_count": 36891,
+      "action_count": 32,
+      "ledger_samples": 579,
+      "recomputed_cost": 86.1090636200388,
+      "plan_sha256": "sha256:e821b798eb1b7de3399a2889e94188d32bb4475a8750140cbadf33c05e67b8c2",
+      "raw_requests_sha256": "e32e50784b57c9df8d78db518b6189306f3a01ca80d8fda5697324c15d469f13",
+      "actions_sha256": "92b9ca9f926f6c03f7bae716a8371689be1c0805fa3731d58f8d38dc9ed13d84"
+    },
+    {
+      "run": "azure_http__b256__s2026100205__dap",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 579,
+      "recomputed_cost": 59.67481671899441,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "691a3fd2450868074b88fb64a6de4002dd46277a36f201a1fa92004f28a5325e",
+      "actions_sha256": "6fe1bdd42ae7c42dc90dbd36297b871125945674cca989155a126fd4a83cba1f"
+    },
+    {
+      "run": "azure_http__b256__s2026100205__dap_guard45",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 43.480611125036376,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "c75bbbca45b6011b178ea615aede9af63435b9c068ad5956adb58997e6403699",
+      "actions_sha256": "d813f8b27bc5a3371ea1cbf4209c2e78062afa8daf5765b263f42128268a4276"
+    },
+    {
+      "run": "azure_http__b256__s2026100205__immediate",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 585,
+      "recomputed_cost": 95.47415979208017,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "3055959039edeaef56d3e3295b23db8935d8b43b1f59852455bcb889f73f4dc7",
+      "actions_sha256": "07b160742cede7f3ac19b3334b2c2667f1939811973f27a4c4bf4a585a4ce716"
+    },
+    {
+      "run": "azure_http__b256__s2026100205__mpc_4",
+      "request_count": 37309,
+      "action_count": 32,
+      "ledger_samples": 579,
+      "recomputed_cost": 119.5637739408703,
+      "plan_sha256": "sha256:bf16b92323fe8676b08a5dbd6a012b4d808c724a875a5ac2ced39249ec866456",
+      "raw_requests_sha256": "ee3772cec47724347f936a678ed8bd72e662f9a392af961850e85aa96a3e050e",
+      "actions_sha256": "da0195e48594268c1e552d6da9ebea0025a8d46249c9c11f2dc0c8f4ea63adab"
+    },
+    {
+      "run": "azure_http__b256__s2026100206__dap",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 579,
+      "recomputed_cost": 62.8644464599638,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "7600e963fae74b5878d24b81c77e6435832c2316bc550e2ca5f3491ecf3c6a02",
+      "actions_sha256": "2b75ffc6af0a29159a486627ae29cde5ee3e83b7897b7fb27da53c9d9e03f6e9"
+    },
+    {
+      "run": "azure_http__b256__s2026100206__dap_guard45",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 581,
+      "recomputed_cost": 45.49809892599296,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "da727c8da3bdc8eff1f0500d85edb3d1f2cc2e52412beed235145f1f1012e3e6",
+      "actions_sha256": "7c7338dfe317f2a1c92cea1dce36ba554b5a61a2ae30b8218927a7844f7d2403"
+    },
+    {
+      "run": "azure_http__b256__s2026100206__immediate",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 579,
+      "recomputed_cost": 122.49557998903038,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "009f1fd827f3f2e40a603ea336314134e83ff97826861f067c14ee8e79296b33",
+      "actions_sha256": "e2aea78523c4b589bc25a3791b15b0f7a1bd65dd02b0d7168e3f5df1b2c86beb"
+    },
+    {
+      "run": "azure_http__b256__s2026100206__mpc_4",
+      "request_count": 37656,
+      "action_count": 32,
+      "ledger_samples": 580,
+      "recomputed_cost": 129.5087091839523,
+      "plan_sha256": "sha256:8dc107f498cd4728797729d3217020112195e7af99257cf8a5c2ddf69422a448",
+      "raw_requests_sha256": "1e56683e080ddbbced558eca0f9dbd375d12357c67bf0666500a4d5ac51a23d5",
+      "actions_sha256": "a0529495251579107db218465a408b0fb175ae984032ff43f6b203d6d4a8d78c"
+    },
+    {
+      "run": "azure_http__b256__s2026100207__dap",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 72.21023979793245,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "8a70fac7bd349977cde50a34b686d7c4d4068c590317b73c509acb208e73e612",
+      "actions_sha256": "c9cdfe1269c30561a96b251ff9175bc5d565516f2e9a5f2de2a217e1fe38b356"
+    },
+    {
+      "run": "azure_http__b256__s2026100207__dap_guard45",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 73.95647605702106,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "d3e8dbe425cd31698024141a1d135659c4666eff33bb443cabb609152cd6033f",
+      "actions_sha256": "65aff2772807ebcdbd1228b1e3d9141209f1e13d562d5c40b7372a8a1909792e"
+    },
+    {
+      "run": "azure_http__b256__s2026100207__immediate",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 563,
+      "recomputed_cost": 202.94344587496016,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "0dc016094742f5a66d05da941452f7935ae000ab9a6333bb4c7d1c1865787968",
+      "actions_sha256": "c8829de04398179aeb74e92f12075b3cbbb5b593de0268e1cdbe2473ca07d24a"
+    },
+    {
+      "run": "azure_http__b256__s2026100207__mpc_4",
+      "request_count": 37909,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 205.27716607501497,
+      "plan_sha256": "sha256:41c538395c721250fbacb60e51c1578520a11f3d5e4841a0df143ed8ab268257",
+      "raw_requests_sha256": "0384da42418a27a187c52f62f00f8e3d05800141d0f45b3100c306d2f6c4c733",
+      "actions_sha256": "0965f483efc4a150d4166e214585f04c2fde8865c7bb3012ba4ea081385892f5"
+    },
+    {
+      "run": "azure_http__b256__s2026100208__dap",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 89.84200893407979,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "2910e86f707cf96f5ecdc73f6d7d4e8192345146fd10aff1b3048ee4bf678e9d",
+      "actions_sha256": "f08db4ec4f00c0078a3b92887dbaca029fa34092a9986021336ff445e28a5f53"
+    },
+    {
+      "run": "azure_http__b256__s2026100208__dap_guard45",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 69.72152849398844,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "03d6fa46784f65398450b82b45af856c31ae8c7e77ebee0006f57997a9b96b13",
+      "actions_sha256": "406fb47db42423e2022cfbcffb797eee03a370097c217186d5a636cb2b24cf7f"
+    },
+    {
+      "run": "azure_http__b256__s2026100208__immediate",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 142.02278912998736,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "fd6010b4e02236962d99a8737675aaee6e3586fabb636dc3c2d6dfad9fc4e40d",
+      "actions_sha256": "32fac85995bb943e99f89e88d5a6b088fcb9d718f469e2cc2def7dc84a4b4935"
+    },
+    {
+      "run": "azure_http__b256__s2026100208__mpc_4",
+      "request_count": 39179,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 169.1145460709231,
+      "plan_sha256": "sha256:41c69b446c3f27e9b41c0a420957c4457a930d584a741142c3324164f72d7d13",
+      "raw_requests_sha256": "479eb581f74418a683af3d105920e449a0e92df3f69d77725186d7a8e8197e6e",
+      "actions_sha256": "afdd01946bc7f6bfad45c4610011ec108298ecfdc8d83d9097b078bcddc103c8"
+    },
+    {
+      "run": "azure_http__b256__s2026100209__dap",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 60.69820898398757,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "c73cc9954be2384006104c69a95b1ddf5c1c4bfd5699673350a9f014df00be65",
+      "actions_sha256": "1e3841d9f2f6a90a1a5fef43d1cf83f88b1bd796a0a4e7363fc25a68f56266d6"
+    },
+    {
+      "run": "azure_http__b256__s2026100209__dap_guard45",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 582,
+      "recomputed_cost": 77.80964240098547,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "ad847cd81552608bb4ac9d86db2311d10d9e2ba25e83e70948a34360edd15eca",
+      "actions_sha256": "c85c0216d090d35fb69c78805b46ee273f8916fd3d6bbb143cf0725892c26353"
+    },
+    {
+      "run": "azure_http__b256__s2026100209__immediate",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 180.47737871108984,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "bd31944cdbbcdaee1bffb6bf8f64f7b3e0fac73811b0781353da905be967edd7",
+      "actions_sha256": "8199823e433de324ee1c230eeb26bb6325fe2bfdf97dd0c2bbfe95c13068dfb2"
+    },
+    {
+      "run": "azure_http__b256__s2026100209__mpc_4",
+      "request_count": 41042,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 204.5359218668891,
+      "plan_sha256": "sha256:610864b9f71a46102b513574fda5537394a6c6bcff6cb484f1d721fcfc664065",
+      "raw_requests_sha256": "ba21f2f94595f1b17afd1fa6b727cf3d016ee1c456393674017c677ba919fb38",
+      "actions_sha256": "de09909c8b07209a8304c79069a72cab76b82215eaa6938d8a397884b3506c9c"
+    },
+    {
+      "run": "azure_http__b256__s2026100210__dap",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 88.75848432499333,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "6096ac11fcad543927bf0dd3bf7e019ec7a0b1ef739ca2f55b822b7442ce85d0",
+      "actions_sha256": "4265b4360199c09a2bb7cbd736ca03a34db080e51318037c46812ea03a1a501d"
+    },
+    {
+      "run": "azure_http__b256__s2026100210__dap_guard45",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 567,
+      "recomputed_cost": 87.59396076093253,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "d48a816a1400ea100f7a08ea552cfc1cdbd8121a9ca15d51cb3bae44fd6e23a1",
+      "actions_sha256": "145e07d29c9bcd555a2ac6f3bdb81c2f0c16e3fc70b0f9e119d4ec7e56d93215"
+    },
+    {
+      "run": "azure_http__b256__s2026100210__immediate",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 574,
+      "recomputed_cost": 180.46864434001327,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "2136f92085977197191708065719ee0379a5a7ecf01e2f0205508dbda921830a",
+      "actions_sha256": "0ebf2d3d893ed625cbb25facd2de3b12b96268060ce48e39b58f022081fa1020"
+    },
+    {
+      "run": "azure_http__b256__s2026100210__mpc_4",
+      "request_count": 42950,
+      "action_count": 32,
+      "ledger_samples": 574,
+      "recomputed_cost": 186.82572489294398,
+      "plan_sha256": "sha256:9e12f77b8af8cd29eb4eecce5950b2234bd1444005b67f383bf13da12b589733",
+      "raw_requests_sha256": "db1babc93eaac0548d2ae4ac09976640f7a291a812b43537b17c22fd1ffb2aec",
+      "actions_sha256": "0f58f04a3ffc51ae43fa28df781a0b7217c6d397d36029f3f362f96950d6f347"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100201__dap",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "11018b32ccef3c5ad332cbd32dd7a67982d3fdb192d0a936b1a8dd8d64c21a4e",
+      "actions_sha256": "6172d8cbe1baff55439a4f036bda7fd3ecb77ab3e27b25a5ac45715597be9894"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100201__dap_guard45",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "e5ba00cbdcab54ee57b14becbb1e3998042a129c34d208d9f05435ed362a9852",
+      "actions_sha256": "9e65eff1b746b781657df24d4d9770a575d1d47cc46b2ff03b0003452ecca00c"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100201__immediate",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "b75515709216cf735ba723d8c1dd942bca72421cffec69d50b420dc620e8cf4d",
+      "actions_sha256": "a7aaec15a7ce6d533028d565f01cc76ae21d0cc7b22257d9b6446e1a44d8b73f"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100201__mpc_4",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 574,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "e6eeac0b98471b06b60579f10e3330e72c57985a06dfc833a42bf0a20d6b9a93",
+      "actions_sha256": "a0c76c4d54920542d23f03ecea3e0703c69dbac9399e8e17a9e380668c6110a7"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100202__dap",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 581,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "379b7dd89f26dd5b62f363d4e611a483c9e617f40e58912b7cc58ae8d373019f",
+      "actions_sha256": "57dfbf45435ae3616bed6fce7448d9760fc0ae97bbee7a42e800de27d4073756"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100202__dap_guard45",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "1edbdcd849d0cb9960f2899e4bf95b916afeac1add41ddf1bdc06b65be7f4b5f",
+      "actions_sha256": "7a219f5f9daa2a2c7cbe7fcd282f47287e2d260f23d9fbd048cb89b6cad58249"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100202__immediate",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 578,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "aab5726a195145aa6e6b9efc8eeb5e961c610a005ed50dbf15d4f61d4b8db93b",
+      "actions_sha256": "8ae4c0112545ea7e48b85ac83cd43afb0daf07fa3d2ab7d637368ef1f3db6961"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100202__mpc_4",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "bd6d939969b4f8d615c4b6864ce1d58bcea00c926b4aedb9e06fd0c31ac3912f",
+      "actions_sha256": "a3dc7c9ff70f52103ddde30a741a7af95f7f846d8ae76957bf300fadcbff6f33"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100203__dap",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 19.56299177996698,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "4b488fa876ad1c5aa1e33b266b9d807111b08757f61c28f97f95f1dc3d0b84fd",
+      "actions_sha256": "56948750af4705c45b8db824695af389eaf646514238d796dd16e4eb2d33899b"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100203__dap_guard45",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 588,
+      "recomputed_cost": 17.03651776400511,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "c03037422be5a91bfcf854d92262c6a272f6e02fbc7eb7ab0987775ec61c4c76",
+      "actions_sha256": "6a71a35a193d4a89b141ac6cd0ca9568da5e54359979716b0c7f6d3614da8dee"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100203__immediate",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 602,
+      "recomputed_cost": 8.303269483993063,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "271726dfbb74996b2b0465f8027e1a8dc4082bbed129e46706ef79d625198932",
+      "actions_sha256": "d84ac9a8abf48edffbb38e0f351563b08ae557191a25ba692253e7728176da01"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100203__mpc_4",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 584,
+      "recomputed_cost": 17.924427235964686,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "d44486a2825c6711b9080557b109f555aba3a318b12b0c32828fa12bd10d1f9a",
+      "actions_sha256": "892edea754adca4c5ea86af8befa43385317d14a03640f600668e5d9df92a115"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100204__dap",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 593,
+      "recomputed_cost": 3.2082343399961246,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "52cb21fbc34921b942e33015bb0a5559069347d66c31d73cfe441cde59bc4af6",
+      "actions_sha256": "6708fc9f07152073c37289cdeced34ce07992b058e70b3e128e241ac363a4149"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100204__dap_guard45",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 585,
+      "recomputed_cost": 3.2378503069921862,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "d3edf807d770eaaa29bdb0b7973e240777848f43036bd15f1558486c4866478b",
+      "actions_sha256": "390e22e075c82a53b98ae5ce7a54970eb5aab4cc4e77dc5a54a0180e52b68ff2"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100204__immediate",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 592,
+      "recomputed_cost": 4.127171526008169,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "12aefdd581b46e5326d43e4f12347d0210af20b9948cd700652f63d2a8651b02",
+      "actions_sha256": "9448f18de0e15a2f22ccffbffe94db8cb8f5f7af44f772bdcc9619e188b09587"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100204__mpc_4",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 598,
+      "recomputed_cost": 3.0505884169979254,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "135df313c1aea13abebc93dd7f87c97c9eb325a35d09cbacee691adcd8dd2621",
+      "actions_sha256": "365fdce78ef35e4fd954415305cb523f09d9f8091cd54cde7a7743dbdc3df6c8"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100205__dap",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 593,
+      "recomputed_cost": 50.69395529096073,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "5244a98158db15f8fa1d1d46590c73dea2771d85bedd5a35b03c44a6d64d560d",
+      "actions_sha256": "b3345c3e697669c880560a41cbbd0731efbf4d40c0618b68765e23526d198d7c"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100205__dap_guard45",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 596,
+      "recomputed_cost": 41.30833965499187,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "00801441ed097dca140f9fe35f1c02bd1e42c6a70b0271d302bda7b6f5a9893f",
+      "actions_sha256": "d4d6c461767554d00159c0904fa52a06a448df174b33ef7f385427d2732ed585"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100205__immediate",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 597,
+      "recomputed_cost": 55.90964790302678,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "f536634aed4e884947197c16187a2cd570a900bd6f5e48b72821c9cdcbfa22a6",
+      "actions_sha256": "23530a7d104b21902ac386afad91472c1a950054938834ab33ba3ab162a83778"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100205__mpc_4",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 597,
+      "recomputed_cost": 46.35947207499703,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "7970f42675734117512f8946e58741c8518360b0fbcc09301b014f0d3c8b343e",
+      "actions_sha256": "9aea9cb12df6c93b2b9ca9dfa817c6dff9ea361aa0ac34f458524f2ca153b109"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100206__dap",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 117.54468354200071,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "ec769d3db65c51939fe31a1e8e6147e45f8a100209739160bb646fc8552d9960",
+      "actions_sha256": "031046955382a5f9c3bfca5eaf6b878830bf2e7298f53656a78921469908a08a"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100206__dap_guard45",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 80.12939752000966,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "710882281c282064539d3b4771a7131673c29077993cd88bca9b4dfa45baedf0",
+      "actions_sha256": "e84a9498d11ca60f839e2e0aa56af458c43720f6db0a2bc556e639e397baffaa"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100206__immediate",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 582,
+      "recomputed_cost": 101.28504070895724,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "550a10b87c47ae8bc275d81180a3ac7c2daa838e7e0b35e5aa03e742a5b162fb",
+      "actions_sha256": "0bd5e5fc8de75bc21d5f4c6cb79fc46feed0902e37b6e2207b77e40dd83a7b4d"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100206__mpc_4",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 583,
+      "recomputed_cost": 107.85331725097785,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "90983b84813dfa93dbb288f901acffb44b9f3e7334c1902747c7d4363750293a",
+      "actions_sha256": "3a307cc1914b59a89a92a937755bbdab95bd28472e381a814db4580af6308f07"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100207__dap",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 562,
+      "recomputed_cost": 121.29102392504865,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "b2b4740cf930db6313224ca14febfd0d6357cc70c80646e227a4e391503683b9",
+      "actions_sha256": "e4389141b21c462006efb87a5e8853de847159aee5d79f58a17d87d095e97d86"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100207__dap_guard45",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 568,
+      "recomputed_cost": 79.6164872340014,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "50e3df93090d09d82580749ebcc7925654b588888e5f2712548ba7d807d8ca4a",
+      "actions_sha256": "71269e8573d54621ff9d2fc821831d0c7c4742573419b1ab093a239a027ac662"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100207__immediate",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 564,
+      "recomputed_cost": 123.74283549495158,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "b8c780319f3cc643d371bfe9d524ca8240eaed39d1310271dcd2dcf6f4253a62",
+      "actions_sha256": "257423de4bd4c78b05f2e88faab02f77e5f777b9de4343f9ff4b59de869d7ed9"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100207__mpc_4",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 560,
+      "recomputed_cost": 122.40430959110381,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "704aca2950e47d85fde9c35585a289d771f9464b0bf34b720ac50f7c4fa67c9b",
+      "actions_sha256": "78f0f7bb9199d02de63a19eda4eda22ccf9caed161344672940c9019d101084b"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100208__dap",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 570,
+      "recomputed_cost": 124.54015548694588,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "8b77f5b756ac9fac0a8ec19473246c9120bbd2ee84d9100050c54554f696c432",
+      "actions_sha256": "0c8524495c0f922774328c9b262f5cc4c3f3142647b1c9bc8fee3717fabe13b6"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100208__dap_guard45",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 79.24788059499406,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "c426610cd7e7b74448a96d7aab5fbbf3102943c9a0750da079ff1baa7e6c0761",
+      "actions_sha256": "229b04075d2673ba5e0cc7d5d1ecfa2ee411925aaa6fc140f7c115afba8bfeda"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100208__immediate",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 122.65061471794615,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "06e01c76121f2ce60a542d9a78554e79751f5897ed6eec99aea4018076650248",
+      "actions_sha256": "bf8cf3e214ec8964b7fcf692bfee05357f9302528d61d717cffb0223d1aa0e8f"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100208__mpc_4",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 568,
+      "recomputed_cost": 121.01294327594223,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "9a7a8ba312019fad7ac61d7c771abd11bf956f0931197c49f5841a9da35754da",
+      "actions_sha256": "2cc2e5fc47a82c2399a79205a9a470e742bffd404418a593e93e797b9f976555"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100209__dap",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 121.89933307700267,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "9f7b34e74801f5295bcd0117722fa2b6a7af49a76d40bd241e3309664bf35804",
+      "actions_sha256": "7b131605c220c759eea9244411b5f4b0b96176feb998c9839d70afb71f93438e"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100209__dap_guard45",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 79.3736694479885,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "adfc8b13e1cffafb70698ca9391797c61f7172a06ef518be9e475d7a71453e8d",
+      "actions_sha256": "1cb6303ec99825b3d6526691f62aef7a69bb72672c485370d94d3b08919bd334"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100209__immediate",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 123.64862979805912,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "a634ba59f46a744891084d0d3ef15c30638ad392cbf7099eaba8fc45af651275",
+      "actions_sha256": "2679a7ff9ed17ecd311afe541805e7504ef0d2bb86b5ffc9f5703e28d3eadd51"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100209__mpc_4",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 121.60753461997956,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "b8815303abd1270cf205ff6e85f5cb3b95bcb21513d21b307da2cadce419ba6c",
+      "actions_sha256": "77d2a30016a906ca47a718ff6f023b0419ce3216672ce54e153636e3d5ed4454"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100210__dap",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 120.67425305796496,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "6d05105db040cb13399dc62c22e972102b22e13349647dfb27488acc5bb6f7ac",
+      "actions_sha256": "39cf1ed36eb970b0e0d07deaf3069d0e3be0b63dd9f811f3e2987a0da1db1bcb"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100210__dap_guard45",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 580,
+      "recomputed_cost": 81.28331169801822,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "932e3136b45b5f6f2c677da0dc707a276992f65b694514d8c1f61dc34045c565",
+      "actions_sha256": "181a6e7454ee96ccaef980f0a3bd0909ace6dd37431a944bdde592191a991128"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100210__immediate",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 563,
+      "recomputed_cost": 123.20451313995,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "716681f6b93a7d8b7c7adaabd02f55f99b189d95ed67488d4c3a9c8b51ead109",
+      "actions_sha256": "2559cae0c2ea0ef0e1636259c05126c04a6526c9861754afb87112e599a594ce"
+    },
+    {
+      "run": "gentd_inference__b128__s2026100210__mpc_4",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 121.85280412595603,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "af4b7ac4eac6d9ae0f2becbf7410ba45794fe154cf93267ad878b501233feb1e",
+      "actions_sha256": "ec0242962f58ac3ce7ec5fb8e8c73688ad7c24b2e6bceca1f43c4079002656af"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100201__dap",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 582,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "f62b13c2daed23e1dadf41b4a81cdc6eb679a1b113e482b8a26467bb1adf4609",
+      "actions_sha256": "b5bc2b820394f08d1c9e9240a90beca68ab0fb3ee6abc26e8ffe170811846a32"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100201__dap_guard45",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "6aef97ab7c06c63177ee58f62930c8b4def74fb68a97afcd298d5f2736ef3c9f",
+      "actions_sha256": "d6afc68b1a1e7bfd1fe8fd08c75d22fab43d0cf297b12c1fc9ae17883587d97e"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100201__immediate",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "716b3ff7680003c2473466923922512d6e9ffaacafb90072a020ef091076c17e",
+      "actions_sha256": "1508c378008563ad2e9137332e87d580432fcbf5ef6d5122f585363272efa47b"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100201__mpc_4",
+      "request_count": 801,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:ae9aa8c9bbaff33af3910c2bca151ac3a6e7cfc5489f155cfdc250f4e1b1ab02",
+      "raw_requests_sha256": "d88b5ae81af25e666968ad1b6d4937a25db2d643f51bf5959e4567698f98fb3f",
+      "actions_sha256": "c68e25a0eaa9c57ed7bbbd83a396a41e4a8fa23f17f8a9fe03229958ca711deb"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100202__dap",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 17.662575853995804,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "9063454b6e4c9d54f68a51a3f8b30b6fa83c33401f5a87c6a90399ebdf69c78a",
+      "actions_sha256": "3a98fa84308552d69730b94b4ab5925b2ecb72091c2c2a3142a255753be65e6f"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100202__dap_guard45",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 574,
+      "recomputed_cost": 18.05636993799999,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "5adc2bcb762456f59d6020d5416cf927cf4e4362a01812273254a798d3e13b2a",
+      "actions_sha256": "921eaedb6808fc7d3de0f788c48173f5ae6f88127843012640a268b14a0952a6"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100202__immediate",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 575,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "08134b51a3418cbca7ccfc4984cff308ad3217d41e4b4cd657b5931fb3cd8f1b",
+      "actions_sha256": "83d4981b07a3f60b6073317aa854cd92e86fe19a2bf9fe63ab8c3c73914a2bde"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100202__mpc_4",
+      "request_count": 1007,
+      "action_count": 32,
+      "ledger_samples": 577,
+      "recomputed_cost": 0.0,
+      "plan_sha256": "sha256:032703188c6d0ae0c2b4b97046dd89b79dabb991f1c18be7e03757eaca1e25fa",
+      "raw_requests_sha256": "f822a824da54024c4425ad5a18df927aae41946176781cac03d39f65c1f59f1a",
+      "actions_sha256": "d5acacf46903d8b1d9e1ba5f750818b4e72ca058ad91edf28761e96a05b4f1e1"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100203__dap",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 594,
+      "recomputed_cost": 26.763752341998043,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "fab695400d2bccff0ddd62152a8eb0514299def05b1efe24881eea3125d21bb7",
+      "actions_sha256": "2017ea9eeca857eb8d7a0a05c02511778ee7bb836f4b93ed09f3f5d67bceda46"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100203__dap_guard45",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 589,
+      "recomputed_cost": 26.732525454019196,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "7bf10b1124b70addfd47049d89a7165da7090a41ff35c5d7bbe8dabf22af27d8",
+      "actions_sha256": "38dbd1fb7aace57711a0ae6ce6847cde79ef943ca1760997905fcd0e26dd5556"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100203__immediate",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 589,
+      "recomputed_cost": 11.573305359008373,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "d836e58af25634a78267ea3d29038a83e57ffb8fa3d30bb02b1fb34fb5dd375d",
+      "actions_sha256": "5d708a1e98471727247edc8605636dbdf667a9fea6c60b30e421ce6044774477"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100203__mpc_4",
+      "request_count": 1392,
+      "action_count": 32,
+      "ledger_samples": 587,
+      "recomputed_cost": 19.890426835991093,
+      "plan_sha256": "sha256:9c31a0971b183ef4cbff40ca7e35eaa661392dd731d4aab851a224a615edefb7",
+      "raw_requests_sha256": "be8ba92e0a572532356cb35b43cb0397c061400a037ae0036031465217a2625b",
+      "actions_sha256": "51ab77bb494a8d7aff1ccb3985419d32f013ed00f6ff69162bafa9458ea52cd7"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100204__dap",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 595,
+      "recomputed_cost": 48.17751134299033,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "cb5059614bf6ffa61df3d5e90415b457678f7f5810209f7b9f48a7e9f011f511",
+      "actions_sha256": "48636b7ca35e2e56b6f0bc44f3b5933756ec6f6af784608b5297f88bd87ae6a1"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100204__dap_guard45",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 586,
+      "recomputed_cost": 48.31632011500187,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "67461735f4b557feb6b78be9de22cbc59b8b95efa9740c1add809ae32c88bbe0",
+      "actions_sha256": "c94a5bb42508b60bde5e6e5b43248a83ba7c735566316d48cdc1a4d4de3c256c"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100204__immediate",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 595,
+      "recomputed_cost": 3.044440351994126,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "3c17c47328ebe0830d909e82610de6363c4c06bcf2bcbd7adef40e0a6ef3ad8b",
+      "actions_sha256": "e367795ea86e491d1c7d0141e44f6df60c26ee9b7597f550ccf39c89a0d5dfd2"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100204__mpc_4",
+      "request_count": 1770,
+      "action_count": 32,
+      "ledger_samples": 591,
+      "recomputed_cost": 3.2625600909959758,
+      "plan_sha256": "sha256:abd3bcec3edd9f2da953ae4c6dca61859b7af5edf66b06dee6b87e34016b4349",
+      "raw_requests_sha256": "d61483d7455858911a12012a0d642be1975a466122439df950c17563cea8c5b0",
+      "actions_sha256": "c2439df40eaf9d33ed9ccea2a99fd406112f0eabde613728129bc4333984fe6b"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100205__dap",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 594,
+      "recomputed_cost": 57.57145067000238,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "954269b642c16863a13d00ba290515f5f3d2fbca248ee943e10c679f81d23fb4",
+      "actions_sha256": "06f8af0b7a160409cb53848df872062e1950506ab30007843a56b81ec676b0c9"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100205__dap_guard45",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 593,
+      "recomputed_cost": 58.19053668701963,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "1fde3f97d02f394d528562522b6ba983eb21f8b19af202fc117dd59d4a0e1978",
+      "actions_sha256": "3cd00550cd1f7eee84026277ee27d0676bfaf6fe7d6b97542691f397aebef190"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100205__immediate",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 598,
+      "recomputed_cost": 41.45739925894304,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "aff1f79ad0a2450459a5489be49ead620c9f50ba454060ad88524a9253c00f79",
+      "actions_sha256": "082d0a5c7d504231e3af811cfb02bf81347fc5d8c9158cccaf85fae5e650417e"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100205__mpc_4",
+      "request_count": 2330,
+      "action_count": 32,
+      "ledger_samples": 601,
+      "recomputed_cost": 42.01863993899315,
+      "plan_sha256": "sha256:7f17048c7a48a594f1702336059b50ddb9f3f47d767d3c6c64023ce45256606b",
+      "raw_requests_sha256": "18f8e5eb7f062ea459531e2138a90f13c38bb656122a7d7ae49c1370d9e05fe8",
+      "actions_sha256": "ad9c291ca351f43f6c17e319e3860738c2fc9f10f89046e22a308e9b28947390"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100206__dap",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 579,
+      "recomputed_cost": 156.2976323029725,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "afa43ab22b9f1896b1eb54779fb530b974fe7c17631fac1e9be405b61ce404eb",
+      "actions_sha256": "ccc05b834cb5fb85042bdeb5995fa67948d78757a3a59b7bc2b5becd1e427e40"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100206__dap_guard45",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 585,
+      "recomputed_cost": 157.8628389989317,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "faa1cf6850759fd18ddf5c6cbc7763b19bebd9d7ad7c082419218a612fd96e7a",
+      "actions_sha256": "fef2d7bc2d916ff0566e5fb17db0120d3774dfa9ce6023126e2cda1d03e4f3ba"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100206__immediate",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 580,
+      "recomputed_cost": 105.16949896806909,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "1fefcd1af97351d737375799091f80a59e926e22a5d4e54dc462704aabe7fa0f",
+      "actions_sha256": "77b2d82477398a6a19cf4d00d3eca275d629ad3fcea0c108d6dbc9dc8cbdb643"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100206__mpc_4",
+      "request_count": 4091,
+      "action_count": 32,
+      "ledger_samples": 578,
+      "recomputed_cost": 102.74256984998647,
+      "plan_sha256": "sha256:b42d98c352f46fac3d35e667473454c967f8dc91ae9817a96a866489f0aacc6a",
+      "raw_requests_sha256": "86f718b5e2e4e14e88a3ddda8c2da94709544e3fe51abf96c75f0a202ac5c825",
+      "actions_sha256": "fc629bf71209b5bfbd2f00790d7787a79c9e87fa282c443e4c0d27e4f21c50a0"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100207__dap",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 249.5354773720319,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "f915a3dae9c41dbf3c794ec32c226824793a5a847a366af208aa9d28e249f55d",
+      "actions_sha256": "3657ab62b6698000969f62a65df4572e4ff3cb3571daa51ee73e9c157c98099f"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100207__dap_guard45",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 576,
+      "recomputed_cost": 208.53059120703256,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "a3c056a3f68ce1f8eab2a3100110a8dfcd364d82fc8e3c15d0ea0dc3e8fdd023",
+      "actions_sha256": "ceda48ba8a17f3ede3297e62488d56c8dacacb66fd01edeaf8709955f080cb6d"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100207__immediate",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 573,
+      "recomputed_cost": 152.56503401795635,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "aca68a32762ded270a86ac264fcf1c063197dd4f75f0c9cbe55ad01d07ea3083",
+      "actions_sha256": "ccb7935f462efb3fff31ae9d79def85a0a91c020a1b67856cba9ca1c49a4da94"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100207__mpc_4",
+      "request_count": 5569,
+      "action_count": 32,
+      "ledger_samples": 568,
+      "recomputed_cost": 133.1555280960165,
+      "plan_sha256": "sha256:318d1b83fc1197daa4638ca8b8f2f15d55373bbd7a157a6030b8ac9c59a5ebd7",
+      "raw_requests_sha256": "795f32810728044ed365bde95fdbba9286361907e1499d5e9e2320aff55550a3",
+      "actions_sha256": "fe4682368f26129876849690e4957611008ccb75b902e1750796946aedc72f53"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100208__dap",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 240.19745541800512,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "4bde3120a9e90b9a811904c4e4a3e2e663a88c3c07eddaf5cc902e1091e96840",
+      "actions_sha256": "be9082eb81ea09c8747580056a9574ae991b63c66b46a4611785447da88c2e5c"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100208__dap_guard45",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 565,
+      "recomputed_cost": 184.6591837460437,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "3654c5a003824a91a9b68f2984fdf62912e0a1582e873a233e61641128e344e2",
+      "actions_sha256": "1dd4fea6937fbe88ee98462b0a0197839a79bd08bdfd14f46605a6f4fc98fa2e"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100208__immediate",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 580,
+      "recomputed_cost": 182.1903843080072,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "5bcd92cab24712de1976686cfc58c888b2e20e4ada11630a2fd7e75495ef8cdd",
+      "actions_sha256": "41eb28f69f126dd4752841d4b19bb5b71e8291c2db5d48d1d63f607e6ccfc564"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100208__mpc_4",
+      "request_count": 6917,
+      "action_count": 32,
+      "ledger_samples": 572,
+      "recomputed_cost": 192.9152961150685,
+      "plan_sha256": "sha256:8edaecd5b0d065f1415b2dffb97cdc958bb7614e7d2b2b8b8ba2aec84f3978ad",
+      "raw_requests_sha256": "3fff1a914a6d8ebdf807edeaa04b0cdd7a094eff0ee8fbc1af22c2ef73f17628",
+      "actions_sha256": "c2e2d583227cf1d31f3b3462d899074c8363d083c2f8d3b03d794010bd35f711"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100209__dap",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 560,
+      "recomputed_cost": 249.6924062330072,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "9ab5f45e2499e75ed1ad661289e2468f2e14413c2c017581fa1401bbb6efa8b8",
+      "actions_sha256": "f656978473e1b1c1969ea0c9edc63ede58a48dd87b683a3b0e83aee7a14418cb"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100209__dap_guard45",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 549,
+      "recomputed_cost": 205.52647524398344,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "38511b2c8354c01e192152530e087c5a14d3fae7b3fc9f07f5877271377f28b8",
+      "actions_sha256": "a720431f2cf6b7ea12bcb3ee0be01144894e9213f697508ac3ada6b78b81f0fb"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100209__immediate",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 570,
+      "recomputed_cost": 235.26275830008672,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "21b03f94612f73b9c5858810fdb25222c88858354339444743e3c1be57ccc092",
+      "actions_sha256": "df91d7194fe27cfa2ef02de19c912e2c168dd968e68083990450c730f90da475"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100209__mpc_4",
+      "request_count": 8326,
+      "action_count": 32,
+      "ledger_samples": 563,
+      "recomputed_cost": 232.87506900804874,
+      "plan_sha256": "sha256:fdf23d1ec125ac5c0cbf85f07900c8be8950999c45e012e24111295a8b7d9b3f",
+      "raw_requests_sha256": "77a0732ef153e660e40dcc69cfb92ff7bfe3babdad0cca496d7c449ff72dca07",
+      "actions_sha256": "4579e05eee260d46d00bb2ab272602493a18728155a890d4edcfa652b3baa3e2"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100210__dap",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 570,
+      "recomputed_cost": 250.3950302279991,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "4f83449a8744927537c1c68b0a3aa057a7d157d605f23e2d69740c6b747a473a",
+      "actions_sha256": "7e0ea0c0cb596f7fd925c8b10cfd4678672683fab4bcf1fb9d47a3d2a3030da0"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100210__dap_guard45",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 571,
+      "recomputed_cost": 210.60248880500149,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "0be59a92fed2d9a7763b77adda64cf17ca49bce62b7db755a09ddbf634e760b5",
+      "actions_sha256": "5353387dd019925ad5c5be0dc20dff93924f5d36668c4616b3c670b407cd428a"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100210__immediate",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 567,
+      "recomputed_cost": 252.61389415393933,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "ab7d4311fd857e254e2bc85459edc307a2ae409ed661408876dc97629b2a4131",
+      "actions_sha256": "1b9b9d04af89aad8c6213d1a2c5df8ee3d0b1dde9977d0c6850ac9bd0f8d610f"
+    },
+    {
+      "run": "gentd_inference__b256__s2026100210__mpc_4",
+      "request_count": 9955,
+      "action_count": 32,
+      "ledger_samples": 569,
+      "recomputed_cost": 252.41168843302876,
+      "plan_sha256": "sha256:86be3eb2e888627c0069f5b5d57eedd3e4d2aee91f467cc8f4f3187a0b082704",
+      "raw_requests_sha256": "6713e207ec0e9ba314fc9a48cc9c22cc7dbc6a39ad6f2ed44a005b8c03eee28b",
+      "actions_sha256": "3d38153704437cb6a50d7f25cc88f3297f19cabf77439cb30f2f5ce8f33e43ff"
+    }
+  ]
+}

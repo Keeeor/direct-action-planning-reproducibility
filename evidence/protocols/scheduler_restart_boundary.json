@@ -1,0 +1,16 @@
+{
+  "completed_run_boundary": [
+    "PROJECT_ROOT/research/fse2027_revision_20261002/live_runs/azure_http__b128__s2026100202__immediate/result.json"
+  ],
+  "incomplete": [
+    {
+      "run": "azure_http__b128__s2026100202__mpc_4",
+      "cause": "Scheduler prefix collision correction; stopped after preceding run completed.",
+      "utc": "2026-10-02T10:17:49.946322+00:00",
+      "action_rows": 0,
+      "request_rows": 0,
+      "policy_outcome_used_for_restart": false
+    }
+  ],
+  "utc": "2026-10-02T10:17:49.979314+00:00"
+}

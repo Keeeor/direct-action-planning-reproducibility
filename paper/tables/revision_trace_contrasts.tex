@@ -1,0 +1,22 @@
+\begin{table}[t]
+\caption{Temporal mechanism controls over all five budgets and ten paired training seeds per dataset. Differences are DAP minus comparator; $\dagger$ instead compares the full-feature retrain with its identically initialized masked-feature counterpart. Return includes pointwise 95\% intervals; completion and SLO differences use percentage points. Stars indicate Holm-adjusted $p<.05$ within each fixed study family (24 trace, 16 learned-model, eight matched-feature endpoints).}
+\label{tab:revision-trace}
+\small
+\begin{tabular}{llrrrr}
+\toprule
+Dataset & Comparator & $\Delta$ return [95\% CI] & $\Delta$ comp. & $\Delta$ SLO & $\Delta$ cost\\
+\midrule
+Azure & Immediate & $+8.72 [+7.32, +10.20]^{*}$ & $+1.11^{*}$ & $-4.52^{*}$ & $-3.46$\\
+ & PDS/ADP & $+0.73 [-0.24, +1.62]$ & $+0.04$ & $-0.24$ & $-0.80$\\
+ & MPC-8 & $+4.80 [+3.98, +5.68]^{*}$ & $+0.69^{*}$ & $-2.39^{*}$ & $-3.46$\\
+ & Learned trans. & $+5.38 [+3.81, +7.01]^{*}$ & $+0.65^{*}$ & $-2.54^{*}$ & $-7.73^{*}$\\
+ & No B/H$^\dagger$ & $+4.68 [+1.72, +8.10]$ & $+0.32$ & $-2.07$ & $-0.65$\\
+\midrule
+GenTD26 & Immediate & $+1.79 [-0.13, +4.25]$ & $+0.20$ & $-0.04$ & $-0.24$\\
+ & PDS/ADP & $+0.47 [-0.58, +1.65]$ & $+0.07$ & $+0.04$ & $-0.00$\\
+ & MPC-8 & $-0.82 [-2.51, +0.85]$ & $+0.08$ & $+0.22$ & $-0.07$\\
+ & Learned trans. & $+19.30 [+11.48, +27.98]^{*}$ & $+3.79^{*}$ & $-2.07^{*}$ & $-19.09^{*}$\\
+ & No B/H$^\dagger$ & $-1.91 [-9.11, +7.65]$ & $-0.65$ & $+0.25$ & $+7.26$\\
+\bottomrule
+\end{tabular}
+\end{table}

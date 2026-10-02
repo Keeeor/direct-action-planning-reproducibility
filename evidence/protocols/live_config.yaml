@@ -1,0 +1,131 @@
+schema: dap.k8s.service_repair_runtime.v1
+mode: formal
+source_split: test
+horizon_steps: 32
+control_interval_seconds: 5
+budget_seconds: 256
+seeds:
+- 2026080921
+- 2026080922
+- 2026080923
+- 2026080924
+- 2026080925
+- 2026080926
+- 2026080927
+- 2026080928
+- 2026080929
+- 2026080930
+methods_by_profile:
+  azure_http:
+  - dap_repaired
+  - dap
+  - static
+  - threshold
+  - mpc_4
+  gentd_inference:
+  - dap_repaired
+  - dap
+  - static
+  - threshold
+  - mpc_4
+perturbations:
+- observation_lag_1
+- metric_dropout_10pct
+- readiness_delay_5s
+max_attempts: 2
+development_contract: ../contracts/development_v2_contract.json
+kubernetes:
+  context: kind-rl-lab
+  namespace: dap-fse-revision-20261002
+  deployment: dap-worker
+  image: dap-k8s-service:local
+controller_defaults:
+  horizon_steps: 32
+  control_interval_seconds: 5
+  base_replicas: 1
+  native_scale_down_reserve_seconds: 45
+paths:
+  system_model: "PROJECT_ROOT/research/direct_action_planning_k8s_prototype/results/calibration/system_model.json"
+  plan_root: ../results/request_plans/formal_v1
+  run_root: ../results/runs/formal_v2
+actions:
+  no_op: 1
+  scale_small: 2
+  scale_medium: 3
+  scale_large: 5
+profiles:
+  azure_http:
+    dataset: azure2019
+    domain: http
+    checkpoint: "PROJECT_ROOT/research/direct_action_planning_k8s_service_repair/results/checkpoints_v2/azure_http/models.pt"
+    repair_checkpoint: ../results/checkpoints_v2/azure_http/models.pt
+    slo_seconds: 0.25
+    capacity_per_pod_rps: 233.90924048217514
+    target_peak_rps: 300
+    max_rps: 480
+    training_quantile: 0.99
+    activity_quantiles:
+    - 0.55
+    - 0.6
+    - 0.65
+    - 0.7
+    - 0.75
+    - 0.8
+    - 0.85
+    - 0.9
+    - 0.95
+    - 1.0
+  gentd_inference:
+    dataset: gentd26
+    domain: txt2img
+    checkpoint: "PROJECT_ROOT/research/direct_action_planning_k8s_cost_calibration/results/checkpoints_v2/gentd_inference/models.pt"
+    repair_checkpoint: ../results/checkpoints_v2/gentd_inference/models.pt
+    slo_seconds: 1.0
+    capacity_per_pod_rps: 29.97526124225415
+    target_peak_rps: 80
+    max_rps: 140
+    training_quantile: 0.99
+    activity_quantiles:
+    - 0.55
+    - 0.6
+    - 0.65
+    - 0.7
+    - 0.75
+    - 0.8
+    - 0.85
+    - 0.9
+    - 0.95
+    - 1.0
+workload:
+  azure_http:
+    client_timeout_seconds: 10
+    connection_limit: 512
+  gentd_inference:
+    client_timeout_seconds: 15
+    connection_limit: 512
+monitor:
+  interval_seconds: 1
+baseline_parameters:
+  static_replicas: 2
+  threshold:
+    queue_small: 8
+    queue_medium: 32
+    queue_large: 96
+conditions:
+  readiness_delay_5s:
+    baseline_initial_delay_seconds: 1
+    perturbed_initial_delay_seconds: 6
+revision:
+  node_port: 31281
+  guard_summary_sha256: d50eb59c39b62ec3e3a56c3ffbac681235be5bb602cf4bacb24e9aa2da7b19c9
+  methods:
+  - dap
+  - immediate
+  - mpc_4
+  - dap_guard45
+  mpc: exact depth-4 enumeration, common causal no-op-reference forecast path, matched
+    transition/cost/collector, zero terminal value
+  scope: guard45 changes only the feasibility reserve, not predicted capacity or reward
+  historical_test_inventory_amendment: Only tests/direct_action_planning_k8s_service_repair/test_planner.py
+    changed before this study; original and current hashes recorded separately; all
+    historical runtime/model/config hashes verified exactly.

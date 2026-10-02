@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "cells": 100,
+  "paired_episodes": 1000,
+  "same_training_initialization_and_device": true,
+  "selected_round_and_weight_inherited_without_reselection": true,
+  "protocol_sha256": "037e197a091d939579a4271a7bd60b50244bc4af1727f501ef44a1d313826e9c",
+  "analysis_script_sha256": "f3b14a72e9d2940c9eed235eb7b1b068622dfd93775de06f815ea244648588dc",
+  "utc": "2026-10-02T09:58:07.823113+00:00"
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "dap.fse2027.executable_faults.v1",
+  "script_sha256": "cdf624a0e22637733f6e8198c60a3cab2ab349103c1f9fbcfdf8a0eedeedb036",
+  "source_protocol_sha256": "8bbf0705a05e5e90357cafa975b90b2a2c9841e97cbdc0177dfbdee62feed922",
+  "datasets": [
+    "azure2019",
+    "gentd26"
+  ],
+  "budget": 96,
+  "seeds": [
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829
+  ],
+  "windows": "first registered test episode per domain",
+  "steps": [
+    0,
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56
+  ],
+  "faults": [
+    "branch_forecast_mismatch",
+    "postcost_budget_error",
+    "nonmaximal_selection",
+    "target_mapping_error",
+    "delivery_override",
+    "ledger_omission",
+    "stale_cycle_context",
+    "coherent_wrong_model"
+  ],
+  "monitors": [
+    "ordinary_log",
+    "standard_assertions",
+    "full_contract"
+  ],
+  "pds_forecast_fault": "not applicable: no forecast consumed; report inactive, not a detection failure",
+  "activation": "pipeline value changed; separately report selected/executed action changes",
+  "clean": "scores and action verified against original frozen planner",
+  "generic_comparator": "standard local domain/bounds/affordability assertions, precisely enumerated in code; an equally complete cross-boundary assertion suite is equivalent to this contract checker",
+  "timing": "checker only, paired same record; excludes acquisition and persistence",
+  "utc": "2026-10-02T09:28:38.505190+00:00"
+}
