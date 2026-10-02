@@ -1,0 +1,1680 @@
+{
+  "schema": "dap.package_namespace.v1",
+  "baseline_commit": "0a67a6811588a616faec276da21eebab1d64429a",
+  "package": "dap",
+  "transformation": "Normalize the public Python namespace, module paths, schema identifiers, and descriptive labels. Preserve numerical outcomes and frozen checkpoint bytes.",
+  "historical_contracts": "Paths and identifiers use the public namespace. Embedded experiment-time content hashes and timestamps retain their original values; they describe the recorded runs. The per-file hashes below identify this release transformation. Generate fresh audit contracts for new experiment runs.",
+  "files": [
+    {
+      "path": "evidence/sources/contract_faults.py",
+      "prior_sha256": "cdf624a0e22637733f6e8198c60a3cab2ab349103c1f9fbcfdf8a0eedeedb036",
+      "release_sha256": "7352b40828df1bbc2e02dbb4a4a1702453089f7e771bc6c6870b94aa49260d6b"
+    },
+    {
+      "path": "evidence/sources/gpu_ablation.py",
+      "prior_sha256": "e95cb192c752d29c7b813bc97d70e1f5cfb76c0125c49f0f958edf98dc12eb52",
+      "release_sha256": "7e0118ae10d460f7e8b3292b2778357228fd765dd903d52a537dc450fac86c7f"
+    },
+    {
+      "path": "evidence/sources/live_evaluate.py",
+      "prior_sha256": "02bb6142f9160af1fc9ad807eb49c06ef300acce262d7c62ab10e99b212a6f8a",
+      "release_sha256": "811956ed5b76dfc774cb032ac85062a7151b11135ac948255136b434fe042f87"
+    },
+    {
+      "path": "evidence/sources/trace_evaluate.py",
+      "prior_sha256": "1334caa28c340efe70922fdcfa1f3d5d1c97a1fff4f396ef462b063ad2554514",
+      "release_sha256": "499c2e8c159a52117357ddf5b323ab325072580d21061aa5eec28f799bf83fa4"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/baselines_core_v1.yaml",
+      "prior_sha256": "3aec3ad3087b50194950a6e1d61b5d478947d50de6bf877cde5087424212cf22",
+      "release_sha256": "6bb5c86fa9b7d5b56037587b23c799ecc6caebb3a5f40cae91fb693f00c38da1"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/baselines_smoke_v1.yaml",
+      "prior_sha256": "2bd45098130c0fa74406411c4775d91eae0866feff9e573f021aa8a5b3b7ca68",
+      "release_sha256": "10d4b08069475b9c54f8856e48cb0840534953322df7b2458bbb09db9d3ae4a0"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/core_v1.yaml",
+      "prior_sha256": "dfb336f539046f23c8e1a37c53b47036f2670ea2acf355b7ca53ef0a49b0bc19",
+      "release_sha256": "a9bf02d55d56845479626964de58efe777c4e3bcd3ffee9e9ce337a7be74d312"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/core_v2.yaml",
+      "prior_sha256": "e4baf830db959ef61ccccc61c65620dbad0c4959de41f170c0e0754af158c239",
+      "release_sha256": "bc692dd1637eb24992332bf595736d1410a384ddfbd29e08471fadac30c1dbd5"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/core_v3.yaml",
+      "prior_sha256": "a0431040061f156f3b00a91d33530877ba580754c554da7d9f61d96762b7b73a",
+      "release_sha256": "0ee47ede4bb31d5be2fe4b5648f9017fe9db43a27595b25d7912d4633e426d8f"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/core_v4.yaml",
+      "prior_sha256": "b94d81d3d02286fb5cd8ef968cd57b3d30d89e7445038200946f71ef3f49d023",
+      "release_sha256": "9ec5eb7ba5058cd3845e75f90abff698e8aa7e01dac0b99224b20569e01935a3"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/smoke_v1.yaml",
+      "prior_sha256": "748d2a682a08ef805d95815eca869a0fbd0850fc3e67e3938f3f4aad20c170be",
+      "release_sha256": "1b6484667c734a1168a4ecf9cd6c629e5ba7f416ef986ac4f7ea3fa6ac025d27"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/smoke_v2.yaml",
+      "prior_sha256": "206e9398590e4c29c64448526a2c2172c13a45da3b8a97485fb67282e6865a26",
+      "release_sha256": "e76984994ffad73c4ce19c5060733f7e7ae1088908264350efce1d58a9cf4959"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/smoke_v3.yaml",
+      "prior_sha256": "fcc0f116d795bfb4858f5863b61f234c5012c935dd8b8c98f1285bdbf618a822",
+      "release_sha256": "b6e6221a14459de30a6104f6b387b26cba78a220e5589abe10ad2ecd442fdb27"
+    },
+    {
+      "path": "research/direct_action_planning_dataset_specific_stabilization/configs/smoke_v4.yaml",
+      "prior_sha256": "d7fc576e53132ca19a9acdd23a3b02ce6ff36a671965028b6dc901067ddf5d7a",
+      "release_sha256": "301419091419e1947f28f8e236b15e7cef350ff2402ca5afdb57603ad24a4bf0"
+    },
+    {
+      "path": "research/direct_action_planning_frozen_temporal_test/configs/frozen_model_temporal_test_v1.yaml",
+      "prior_sha256": "ca8a72413635d4785b00bbbf298d34d1b85c05da2961ed2ff65abb4ef032186c",
+      "release_sha256": "861aa604f979177ea12777797a9ab9441f83d1b3517d5883bfe9dbba3142801d"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_cost_calibration/contracts/development_v1_contract.json",
+      "prior_sha256": "d1e363fc89d611ba32fa5e62cd04faa4a785f900443f53ead0ceadc46a4cf939",
+      "release_sha256": "db475bfe93bf269bf3a0e967a390b6bf6e523def29c503b97e0d37e50ba20b31"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_cost_calibration/contracts/development_v2_contract.json",
+      "prior_sha256": "c59a80b87a446beef6560262e87eb0e7842991c5407fd131f9403e4422eeb44e",
+      "release_sha256": "dcbf47af4cc9e398cf6a94d91f221dec85b7e44fc2c13e6be1b47699311ed191"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_cost_calibration/contracts/formal_a2_runtime_contract.json",
+      "prior_sha256": "10ff5208dc3d71944cc7630297a71bb7fb6d9cc957062bf358579bb64ecf32a7",
+      "release_sha256": "7cd9076aa6b2ceec30ae6db7f9cd8ea5fffaed0d98d580c0886905cc12bc75b4"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_cost_calibration/contracts/pilot_a2_runtime_contract.json",
+      "prior_sha256": "fcdea1f29a856aecafabf4444bd06f63d76be1c54f8fa4519228bea52207cc02",
+      "release_sha256": "c252f7ef33cce76e71cc898df6f279d1444305be94718a13b61cda65b36aaa19"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_pareto_calibration/contracts/locked_replay_a3_runtime_contract.json",
+      "prior_sha256": "ea346440d266697142bd89643b630f4befb58f2e26bd771071b31efc85eb8165",
+      "release_sha256": "3647f6b26a7a3ca73b5cafb673f194cbd65772efcf29216199c7712c64fd1497"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_pareto_calibration/contracts/screen_a3_runtime_contract.json",
+      "prior_sha256": "123a40b3a7a85a4ae84bd2f7ef4da1077ec26e77728a7b3ae77adb89990d2f38",
+      "release_sha256": "292d3b47a50023e6afeed1edd5468381e2cfeec8b76d4ecf40e8d66bb0e9791e"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_pareto_calibration/contracts/validation_a3_runtime_contract.json",
+      "prior_sha256": "bbb10e1612185eca503c314e1c2594de0e9d017ca62d7bcbf4aaebe79a33c36c",
+      "release_sha256": "3e72bb5073cebaadb725dab514e3b9b696efde14c8ad8251d7dfedcd4599c534"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_prototype/calibration/train_prototype_dap.py",
+      "prior_sha256": "50eb5cc7bd7f4ccc3a69065aeee9d2ea70a19d1fad8cbf93f8db869e63f4bfc7",
+      "release_sha256": "954995017a3635245dad7630aded2ebd08fcf87c914e70d3aaf06e653e208c7c"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_prototype/controller/checkpoint_loader.py",
+      "prior_sha256": "e2639e1eac4cb71384db8c45cef8425b360d3b6a689c934001d5cb9f92d35961",
+      "release_sha256": "1ab9cbfa2e50dcb68f2e18a4973b2c7dc8413750ccfb67af4f3f18f4ff43fb81"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_prototype/workload/trace_converter.py",
+      "prior_sha256": "2adb498dfcd75983a2d705df937ed0d4be2c22c69fc5628e2949a220b4065ba2",
+      "release_sha256": "d2beb91183bff09745f26df591fe38e7f58d154cf848a84e90a906fcb2c3cc28"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_service_repair/contracts/development_contract.json",
+      "prior_sha256": "659737312c6accc7f5c6ecf71a10eb0604580fcdfe85d93fee5b778b591d0749",
+      "release_sha256": "9bf05328de5befceca8595a3ddec0df646bcd1b23e6723f8e01fb78213beabab"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_service_repair/contracts/development_v2_contract.json",
+      "prior_sha256": "8694ab31096610fedae6709f542d08d0d4db28eadeaf84c0713518ce1075981e",
+      "release_sha256": "2bf91f85441b7a4e3984bda4e910d8cbbb3f0b59483d35a0657351a7abe9781f"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_service_repair/contracts/formal_v1_runtime_contract.json",
+      "prior_sha256": "de638dd6f18ae16b546cda2ac42968c1fbf1c434d31669b4e9ad5c422fbcf5f6",
+      "release_sha256": "34445fd049ce62017b7373f888f14ce2c72daf23dda0f7dd39c66bc8b8801935"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_service_repair/contracts/formal_v2_runtime_contract.json",
+      "prior_sha256": "90b8caba0db5e8d6bdc1832d92fe3666d640e4ddbd32b8d03a0eab4cafd353b3",
+      "release_sha256": "4ceee4662c2a6b71aa77fc8e3c1883b4ceffbad4741d637e405ee791ddda70c3"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_service_repair/contracts/pilot_v2_runtime_contract.json",
+      "prior_sha256": "183c55c01af7e8b023c68a866c86e01ad40099ee11752df131d9d0d1f83ca985",
+      "release_sha256": "29671b86d6a8b485904401306bf8b81575367dbf3d5020ed7a78d0e52edde3c4"
+    },
+    {
+      "path": "research/direct_action_planning_k8s_service_repair/contracts/pilot_v3_runtime_contract.json",
+      "prior_sha256": "aca1216b20442c53d1f144262e1cb730dd0fdd70c40fe34960cf3dc0f1f5161a",
+      "release_sha256": "3e0fcd565d5d20b9641c90c97539659eaefe44f8107ace49e3a2b019a6bca7f1"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/baselines_frontier_v1.yaml",
+      "prior_sha256": "e37afba4ae1b4716203d8f91d91aedd2d177cf9ac8dbb7fd9edd51849a52313e",
+      "release_sha256": "f40d78ac11c8a325301447b0ed160ed2f691623922f377ee14cee1e5ffe207f9"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/baselines_frontier_v2_parallel.yaml",
+      "prior_sha256": "0357c41fc4b9e2c40551d27c9c3499ddffe2f21a18927ee0b84921fa7ae7c1e7",
+      "release_sha256": "11bae0d56162a164a811d4564b160714d311e1909900ed01b33b83b97797b7ba"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/baselines_frontier_v3_locked.yaml",
+      "prior_sha256": "c336263c9fc99353eb82be7e188a37d25e2f5eb1520818202d6e728176232f84",
+      "release_sha256": "8569774c09bf66cf4e1603af0e944ffc294834bfcf482f6fd1018e36ae4f8859"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/baselines_smoke_v1.yaml",
+      "prior_sha256": "99aef1b296348ba5b2299588e1c0eb0653dfd5472bbf027b0af13cbd35e72d87",
+      "release_sha256": "3505ce507dd6ea95efd050965587ed5968bbe74c2b5f757febd2df708045a9ae"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/controls_v1.yaml",
+      "prior_sha256": "a82a3d830c6de6f2b35265f9733582d7bfba06f23e678c5dc101d3731ef695cd",
+      "release_sha256": "fe2274fdc0c50f936531a4e8a1cabf4f13916a319c51419cb0d8563d93e2f028"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/controls_v2_budget_horizon.yaml",
+      "prior_sha256": "9bd7cb9d7e67050bc23079eb61b867c19acaf109607e4d34df12ed8cc44f3ed7",
+      "release_sha256": "9fe053e5f2a940c276683976dc8c8453936abc657767f7d26ad5c8d394bed45d"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/controls_v3_locked.yaml",
+      "prior_sha256": "eedc79efcf273f299499d1c6af0b838e0c13c607f383b9e5cc770b6552bb67b8",
+      "release_sha256": "479d24dc43986710705c48e4c6eee3f79b4c450153f1e8c2cd6b97f9a69fbd0d"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/core_frontier_v1.yaml",
+      "prior_sha256": "e85592b24075dbbefdf5bcb1c59795f3ce2b2cb95cc8844b4ed8f361738083fe",
+      "release_sha256": "9c6b7f8d9f0af6b1374140b77c2f9b64cbdf8006f4073606b085df1e6cd10b7e"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/core_frontier_v2_locked.yaml",
+      "prior_sha256": "3a3d638589ffb842c3abf32c4d49d0dd7a7dffb7857f7c0f98c0e1a37c27b573",
+      "release_sha256": "ffca03c69ce0ee70b348b95f49c83375147b0dfda912db0ed0f39c2117e68a49"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/frontier_smoke_v1.yaml",
+      "prior_sha256": "e45748b8a735923f544fc551f85e0045745a9e4d5c23439f80a4fd4d2323e5e8",
+      "release_sha256": "37800e0fd080ffdffe4f7533577ce7870b15bf17d48cd3486b8d08d11fb75da9"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/temporal_test_template_v1.yaml",
+      "prior_sha256": "04783de8ae850a6099583e34ad7b9cce50e133fe30e1eb4638902c93f9c91423",
+      "release_sha256": "7b3f2c6ada80947faeacfc7df22aa7a61fa81d3021a6d301b874dc1528e6a55c"
+    },
+    {
+      "path": "research/direct_action_planning_paper_closure/configs/temporal_test_template_v2_locked.yaml",
+      "prior_sha256": "ab1bebddedecd0c5918d571b78c7bb592796d02ed50017fa6bb90861143c210b",
+      "release_sha256": "187d92742ec6feed05dbcc0bd38466469e294d60fc678108be59f2f51137fe84"
+    },
+    {
+      "path": "research/direct_action_planning_paper_evidence/configs/paper_evidence_audited.yaml",
+      "prior_sha256": "e3e94d4eb28bd69b4294c0e04d688d9bbd0ca8ff6d8c33d503c45e952a5392ba",
+      "release_sha256": "b6a9f3bf868b8aa6e89f9ac7983641c164060abc245a0a1d8bc4fd1c7f02a3d7"
+    },
+    {
+      "path": "research/direct_action_planning_paper_evidence/configs/paper_evidence_preformal_v3.yaml",
+      "prior_sha256": "f703f219fddc19233077870443debb0cd09968397cec53e59216ca826bb4ac99",
+      "release_sha256": "fb7faad397cd9939d3dfc3b33a4b8e3c1a32097d158fa49b58cd8adda0ffbb95"
+    },
+    {
+      "path": "research/direct_action_planning_paper_evidence/configs/preformal_smoke_v3.yaml",
+      "prior_sha256": "60c09831dbd1260ddb9fcf85a04a7023374ab5b089fec53d260f6f3309565987",
+      "release_sha256": "806965af5d31cb460fe333984181fb97891d18df44a72ea80b0533dad3bb4124"
+    },
+    {
+      "path": "research/direct_action_planning_paper_evidence_v4/configs/paper_evidence_preformal_v4.yaml",
+      "prior_sha256": "88af1bfb352d56b40e51477f3379150d14393ee62b79afb7eff84fe7632a6066",
+      "release_sha256": "2b4df302ca17bba8fefd3bd932512d755995833003e4666e074b3f28b05ab16e"
+    },
+    {
+      "path": "research/direct_action_planning_paper_evidence_v4/configs/preformal_smoke_v4.yaml",
+      "prior_sha256": "02eab610cf66a6fe03d331e825e63231e40c6f828078f0d70d2f210b481a1da7",
+      "release_sha256": "aee2271d9282a28bb5eebcdd63331132579546ad4ef128e26cbe88ac51154329"
+    },
+    {
+      "path": "research/direct_action_planning_pds_adp/configs/formal_v1.yaml",
+      "prior_sha256": "ce81a42962123297aeb1a0bcf457c0ac808df8802498f560a2ed520f71ff29df",
+      "release_sha256": "957dbc78a7994e5282795fed224b55040e4b9264e5120f83ecf5f61c04e6a080"
+    },
+    {
+      "path": "research/direct_action_planning_pds_adp/configs/smoke_v1.yaml",
+      "prior_sha256": "d4e8a4e5a35584868f009d859bcedb7791d58a6d28b60c0f11f2baed6c1bf415",
+      "release_sha256": "d9fe9dfc6b6d390b2c7b8537d103138b05da0cf174d455cf0ec7e043b01e46e8"
+    },
+    {
+      "path": "research/direct_action_planning_pds_adp/configs/temporal_test_v1.yaml",
+      "prior_sha256": "528418918eb46c57422fdafcc05821fe5608aa0991364252f4c1ab8e2531e3ed",
+      "release_sha256": "5c97417f4c3049dfa6abd9a70c14d28cfe813729ad1a28cbe9837e027034f32b"
+    },
+    {
+      "path": "research/direct_action_planning_recent_sota/configs/lcpo_frontier_v1_locked.yaml",
+      "prior_sha256": "66aca022b2c19ffb81c4b02c423b401565ba33ce569b6e0ffaf86100cfdf0d8a",
+      "release_sha256": "96d9d5fc82079754ee889fc93b75bdcb3aec2ad40ba4f628edeadbf7d1b43e03"
+    },
+    {
+      "path": "research/direct_action_planning_recent_sota/configs/lcpo_smoke.yaml",
+      "prior_sha256": "32d3b31206cbe5b1f95122658adc12c9d0fec8529d7cef43b0a9727c0bd9e21b",
+      "release_sha256": "cc8bb1d3d67d8b9a472b14ba402233265b3b72956fa5950faef7ec33ba1f5fb7"
+    },
+    {
+      "path": "research/direct_action_planning_recent_sota/configs/lcpo_temporal_test_v1_locked.yaml",
+      "prior_sha256": "dd823d8de77f192c1ec9292247dd86dcdabe8631b119c64abafb8550f005bc4d",
+      "release_sha256": "4626585a32b6312c1ba6bdcb4c947def4160ba52d8773cdded1cb2b0d705b08b"
+    },
+    {
+      "path": "research/direct_action_planning_repair/configs/minimal_validation.yaml",
+      "prior_sha256": "feaf6a6410d0a9c0a16f72dfcbb2d09068e07e2cae41a2973e09a08f310d41f7",
+      "release_sha256": "43bd067ad9db04e360f5faf9be3571c4fc9ba6a54a7ae94da04ca85cb68328b7"
+    },
+    {
+      "path": "research/fse2027_revision_20261002/contract_faults.py",
+      "prior_sha256": "cdf624a0e22637733f6e8198c60a3cab2ab349103c1f9fbcfdf8a0eedeedb036",
+      "release_sha256": "7352b40828df1bbc2e02dbb4a4a1702453089f7e771bc6c6870b94aa49260d6b"
+    },
+    {
+      "path": "research/fse2027_revision_20261002/gpu_ablation.py",
+      "prior_sha256": "e95cb192c752d29c7b813bc97d70e1f5cfb76c0125c49f0f958edf98dc12eb52",
+      "release_sha256": "7e0118ae10d460f7e8b3292b2778357228fd765dd903d52a537dc450fac86c7f"
+    },
+    {
+      "path": "research/fse2027_revision_20261002/live_evaluate.py",
+      "prior_sha256": "02bb6142f9160af1fc9ad807eb49c06ef300acce262d7c62ab10e99b212a6f8a",
+      "release_sha256": "811956ed5b76dfc774cb032ac85062a7151b11135ac948255136b434fe042f87"
+    },
+    {
+      "path": "research/fse2027_revision_20261002/trace_evaluate.py",
+      "prior_sha256": "1334caa28c340efe70922fdcfa1f3d5d1c97a1fff4f396ef462b063ad2554514",
+      "release_sha256": "499c2e8c159a52117357ddf5b323ab325072580d21061aa5eec28f799bf83fa4"
+    },
+    {
+      "path": "scripts/analyze_action_conditioned_budget_advantage.py",
+      "prior_sha256": "7bf02d4e580fa606bc29160a31dd41ab311493438bb35f32fcadfce92e4752a5",
+      "release_sha256": "6eaa3a9141f5e5ae6a09d7d61f4d290169f6ef3150d61a34b3717ccf89b8e237"
+    },
+    {
+      "path": "scripts/analyze_action_reallocation.py",
+      "prior_sha256": "c55a0a9c53c979caec6f6237b14761a6f586f3aca81d9e48a52e047447bb619a",
+      "release_sha256": "728f5767d76bdb67591ed61e0c21afb5fa0d9391411b0a20e4aa2e74fc761b22"
+    },
+    {
+      "path": "scripts/analyze_allocator_association.py",
+      "prior_sha256": "ca033c08e5afd8b8a4745fbcdd08c02daf55c8c5707742fc08340d2c755979f3",
+      "release_sha256": "c2787dfb6dfc1575b3ec429de53778eca2f02b448592a011512c343941164f9f"
+    },
+    {
+      "path": "scripts/analyze_dap_dataset_external_baselines.py",
+      "prior_sha256": "6ea3efe0a0fa8ab09c19717ded50fd05a09ff61996da01c527452dcfa1f7fbb1",
+      "release_sha256": "9b7628ce34141914d69a12d30c105bdbd4aef261f543b1c0d9aef3756b4f3014"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning.py",
+      "prior_sha256": "65a3fe49d59338a8f2fff42bfadb1a9ec34de1a4bca6b424ff2ece45ae6f9de3",
+      "release_sha256": "d0e45356891c13c1c16b92201ce7df1caca3528cd315ae62a6f89450a96c053b"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_dataset_specific_baselines.py",
+      "prior_sha256": "b2e4b88b85c940cbd62c8df2968bc1fc81950abd28ebf5d27428abb10a73e287",
+      "release_sha256": "da2ff4af5c4cb602507a4447010eaf3aba6406e3a8bc8498d7be2eb43c2c7d7b"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_dataset_specific_stabilization.py",
+      "prior_sha256": "3887cf82882ed7e9ace799738dea10178104917113cb97ce6a574844185c0283",
+      "release_sha256": "8fa386b570210093ff67df8512c0ed451fe3247974eb5ac3c1cf29a6c6683712"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_dataset_validation.py",
+      "prior_sha256": "2e19cd8401ff3420b4ec76ff896349bf8c3e4f3cf19f0e9b4fe787e05e798a1a",
+      "release_sha256": "68dfe1063e65cb7e5ec73be22b474bd6d5d5393619344bcd50ecb6b9f16fefd8"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_frozen_temporal_test.py",
+      "prior_sha256": "cea2266ca30eadfd5c1f8cf024ee95830b8e87fea8f4ca14413e0abbe6ebf431",
+      "release_sha256": "35672615e2ecc1deb125250aa23959262939b0e89df375b69d1686c78aa0a49b"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_k8s_robustness.py",
+      "prior_sha256": "7ed090c93753d7a17ad58ef66e12fa0946650ac670d0c2fdb32430943a1e90f8",
+      "release_sha256": "801f539c5e1c9a422dc973bcca0e57a67458db48941e0eaf15411b1d72d8c007"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_paper_closure.py",
+      "prior_sha256": "566fbafdb02e168781b153ac11486dc0ea0270bf8e3ab9a005faac659985207d",
+      "release_sha256": "a39ca8bc97490818a92b24ee3f16711ab564df7b99ad9f557cb8bb373e6c9d79"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_paper_closure_controls.py",
+      "prior_sha256": "3437dc54c85df23e7145cfbf0db8c9ebf99a5523d2cacc070c57159bf6471dee",
+      "release_sha256": "65c078630ec88e100268e7e5f4d5a2bd862d3760d250d5f42cf4ffad9cacff98"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_pds_adp.py",
+      "prior_sha256": "4ee3ed1a96b74b3e3439071cf392b128d1788341a8f16995323af84010e22ef5",
+      "release_sha256": "9973dad7d41a541ecb5528821dcd0d395cb7860f933397d705bb8f265735d317"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_recent_sota.py",
+      "prior_sha256": "463bcfa05dad8e9c1b5bfd1ff8d595311aace483df3c8cd2dce969ba0c5f6947",
+      "release_sha256": "c6cf5eb51c4bb867de1196f3002a581c24b82b34c6d673ed11fef3e1d088a987"
+    },
+    {
+      "path": "scripts/analyze_direct_action_planning_support_adaptation.py",
+      "prior_sha256": "c09ed5f291d8904f75dd397067bc9aa6178098042d0d928b049111a65735a222",
+      "release_sha256": "13c3ca0d4589abd949499db0b37ba3045a8dc19ef802c7d1532f1ee7ba4b6d23"
+    },
+    {
+      "path": "scripts/analyze_direct_action_value_selection.py",
+      "prior_sha256": "3ed0e8235e763dd5f8c09561b6dc9e0b193a9ac8983fdeddfed3ac0fa9b6fb4d",
+      "release_sha256": "41fd0a413a3270d45f4362b3f88e729a596871fe175f0953673418bbf9c56fbf"
+    },
+    {
+      "path": "scripts/analyze_direct_action_value_selection_full.py",
+      "prior_sha256": "a622eb74b703111bf1139107358287e9674260f53d44eadb3609c38a899a2b6b",
+      "release_sha256": "02011f5ad85d87947edd880edf47a141654e6da0cd51ac99bc56f307dfd587f0"
+    },
+    {
+      "path": "scripts/analyze_dp_reference.py",
+      "prior_sha256": "e0df7fb68ddfe11c535666fa244d0db99d334a4728b3e91e186ce973931b0155",
+      "release_sha256": "d42eb7ba9b2a0e7f6d18c57f40d3f2a37896b4d26b3a8c269af20a9d41a98a89"
+    },
+    {
+      "path": "scripts/analyze_dynamic_shadow_price.py",
+      "prior_sha256": "caa61a7b69137b3ba136b4e99feb87c75e68987808569156b96bcfd978352cdb",
+      "release_sha256": "195f87edd57ed107ca9cb696b12c5f8b1808c06cf6a2046b9618dc4c87342612"
+    },
+    {
+      "path": "scripts/analyze_hard_coupling.py",
+      "prior_sha256": "c07c12984be0ecdefc209d9c9320fd826a3ad3b4c039705410d742da02c537a4",
+      "release_sha256": "49f63526143a60f3c05d370a7a453a6ab8e0746886b38fa0b7ccbe4a0dd69145"
+    },
+    {
+      "path": "scripts/analyze_synthetic.py",
+      "prior_sha256": "7c68033eb35dd74fe1932133f35e7488a215560f73fe1731a760a35e8e054d6a",
+      "release_sha256": "54049ec705a016add2650e0b37c6e45dc59d04389210510730fb78bc044119ab"
+    },
+    {
+      "path": "scripts/build_direct_action_planning_paper_closure_evidence.py",
+      "prior_sha256": "7b91e0300430af2f0ac9484803d8c60a02a9c58fe97f295c40489bb07a69fd06",
+      "release_sha256": "12e1292ec17d3f4d909afa887da35b4fcf2e8a2900456533369f8482340435f5"
+    },
+    {
+      "path": "scripts/build_final_tables.py",
+      "prior_sha256": "7f0850eb54c3bddb31b96a287539f3be9ebfb4eb56aefb0a33a4b357924efe62",
+      "release_sha256": "20d3a6047cc6bbc6467cbdb52765dfcb4cadbbdc61eb04bf0efbe69d4ff9690d"
+    },
+    {
+      "path": "scripts/generate_direct_action_planning_paper_closure_figures.py",
+      "prior_sha256": "f973ab785e46ef9bbf5ba74f728061a198e4554f5adbcfcadeef3f5b75f4fa2d",
+      "release_sha256": "30b606b8ffe21f23be86a1543ad17e096c013fb6b0c40902e9fad2a3e9fdc5e5"
+    },
+    {
+      "path": "scripts/preprocess_azure_bursty.py",
+      "prior_sha256": "e9631cb17507c17cc8735c62f76fcaac4a431ac7066321e79f44130979c4fed8",
+      "release_sha256": "126be0b1c7081c3d594ac55badbbcc06790e8b6665d641d1b2405b33f5ffdb1f"
+    },
+    {
+      "path": "scripts/preprocess_azure_trace.py",
+      "prior_sha256": "53df901aad08bdb7726e65d57abbc1a348f30afbb4b0afc8230e66b15e704149",
+      "release_sha256": "34d68625c39acead16ca649f9018740bb4882017282daca12817197b92e6e743"
+    },
+    {
+      "path": "scripts/preprocess_gentd26.py",
+      "prior_sha256": "f9b2a890b2819287f0fd27b09b181773278ab2f54e9323a5ee586861b7800c90",
+      "release_sha256": "1049ab69d1533d7c647ac56650b23953b288eb2c5fdbd3f94f1c598420bc9b67"
+    },
+    {
+      "path": "scripts/run_action_conditioned_budget_advantage.py",
+      "prior_sha256": "e6ce85dfffc0bdb6eaa0a9b33fc3608dfcd451cfe09a2f06090dfdb22188f3b1",
+      "release_sha256": "ee2a1330f6670bbf6823d33b15873a848437a94478471ed0525b56c71b0d876d"
+    },
+    {
+      "path": "scripts/run_dap_dataset_b4_sensitivity.py",
+      "prior_sha256": "e43b3c4dc6e596a7e76e4bf2398c2cce705907bb2775aeca5ff6749bfee376ba",
+      "release_sha256": "84f23667bb87dfa8e57b4084f14e5c5b0441e14035bc4b62a82787d31ffa7195"
+    },
+    {
+      "path": "scripts/run_dap_dataset_external_baselines.py",
+      "prior_sha256": "5b0e55146b469c0f7310d0373e6a69c3c7de27e00864b01e3bf03fad49e43d7b",
+      "release_sha256": "b65d88e3be5d4913cbd3f53ee58ac9c2cb0fa2a463901a66715918086418cc8b"
+    },
+    {
+      "path": "scripts/run_direct_action_planning.py",
+      "prior_sha256": "548a8b3727049ca5801dba24b94f47e2fd69a8df88b9d680f42fc3dd90548dcb",
+      "release_sha256": "7972ee0b7d9159633e739c5629ef21cfeb038073518e83f60c3b3df2ac53cb8e"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_context_value.py",
+      "prior_sha256": "8dc1609c9231310e449e931694f8fd7dcdb55592f2ba9053e1504b02b07695be",
+      "release_sha256": "2086cb7214ba1eaf5694edfbcc481e59ce7465e7d2ffd4de4e6297211a1b06d5"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_controlled_aggregation.py",
+      "prior_sha256": "bae3701e6a7594a776abefe30505b6db67931f8470f934c2508401eff60de081",
+      "release_sha256": "9e17fa4b44b3af0785e955fe277edab66edd3ed04a567f5bd88129d8de4e3c3f"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_dataset_specific_baselines.py",
+      "prior_sha256": "c5b66054b082f1c2857701fa8e4edc4d0c746318fe8a524661f168e2df90142f",
+      "release_sha256": "e139922648e54d592eef55132a9cdf6d19f13bd0372319d22e47032974cba127"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_dataset_specific_stabilization.py",
+      "prior_sha256": "29120a4ff2051b7f9475fc2e4610c5cd2f5b7f9d7e5bbff006b012dc8bdfbc84",
+      "release_sha256": "763c746df1a5e0f27f363b2b1d3222d384a54dba4cfcc8b4b70dabaa0ce785bb"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_dataset_validation.py",
+      "prior_sha256": "d310e6c704e78726892de4cdb01e231d9f226039c8c54f1ae9ff395ab1e911af",
+      "release_sha256": "7488db9c7aab285f2f773c47b2bc2da42ee4c560a103313db43e22fc3c394c66"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_frozen_temporal_test.py",
+      "prior_sha256": "43a312b6a5d9fa3fef16b5b8df129444da01fd61a438b3f8ed24aef424189a2a",
+      "release_sha256": "9f73dcc443b1dae70c8ad91bd5782d05101d00bff2756c6139c601f6d6725816"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_k8s_robustness.py",
+      "prior_sha256": "2b4824b1103bd78d274c1d44af47d8e4aed3cdf91d60fa5656f6d273a98793fa",
+      "release_sha256": "71c6da5ad0bdb65f137b4a01defdcabc4526480a33be1f845a4bfc400bd4c4ef"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_paper_closure.py",
+      "prior_sha256": "85b67b59c09ad3e389477302182088aec6a40a7a2932c4450ed813713f41d245",
+      "release_sha256": "087640662cc74323faaea2c353c41389766a7de46e15388a747b811258f45b66"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_paper_closure_baselines.py",
+      "prior_sha256": "02f1d3bb9a437aa608622814bfc49293867d6ebfe636bad14ba9321b9a857af7",
+      "release_sha256": "10476eab11b3972eb17c5cab91f0d7dc19ffa2ff59b711fca1a6e5dfae0472b3"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_paper_closure_controls.py",
+      "prior_sha256": "b5ed80a1caf3ce995dec9ea896f062a881e596e1898b4468362ad9a9b113a091",
+      "release_sha256": "1c999abb02d9a245761941b15eee5868efbffb685704c8a3268e028c3679d07a"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_paper_closure_temporal.py",
+      "prior_sha256": "61578825f31e925a69323d61b291d98b771b478f513c0cd73cd9e479cf239102",
+      "release_sha256": "d2a9ddf84bba97510b0a897e55f5323b80d4fccbf1d2326f1d23d99b953b545c"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_paper_evidence.py",
+      "prior_sha256": "058451060aecc8da5ce686fa3665afba36820a6710b5bc2e35a695e48d2c8b71",
+      "release_sha256": "d3f14fc01bc500f96b8d8b1cd4f834720bf4300f40c3980cc91d0f1ea40c618f"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_pds_adp.py",
+      "prior_sha256": "a2c937ac20152899af10ba9099abfc36517870568e9c1dc2c1df8e83d7e58448",
+      "release_sha256": "13d8914ac5a8a19f439aba1fa98ff5a98aafb4acc7582ff2f43b65a911aa950a"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_pds_adp_temporal.py",
+      "prior_sha256": "962aba5f1a6c1025a3a3820ab31da57576dea9a906fb1f59ad6a19697f55de75",
+      "release_sha256": "ae0ecb0383aeceb5093a50451c45ab48c72adf616485e79d21d0eb74f34e69b0"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_recent_sota.py",
+      "prior_sha256": "2493bdb969a45d453abf228656afa48732e3314d05c827869b4f6a195b4c7d17",
+      "release_sha256": "fa45f31344ab2ef7514502b57aa8abfd20d6c0b04e79fbb4fff763c9677202e7"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_recent_sota_temporal.py",
+      "prior_sha256": "dbb7262cb78a32bb4698d8203a9b7302c2e1e6bfa1b85b49d0f6c0487b70ad72",
+      "release_sha256": "5930096c03ab167e865d8e6d0c56c82b3c7009f6aab9eca15f7f447ddc0f125f"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_repair.py",
+      "prior_sha256": "8ecbb0fca245161ff54ec16d1eb67116bb1f2a9a65ff4604f97cc6ecff1cf56d",
+      "release_sha256": "d780b495fcd8ff791b13ced3a812a7cb5ec20e820b6ede372e797f96d159b9f6"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_support_adaptation.py",
+      "prior_sha256": "582dd1b72b214d89c947f820e66e7131b05c2d1be382c901ba54603db384017f",
+      "release_sha256": "60bce64c1baf358813efc76284b9c0380c007a90af5bbd071434288585eba2bf"
+    },
+    {
+      "path": "scripts/run_direct_action_planning_value_refresh.py",
+      "prior_sha256": "4b76d0bc67c0c9bf4952a41e77670377592691405eeae4cf550e99a4d77c818c",
+      "release_sha256": "621b154f3cefd5f61b3794b6bd1a253e7a8a7ae8d304776cbcf108dff63283cf"
+    },
+    {
+      "path": "scripts/run_direct_action_value_selection.py",
+      "prior_sha256": "5acd9ff10daf456dde9366e681058782d5dfc1721a0c5c16a2b30f4312f0260f",
+      "release_sha256": "e336c43c9e0ed3025dac5a2206e920cb5daec988e79c67028e1f7c1eb1c52a25"
+    },
+    {
+      "path": "scripts/run_direct_action_value_selection_full.py",
+      "prior_sha256": "b32101db561cad4c20162a82e3b219e55452b3f834de8d5566fec248354cec87",
+      "release_sha256": "0ed9984312dfb4dc12f83ebda8ea8015e1c577dce76e9e285152860da39c5a66"
+    },
+    {
+      "path": "scripts/run_dynamic_shadow_price.py",
+      "prior_sha256": "0e16c3d8c99bb9c6460a759483e18631a777d442073a861d51098d2cbc518f1e",
+      "release_sha256": "ba08e9bbb603d70358c4347b3db5272f2a9047ff745f3ad467c41424c06b621a"
+    },
+    {
+      "path": "scripts/run_experiment.py",
+      "prior_sha256": "e535f2f070e7b44e623ccbe314104d1ab05d4b6fe85b3a767b24ba00ed3b076d",
+      "release_sha256": "efa6289154322f68a20d040bfbea649e86c9cba64f6e7289e47e3734a6527397"
+    },
+    {
+      "path": "scripts/run_pipeline.py",
+      "prior_sha256": "6bb31761bad9403bb33bacf303e7f0781b5b7ad9fe8f38da81265740edad879a",
+      "release_sha256": "39cd605d18a0abb195e383046dd96810b1a76754f5b2d71c8513af9b9b384b6e"
+    },
+    {
+      "path": "scripts/run_trace_pipeline.py",
+      "prior_sha256": "7d435922db207519b6b59e3a79e550551c58d6e16a6fc9e30a82eacd9ab61cb8",
+      "release_sha256": "e40799534dd27bbd9592678942a4ced6aa1f17bdaa4f481a114746b97393046a"
+    },
+    {
+      "path": "scripts/run_variant_matrix.py",
+      "prior_sha256": "70e0c1cc9d6292202c02b6a01b8231dc290ed8964dd1f320cf389c6600f9b7c8",
+      "release_sha256": "b2feb4e013eb9a0a2e718277cda7e713037fae7cb70fcc92aba7aa4d6593604d"
+    },
+    {
+      "path": "src/dap/__init__.py",
+      "prior_sha256": "80c45989d4292c599ef60cd21c9b632347487bc2a329b4d60613a6d97f91ea73",
+      "release_sha256": "67871da25a50e69d156865c2606fd0ce4fec880e9c8b62f159ad44df8094012f"
+    },
+    {
+      "path": "src/dap/action_conditioned_budget_advantage/analysis.py",
+      "prior_sha256": "30ae2535fa557bf4389694aaf6b7c9a57d8166e3a892a0a89d325510777e974d",
+      "release_sha256": "39e06b72a2b62784d27b57865e905a4e2073d2db44b8cd335d0703ad2d82d3b6"
+    },
+    {
+      "path": "src/dap/action_conditioned_budget_advantage/experiment.py",
+      "prior_sha256": "d164166d277f7b2093ef1173743db46aa4f721773cbdcd9c581a8fc86c918af2",
+      "release_sha256": "739bb4333a5e47b5c1715c5aaeb72b08d055691b1c580c0e999574f891a687ef"
+    },
+    {
+      "path": "src/dap/action_conditioned_budget_advantage/policy.py",
+      "prior_sha256": "2eb2959312d34519d7a88c35cc4699c9a4b2108b4cb58dfa599425acbd853034",
+      "release_sha256": "19041e3494ff148477c4b9e006327e61e08717cfed9a1ff85cab94f8045b9d6c"
+    },
+    {
+      "path": "src/dap/action_conditioned_budget_advantage/training.py",
+      "prior_sha256": "737ca1fb1835f76d0880957d070b64f9f38c369591c79a3ad9c701975a0fe3d8",
+      "release_sha256": "83705a81d80cb26f15c34fedf1da55da03c122aa8a38c823440fb5853a8abf40"
+    },
+    {
+      "path": "src/dap/agents/ppo.py",
+      "prior_sha256": "1a8e38afaad9d132d257b01ee83cde9208caef08b8774c3055d2aea906f7635c",
+      "release_sha256": "8b84c9fc1ad9011871387ec9de11a782459a441208d3207589058ffbc4828620"
+    },
+    {
+      "path": "src/dap/data/gentd26.py",
+      "prior_sha256": "6b2db4ab9b4be3b1c465e6836bfe96c8ebb1872972bb726088eba6634d186896",
+      "release_sha256": "a6f8011d2cb817543680840af3dd7533526b6d87f581df87a94a246594f76861"
+    },
+    {
+      "path": "src/dap/direct_action_planning/analysis.py",
+      "prior_sha256": "95b48e7018945341939da9fadfc1b85e0bbc8e942b7a6cd8c3d47346bf9631f3",
+      "release_sha256": "685015d5eee6ea33593ab189504959d941b9af094d9d481e37bbf97db93cd084"
+    },
+    {
+      "path": "src/dap/direct_action_planning/diagnostics.py",
+      "prior_sha256": "a0996c4059410bd434e15b8ae5af856ac0c29cb37fe18485ed8f3b2855f2e50f",
+      "release_sha256": "7ec00df5ede69efeb60726334cdb757876b8b5802f3677bb686393d8c69b00b5"
+    },
+    {
+      "path": "src/dap/direct_action_planning/experiment.py",
+      "prior_sha256": "2d0425fb55b45fa0dd3f6b1925bf520d3bb210face0bc7308fd70b9c69d28a31",
+      "release_sha256": "de91a096fd0ee3c5dc4965a3d9b4a61a73e6698b2927e0641a675239849a17cb"
+    },
+    {
+      "path": "src/dap/direct_action_planning/learning.py",
+      "prior_sha256": "c29d043b909d838911f75668022dac1423b55d23381e088e004864810ba03d12",
+      "release_sha256": "5ec3c85a9d2364f335e76f450cc60c29fa01562f924051d9486f16e1e1a87ef5"
+    },
+    {
+      "path": "src/dap/direct_action_planning/planning.py",
+      "prior_sha256": "f968a8835e26a9a27a0ed96ab09fd1ded17637d160b98d39a8502aa61ca8342b",
+      "release_sha256": "a424d06024de6eb11a1bbbafc4069ae63a4c4de357f4801f6064f58bf3358f2f"
+    },
+    {
+      "path": "src/dap/direct_action_planning_action_effect_sensitivity/analysis.py",
+      "prior_sha256": "fde8b61aa8cf9409df634742bf0d51fa37c030c761d44032a8d115f19b5d90fd",
+      "release_sha256": "62828608dee8e9277f951e8bc412eafa68a75197b54af62e1af98e78f25a9b12"
+    },
+    {
+      "path": "src/dap/direct_action_planning_action_effect_sensitivity/experiment.py",
+      "prior_sha256": "2022470b774fd8c0f61d2977e701474eab7ddc77ee46b0dbf418949077fbd29a",
+      "release_sha256": "675ff868fcd21aefcc8a6a0108ddba717121c84f61228565be4c75915d62297e"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/aliasing.py",
+      "prior_sha256": "8f7f515e35bd543fbb21bb60226f0b174e0738ec0f0b580cf0184a3e0c941c7b",
+      "release_sha256": "553a96daf4344025ddda7af06dda79c748d700d112b1016272eaee9e1c9a9c5f"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/analysis.py",
+      "prior_sha256": "39a333afb32cadea75371915ff8c45e3a085aa129e7bb929d9ff368c4fbfb0b0",
+      "release_sha256": "7ebf6a979113e0f6c6bcd17321b559a3a5c9145e9f9b160fff74a075d29c1fc0"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/data.py",
+      "prior_sha256": "4c514e11e3563ca1c3d04472682905bde47ee39351f0dde21732ec08e80f13c3",
+      "release_sha256": "bb6eed5c1015238c054cfe489bff2cf23cc8825192dc7f8e21122d59cb20ac5c"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/evaluation.py",
+      "prior_sha256": "ad3b3fcad1a490a6a55dec673cd9ec7d2c982aeedf274c10862597e0b1150012",
+      "release_sha256": "87c257147b390755e9735b6325efa7cfded6f89b0f20cc639f4756d153a3a148"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/experiment.py",
+      "prior_sha256": "72760602114f742abc1e928315e29476508f29b358f8a76eeb398a2db5597514",
+      "release_sha256": "50df34ab7255f4221f6bb57f619adaca7032741ec2d10d6a23ff60ce3ffdeb11"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/model.py",
+      "prior_sha256": "70232c5981ff04b07d8ecb57251a21f23e5b879009898da62dd274b0e4aa7eb0",
+      "release_sha256": "1a00214c6cab60d762111b08c49f411328319612b2f81320db0b27b09c048f0b"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/planning.py",
+      "prior_sha256": "9288798e90a8cca31b455863b7a9c7380e51f1450cb1b196ffa539b302d5bc9b",
+      "release_sha256": "2bdc22f91124c705136276f07d165580d1118bad7d6f050a9707efcb21b868b9"
+    },
+    {
+      "path": "src/dap/direct_action_planning_context_value/training.py",
+      "prior_sha256": "868622e0a9b99ff70d21ff3b0bf95893ed88d2f773df1855c9ab9f5c076f8ef2",
+      "release_sha256": "1970954629a58392baeb8d86ea75042cdebdb43cb2178d42bf7a8421ae7ae066"
+    },
+    {
+      "path": "src/dap/direct_action_planning_controlled_aggregation/collection.py",
+      "prior_sha256": "5b69705eead4fbd60546bc516d9bba87193e46db6783e3c592a5cbb7876ebc57",
+      "release_sha256": "38109a22b8d685575ec57796863262e71140eb47ed5d590bf739042e20b16dac"
+    },
+    {
+      "path": "src/dap/direct_action_planning_controlled_aggregation/diagnosis.py",
+      "prior_sha256": "5e2318996ddbef7eaaaa15aea836613fb18e3fa0fce83f26bb61fd279554ac9d",
+      "release_sha256": "b3ee96991e27cb3823619f6addef49d1caee8a41a31b87ab5caf494b61acb1fa"
+    },
+    {
+      "path": "src/dap/direct_action_planning_controlled_aggregation/experiment.py",
+      "prior_sha256": "06efe568ce4050d25dffe4a26973fb51d14b37b952a0ab17dc72b4fd61d26b38",
+      "release_sha256": "9bf3a1dd088a808696330a7598d628e9a059fe8ddfe4cdfbc033a347a4601abc"
+    },
+    {
+      "path": "src/dap/direct_action_planning_controlled_aggregation/replay.py",
+      "prior_sha256": "e103bf6735520be20035f3d95e5a66bd59cc226b497244164d817ff5af2b864b",
+      "release_sha256": "9bc4b793364714df885d350725adb07ec5d21d6b238bcafdcaf8af6d4efd73e9"
+    },
+    {
+      "path": "src/dap/direct_action_planning_controlled_aggregation/training.py",
+      "prior_sha256": "5458605492786f64f5708324b74e6bcecaac11a579992332808ed4e844151a74",
+      "release_sha256": "2ff5102db95a2a49a84304ffebe05168ffc1c9ec54a435797d176e0e044b5447"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/analysis.py",
+      "prior_sha256": "e595a7f3446cb24291cde7dca8b5c864c0e484d39ba6118e1715f663e95cbb35",
+      "release_sha256": "3f56520a6e980f1319d8e7d03a97232553405053af17c85e811833d2c8dfdc9e"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/budgeted.py",
+      "prior_sha256": "5ee057eb31bd7a0621713b62977677370dbda73c1cc4976a66dfa7ebb0d9c9db",
+      "release_sha256": "4c352b56a66a9642f41ba37f70fbfd5e44a2c9bee5947ebc2aed2f3c390eb193"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/cpo.py",
+      "prior_sha256": "f0d275adf8a6833dd0abd845d93c2974972855aa156e358257341dcaccd6db54",
+      "release_sha256": "41c24518fa34b4ba1a280a294e24676b57d6ada1068456be3e3badf930a68782"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/evaluation.py",
+      "prior_sha256": "b66a72d40879d3ada35066cfbbcb6ac87eb263b62a720707f0cc7b7d830376a6",
+      "release_sha256": "68bdebe588a320a6295f29f368cb65a952f61278607e9a0498ef9def48779532"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/experiment.py",
+      "prior_sha256": "030e3f34f41837ca6a9f341c6aabae2eae6b727c4a872636cea5d52f551ebb49",
+      "release_sha256": "cf6600524408ed0df353f96c2867f7d141ce090eb8e66587e63cc2763c6eba56"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/rl.py",
+      "prior_sha256": "6af4a78eb86e1f7d8dc342d87efadfcbc9051021649c67e753276008e0cf0fe0",
+      "release_sha256": "dacccdbacce811df735a8f41e45beb6e5172774288cd1dda7debbc6d1fc2aa8d"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/smoke.py",
+      "prior_sha256": "4c2595ad5a737b415fc913f23d01992eb4b8c556aab6b81ea95dc04365b1898b",
+      "release_sha256": "3c7c5a1de4e81d417f43eddfc978c65cc4279e43185530da79103d0629603427"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_benchmark/tuning.py",
+      "prior_sha256": "0e1e6463f63c94ac06716461dc04d09ba12bae3640a6a4490fef43985320a7fb",
+      "release_sha256": "fafab44a1c1aa567bd696533238ef5298db3fb066e1cdb480930fd0f7aa22975"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/analysis.py",
+      "prior_sha256": "6d810a95577c3c447d7dcb6db5817936923669eb2f39d5907ed06552cbabc332",
+      "release_sha256": "e12ff989cf52fdc167037fabe7a51e23e703af5900d903cb94e32b6e3596a18a"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/baseline_adapter.py",
+      "prior_sha256": "0249482b8fefa6ba3bc9bce32f32c44fe7c6cb167fcfa8ce8e9b154b6bc4393a",
+      "release_sha256": "577063040641c9fb41184b1b3116454a42d89a2310ec0e4f5dfc176ddbe9f310"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/baseline_analysis.py",
+      "prior_sha256": "023a43faa8628cb3482026bcb5d0efa6f8001d5ac38ef9408bbef9daad8f6424",
+      "release_sha256": "93b45c85b9c1914f5ebb744578ce2eccbbcf89ec657faaead2c1662b03d3041f"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/baseline_experiment.py",
+      "prior_sha256": "7990961d83aacb6fe0558247923e3d8298f2d24e8a671f7d503bda08ad4ffb74",
+      "release_sha256": "1dc395d53f5e96f1b35c6a8f892f0b4b2ab3fd743ce9a8e2267a2cdea014d620"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/calibrated_protocol.py",
+      "prior_sha256": "078f92abd5940415a6aabfcefad89db79618c6b84347f9e9e73ba4de9914ef98",
+      "release_sha256": "610e1d46eb9b9f71d8e663e59ed079e7068bb400cb6dd4758fe45890a98c6de1"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/environment.py",
+      "prior_sha256": "9d190ba6e79aa57244b94a84a34796d8b18631ffcce203bdabcec2048635bb7b",
+      "release_sha256": "9c0bd6ca8f70ef053aeaf69e82b98d4d9ad1e575b4707adac2e639d03511444a"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/experiment.py",
+      "prior_sha256": "78b61504bb6d17de3ed63f67a813e74a0ba2345f1ff32c7d007f8e2310383b18",
+      "release_sha256": "217db69e7f58fac0d74c21bc1cab9bcfb3fc8c18241d5687d1244d8cb0eea6f5"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/models.py",
+      "prior_sha256": "628c8dfa9799638b03d2ebea8b2083268317079ac4e2a9be2bc9c553879e98d6",
+      "release_sha256": "b52e884ee0805a95f3d0672a32edd6a4557957cc663ce00536219341a465f71c"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_specific_stabilization/training.py",
+      "prior_sha256": "454875b0faf2046d27b4c332ef1f72405e526810864c34822c0cdf50e8e3dd60",
+      "release_sha256": "1f5f5dbbbd817484a63ad3b5e002bd75929f5372888bdaf6a38929c492fb21c0"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_validation/analysis.py",
+      "prior_sha256": "01d71c6b1f07b61039defc4b95bf27236c7744e5905de64db6b8dbb221d49cdc",
+      "release_sha256": "49618a8ed346083023fbe42c500e4ed64b7331cd12c8592ad32f6e8609dd0241"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_validation/data.py",
+      "prior_sha256": "70f0f21ddf3d569ee0c22538c1edc3330dbb82e52b292d1b8ec037c68dcf607a",
+      "release_sha256": "ed2811c6eb8ab94701623cdb61e55c65bb5beee947c11eba0e0e66265ab401ab"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_validation/experiment.py",
+      "prior_sha256": "eec065210487761898c77e61f6a1d4b032332b65dfa17f040b439da3f729bc4e",
+      "release_sha256": "73d0b8e2371473a0bcabda70c326c3db916718835938c047c89138bed2b763d9"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_validation/models.py",
+      "prior_sha256": "76e3e70df54f49517d2da31431a36c039a865c53abf3132065cac55dfef47864",
+      "release_sha256": "3df097a557c5b46c57adfc59f95b40bf4d41b973ff1e9479448296b7817de262"
+    },
+    {
+      "path": "src/dap/direct_action_planning_dataset_validation/training.py",
+      "prior_sha256": "4adf680ad4ad823d5dee8b6ab082b8acb49e1a1b1624f6d27943bfd1ed8f0b71",
+      "release_sha256": "c6824017c826dd946d93ea1771e82a8f922cc2b12f153a33980f24e4aac81281"
+    },
+    {
+      "path": "src/dap/direct_action_planning_frozen_temporal_test/analysis.py",
+      "prior_sha256": "453e8ef8ac2e13fe895f1af42474b1edaea89b9e4ca2ced7ddc53f130fc9b2be",
+      "release_sha256": "9188ad4d14062b758bf72d6f66031d39a0830b1f29154388bc399969587eca87"
+    },
+    {
+      "path": "src/dap/direct_action_planning_frozen_temporal_test/evaluation.py",
+      "prior_sha256": "25e8e1c8771471587dcbbe7fe74a887206e642de750337b2f4e321d7f162e1d7",
+      "release_sha256": "ad4350431713ad2514992d394333f4201daa7c97e3369d552b84538ae8422a52"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/analysis_a2.py",
+      "prior_sha256": "f1e19746e658b6e7cc50bd3ebd807c6d90f94cd50b811d64a85a36324e3b1b8c",
+      "release_sha256": "a19fdd532d49eee535032fbd569816804a1577673b8645c7d2ffd580887939f3"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/audit.py",
+      "prior_sha256": "d62b3cddb0443295cc51202a7d1f0fcfeea438aec036e86b6e7ee95d8c6bc563",
+      "release_sha256": "1d99d7b46839a1bfb259ccfc1637e9c03cd4799c8d02e645fdfe7ae4b1b798cf"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/audit_v2.py",
+      "prior_sha256": "61e0a0602efea3e7cabe1062ae63aa68d8a4df9f39bc15005cf69cf0cda36e9e",
+      "release_sha256": "f8fce774f9797675b29068500b0bb35f2a9e011ba49825b90ccc7b607975c57e"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/formal_gate.py",
+      "prior_sha256": "4805726363f4f651371bae5a1ca19a4d2cc243e7449da40a4cb4e198c081bc07",
+      "release_sha256": "2439ab3b55593278f06f94a53ca96cfd0c5883f632379491b04ccb9dee72a09d"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/model.py",
+      "prior_sha256": "13d95144282a600e03a5bf4bdc6746cbcb767de6e0ad6e6d1c1d3cd8ce0e1374",
+      "release_sha256": "5655504abed59269bf6e3e8172e1f15b7aa6caa2b998d1dbcba59c565b31ec9e"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/runner.py",
+      "prior_sha256": "9b52dbc01c3e4c218efc8e4f9aebc068af9f3e45bfa8cfafbfbd08adfb561bc0",
+      "release_sha256": "5305c692b2962f0d4e39bab40a5e7fc4639266ad3a550b9068c4eeab795950e8"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/runtime.py",
+      "prior_sha256": "e5ac148a6ab44303aeec3790c9aea9844eaa075440fce163c5875f945328f80d",
+      "release_sha256": "0f788be7d96fd3eb02b6929caa7700f7000fedf8c92efa0aed77a95cbbec0a2a"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/runtime_audit.py",
+      "prior_sha256": "a91be9228e9cf28f3ea31668d2264ab837d23cd30f2ed71460d283e2886f472c",
+      "release_sha256": "a9d8f2bdfeaa04ae070cdb07f0b1a25d81b02648db2f7380340638cb781ec00e"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_cost_calibration/training.py",
+      "prior_sha256": "1c5722ef8cfe1e0bd5311a2e5b6d8c5dcebc6da0b4e11616d62b7bafa7b05612",
+      "release_sha256": "68ed3ebdbdf0ed95a46787a2060dfc4ce895c0e81762b181ba6248d498b820be"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_native_comparison/analysis.py",
+      "prior_sha256": "3956091b19854d66b4a3889e3a6806aa260c3f161fae5a52a0f05b452ffaa5f6",
+      "release_sha256": "807f86b5b7b095744badd973ea7fe96491df4e219515bf44084b97c7d921fad1"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_native_comparison/audit.py",
+      "prior_sha256": "4bde1e12729418c343d18591cd384fd44c199767218161d9c58a55259ab3bfce",
+      "release_sha256": "c099cb1cd9dc5e44c93d905b35f8fa756b33a3468493d4b1f67426cb214d6460"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_native_comparison/runner.py",
+      "prior_sha256": "5eafd61dd6c85e1f8b7554139f4b6a81b41c8dbefdb7b2f7398c0d918b0da38b",
+      "release_sha256": "bf1fdda56c934469582b640fd00b4427b26076dfd21342c0a8e7155873994553"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_calibration/analysis.py",
+      "prior_sha256": "3ec83f61d194346273f078ad810ada4fc8d7230a3b6028366c728359fcc36265",
+      "release_sha256": "a47c6b0dd75f22f243133d1de4f2026028ec3a1a1ee97ccb3abdc517e284f448"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_calibration/protocol.py",
+      "prior_sha256": "16d892690dfe1eb00efca36bee0c6b721bbc2c7e3ce44698274b1dcbc251230a",
+      "release_sha256": "61bca5165f94765bed890964542a074899d167766664a27ccf42cbb68798f871"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_calibration/runner.py",
+      "prior_sha256": "5431d865c5a04bed68415dd118c846e641870ad53f2e9a25ea22ed871b348d2f",
+      "release_sha256": "82ba9dba148712c1e5af512afe6594b32d978d39151323499c4621b4942177f2"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_calibration/runtime.py",
+      "prior_sha256": "264e3cb50cfbe69a0ca6e913f7db1aa99c2cc69d19fa32d035e4e1040cf74c9f",
+      "release_sha256": "9362986525a54247bc8dbb22ae92f5eac60af5adc5e0dec7f23495d9292298fb"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_calibration/runtime_audit.py",
+      "prior_sha256": "150feaeca85bc19ffc552f3762c38414e0ae875a266862cad8701e2dd3a1b5eb",
+      "release_sha256": "0bfd4101eeb918ddd7f83ba8ee5c2d527337f74984e03f3eb5b3b8d379b14248"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_locked_replay/analysis.py",
+      "prior_sha256": "cd3bc6b5f98cc404e22bd6b19a23ab5d3b0f1e77612c48dcf5232e832baa8e44",
+      "release_sha256": "835d66e01d99c18b7e881c0c193e942a5b930eaae612cb4c8e58d17e6b32d8f7"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_locked_replay/runner.py",
+      "prior_sha256": "43419cf990e533d30e6c7f292f4d90d81ce96b4ad260730becb0dda20c6960ea",
+      "release_sha256": "6d1fbc2724aed8f4033e8652ea9fb4ed7da948b9fe5187a29a885926fe03338b"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_locked_replay/runtime_audit.py",
+      "prior_sha256": "08e4d2f9dbfa97eac1d4f306c09c59a80ea524f1b5322edc84a68a30a5e9639a",
+      "release_sha256": "90d056b6c49308d1550882b0529898b2bc55879c0406a76a9432548b3028368b"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_validation/__init__.py",
+      "prior_sha256": "480dd56b4937476e446c4c0f95a3679802ce2ad1ed23b62ea36d5824dd815043",
+      "release_sha256": "a1417dd86907a332698c33c70394e7b5cc9840546549d6ad2910faad42e4059d"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_validation/analysis.py",
+      "prior_sha256": "db7058d90c1654868319784ef8765fbabf9a28c37ab94e46f40c695308d82322",
+      "release_sha256": "564e4f0272eea1126788103c2a894f77b226ea2a8089002b214ab30c5e421066"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_validation/protocol.py",
+      "prior_sha256": "9e6c10555f499b3bee3cac9dd42e4fc448eecfa63256287e2eafa8dc69f813f1",
+      "release_sha256": "686d0178bd8e5d8af919353556bca2be1ef56e2e3aa701bac64ed2fc6fdcd6ef"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_validation/runner.py",
+      "prior_sha256": "2beea85e5c9aa95eee03e670ea65267563cb87ed6c69215d35d2a026bb0c6adb",
+      "release_sha256": "6f5b54bfb6a5daf337825ff508c2b5613194e1c54ff8630f2967ba7bf19abd81"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_pareto_validation/runtime_audit.py",
+      "prior_sha256": "5e7fc484d213116f597b182302c2f4610ed4d305c3b71e4c2af60fb05054998c",
+      "release_sha256": "dcc75d700eea1ced30be9899a3b0a7a74aaafb0e0da9c39d8738a9e8f43c649e"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_robustness/runner.py",
+      "prior_sha256": "9c525a6ceaacd3cbc20b7f3b3ab2ec4990001dc5ec0be5240fe3f525d205996f",
+      "release_sha256": "15b79df63ed85eddb56efc2e732ec45aab96de5b0f796b7a388aae4797fda0ad"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_service_repair/audit.py",
+      "prior_sha256": "78968fa92f79b571e148ecd1cb70e6f8d63ab785d7f5584ee2a098a15595fe60",
+      "release_sha256": "dd08700f23670422a36f106a56b0acab77ce5311c6998907d4306ee45e62459a"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_service_repair/runner.py",
+      "prior_sha256": "ef13299d8463ebab73735675e8df0c6496b1bce0a1d4f1fa522bf12b6d4c2045",
+      "release_sha256": "681fbccfe5739c20fc60723db0344ec7e26fb2dd95da00c4ed78f63c4fc54b51"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_service_repair/runtime_audit.py",
+      "prior_sha256": "8ad305a7acd3c3a6821e77d41e40f7ae4692a774702d5363ba80efd1e638bb66",
+      "release_sha256": "4e5a2e0b543ab56d4e4fbc1c753cad750b07a3b1d91f46b04158a1098037a4e8"
+    },
+    {
+      "path": "src/dap/direct_action_planning_k8s_service_repair/training.py",
+      "prior_sha256": "53d34301eeba620be5c57a6f22a8cef7ac511b196ac155c5aa35e6bd2a63748a",
+      "release_sha256": "59991403f885dc5e500a64b8b62892482bbfbcbb96e7b0a8b7cdd7e13818e7a1"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/analysis.py",
+      "prior_sha256": "0db7ca65a9c5aca9d1f279bfb2cb0b6a83809e89337eb69b21a7de17b42d1f38",
+      "release_sha256": "803b4c3b7ceeb7bc15612b2a2038e7ae8e07b531727f9b0c52c41c79a76575b2"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/baseline_adapter.py",
+      "prior_sha256": "0249482b8fefa6ba3bc9bce32f32c44fe7c6cb167fcfa8ce8e9b154b6bc4393a",
+      "release_sha256": "577063040641c9fb41184b1b3116454a42d89a2310ec0e4f5dfc176ddbe9f310"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/baseline_analysis.py",
+      "prior_sha256": "afc883c25ba0180dd1f2339763228f5ee5c13244735acb8771b2c6e05e93e454",
+      "release_sha256": "5fcf7d7d6d618488fe4942af678458ea711ac04961a6ffc0656c5ac6502c3cb4"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/baseline_experiment.py",
+      "prior_sha256": "b80022d8c19120533235fc2d1b7f65ad228d5ba58cd3693810647282e443f100",
+      "release_sha256": "e7e02aed8f34b624b7ecf8b772dfe9b944737c68eb57a22a26ec8ed99b0bbdc4"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/calibrated_protocol.py",
+      "prior_sha256": "078f92abd5940415a6aabfcefad89db79618c6b84347f9e9e73ba4de9914ef98",
+      "release_sha256": "610e1d46eb9b9f71d8e663e59ed079e7068bb400cb6dd4758fe45890a98c6de1"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/control_analysis.py",
+      "prior_sha256": "53ddda95552188aaa3d7727ee9d6939c108ee0f98b8c80d2c44d4e2082be2d31",
+      "release_sha256": "67fca859647aab103907c6e196b5152e1e0f388b4187860c11f3723516329ca3"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/control_experiment.py",
+      "prior_sha256": "89a2c2f17068eda12e9a5d79799cc5e8c0cd9ddf25b7e27bb4400120e1993d87",
+      "release_sha256": "568737ff45557a88ae2db2437ff50f6f952bae4e0a09f88f6a35e374696c1d03"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/environment.py",
+      "prior_sha256": "9d190ba6e79aa57244b94a84a34796d8b18631ffcce203bdabcec2048635bb7b",
+      "release_sha256": "9c0bd6ca8f70ef053aeaf69e82b98d4d9ad1e575b4707adac2e639d03511444a"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/execution_lock.py",
+      "prior_sha256": "b19d43915fab240defdcffeeea9338e29d5718c2d025b840ead5112a682b417b",
+      "release_sha256": "0dc0767e870a11e849d09da60e65f870b82b31f2fb737eb8a2f9dfc9f80e45c6"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/experiment.py",
+      "prior_sha256": "2c409851711195439efce2fad8eec4f8064a4c3b5eee5fec6349ec5995f4ee45",
+      "release_sha256": "395ac912eef8aa381b7e43c00d99482b0ed88cc6e5038efe9a594d3072207c00"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/models.py",
+      "prior_sha256": "628c8dfa9799638b03d2ebea8b2083268317079ac4e2a9be2bc9c553879e98d6",
+      "release_sha256": "b52e884ee0805a95f3d0672a32edd6a4557957cc663ce00536219341a465f71c"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/temporal_evaluation.py",
+      "prior_sha256": "a79474da5fd48c4e659d119009646d4ac51e469896da8144dd146763605f5c54",
+      "release_sha256": "3eaae7b704dc2e556228af2845b18d6193d522aa12f9d4ebfd446154b22a1414"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_closure/training.py",
+      "prior_sha256": "dd7a34e4b54c048b22ace9f0221454f5cdd25445fefb55ffb8f5ad6cb2e4c1d0",
+      "release_sha256": "4c99cf5470009efcbceefe361ac9730edfff338b3977076a5e6a3fe2ba8b0dee"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_evidence/analysis.py",
+      "prior_sha256": "886440e27a360a027555913e42372a94e21080b53f472db44ebafa707cdb5067",
+      "release_sha256": "4ff9c6795680eed61484103c9546e55eb9543f73bc8da54d8a1341b4ed353954"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_evidence/data.py",
+      "prior_sha256": "094976682f810e19b04eed5cb92fd05e5d949460a7e6cfa4211d96c805cca50a",
+      "release_sha256": "e4d2292c3c0817ab8becb2dad0f84510e2463c25a21816666112494a6b5945da"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_evidence/experiment.py",
+      "prior_sha256": "e944fd3e6b0dcb2c590e0eec860edf152bfc684f418a26edd8dfd1858f8fb571",
+      "release_sha256": "c0b8e0b8167f135f3ca72163b1b3ef123ed41677e1dedd8179c709142b28f44c"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_evidence/models.py",
+      "prior_sha256": "7ca9be17f7264b553fc4b14591b26d90e3726a31a3687fd6d69e920b419876fe",
+      "release_sha256": "e3ddff0a61a5ea54b6636adc30ad247ad871ee3df0f13670bf5a3cf7dd1a1578"
+    },
+    {
+      "path": "src/dap/direct_action_planning_paper_evidence/training.py",
+      "prior_sha256": "367c5b54eccd751e34798c702f27ea43ddd2c5647cc0399300a31d7c2dfab2b7",
+      "release_sha256": "10aff5ee066847e7aa551c42e5483b6a45192e2e754bec73a0ad01bf1d399798"
+    },
+    {
+      "path": "src/dap/direct_action_planning_pds_adp/analysis.py",
+      "prior_sha256": "4d27d5717ff5314884580414078d5919fe95dcd2c0753b518a99a2cd50d1af95",
+      "release_sha256": "0637217f164fc9a3bfee38386109797d160dd8cc3ff45f799f954ca1b2ce32ed"
+    },
+    {
+      "path": "src/dap/direct_action_planning_pds_adp/experiment.py",
+      "prior_sha256": "92087261756fe4521a9496e4846c8cabd542612c246a0e7cee211a863d016f2e",
+      "release_sha256": "ad1255356c26b2e07b02e0872e4f3b64f3fcec2dff60e5fb4980b5de72e4d781"
+    },
+    {
+      "path": "src/dap/direct_action_planning_pds_adp/temporal_evaluation.py",
+      "prior_sha256": "2b573c5474881392411ba948ea14bb38bdbde0c0ebd411a4b04018efbf53a7e1",
+      "release_sha256": "db49839607863bc3ab387ae633755cf05990d572128714e69fabd2cf8e180bda"
+    },
+    {
+      "path": "src/dap/direct_action_planning_pds_adp/training.py",
+      "prior_sha256": "790fc8375d0309bc9dcd44a4c9728cf1ef1d712ebde1675c6214279613ff828a",
+      "release_sha256": "beda46aa6577e772a5d7d81d0b389e92985aa05c55680297f019d6daac1b3c5e"
+    },
+    {
+      "path": "src/dap/direct_action_planning_recent_sota/experiment.py",
+      "prior_sha256": "a05690c56fee3bdc940dd622a65f740dffd7efa5b44109448ee446ce1ce69d00",
+      "release_sha256": "d694e3cc7180994437d2d749e3ef4c75f40eca6181c9f6701297701118be96f9"
+    },
+    {
+      "path": "src/dap/direct_action_planning_recent_sota/lcpo.py",
+      "prior_sha256": "8a294a251b7ca670ed06ce1ab418dbef19da6b66e9bec5205820a9f471848fea",
+      "release_sha256": "f05e0f7a19bbabd76c6f11ed9b2065ba43a40362c9116f8807dd926d0a8872c8"
+    },
+    {
+      "path": "src/dap/direct_action_planning_recent_sota/temporal.py",
+      "prior_sha256": "736cbe57ff0d7e1f3c0534f6bff3c43cfa30a4642065f47835b162d46ca2c486",
+      "release_sha256": "1c096e106451a2ce9c08ce796dfc1d74cacbb35b19f75adc363c76bf0a2f3d60"
+    },
+    {
+      "path": "src/dap/direct_action_planning_repair/aggregation.py",
+      "prior_sha256": "5c1fc9c800dc822a8679d557a6dd280c6b320d52306408165ab95ebdffad177d",
+      "release_sha256": "84d3bd95005c5f92d2f539efa1afd6480936e569f22bf56e8a538c91ecadc9fd"
+    },
+    {
+      "path": "src/dap/direct_action_planning_repair/benchmark.py",
+      "prior_sha256": "40f3eafdfbfc2b4d4121d9a0a7e4a8b85f1cc9c0f803837fa6837764d57089c3",
+      "release_sha256": "69fb08d80c8fd8af748146671e0889afd3a08b09b63ea29a2e51eeccb0378271"
+    },
+    {
+      "path": "src/dap/direct_action_planning_repair/data.py",
+      "prior_sha256": "70f8e3764650e4145dd59834c0b92ad500714138c38cc221f7173851d77cb104",
+      "release_sha256": "2c494ad7a1215c41b0b1a3a681c23da0eadbbc8a09a766b960b5757ea89165f1"
+    },
+    {
+      "path": "src/dap/direct_action_planning_repair/experiment.py",
+      "prior_sha256": "ad7e62982f8688c93e777888807df9a20b89fd2f641d72768f82653a4ba4efd0",
+      "release_sha256": "6e823aa25603d1edeb83d2127c6c1e9bbd46e020c34f907fbe615f0910ea954f"
+    },
+    {
+      "path": "src/dap/direct_action_planning_repair/legacy_diagnostics.py",
+      "prior_sha256": "c009e3fe18cbc2ee784f1a6cddfbe965f40dce63ca19c05054ae9475516b3ea4",
+      "release_sha256": "eda974de67c3ffc4635446977d584527d2bfe11845b98ae936065985e1ac9413"
+    },
+    {
+      "path": "src/dap/direct_action_planning_repair/planning.py",
+      "prior_sha256": "a3c5152dee4c2154078f2998280523f63339b9bd9e66f2a1eaf0703913fb2e24",
+      "release_sha256": "e592fb9a3557bce2ff079b68a05107cd101934664029f1fa4a76f7948b1f75be"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/__init__.py",
+      "prior_sha256": "225ea03302b2c9edee453a843a226977ab16f696a97855856c0443803dcf9988",
+      "release_sha256": "4d4ce2cdf09d1223d673a752ddabea2c7fc88a91208483a5c7d423b9dbc71dec"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/analysis.py",
+      "prior_sha256": "4e941dd19ac820c7cab53e7a444391c42f295524806ccb6fff43673e4a1cfafe",
+      "release_sha256": "85d8c7a899b143c55499908c0166d99a1abeb528864ae45835c24856e3c3ed56"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/data.py",
+      "prior_sha256": "19efbb4d76d89822b9eebf1cc28724974f6829bc0f7e5bc1f2aaf2826f1343d6",
+      "release_sha256": "db71892fc24dc313745bb06b930e297b1071ce7c1707ad590550abf83a31e239"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/environment.py",
+      "prior_sha256": "23cb9aa5b1dfc1f7856328b86b3b66b9d28fe8a7b31b06437b3f1c8d06a06744",
+      "release_sha256": "c110f0f8afc1c3f597cbf7ee329dda690eb01e0ece794853436bc6df63eef4aa"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/evaluation.py",
+      "prior_sha256": "643680a9b677bf8106d6c995abd37d8d7cf67a0735c2287cf1506a75e24261a4",
+      "release_sha256": "eb45f53d475a8a29a7d4f083bd202e10422b23275952a54f6eda21ea0d47fcaa"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/experiment.py",
+      "prior_sha256": "cdff28e4b4b04dcac5ab72c9e373928369a07c53a393b09ce72467214c290f28",
+      "release_sha256": "0cf740126083e7958783cb05285e80dc3e6ea92a6caa418bdf9d67a7e1b63cf9"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/scenario.py",
+      "prior_sha256": "310498d6ac2eb9c90c7833ff68af10683881bb54c6aa96ea38491948cbf30106",
+      "release_sha256": "3e4ec778b6da966463ec418e8e54ec5cb9135f1056ee6f4697e0ffbd572c52eb"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/support.py",
+      "prior_sha256": "df1828662f068cbf8f502b41d045c5d14d9a03430ac6ae661c5ba7fa16159c7a",
+      "release_sha256": "98821aa875baee327016f3e522448a39171157f3e3269c13a75f7a876ee3a15d"
+    },
+    {
+      "path": "src/dap/direct_action_planning_support_adaptation/training.py",
+      "prior_sha256": "8eda156cd902182e73356f807437ac7bf4603c12fefe1fa6900ef16473c54dca",
+      "release_sha256": "4817369b6152a3eb63bb2819a2a6b9ac3a83ccaa9722a1967f02a45ea3527e99"
+    },
+    {
+      "path": "src/dap/direct_action_planning_value_refresh/causal.py",
+      "prior_sha256": "98992239a57fc97cf1c24553603628c9c2323f2b87b65e4cb08fce5fca8e0218",
+      "release_sha256": "a9e3d11c833fdf74cb1492c2a26a826f3f24825ae76d1be1a14b439cd6e6f026"
+    },
+    {
+      "path": "src/dap/direct_action_planning_value_refresh/data.py",
+      "prior_sha256": "bf3483f26e46ff7bf14f70159532cecf3eefa9dc445fe68858ed9aff3e4ab031",
+      "release_sha256": "df25b856d5d81c8acd32bbb6c94f5fc005b3d7ddd9d9ad18a891ed374086e6e3"
+    },
+    {
+      "path": "src/dap/direct_action_planning_value_refresh/experiment.py",
+      "prior_sha256": "41878fc1480f21ef419279bd7ef53320364d14afe4abd4b8fe85e372df10539b",
+      "release_sha256": "c5de7df8be6d9165cfd4d755d1a2a87b6ce2233be9c5ac89dd2715f6e4440ebe"
+    },
+    {
+      "path": "src/dap/direct_action_planning_value_refresh/value.py",
+      "prior_sha256": "88a754d3181a1e9a3f70a8bf6d2c9128db07435219be1a32ab2c8813c10e776e",
+      "release_sha256": "d65c38a620bd4fd3dec04046f7a37db20abc8af1e4af75631e5e4c60dd3d9ad5"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/analysis.py",
+      "prior_sha256": "bb0f128319df46c9c6acffda2c07a9f31a839fdfa6531e409edec1dfc7fed509",
+      "release_sha256": "df3f25abd01b110e697582f97c4487ed2eca8727fbf175b008a773837d4808e8"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/data.py",
+      "prior_sha256": "2c417922c4d1d5d13b1123bcf67794ffeaf24ec0c737352a30d6ba4cce76d5ad",
+      "release_sha256": "4c25fd928b43f933499d3efceb86a123a24e769f5384820b02091c3726f01877"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/diagnostics.py",
+      "prior_sha256": "3471ede9879a46b53f2fee8f0a46aea9c67d1c91c4a342f87167c36c6adb13d0",
+      "release_sha256": "947e9b5c3d125f14f86d20c5b3a60a8b792c505cd936d631b51cfb8352aa1160"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/evaluation.py",
+      "prior_sha256": "3d791dff3bb36ea1d5f7a0950b629f6295c5acf3efe8f566380ea3cfb6773b69",
+      "release_sha256": "422fa0b4a12c0214e8f15f6b6ecc7b4a94aa9dde2643b59f16acad225c5e8823"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/experiment.py",
+      "prior_sha256": "37238b49f8821474d1bf6b264feaceaae4d4e9402a445412245244aa0c30fe83",
+      "release_sha256": "43d0045d99913a44b9955debd15ff55abe5e38058e23b40fad7f04d690d82a67"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/full_analysis.py",
+      "prior_sha256": "794f274430ab4c8913acdb38144eb7e218feeb54326c6686f87639ea344ae00a",
+      "release_sha256": "0066125a0d61c364e74e7ece08b2511e3bf519f1768ddfbc8603c45a40c11175"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/full_experiment.py",
+      "prior_sha256": "4a984064270c83763aef6e6f4884891db104493da5864e57e5cb0835c344cc32",
+      "release_sha256": "b89d9aceacd37a79a7c5b2c285beb817b61e6cd2298dbc2c0a3381cc6aba81c2"
+    },
+    {
+      "path": "src/dap/direct_action_value_selection/model.py",
+      "prior_sha256": "a4ddd8b84ea7416b3ffdf72223c9fd1da11ca1a83757f11b56cf8873ca8a10be",
+      "release_sha256": "1d99e96542ea7bcfd189fb0689fcb076e065b713ae314f3a63d84f20d89609ae"
+    },
+    {
+      "path": "src/dap/dynamic_shadow_price/dp_experiment.py",
+      "prior_sha256": "9d9e11ba8902b47d06db6ab386eabd7ea59357f71ad762f8cfb7f7c3c023f03c",
+      "release_sha256": "5ef8444382278a25582bfb11a2d219b59337555e80b11f6bb135346e45ec6250"
+    },
+    {
+      "path": "src/dap/dynamic_shadow_price/dsp_trainer.py",
+      "prior_sha256": "97cf51947cda4460b3d80dce24ce9e582d1d24434168464baeded601beed492c",
+      "release_sha256": "7d53cb548455f3ace1155c5be808336a8da4ff141f5b777df053ee5a77f87348"
+    },
+    {
+      "path": "src/dap/dynamic_shadow_price/hard_coupling.py",
+      "prior_sha256": "2e92e11800a4eb44a350e225c87fa660b36034dc7d574ac12e1594608c250bbc",
+      "release_sha256": "748119ba28d4a7a3e13d781cab61ad638b5bd7b2af1bd250ba49610dafadb861"
+    },
+    {
+      "path": "src/dap/dynamic_shadow_price/hard_coupling_experiment.py",
+      "prior_sha256": "5c9b054f75158ce3af43a40f97f24d1c8ac26424bc535a42f449123cb24e015d",
+      "release_sha256": "8b1584f7dc6b39326707b2076345d4d9eed8e6ee4a9f7acb616fc33b64f38588"
+    },
+    {
+      "path": "src/dap/dynamic_shadow_price/synthetic_experiment.py",
+      "prior_sha256": "38774d128e4e12c60325fe3f47ec5ba9eb2ffd42a79cdd5b7c6f41f6dce83675",
+      "release_sha256": "b796a9a640b5fa96dfbf8536111e83067cbbf67e82e8939556fc0764ff4c719c"
+    },
+    {
+      "path": "src/dap/dynamic_shadow_price/trace_experiment.py",
+      "prior_sha256": "2b9e770c87f15bf8ea41f8d0ae182bfd6322972752f39507d1f6b4feb0cfea2c",
+      "release_sha256": "53c322913c3bae4351a295a540f7ee04dcb7455ec8118e4c7515dfb1ab687979"
+    },
+    {
+      "path": "tests/action_conditioned_budget_advantage/test_acba_core.py",
+      "prior_sha256": "8b41e270b175323812448d0b3fbb213594a83c36459c731eaa98a72405571aeb",
+      "release_sha256": "bc1c1d2cff1d3280d2c371ab52fdc3df694d518173b700c3a78d02210f91051c"
+    },
+    {
+      "path": "tests/direct_action_planning/test_direct_action_planning.py",
+      "prior_sha256": "ec6b4cd7561d27c59f01f1f8a4ee5b2df6abaf45b65d5442c3069da34582b342",
+      "release_sha256": "c473fcbfaaf49595d953717fc3b5c88a9c6704914144db1bd89bfc1abe4427d3"
+    },
+    {
+      "path": "tests/direct_action_planning_action_effect_sensitivity/test_planner.py",
+      "prior_sha256": "50b548035923b4083a600339889d056932be9dc64e75876257c8d33b9bc9f514",
+      "release_sha256": "15f6b9a6b6f5db5c9d1c4dd5028a608aed42777da2966a23544ee3d43c9ee7c9"
+    },
+    {
+      "path": "tests/direct_action_planning_context_value/test_aliasing.py",
+      "prior_sha256": "64eb0b1d4f81023ffa6089e08e178a0560a90fc488a25aa2283bedc158cf2cca",
+      "release_sha256": "c8b3291bf32a6167aea753e97cde718c55ceed5a21c958406bdf09e8e16f5d40"
+    },
+    {
+      "path": "tests/direct_action_planning_context_value/test_analysis.py",
+      "prior_sha256": "a71de48873b080c255ddf3eee1f2239859e2b3a64603090a02c3026c0441a42d",
+      "release_sha256": "22a156f7321d69c1b095b186637f5b642734567192a689d7c35e666b06271550"
+    },
+    {
+      "path": "tests/direct_action_planning_context_value/test_context_models.py",
+      "prior_sha256": "b93d6c76f4be3c30245858937966e1e69102f6adc65d62a23cbcd6bc77ad5b1e",
+      "release_sha256": "7914cc8660d0d968da21049a79330f2986fd926a23bba56f0ada554c719a7416"
+    },
+    {
+      "path": "tests/direct_action_planning_contract_audit/test_audit.py",
+      "prior_sha256": "d560bf6a19dda89745465d5a3fcd838ea33edc932230832d2333b6a2557a92ca",
+      "release_sha256": "83e236e2e04bec7f79589ed7b063cb8d43820b92b22e0f0a298b19a3ca9fdaee"
+    },
+    {
+      "path": "tests/direct_action_planning_controlled_aggregation/test_controlled_analysis.py",
+      "prior_sha256": "78e1f9a7535fc4ac0dd03310c790cdb403ffba99b6d1a72e900f85a39e1596e1",
+      "release_sha256": "b988ba1d8e75daf71ccc5d6b56f49e53aa08e47084fcb60e267c8785953be68d"
+    },
+    {
+      "path": "tests/direct_action_planning_controlled_aggregation/test_diagnosis.py",
+      "prior_sha256": "1bebc4170236c697fff26c9543650bcd15b652452d6b75b7232c8d1f956d4e69",
+      "release_sha256": "b5ef1ca5bab9d97779eafc09357cb115ea26a4ce61a7bd09a1c1da05cf6fc980"
+    },
+    {
+      "path": "tests/direct_action_planning_controlled_aggregation/test_protocols.py",
+      "prior_sha256": "0d014b30ddb1b72ecda376463638ad1e3dc4a3bad8485d9565e513062c6554ba",
+      "release_sha256": "3a8c40b366acb22ec57db5c11283212c84a3a937011ca8a97c8cb5b5adb58a47"
+    },
+    {
+      "path": "tests/direct_action_planning_dataset_benchmark/test_baselines.py",
+      "prior_sha256": "4a8c23bc231339a79bb70f1fedce60f474bd2064f24fa6072b4a15fa295f7364",
+      "release_sha256": "90ea3dfc8d7cd02ed6c364b64f046ac53f90c5abcf7c861dc51b3d1d9df76266"
+    },
+    {
+      "path": "tests/direct_action_planning_dataset_specific_stabilization/test_baseline_analysis.py",
+      "prior_sha256": "d6ac5a810ca605e056ea737df010127ffaf02f1b02693530836fb131549b539b",
+      "release_sha256": "cead82db7a38b287bfa7f2e46c79b74188af1de6eae31a2075570642fe4cd80b"
+    },
+    {
+      "path": "tests/direct_action_planning_dataset_specific_stabilization/test_stabilization.py",
+      "prior_sha256": "083cd8c4676b2084bf4c1d332c76ecbd6c1caab3288fe53f1b662b48cd2c087f",
+      "release_sha256": "e0bedb3ab7dc9fc2c529a2a18b09331b233a0eddc602a0a9b2f410d3133f727c"
+    },
+    {
+      "path": "tests/direct_action_planning_dataset_validation/test_dataset_validation_analysis.py",
+      "prior_sha256": "ccb5f78b13c0f46743d148ff7138b0565a877feb70fa9996e728c3dda5a422af",
+      "release_sha256": "af18d497ee6764f3d8ae79c9f2bb0bd1f55419d3b38dfd9040194c237fbcc04f"
+    },
+    {
+      "path": "tests/direct_action_planning_dataset_validation/test_gentd26.py",
+      "prior_sha256": "959c4bc4445546acb5ebd0a7fe0df4dbf3a4337a470209509a19364c18825ccd",
+      "release_sha256": "3b885a89165194d81c10e88620267bd08a68c5e9a663f2d699f8719949fc40bf"
+    },
+    {
+      "path": "tests/direct_action_planning_dataset_validation/test_planning.py",
+      "prior_sha256": "b6a910706a2d7b6e0577f85564c14c88bfa95b5e92ddb151af3003261679d779",
+      "release_sha256": "b08b4dfc245a7d58aa386e979ceb121c9f979a53138d1aa7d1df15c7f6509b8c"
+    },
+    {
+      "path": "tests/direct_action_planning_dataset_validation/test_training.py",
+      "prior_sha256": "d03fcf9d9a6c1a97fc85f03ea72a0713c0bfa1442f067622e5753cb936c11e34",
+      "release_sha256": "fa59131e6adf997351c5b5897fd217e9456bc8c5a6839361d770d9c4eb6ab988"
+    },
+    {
+      "path": "tests/direct_action_planning_frozen_temporal_test/test_analysis.py",
+      "prior_sha256": "27e0346b23ecbfe68922f5d337898d2f7a6613c393e760bee849729e56b864b2",
+      "release_sha256": "1da58557fb66b6e650b63354945ad3dcb3ae261bc54634c582266e2b3bbfbbb1"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_cost_calibration/test_analysis_a2.py",
+      "prior_sha256": "bb5eefc2f86430f24d56b2a4eb2aa150677d062967ea1a31e2e1febd0571b145",
+      "release_sha256": "87061274f81e3a4122bf75e0b6c0510af03a35e0862eb09b75a1c181f69fb13a"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_cost_calibration/test_model.py",
+      "prior_sha256": "eaa6505756a63d7114fee2e86551a6eecedee6f3e9a9b19c81b6f4c858ab6bf4",
+      "release_sha256": "60554040e2820eb7afe70e4b946c219a855fb9b0ee755faf4d59156d1a635b85"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_cost_calibration/test_selection.py",
+      "prior_sha256": "d50398ff0fb63f504110a4ad42376f66650d8024065717ec2dde11873eebab0e",
+      "release_sha256": "b6319e0e35ec35af695d2899faaa42cc5cc6642440e6b85ae92152ca44cd9bf6"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_cost_calibration/test_training.py",
+      "prior_sha256": "d6026c54ea11024c8582b374849d414da6cf5bb87004951cbef0ee030764ef45",
+      "release_sha256": "1ba9b11135f8ff6e0243e5701d58d7e7836de64918b1ef11e447d07789443012"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_native_comparison/test_analysis.py",
+      "prior_sha256": "b15bfcd7b4805fbecca0f6863151332d352591231a6f40aa28d759aaaf706a80",
+      "release_sha256": "11c114eda608112cbb151e697e16febfbbc63e4b5cf35e84e8d2ad2d92ec1902"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_pareto_calibration/test_analysis.py",
+      "prior_sha256": "9821bb788eadf1c7c7207b564a48859752e145b3a5e56e6def5b6654949f6780",
+      "release_sha256": "b8b775d704827899e257940a6fff681cc12d857ce64ad47709dc1afb3bd525dc"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_pareto_calibration/test_runner.py",
+      "prior_sha256": "e7e9e2a8bb0d2a657ffb0a5cfb959cb1a18941325a51489ba96be1a1ec045cf2",
+      "release_sha256": "d82b3e4b5073d756d7736e47e187f082fa1d84b8b8e9a39c0408a7b3ac238e8e"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_pareto_calibration/test_selection.py",
+      "prior_sha256": "39fe7f768ed5ba9d9db1794b0f224dfd05e02eb9cd62f5268e4ebf6c97c56105",
+      "release_sha256": "97cfbffb055d0a1110ef1bd4e45121bfc6360728993f012262be81400901b11d"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_pareto_locked_replay/test_analysis.py",
+      "prior_sha256": "d69a9490b7ada2e0e56b547c054ee40cbcbccc0f2fccb16e64d3a759a18d79fa",
+      "release_sha256": "4e88c2ed168ccd9dcdbe4a2c1908354b6aded490d76c9141346644f0dda25939"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_robustness/test_analysis.py",
+      "prior_sha256": "e206634d4289da3e98338f1f1c03c528d07535f9616f20f534bfcff299e4dfca",
+      "release_sha256": "f901486389f4085184a301d421a33421553373bb7cb60e60e44e5f055b1dc03c"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_robustness/test_connectivity.py",
+      "prior_sha256": "eeea729c9c19492cee99cdc724585f32be88c6bd20239eb292b5c4615e6c2b6b",
+      "release_sha256": "b3724feff292753b3f4df41fcdcf5c420a16e787d520233aa9f21fa58e2a2b7c"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_robustness/test_perturbations.py",
+      "prior_sha256": "52e7740f68faf54493cd93119ada42112fb1db2c9c23e9234650b85b4980a649",
+      "release_sha256": "b37e0722194afd39a8d71bfe9a938347e9b0e23a49e28ced2140219729de1821"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_audit.py",
+      "prior_sha256": "c3e3ed09636569d0b3ba25db52a13953d0db645226da2c06089bbf2ae3776c1f",
+      "release_sha256": "81126fdbd07e24769ef7f8d7a91ff22e0f6c55bdec5b03bd31c62c4d251063c5"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_collector.py",
+      "prior_sha256": "f5cc3ea75aabbc63fdb1529a7d1ea628f448f5a620b7ac94e1fafb5ee588a649",
+      "release_sha256": "ac63104c46f772eb76a3484d64bb405954e4abaf3c4f33745fef775ad13c7beb"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_perturbations.py",
+      "prior_sha256": "eef0ecf40568eb7c0a283890a184ecb80a9ce62068db688ee283bc14e8333c1e",
+      "release_sha256": "e2faf29dff37a1844d3917b795b0025085fe5fd5c5d3475548f84d3504b80af6"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_planner.py",
+      "prior_sha256": "19833408827365bba5f06e07d12d895913c48ddaea09876677fe3878074fcd6e",
+      "release_sha256": "c6fbcf5cd0912f5ca26b93b9d339a760c22b5e4d070025daa4e912c87aa05007"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_runner.py",
+      "prior_sha256": "d8797d6ac09c2cbe7bad092fb40462abfeb5476c60ec7b262604c60a50819dbb",
+      "release_sha256": "d1cdf3bc83078bab7df3266d975f5b3ab13fdd8379d97884b831789f82a66d41"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_runtime.py",
+      "prior_sha256": "25a84b3789e39a2251a1d6ed7439295fb0e93edd1b1988265d76f75662403a36",
+      "release_sha256": "b93f3443ebfe4d165fb9cb09888b14564480e66071630f18e82507cd62e2b536"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_simulation.py",
+      "prior_sha256": "acbaa563a2adc4475125c298896d3ab2b44da1ff876d51fecd4cf830d3b8e3ba",
+      "release_sha256": "d0bffee72edf0f5fb139fa5a96e1c4840426bd7348c478438361e06ce0adb129"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_training.py",
+      "prior_sha256": "1a4ceae7f1a2dd1a0738abba4c91f59ce49cf61a9d7d1d85254f5c473870a550",
+      "release_sha256": "a5c581fbee33dcea91d10945d8fea71112dc805b7e4950596fac27525679b47b"
+    },
+    {
+      "path": "tests/direct_action_planning_k8s_service_repair/test_transition.py",
+      "prior_sha256": "2ccbd1536e20d18557b36346fc0a3ef27c3f6781729574b4e9654518c71b63a2",
+      "release_sha256": "54b40f0120500a693f455bbcf0a83ce46574055f5bfc00866461777430c4788a"
+    },
+    {
+      "path": "tests/direct_action_planning_paper_closure/test_control_analysis.py",
+      "prior_sha256": "8eacb7f82488ea761d6f6bfcb1fb210f846c19a867c3cef3f88ffb7d5c3da7d9",
+      "release_sha256": "6dcab04371a03a840d7a325b256411b8540319b0fd6d1c13da16c0a3753fed31"
+    },
+    {
+      "path": "tests/direct_action_planning_paper_closure/test_controls.py",
+      "prior_sha256": "3c0cd3f41e4a482241c05ccfa4e969075df3a5f4f7bff477bf3408b367929ae3",
+      "release_sha256": "549291eca9c3908101a79d80e4259676f6c31646ec7d5a6b5b02cff0c355aca1"
+    },
+    {
+      "path": "tests/direct_action_planning_paper_closure/test_terminal_planning.py",
+      "prior_sha256": "41f0fc7a5bcfab9694a3421391864fefa1a7a6c536047f934ffffeeff6e2faf8",
+      "release_sha256": "d1c071e4549a6392d22b0e491152c3bddd653cc99a7239e7327c3b3eb26d38ee"
+    },
+    {
+      "path": "tests/direct_action_planning_pds_adp/test_analysis.py",
+      "prior_sha256": "0365ce7a160e82ef8d2b773b74725c99deba4a50598a91fed94c9b7ae8210d6b",
+      "release_sha256": "e113d02dcac2fc02d1ef4a460e7d44d58d6bdb4d3292d9e2c18d95216110e2e1"
+    },
+    {
+      "path": "tests/direct_action_planning_pds_adp/test_pds_core.py",
+      "prior_sha256": "16ca84a4adf961c6e0eb7624c378b847e782e7ea2e1a4237efde053bf3ed1849",
+      "release_sha256": "2eeafeba2f675360dd4056678199fe1750488fdfdc2d2d9e60dd9e069d8ca182"
+    },
+    {
+      "path": "tests/direct_action_planning_pds_adp/test_pds_training.py",
+      "prior_sha256": "732b2041e417c278c5d0b479f54b83f766d6532b7117aa2ca40373fe4992204d",
+      "release_sha256": "5675aeda6e16e55c2671ff19d0d2c8f77b05667bd53572bc6eef051b9966370d"
+    },
+    {
+      "path": "tests/direct_action_planning_recent_sota/test_lcpo.py",
+      "prior_sha256": "0f2f4367e024134cbbf4ebdd23bd92d894dfdccaae88993e8f3f4f9297fb3f44",
+      "release_sha256": "9fe89d333a13c371546ca5c922a4b119eab214bd358695f8393a2dff3b00bef2"
+    },
+    {
+      "path": "tests/direct_action_planning_repair/test_aggregation.py",
+      "prior_sha256": "fd4f6339a3ea5bf14ff32cb80d30d4866e95509d7137d2d52a385b0c3e521e98",
+      "release_sha256": "5224ab5e71f3f40c9c23f654e905fbe4411ddba2e6681c6a14ba16938f6581e3"
+    },
+    {
+      "path": "tests/direct_action_planning_repair/test_analysis.py",
+      "prior_sha256": "d997d88b7cf3796ae1c93182ab8494a77548ba0a2d3283b1b92d7d7e9cfa7289",
+      "release_sha256": "e84cf905bb1b6bbe9bb342740e232f2fd0df5848140eb42ca1953632bf565074"
+    },
+    {
+      "path": "tests/direct_action_planning_repair/test_gate.py",
+      "prior_sha256": "83c9eda6de60cc33ccfae1238e7eed54c7cd6defff778690096fa4bfe99f6e3c",
+      "release_sha256": "b36d7111371dc04ad735f138300c8c0402e46766f58811271eaba4cb507b417c"
+    },
+    {
+      "path": "tests/direct_action_planning_repair/test_legacy_diagnostics.py",
+      "prior_sha256": "3eaf36f7b0c28a6abc716b08697b348939566a6bfac9769126af935dd576c34a",
+      "release_sha256": "3e0779167452d65289962544b93a101fa9b5c282923f120a94a7043104312c36"
+    },
+    {
+      "path": "tests/direct_action_planning_repair/test_structured_repair.py",
+      "prior_sha256": "bbb37bcdaf029e0307681ca2508b36c17b1c5cbc2cb27002ac0ba901b880a11a",
+      "release_sha256": "8c786a75f0dc8a37c0a42c8705a023e6f32b7d821ae5965b60d723ef6f263540"
+    },
+    {
+      "path": "tests/direct_action_planning_support_adaptation/test_analysis.py",
+      "prior_sha256": "3d516aa0c4415a66cffacf2f618ff2e7d78f548a1c899611e468827f16625edc",
+      "release_sha256": "54bb287bb8d680b798458ffd8a7e7dee15899690672784aa18aa8572deb1d786"
+    },
+    {
+      "path": "tests/direct_action_planning_support_adaptation/test_evaluation_and_data.py",
+      "prior_sha256": "b7e0917a3a6f8aca2c323752c0e29293736df0d15b5ace2ee4dbd76c96006a91",
+      "release_sha256": "728a050233eef185ba2025576c75203e85bac4c74d307433090f1296e009c611"
+    },
+    {
+      "path": "tests/direct_action_planning_support_adaptation/test_support_and_models.py",
+      "prior_sha256": "08cb45ee8e595e43fb55359f34a99c3c40f443bb9e145bda1655d0d7af938631",
+      "release_sha256": "fe3bbf9aff136d0d83d85cc6fe7bd46e87cdd8e28cb32c9242edf5e378c0d713"
+    },
+    {
+      "path": "tests/direct_action_planning_value_refresh/test_value_refresh.py",
+      "prior_sha256": "c5b66ec745fa186df32fd363c0a7929fa7fc4d83c583dd074b93c035367bf8b0",
+      "release_sha256": "5c1c5cd8e64eb97e1e040aa6824ed1b7bd96a786ade32f1535f84d2dbecbc277"
+    },
+    {
+      "path": "tests/direct_action_value_selection/test_direct_action_value_selection.py",
+      "prior_sha256": "f7a314340da67c8baaf9818115c6ddbe94b0c173831fc24baa3a36eefce60985",
+      "release_sha256": "0ba254fef54975e290ea1bf31b7be2a893afc7455597380f6d5b9ed76fadefc2"
+    },
+    {
+      "path": "tests/dynamic_shadow_price/test_absolute_budget_wrapper.py",
+      "prior_sha256": "841cb6a89e53de5792ae1e249e2a727c05a10e1f1b5ddd04fdf34e7a2c1370ae",
+      "release_sha256": "584c2bb70a166e33b2dbb7da02700264355f9f3a459b3e6df5876f14970c6e2f"
+    },
+    {
+      "path": "tests/dynamic_shadow_price/test_dp_env.py",
+      "prior_sha256": "7a591c3aa2143c9eea24662831f08fb61cf64efb67a835071fc158e7e13cabf9",
+      "release_sha256": "bc2af742444314f5de3a528fff691924bbfc6b16b51a936445fda55dd966736d"
+    },
+    {
+      "path": "tests/dynamic_shadow_price/test_dp_reference.py",
+      "prior_sha256": "0e45d2088c9099403511ad6702a5fafffd9400dcc37c6a8bcb4fe200a0fb6c62",
+      "release_sha256": "91de737069b02c0d37747a15bd836becf48ee723793c98131a463f5e73f8f577"
+    },
+    {
+      "path": "tests/dynamic_shadow_price/test_dsp_training.py",
+      "prior_sha256": "865b83208ecec71215bd57b5b0193e982fa9f9489639b0c30702a73001cb09a8",
+      "release_sha256": "9042ba15bc60b684059d7ac00b023ead8c9427e2f433865c239a5d8b5dee34d8"
+    },
+    {
+      "path": "tests/dynamic_shadow_price/test_hard_coupling.py",
+      "prior_sha256": "df2337755caac13ffe0fcb573440e30cb3166ef664b355a4f6ddece3fcf54d7a",
+      "release_sha256": "bcecd2ef4560dfaa3fd0b497a44678d9d28478a369054b37523ac1230e999dd3"
+    },
+    {
+      "path": "tests/dynamic_shadow_price/test_shadow_price.py",
+      "prior_sha256": "1714fa81cb3068c368ea9f80b6bcbd3c8b6c0788b396793616c970d8efadefeb",
+      "release_sha256": "9471a33508feca5bdc4ec0bcfd17ea0cfe309ed54fea964b1fd8cf145dadf9b1"
+    },
+    {
+      "path": "tests/test_action_costs.py",
+      "prior_sha256": "0a75f55922ad669cffb0b32a60ca73669c714f869821833afa47f783bd47c434",
+      "release_sha256": "1050f92a0795dfb481261022a4b9cc03b37322a767c74db3d0adde1e2f00a03c"
+    },
+    {
+      "path": "tests/test_allocator_bounds.py",
+      "prior_sha256": "987ef2c602eeb53754edd9a0e000cd6d6d570e52f2d9a852ea8574b44ecb03b7",
+      "release_sha256": "dbf8e41ef93e0e2ed02e9faf7e5956f236d83a07fc1254974c03a2d5e70d9dbc"
+    },
+    {
+      "path": "tests/test_budget_accounting.py",
+      "prior_sha256": "dc3579a2dae2fed3774bed0c5ac62336e301d614b770ece4f698a229f3f988d2",
+      "release_sha256": "458fd286563364bacc5a2c1a9deabea1c58281b19882110cb0f0bf084f7d1775"
+    },
+    {
+      "path": "tests/test_env_determinism.py",
+      "prior_sha256": "26dde61bc502cf6d45f6f64f7661ca74433ef736eccf48afcc8ec81db3fd3d64",
+      "release_sha256": "a32193883dfcef3609e6d06d89d97a19a647e1ea45a3d0bbe071e286d48789aa"
+    },
+    {
+      "path": "tests/test_evaluation_reproducibility.py",
+      "prior_sha256": "4be687cf2caf4b2de64cdd69235d5f8c321f9e03e154379f176ea917da8ba464",
+      "release_sha256": "49dc588525a9de54876722c8ac58ba4147010312c15658ab47f1ab38da88c722"
+    },
+    {
+      "path": "tests/test_hard_budget_mask.py",
+      "prior_sha256": "d310a64363ae4dca9af0b155035abb798e1606775be8b55f245843e9a8342559",
+      "release_sha256": "366a799a44a27a60b4b600444ecf094372991c399b8215b78d6000fb54b6b0a6"
+    },
+    {
+      "path": "tests/test_logging_fields.py",
+      "prior_sha256": "4c924ac52d370aed2b4d296beb4f58740fab4a3e024c7482093a751d0f9a43b3",
+      "release_sha256": "914742a3ef134ffff5e6cf98968fed424b33c84b98c7e8081f6effb790f4c122"
+    },
+    {
+      "path": "tests/test_metrics.py",
+      "prior_sha256": "3e58325561d99259d35b3af8701162fa2ca146b99c2ce7e002db47bf0fc191de",
+      "release_sha256": "356a3bd21ba717a05f04a8a4ce6b7ab078902a7d60c6230c4172421db003dfbc"
+    },
+    {
+      "path": "tests/test_no_future_leakage.py",
+      "prior_sha256": "fa090fbf3fc4e56986556e3218304188d481a32864e63d7e3cbb7182cbd4f88d",
+      "release_sha256": "5d4b003eeb1c8dc5fcb10199c60f652cbd954c0ea2fd42230cb9cf6df9b88f74"
+    },
+    {
+      "path": "tests/test_policy_variants.py",
+      "prior_sha256": "94f16c24cfcbc9131e50142a51e0be66f1727e9abf7d48b63431cba59d1bf9cb",
+      "release_sha256": "28b0c2c3a1a3a151a4b077ccc6e76de824b305ef6e5c495584f22587ade8d47a"
+    },
+    {
+      "path": "tests/test_ppo_core.py",
+      "prior_sha256": "345a8f562026ef7f1c2dd595bca5a5c6a68a9199a6904b3255b658f9d6135d3b",
+      "release_sha256": "955b522c31d1ef396652946d75d532dd4fca78d43f78a446dd1c1290f32deec7"
+    },
+    {
+      "path": "tests/test_queue_gold.py",
+      "prior_sha256": "6482fd0ac7addce8b8859b0689baa8652e18d982e5d4fd79a23e8c36f17e5f6a",
+      "release_sha256": "b887efb702e26b99c164e24dfba49b07200d98e50c2a2d4b191e483074d82802"
+    },
+    {
+      "path": "tests/test_rule_baselines.py",
+      "prior_sha256": "c44dffeb296cd53415c7027f90c8addf4ff64a00bdbafb18ea6d45155006e596",
+      "release_sha256": "7b5b8c3a9a7ff7695a264204a23cc13d71e50463b47f12000b65e63f825cd7c7"
+    },
+    {
+      "path": "tests/test_statistics.py",
+      "prior_sha256": "cc0b981db343ab3ab5227425f2646870b952f45b6368339a3339d754dd6e2ec7",
+      "release_sha256": "9f9ea2743320d88153aca7af4ef1acb275326730acc594208a4bbc5fddb926bd"
+    },
+    {
+      "path": "tests/test_trace_preprocessing.py",
+      "prior_sha256": "106ab01b716ea685601bb5382fda468343ad565c7a05347787325d8dbb83869d",
+      "release_sha256": "a0869f141a871e77ecfd111346b55ddb23e3bdc42239b3809430c84e23a1049f"
+    },
+    {
+      "path": "tests/test_trace_windows.py",
+      "prior_sha256": "e7c5766b63500baa5ba9f988c39a9d2b0eca53b7d7ec21eaabc0387d3aec5b52",
+      "release_sha256": "8b17f82b27f216d0774007f68080e6bc09f942e26a93d6c767d80eeededec3d3"
+    },
+    {
+      "path": "tests/test_training_smoke.py",
+      "prior_sha256": "b18535548ca4c7612dd9ffd90da4098435b262736f4be139bb43e8c8fdb2d138",
+      "release_sha256": "d694035631e8e925224eedf73e025d0aebf37dddeef318fb0c078c355dad214b"
+    }
+  ],
+  "hash_basis": "SHA-256 over Git blob bytes, before checkout line-ending conversion."
+}

@@ -1,5 +1,5 @@
 tier: recent_sota_lcpo_smoke_v1
-manifest_schema: stage2.dap_recent_sota.lcpo.v1
+manifest_schema: dap.dap_recent_sota.lcpo.v1
 matrix_row_id: RECENT-SOTA-LCPO-SMOKE
 datasets: [azure2019]
 horizon: 64

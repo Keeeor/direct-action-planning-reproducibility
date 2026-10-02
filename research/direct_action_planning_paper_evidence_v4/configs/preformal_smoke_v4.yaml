@@ -1,5 +1,5 @@
 tier: paper_evidence_smoke_v4
-core_manifest_schema: stage2.dap_paper_evidence.smoke.v4
+core_manifest_schema: dap.dap_paper_evidence.smoke.v4
 datasets: [gentd26]
 horizon: 8
 budgets: [8.0]

@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from stage2_dynamic_budget.data.azure_functions import (  # noqa: E402
+from dap.data.azure_functions import (  # noqa: E402
     aggregate_invocation_file,
     fit_and_scale_chronological,
 )
@@ -29,7 +29,7 @@ def main() -> int:
             per_domain[domain].append(values)
         print(f"aggregated day={day:02d}", flush=True)
     metadata = {
-        "schema": "stage2.azure_functions_trace.v1",
+        "schema": "dap.azure_functions_trace.v1",
         "chronological_split": {"train_days": [1, 8], "validation_days": [9, 11], "test_days": [12, 14]},
         "domains": {},
     }

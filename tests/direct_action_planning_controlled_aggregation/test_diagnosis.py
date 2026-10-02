@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from stage2_dynamic_budget.direct_action_planning_controlled_aggregation.diagnosis import (
+from dap.direct_action_planning_controlled_aggregation.diagnosis import (
     duplicate_and_coverage,
     empirical_anchor_labels,
 )

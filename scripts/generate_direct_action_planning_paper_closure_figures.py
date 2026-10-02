@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.utils.artifacts import sha256_file, write_json
+from dap.utils.artifacts import sha256_file, write_json
 
 
 plt.rcParams.update({
@@ -214,7 +214,7 @@ point has a 95% bootstrap interval.
 """
     (output / "CAPTIONS.md").write_text(captions, encoding="utf-8")
     write_json(output / "manifest.json", {
-        "schema": "stage2.dap_paper_closure.figures.v1",
+        "schema": "dap.dap_paper_closure.figures.v1",
         "status": "completed",
         "source_analysis": {
             "temporal": str(temporal.relative_to(root)),

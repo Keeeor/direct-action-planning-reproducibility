@@ -16,7 +16,7 @@ diagnostic:
   frozen_run: results/direct_action_planning/minimal_v1
   tie_tolerance: 1.0e-9
 repair:
-  loss_weights_status: frozen_after_phase_0_diagnosis_before_training
+  loss_weights_status: frozen_after_initial_diagnosis_before_training
   hidden_dim: 32
   learning_rate: 0.01
   max_epochs: 300

@@ -1,4 +1,4 @@
-from stage2_dynamic_budget.envs.synthetic_queue_env import (
+from dap.envs.synthetic_queue_env import (
     ActionSpec,
     DynamicBudgetSchedulingEnv,
     SyntheticQueueConfig,

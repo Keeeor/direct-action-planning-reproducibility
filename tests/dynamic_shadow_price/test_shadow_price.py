@@ -1,6 +1,6 @@
 import torch
 
-from stage2_dynamic_budget.dynamic_shadow_price.shadow_policy import (
+from dap.dynamic_shadow_price.shadow_policy import (
     DSPPolicyConfig,
     DynamicShadowPricePolicy,
     dsp_b_td_target,

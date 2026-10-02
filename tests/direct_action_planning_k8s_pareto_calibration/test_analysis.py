@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from stage2_dynamic_budget.direct_action_planning_k8s_pareto_calibration.analysis import (
+from dap.direct_action_planning_k8s_pareto_calibration.analysis import (
     action_horizon_valid,
     paired_candidate_rows,
     summarize_screen_candidates,

@@ -15,10 +15,10 @@ PROTOTYPE_ROOT = Path(__file__).resolve().parents[1]
 PROJECT_ROOT = PROTOTYPE_ROOT.parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.data import (  # noqa: E402
+from dap.direct_action_planning_dataset_validation.data import (  # noqa: E402
     load_trace_dataset,
 )
-from stage2_dynamic_budget.data.trace_windows import select_trace_window  # noqa: E402
+from dap.data.trace_windows import select_trace_window  # noqa: E402
 
 
 @dataclass(frozen=True)

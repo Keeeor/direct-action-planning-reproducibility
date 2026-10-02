@@ -2,6 +2,7 @@
   "created_utc": "2026-10-02T18:25:25.017518+00:00",
   "scope": "Complete matched statistical evidence and original native comparison",
   "files": {
+    "README.txt": "a6643d3960b7fd2ff84740f99132ae436c60aad3603c472e7a2cadb89cf6846e",
     "data/fault_results.csv": "9db75f1d0c9548fe62c0921b4a11022301efc6b039cc84a1b4a6406f4ffdaf15",
     "data/fault_summary.csv": "25521ed996df5678c0ae33e7f6a0a857b4718f1d3eb7e005e0ca8060b3de4571",
     "data/feature_control_episodes.csv": "948abb7222161c439333df8de76cee84f0c7a48ea738999c6ad4f76fe2eb195d",
@@ -99,6 +100,7 @@
     "original_native/paired_statistics.csv": "839c135cf6bde343fea82ab7ac35bf3e2cec8116bf0f9bb988caa39f617e52a0",
     "original_native/run_metrics.csv": "28f786e1d9b6822f2c8f4cbcac8a6638df01acc5d6198cb6ec013880da130337",
     "original_native/summary.json": "c3d932051673d5a7187b3a1593f97bb4639ffec48b13974e00f88bbdc5c6d9ab",
+    "package_namespace.json": "fe0271908e396df80f7ef0e94f6f3a3b10c6f289cf067c9bd9e0c99836b122da",
     "protocols/fault_protocol.json": "994eecc7a223a9ae9ed5864631faff7f4ccfa5c05cc5ab656e14d78ff1bd8f30",
     "protocols/feature_control_protocol.json": "037e197a091d939579a4271a7bd60b50244bc4af1727f501ef44a1d313826e9c",
     "protocols/gpu_ablation_protocol.json": "5789f93177edb7cbe754c15dc2146a6d1c70d43e2109dcb541133974ec29ec33",
@@ -108,20 +110,20 @@
     "protocols/protocol.json": "8bbf0705a05e5e90357cafa975b90b2a2c9841e97cbdc0177dfbdee62feed922",
     "protocols/scheduler_restart_boundary.json": "e7c596d9b8463440687a77e525c4d69916ff49c5994c7719f3342af91a9f6ba2",
     "provenance.json": "10168c25bab3d9090c690372ac9d0e90a71fd019752520c204527849bff9a44c",
-    "README.txt": "a6643d3960b7fd2ff84740f99132ae436c60aad3603c472e7a2cadb89cf6846e",
     "reproduce_statistics.py": "dd4cb63133902a29eb479ecf267fdd4eea74855a8348df590931efd3ba48bfb1",
     "reproduction_verification.json": "677dea2825eb241a6e461d696f5869bdd7a320c275b639e85c985bfb1be96f87",
     "runtime_environment.json": "4190aaac7e4d57c7289e577b595a22929c502b6a83842c9b8431395c3a29ec89",
     "sources/analyze.py": "a0e4ce01d232b89f8665ec1853ee676357eea0ce673baa4dddac258e8692e106",
     "sources/analyze_feature_control.py": "f3b14a72e9d2940c9eed235eb7b1b068622dfd93775de06f815ea244648588dc",
-    "sources/contract_faults.py": "cdf624a0e22637733f6e8198c60a3cab2ab349103c1f9fbcfdf8a0eedeedb036",
-    "sources/gpu_ablation.py": "e95cb192c752d29c7b813bc97d70e1f5cfb76c0125c49f0f958edf98dc12eb52",
+    "sources/contract_faults.py": "7352b40828df1bbc2e02dbb4a4a1702453089f7e771bc6c6870b94aa49260d6b",
+    "sources/gpu_ablation.py": "7e0118ae10d460f7e8b3292b2778357228fd765dd903d52a537dc450fac86c7f",
     "sources/gpu_feature_control.py": "2b78d8f0b53d906ef0218779dea6d81a1b18841a824173ff6bc4b2133307eb9a",
     "sources/guard_calibration.py": "567fc758dd5f52e62bf481bc176d4db99a36c56dcce45f7c24ad878c4ee78c1f",
-    "sources/live_evaluate.py": "02bb6142f9160af1fc9ad807eb49c06ef300acce262d7c62ab10e99b212a6f8a",
+    "sources/live_evaluate.py": "811956ed5b76dfc774cb032ac85062a7151b11135ac948255136b434fe042f87",
     "sources/live_schedule_sensitivity.py": "efb4a7a4f842f38f78397aeec5eb9b98ea8a0a37863256e0a6571dd4f907a004",
     "sources/metric_sensitivity.py": "f077db1e8edbd97fb745e0a0be48ce73e00652b6212a10e35e542e0d71c0328c",
     "sources/resume_live_schedule.py": "6afac0ee189cd4d1454ba06b88033cdef24c6dfb247751f1f40328d52309dab7",
-    "sources/trace_evaluate.py": "1334caa28c340efe70922fdcfa1f3d5d1c97a1fff4f396ef462b063ad2554514"
-  }
+    "sources/trace_evaluate.py": "499c2e8c159a52117357ddf5b323ab325072580d21061aa5eec28f799bf83fa4"
+  },
+  "updated_utc": "2026-10-02T19:43:14.361620+00:00"
 }

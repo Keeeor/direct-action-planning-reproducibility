@@ -1,6 +1,6 @@
 import numpy as np
 
-from stage2_dynamic_budget.dynamic_shadow_price.dp_reference import (
+from dap.dynamic_shadow_price.dp_reference import (
     DiscreteDPConfig,
     DiscreteBudgetMDP,
     simulate_optimal_policy,

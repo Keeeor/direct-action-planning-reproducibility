@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.data import TraceDataset
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.experiment import (
+from dap.direct_action_planning_dataset_validation.data import TraceDataset
+from dap.direct_action_planning_dataset_validation.experiment import (
     select_refresh_candidate,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.training import (
+from dap.direct_action_planning_dataset_validation.training import (
     collect_branch_dataset,
     train_value_fvi,
 )

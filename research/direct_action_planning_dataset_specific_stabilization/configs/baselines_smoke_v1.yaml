@@ -1,5 +1,5 @@
 tier: dataset_specific_baselines_smoke_v1
-manifest_schema: stage2.dap_dataset_specific_stabilization.baselines.v1
+manifest_schema: dap.dap_dataset_specific_stabilization.baselines.v1
 matrix_row_id: EXT-SMOKE-01
 datasets: [gentd26]
 horizon: 16

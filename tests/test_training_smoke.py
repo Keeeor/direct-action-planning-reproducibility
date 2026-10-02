@@ -2,12 +2,12 @@ import numpy as np
 import pytest
 import torch
 
-from stage2_dynamic_budget.agents.ppo import PPOConfig, PPOTrainer
-from stage2_dynamic_budget.envs.synthetic_queue_env import (
+from dap.agents.ppo import PPOConfig, PPOTrainer
+from dap.envs.synthetic_queue_env import (
     DynamicBudgetSchedulingEnv,
     SyntheticQueueConfig,
 )
-from stage2_dynamic_budget.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
+from dap.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
 
 
 @pytest.mark.parametrize("method", ["ppo", "lagrangian", "budget_state", "fixed_local", "cdba", "cdba_discrete"])

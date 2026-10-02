@@ -4,23 +4,23 @@ import numpy as np
 import pandas as pd
 import torch
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.direct_action_planning.learning import (
+from dap.direct_action_planning.learning import (
     collect_transition_samples,
     fit_empirical_action_model,
     solve_empirical_value,
 )
-from stage2_dynamic_budget.direct_action_planning.planning import (
+from dap.direct_action_planning.planning import (
     BudgetValueTable,
     DirectPlanningAgent,
     one_step_plan,
 )
-from stage2_dynamic_budget.direct_action_planning.gate import assess_continuation
-from stage2_dynamic_budget.direct_action_planning.analysis import (
+from dap.direct_action_planning.gate import assess_continuation
+from dap.direct_action_planning.analysis import (
     _evidence_grade,
     paired_comparisons,
 )

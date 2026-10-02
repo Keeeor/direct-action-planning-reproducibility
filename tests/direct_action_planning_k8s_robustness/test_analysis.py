@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 import pytest
 
-from stage2_dynamic_budget.direct_action_planning_k8s_robustness.analysis import (
+from dap.direct_action_planning_k8s_robustness.analysis import (
     audit_matrix,
     pair_with_historical,
     select_completed_runs,

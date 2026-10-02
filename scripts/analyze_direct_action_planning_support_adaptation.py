@@ -4,7 +4,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.analysis import (
+from dap.direct_action_planning_support_adaptation.analysis import (
     run_analysis,
 )
 

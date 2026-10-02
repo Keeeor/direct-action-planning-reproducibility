@@ -3,14 +3,14 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import ACBADPConfig
-from stage2_dynamic_budget.direct_action_planning_controlled_aggregation.diagnosis import (
+from dap.action_conditioned_budget_advantage.dp import ACBADPConfig
+from dap.direct_action_planning_controlled_aggregation.diagnosis import (
     diagnose_frozen_aggregation,
 )
-from stage2_dynamic_budget.direct_action_planning_controlled_aggregation.experiment import (
+from dap.direct_action_planning_controlled_aggregation.experiment import (
     run_minimal_controlled_aggregation,
 )
-from stage2_dynamic_budget.direct_action_planning_controlled_aggregation.analysis import (
+from dap.direct_action_planning_controlled_aggregation.analysis import (
     run_analysis,
 )
 

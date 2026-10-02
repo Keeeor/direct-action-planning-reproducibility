@@ -4,11 +4,11 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_dataset_benchmark.experiment import (
+from dap.direct_action_planning_dataset_benchmark.experiment import (
     load_protocol,
     run_development_unit,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_benchmark.smoke import run_smoke_matrix
+from dap.direct_action_planning_dataset_benchmark.smoke import run_smoke_matrix
 
 
 def main() -> None:

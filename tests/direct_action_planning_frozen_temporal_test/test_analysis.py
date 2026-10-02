@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from stage2_dynamic_budget.direct_action_planning_frozen_temporal_test.analysis import (
+from dap.direct_action_planning_frozen_temporal_test.analysis import (
     _integrity,
     _stat_spec,
     build_analysis_tables,

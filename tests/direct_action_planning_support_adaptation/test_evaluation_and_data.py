@@ -2,23 +2,23 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import solve_action_dp
-from stage2_dynamic_budget.action_conditioned_budget_advantage.evaluation import ExactDPAgent
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.data import (
+from dap.action_conditioned_budget_advantage.dp import solve_action_dp
+from dap.action_conditioned_budget_advantage.evaluation import ExactDPAgent
+from dap.direct_action_planning_support_adaptation.data import (
     collect_value_trajectories,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.evaluation import (
+from dap.direct_action_planning_support_adaptation.evaluation import (
     evaluate_rollouts,
     make_branchable_env,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.models import (
+from dap.direct_action_planning_support_adaptation.models import (
     PooledValueNetwork,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.scenario import (
+from dap.direct_action_planning_support_adaptation.scenario import (
     ContinuousScenario,
     build_continuous_mdp,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.support import (
+from dap.direct_action_planning_support_adaptation.support import (
     build_support_features,
 )
 

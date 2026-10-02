@@ -1,12 +1,12 @@
 import torch
 
-from stage2_dynamic_budget.dynamic_shadow_price.hard_coupling import (
+from dap.dynamic_shadow_price.hard_coupling import (
     GlobalBudgetMaskedPolicy,
     HardCoupledCDBAPolicy,
     apply_local_budget_mask,
     local_budget_action_mask,
 )
-from stage2_dynamic_budget.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
+from dap.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
 
 
 def test_local_quota_masks_actions_above_cost_and_keeps_cheapest_valid():

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.analysis import (
+from dap.direct_action_planning_dataset_validation.analysis import (
     _bh_adjust,
     _paired_test,
 )

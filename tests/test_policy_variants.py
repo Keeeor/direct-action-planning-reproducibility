@@ -1,7 +1,7 @@
 import pytest
 import torch
 
-from stage2_dynamic_budget.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
+from dap.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
 
 
 @pytest.mark.parametrize(

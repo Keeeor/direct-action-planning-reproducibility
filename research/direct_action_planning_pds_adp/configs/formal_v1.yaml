@@ -1,5 +1,5 @@
 tier: pds_adp_formal_v1
-manifest_schema: stage2.dap_pds_adp.development.v1
+manifest_schema: dap.dap_pds_adp.development.v1
 matrix_row_id: FSE-PDS-FORMAL-01
 datasets: [azure2019, gentd26]
 horizon: 64

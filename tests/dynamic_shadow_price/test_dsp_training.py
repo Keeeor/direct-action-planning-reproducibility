@@ -2,13 +2,13 @@ import numpy as np
 import pytest
 import torch
 
-from stage2_dynamic_budget.dynamic_shadow_price.dp_env import DiscreteBudgetGymEnv
-from stage2_dynamic_budget.dynamic_shadow_price.dp_reference import DiscreteDPConfig
-from stage2_dynamic_budget.dynamic_shadow_price.dsp_trainer import (
+from dap.dynamic_shadow_price.dp_env import DiscreteBudgetGymEnv
+from dap.dynamic_shadow_price.dp_reference import DiscreteDPConfig
+from dap.dynamic_shadow_price.dsp_trainer import (
     DSPTrainer,
     DSPTrainerConfig,
 )
-from stage2_dynamic_budget.dynamic_shadow_price.shadow_policy import (
+from dap.dynamic_shadow_price.shadow_policy import (
     DSPPolicyConfig,
     DynamicShadowPricePolicy,
 )

@@ -1,5 +1,5 @@
 tier: dataset_specific_baselines_core_v1
-manifest_schema: stage2.dap_dataset_specific_stabilization.baselines.v1
+manifest_schema: dap.dap_dataset_specific_stabilization.baselines.v1
 matrix_row_id: EXT-01
 datasets: [azure2019, gentd26]
 horizon: 64

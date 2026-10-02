@@ -1,5 +1,5 @@
 tier: recent_sota_lcpo_temporal_test_v1_locked
-manifest_schema: stage2.dap_recent_sota.temporal_test.v1_locked
+manifest_schema: dap.dap_recent_sota.temporal_test.v1_locked
 matrix_row_id: RECENT-SOTA-LCPO-TEMPORAL
 datasets: [azure2019, gentd26]
 horizon: 64

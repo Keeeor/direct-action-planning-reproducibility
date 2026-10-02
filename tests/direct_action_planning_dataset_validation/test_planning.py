@@ -3,20 +3,20 @@ from __future__ import annotations
 import numpy as np
 import torch
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.models import (
+from dap.direct_action_planning_dataset_validation.models import (
     FeatureNormalizer,
     FullTransitionNetwork,
     LoadForecaster,
     MaskedBudgetStatePolicy,
     ValueNetwork,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.planning import (
+from dap.direct_action_planning_dataset_validation.planning import (
     assert_structured_planner_prefix_invariant,
     make_planner,
 )
-from stage2_dynamic_budget.envs.synthetic_queue_env import SyntheticQueueConfig
-from stage2_dynamic_budget.envs.trace_driven_env import TraceDrivenQueueEnv
-from stage2_dynamic_budget.models.policy import PolicyConfig
+from dap.envs.synthetic_queue_env import SyntheticQueueConfig
+from dap.envs.trace_driven_env import TraceDrivenQueueEnv
+from dap.models.policy import PolicyConfig
 
 
 def _models():

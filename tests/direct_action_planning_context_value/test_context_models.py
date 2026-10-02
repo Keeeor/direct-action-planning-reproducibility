@@ -5,36 +5,36 @@ import pandas as pd
 import pytest
 import torch
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.direct_action_planning.planning import BudgetValueTable
-from stage2_dynamic_budget.direct_action_planning_repair.model import StructuredActionEffectModel
-from stage2_dynamic_budget.direct_action_planning_context_value.history import (
+from dap.direct_action_planning.planning import BudgetValueTable
+from dap.direct_action_planning_repair.model import StructuredActionEffectModel
+from dap.direct_action_planning_context_value.history import (
     CausalHistory,
     leakage_audit,
     serialize_history,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.model import (
+from dap.direct_action_planning_context_value.model import (
     ContextResidualValueModel,
     ContextValuePredictor,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.planning import (
+from dap.direct_action_planning_context_value.planning import (
     ContextPlanningAgent,
     context_one_step_plan,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.protocol import FinalTestLedger
-from stage2_dynamic_budget.direct_action_planning_context_value.data import (
+from dap.direct_action_planning_context_value.protocol import FinalTestLedger
+from dap.direct_action_planning_context_value.data import (
     collect_context_trajectories,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.training import (
+from dap.direct_action_planning_context_value.training import (
     ContextLossWeights,
     ContextTrainingConfig,
     train_context_value,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.evaluation import (
+from dap.direct_action_planning_context_value.evaluation import (
     evaluate_context_state_grid,
 )
 
@@ -163,7 +163,7 @@ def test_context_agent_advances_and_resets_history(tiny_mdp):
     agent = ContextPlanningAgent(
         tiny_mdp, ContextValuePredictor(model, fixed, 4), transition
     )
-    from stage2_dynamic_budget.action_conditioned_budget_advantage.branching import (
+    from dap.action_conditioned_budget_advantage.branching import (
         BranchableDiscreteEnv,
     )
 

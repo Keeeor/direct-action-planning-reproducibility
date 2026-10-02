@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.analysis import (
+from dap.direct_action_planning_support_adaptation.analysis import (
     METRICS,
     bh_adjust,
     paired_method_comparisons,

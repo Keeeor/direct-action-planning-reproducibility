@@ -1,8 +1,8 @@
 import torch
 
-from stage2_dynamic_budget.envs.synthetic_queue_env import DynamicBudgetSchedulingEnv, SyntheticQueueConfig
-from stage2_dynamic_budget.evaluation.rollout import evaluate_agent
-from stage2_dynamic_budget.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
+from dap.envs.synthetic_queue_env import DynamicBudgetSchedulingEnv, SyntheticQueueConfig
+from dap.evaluation.rollout import evaluate_agent
+from dap.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
 
 
 def test_seeded_stochastic_evaluation_is_reproducible() -> None:

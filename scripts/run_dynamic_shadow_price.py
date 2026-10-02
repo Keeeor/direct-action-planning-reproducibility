@@ -3,16 +3,16 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.dynamic_shadow_price.hard_coupling_experiment import (
+from dap.dynamic_shadow_price.hard_coupling_experiment import (
     run_hard_coupling_experiment,
 )
-from stage2_dynamic_budget.dynamic_shadow_price.synthetic_experiment import (
+from dap.dynamic_shadow_price.synthetic_experiment import (
     run_synthetic_joint_experiment,
 )
-from stage2_dynamic_budget.dynamic_shadow_price.trace_experiment import (
+from dap.dynamic_shadow_price.trace_experiment import (
     run_trace_joint_experiment,
 )
-from stage2_dynamic_budget.dynamic_shadow_price.dp_experiment import (
+from dap.dynamic_shadow_price.dp_experiment import (
     run_dp_joint_experiment,
     run_dp_learning_experiment,
 )

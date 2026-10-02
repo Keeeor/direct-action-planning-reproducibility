@@ -1,7 +1,7 @@
 tier: paper_evidence_core_audited_v2
 sensitivity_tier: paper_evidence_sensitivity_audited_v2
-core_manifest_schema: stage2.dap_paper_evidence.core.v2
-sensitivity_manifest_schema: stage2.dap_paper_evidence.sensitivity.v2
+core_manifest_schema: dap.dap_paper_evidence.core.v2
+sensitivity_manifest_schema: dap.dap_paper_evidence.sensitivity.v2
 datasets: [azure2019, gentd26]
 horizon: 64
 budgets: [48.0, 96.0, 144.0]

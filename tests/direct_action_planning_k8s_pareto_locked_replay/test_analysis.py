@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from stage2_dynamic_budget.direct_action_planning_k8s_pareto_locked_replay.analysis import (
+from dap.direct_action_planning_k8s_pareto_locked_replay.analysis import (
     decide_locked_replay,
     paired_rows,
 )

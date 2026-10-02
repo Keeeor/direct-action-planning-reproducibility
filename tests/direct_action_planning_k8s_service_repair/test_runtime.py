@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.runtime import (
+from dap.direct_action_planning_k8s_service_repair.runtime import (
     decision_ready_inputs,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.collector import (
+from dap.direct_action_planning_k8s_service_repair.collector import (
     stale_system_with_current_safety,
 )
 from tests.direct_action_planning_k8s_service_repair.test_collector import (

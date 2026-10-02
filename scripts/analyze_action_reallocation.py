@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.analysis.statistics import (
+from dap.analysis.statistics import (
     benjamini_hochberg,
     paired_bootstrap,
     paired_effect_size,

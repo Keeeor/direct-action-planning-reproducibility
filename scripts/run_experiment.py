@@ -9,7 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from stage2_dynamic_budget.experiment import run_synthetic_experiment
+from dap.experiment import run_synthetic_experiment
 
 
 def main() -> int:

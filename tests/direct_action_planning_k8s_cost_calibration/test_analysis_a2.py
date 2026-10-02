@@ -5,7 +5,7 @@ import math
 import numpy as np
 import pytest
 
-from stage2_dynamic_budget.direct_action_planning_k8s_cost_calibration.analysis_a2 import (
+from dap.direct_action_planning_k8s_cost_calibration.analysis_a2 import (
     action_horizon_valid,
     bootstrap_ci,
     count_nonempty_lines,

@@ -4,11 +4,11 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_paper_evidence.experiment import (
+from dap.direct_action_planning_paper_evidence.experiment import (
     run_core_unit,
     run_sensitivity_unit,
 )
-from stage2_dynamic_budget.direct_action_planning_paper_evidence.analysis import run_analysis
+from dap.direct_action_planning_paper_evidence.analysis import run_analysis
 
 
 def main() -> None:

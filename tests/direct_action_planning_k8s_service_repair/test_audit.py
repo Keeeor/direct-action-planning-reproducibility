@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.audit import (
+from dap.direct_action_planning_k8s_service_repair.audit import (
     build_inventory,
     verify_inventory,
 )

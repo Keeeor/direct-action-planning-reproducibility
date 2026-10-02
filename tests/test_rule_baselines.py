@@ -1,6 +1,6 @@
 import numpy as np
 
-from stage2_dynamic_budget.agents.rules import AggressiveRule, ConservativeRule, NoIntervention
+from dap.agents.rules import AggressiveRule, ConservativeRule, NoIntervention
 
 
 def observation(load=6.0, queue=0.0, growth=0.0, risk=0.0):

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from stage2_dynamic_budget.direct_action_planning_repair.gate import assess_repair_gate
+from dap.direct_action_planning_repair.gate import assess_repair_gate
 
 
 def test_repair_gate_requires_continuous_aggregation_and_both_bursts() -> None:

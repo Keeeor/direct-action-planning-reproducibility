@@ -3,12 +3,12 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_repair import run_legacy_diagnostic
-from stage2_dynamic_budget.direct_action_planning_repair.analysis import run_analysis
-from stage2_dynamic_budget.direct_action_planning_repair.benchmark import (
+from dap.direct_action_planning_repair import run_legacy_diagnostic
+from dap.direct_action_planning_repair.analysis import run_analysis
+from dap.direct_action_planning_repair.benchmark import (
     run_cold_planning_benchmark,
 )
-from stage2_dynamic_budget.direct_action_planning_repair.experiment import run_minimal_repair
+from dap.direct_action_planning_repair.experiment import run_minimal_repair
 
 
 def main() -> None:

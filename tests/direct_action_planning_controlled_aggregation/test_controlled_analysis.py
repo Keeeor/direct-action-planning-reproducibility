@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_controlled_aggregation.analysis import (
+from dap.direct_action_planning_controlled_aggregation.analysis import (
     _bh_adjust,
 )
 

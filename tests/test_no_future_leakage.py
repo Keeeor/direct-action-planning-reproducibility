@@ -1,7 +1,7 @@
 import numpy as np
 
-from stage2_dynamic_budget.envs.trace_driven_env import TraceDrivenQueueEnv
-from stage2_dynamic_budget.envs.synthetic_queue_env import SyntheticQueueConfig
+from dap.envs.trace_driven_env import TraceDrivenQueueEnv
+from dap.envs.synthetic_queue_env import SyntheticQueueConfig
 
 
 def test_observation_depends_only_on_trace_prefix() -> None:
@@ -19,7 +19,7 @@ def test_observation_depends_only_on_trace_prefix() -> None:
 
 
 def test_time_split_preserves_order() -> None:
-    from stage2_dynamic_budget.data.split_by_time import split_by_time
+    from dap.data.split_by_time import split_by_time
 
     trace = np.arange(10)
     train, validation, test = split_by_time(trace, 0.6, 0.2)

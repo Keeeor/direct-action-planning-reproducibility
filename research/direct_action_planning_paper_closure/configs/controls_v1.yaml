@@ -1,5 +1,5 @@
 tier: paper_closure_controls_v1
-manifest_schema: stage2.dap_paper_closure.controls.v1
+manifest_schema: dap.dap_paper_closure.controls.v1
 matrix_row_id: INFO-01
 source_tier: paper_closure_core_v1
 dap_source_config: research/direct_action_planning_paper_closure/configs/core_frontier_v1.yaml

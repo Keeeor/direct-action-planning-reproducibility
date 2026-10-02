@@ -3,16 +3,16 @@ from __future__ import annotations
 import numpy as np
 import torch
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.branching import (
+from dap.action_conditioned_budget_advantage.branching import (
     BranchableDiscreteEnv,
     branch_actions,
 )
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.action_conditioned_budget_advantage.model import (
+from dap.action_conditioned_budget_advantage.model import (
     advantage_adjust_logits,
     pairwise_ranking_loss,
 )

@@ -4,7 +4,7 @@ import numpy as np
 import pytest
 import torch
 
-from stage2_dynamic_budget.direct_action_planning_recent_sota.lcpo import (
+from dap.direct_action_planning_recent_sota.lcpo import (
     LCPOConfig,
     LCPOPolicy,
     ReservoirOODBuffer,

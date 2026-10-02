@@ -4,7 +4,7 @@ import argparse
 import faulthandler
 from pathlib import Path
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.experiment import (
+from dap.action_conditioned_budget_advantage.experiment import (
     run_minimal_validation,
 )
 

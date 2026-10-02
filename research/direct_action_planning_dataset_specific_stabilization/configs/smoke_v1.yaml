@@ -1,5 +1,5 @@
 tier: dataset_specific_stabilization_smoke_v1
-manifest_schema: stage2.dap_dataset_specific_stabilization.core.v1
+manifest_schema: dap.dap_dataset_specific_stabilization.core.v1
 datasets: [gentd26]
 horizon: 16
 budgets: [8.0]

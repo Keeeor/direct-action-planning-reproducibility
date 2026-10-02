@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.baseline_analysis import (
+from dap.direct_action_planning_dataset_specific_stabilization.baseline_analysis import (
     bh_fdr,
     budget_sensitivity,
     compute_unit_metrics,

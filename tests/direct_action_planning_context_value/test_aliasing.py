@@ -3,28 +3,28 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.direct_action_planning.planning import BudgetValueTable
-from stage2_dynamic_budget.direct_action_planning_context_value.aliasing import (
+from dap.direct_action_planning.planning import BudgetValueTable
+from dap.direct_action_planning_context_value.aliasing import (
     alias_summary,
     build_alias_table,
     build_near_alias_pairs,
     future_load_window,
     oracle_phase,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.history import (
+from dap.direct_action_planning_context_value.history import (
     CausalHistory,
     history_features,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.gate import (
+from dap.direct_action_planning_context_value.gate import (
     assess_context_gate,
     assess_oracle_context_gate,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.experiment import (
+from dap.direct_action_planning_context_value.experiment import (
     _decision_latency_mean,
     verify_frozen_inputs,
 )

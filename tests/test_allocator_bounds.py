@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from stage2_dynamic_budget.models.budget_allocator import local_budget_from_q
+from dap.models.budget_allocator import local_budget_from_q
 
 
 @pytest.mark.parametrize("q", [0.0, 0.25, 0.5, 0.75, 1.0])

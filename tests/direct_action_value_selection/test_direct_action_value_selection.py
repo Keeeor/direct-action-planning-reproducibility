@@ -5,40 +5,40 @@ import pandas as pd
 import torch
 from types import SimpleNamespace
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.branching import (
+from dap.action_conditioned_budget_advantage.branching import (
     BranchableDiscreteEnv,
 )
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.direct_action_value_selection.data import (
+from dap.direct_action_value_selection.data import (
     generate_k1_branch_data,
     validate_split_integrity,
 )
-from stage2_dynamic_budget.direct_action_value_selection.analysis import (
+from dap.direct_action_value_selection.analysis import (
     PAIRINGS,
     paired_comparisons,
 )
-from stage2_dynamic_budget.direct_action_value_selection.gate import assess_continuation
-from stage2_dynamic_budget.direct_action_value_selection.model import (
+from dap.direct_action_value_selection.gate import assess_continuation
+from dap.direct_action_value_selection.model import (
     DAVSAgent,
     DAVSEnsemble,
     fit_davs_model,
 )
-from stage2_dynamic_budget.direct_action_value_selection.continuous import (
+from dap.direct_action_value_selection.continuous import (
     ContinuousDAVSAgent,
     fit_continuous_davs,
 )
-from stage2_dynamic_budget.direct_action_value_selection.continuous_data import (
+from dap.direct_action_value_selection.continuous_data import (
     collect_k1_branch_episode,
     validate_continuous_branch_data,
 )
-from stage2_dynamic_budget.dynamic_shadow_price.synthetic_joint import (
+from dap.dynamic_shadow_price.synthetic_joint import (
     AbsoluteBudgetObservationWrapper,
 )
-from stage2_dynamic_budget.envs.synthetic_queue_env import (
+from dap.envs.synthetic_queue_env import (
     DynamicBudgetSchedulingEnv,
     SyntheticQueueConfig,
 )

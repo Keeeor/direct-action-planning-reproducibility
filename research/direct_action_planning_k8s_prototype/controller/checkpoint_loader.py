@@ -16,9 +16,9 @@ PROJECT_ROOT = PROTOTYPE_ROOT.parents[1]
 if str(PROJECT_ROOT / "src") not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.models import FeatureNormalizer  # noqa: E402
-from stage2_dynamic_budget.direct_action_planning_paper_evidence.models import EvidenceLoadForecaster  # noqa: E402
-from stage2_dynamic_budget.direct_action_planning_paper_closure.models import ScaledEvidenceValueNetwork  # noqa: E402
+from dap.direct_action_planning_dataset_validation.models import FeatureNormalizer  # noqa: E402
+from dap.direct_action_planning_paper_evidence.models import EvidenceLoadForecaster  # noqa: E402
+from dap.direct_action_planning_paper_closure.models import ScaledEvidenceValueNetwork  # noqa: E402
 
 
 @dataclass(frozen=True)

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from stage2_dynamic_budget.direct_action_planning_k8s_pareto_calibration.selection import (
+from dap.direct_action_planning_k8s_pareto_calibration.selection import (
     rank_screen_candidates,
 )
 

@@ -23,16 +23,16 @@ from calibration.common import ROOT, write_json
 
 PROJECT_ROOT = ROOT.parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
-from stage2_dynamic_budget.data.trace_windows import select_trace_window  # noqa: E402
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.data import load_trace_dataset  # noqa: E402
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.models import FeatureNormalizer  # noqa: E402
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.training import BranchDataset  # noqa: E402
-from stage2_dynamic_budget.direct_action_planning_paper_closure.models import ScaledEvidenceValueNetwork  # noqa: E402
-from stage2_dynamic_budget.direct_action_planning_paper_closure.training import (  # noqa: E402
+from dap.data.trace_windows import select_trace_window  # noqa: E402
+from dap.direct_action_planning_dataset_validation.data import load_trace_dataset  # noqa: E402
+from dap.direct_action_planning_dataset_validation.models import FeatureNormalizer  # noqa: E402
+from dap.direct_action_planning_dataset_validation.training import BranchDataset  # noqa: E402
+from dap.direct_action_planning_paper_closure.models import ScaledEvidenceValueNetwork  # noqa: E402
+from dap.direct_action_planning_paper_closure.training import (  # noqa: E402
     compute_value_target_scale,
     train_value_candidates,
 )
-from stage2_dynamic_budget.direct_action_planning_paper_evidence.models import EvidenceLoadForecaster  # noqa: E402
+from dap.direct_action_planning_paper_evidence.models import EvidenceLoadForecaster  # noqa: E402
 
 from controller.action_mapper import ACTION_ORDER, ActionMapper
 from controller.checkpoint_loader import save_checkpoint

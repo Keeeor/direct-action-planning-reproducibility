@@ -3,18 +3,18 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.direct_action_planning.learning import (
+from dap.direct_action_planning.learning import (
     collect_transition_samples,
     fit_empirical_action_model,
     solve_empirical_value,
 )
-from stage2_dynamic_budget.direct_action_planning.planning import one_step_plan
-from stage2_dynamic_budget.direct_action_planning_repair.legacy_diagnostics import (
+from dap.direct_action_planning.planning import one_step_plan
+from dap.direct_action_planning_repair.legacy_diagnostics import (
     closed_loop_first_errors,
     diagnose_state_grid,
 )

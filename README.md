@@ -35,7 +35,7 @@ settings, and principal results are all included in its main text.
 
 ## Layout
 
-- `src/`: installable Python package, environments, models, planners, baselines, analysis, and evaluation code.
+- `src/dap/`: the installable `dap` Python package, including environments, models, planners, baselines, analysis, and evaluation code.
 - `scripts/`: preprocessing, training, evaluation, diagnostics, and figure-generation entry points.
 - `configs/`: synthetic and trace experiment configurations.
 - `research/*/configs/` and `research/*/contracts/`: protocol configurations and execution contracts used by the paper experiments. The matched-study integrity records and fixed protocols are retained under `evidence/`.
@@ -46,6 +46,13 @@ settings, and principal results are all included in its main text.
 ## Environment
 
 The package requires Python 3.11 or newer.
+
+All Python entry points use the `dap` namespace. The release transformation is
+recorded in `evidence/package_namespace.json`, including per-file checksums.
+Archived execution contracts retain the content hashes and timestamps recorded
+for the original experiments; their paths use the public namespace. Generate
+fresh audit contracts with the corresponding experiment entry point before a
+new run, so each contract binds the code and inputs used for that run.
 
 ```bash
 python -m venv .venv

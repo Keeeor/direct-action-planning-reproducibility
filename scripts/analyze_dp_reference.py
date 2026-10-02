@@ -8,13 +8,13 @@ import numpy as np
 import pandas as pd
 from scipy.stats import spearmanr
 
-from stage2_dynamic_budget.dynamic_shadow_price.dp_reference import (
+from dap.dynamic_shadow_price.dp_reference import (
     DiscreteBudgetMDP,
     DiscreteDPConfig,
     simulate_optimal_policy,
     solve_backward_dp,
 )
-from stage2_dynamic_budget.utils.artifacts import sha256_file, write_json
+from dap.utils.artifacts import sha256_file, write_json
 
 
 SCENARIOS = ("early_burst", "late_burst")

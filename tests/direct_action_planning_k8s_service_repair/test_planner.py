@@ -3,13 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.planner import (
+from dap.direct_action_planning_k8s_service_repair.planner import (
     RuntimeConsistentPlanner,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.prototype_api import (
+from dap.direct_action_planning_k8s_service_repair.prototype_api import (
     ActionMapper,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.transition import (
+from dap.direct_action_planning_k8s_service_repair.transition import (
     RuntimeConsistentSystemModel,
 )
 

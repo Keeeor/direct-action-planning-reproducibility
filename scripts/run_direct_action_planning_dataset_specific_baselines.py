@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.baseline_experiment import (
+from dap.direct_action_planning_dataset_specific_stabilization.baseline_experiment import (
     run_baseline_matrix,
     run_baseline_unit,
 )

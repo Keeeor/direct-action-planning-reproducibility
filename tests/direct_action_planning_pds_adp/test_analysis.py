@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.direct_action_planning_pds_adp.analysis import (
+from dap.direct_action_planning_pds_adp.analysis import (
     benjamini_hochberg,
     build_seed_units,
     classify_pareto,

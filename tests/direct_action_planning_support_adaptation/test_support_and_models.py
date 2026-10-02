@@ -4,24 +4,24 @@ import numpy as np
 import pandas as pd
 import torch
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import solve_action_dp
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.data import (
+from dap.action_conditioned_budget_advantage.dp import solve_action_dp
+from dap.direct_action_planning_support_adaptation.data import (
     full_state_value_frame,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.models import (
+from dap.direct_action_planning_support_adaptation.models import (
     FrozenValueWithAdapter,
     LinearValueAdapter,
     PooledValueNetwork,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.scenario import (
+from dap.direct_action_planning_support_adaptation.scenario import (
     ContinuousScenario,
     build_continuous_mdp,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.support import (
+from dap.direct_action_planning_support_adaptation.support import (
     compute_support_distances,
     support_relationship,
 )
-from stage2_dynamic_budget.direct_action_planning_support_adaptation.training import (
+from dap.direct_action_planning_support_adaptation.training import (
     AdapterTrainingConfig,
     PooledTrainingConfig,
     ValueLossWeights,

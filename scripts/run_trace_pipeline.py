@@ -12,8 +12,8 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from stage2_dynamic_budget.experiment import load_config  # noqa: E402
-from stage2_dynamic_budget.trace_experiment import run_trace_experiment  # noqa: E402
+from dap.experiment import load_config  # noqa: E402
+from dap.trace_experiment import run_trace_experiment  # noqa: E402
 
 
 def _run(task):

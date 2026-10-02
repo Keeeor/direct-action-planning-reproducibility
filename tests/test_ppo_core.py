@@ -1,8 +1,8 @@
 import numpy as np
 import torch
 
-from stage2_dynamic_budget.agents.ppo import PPOConfig, compute_gae
-from stage2_dynamic_budget.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
+from dap.agents.ppo import PPOConfig, compute_gae
+from dap.models.policy import ConstrainedSchedulingPolicy, PolicyConfig
 
 
 def test_gae_matches_hand_calculation_without_bootstrap() -> None:

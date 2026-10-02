@@ -11,7 +11,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from stage2_dynamic_budget.data.azure_functions import (  # noqa: E402
+from dap.data.azure_functions import (  # noqa: E402
     aggregate_selected_functions,
     fit_and_scale_chronological,
     select_bursty_functions,
@@ -29,7 +29,7 @@ def main() -> int:
         for domain, values in aggregates.items():
             daily[domain].append(values)
         print(f"aggregated selected day={day:02d}", flush=True)
-    report = {"schema": "stage2.azure_functions_bursty_selection.v1", "selection": selection_audit, "selected_function_ids": selected, "domains": {}}
+    report = {"schema": "dap.azure_functions_bursty_selection.v1", "selection": selection_audit, "selected_function_ids": selected, "domains": {}}
     for domain, days in daily.items():
         train = np.concatenate(days[:8])
         validation = np.concatenate(days[8:11])

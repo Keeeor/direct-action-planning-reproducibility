@@ -5,7 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from stage2_dynamic_budget.data.gentd26 import preprocess_gentd26
+from dap.data.gentd26 import preprocess_gentd26
 
 
 UPSTREAM_BLOBS = {

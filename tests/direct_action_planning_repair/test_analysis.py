@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_repair.analysis import _bh_adjust
+from dap.direct_action_planning_repair.analysis import _bh_adjust
 
 
 def test_bh_adjustment_is_monotone_in_sorted_p_values() -> None:

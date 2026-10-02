@@ -50,12 +50,12 @@ def evaluate_cell(cell, smoke=False):
     import pandas as pd
     import torch
     from collections import deque
-    from stage2_dynamic_budget.direct_action_planning_dataset_validation.data import load_trace_dataset
-    from stage2_dynamic_budget.direct_action_planning_paper_closure.environment import make_calibrated_trace_env
-    from stage2_dynamic_budget.direct_action_planning_paper_closure.control_experiment import _load_source_components
-    from stage2_dynamic_budget.direct_action_planning_paper_closure.planning import make_scaled_planner
-    from stage2_dynamic_budget.direct_action_planning_paper_closure.controls import make_mpc_planner
-    from stage2_dynamic_budget.direct_action_planning_pds_adp.temporal_evaluation import load_pds_planner
+    from dap.direct_action_planning_dataset_validation.data import load_trace_dataset
+    from dap.direct_action_planning_paper_closure.environment import make_calibrated_trace_env
+    from dap.direct_action_planning_paper_closure.control_experiment import _load_source_components
+    from dap.direct_action_planning_paper_closure.planning import make_scaled_planner
+    from dap.direct_action_planning_paper_closure.controls import make_mpc_planner
+    from dap.direct_action_planning_pds_adp.temporal_evaluation import load_pds_planner
     torch.set_num_threads(1)
     dataset_name, budget, seed = cell
     cfg = json.loads((HERE / "protocol.json").read_text(encoding="utf-8"))["trace"]

@@ -12,7 +12,7 @@ import time
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from stage2_dynamic_budget.experiment import load_config, run_synthetic_experiment
+from dap.experiment import load_config, run_synthetic_experiment
 
 
 def _run(task):

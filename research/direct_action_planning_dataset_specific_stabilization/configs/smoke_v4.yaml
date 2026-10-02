@@ -1,5 +1,5 @@
 tier: dataset_specific_stabilization_smoke_v4
-manifest_schema: stage2.dap_dataset_specific_stabilization.core.v4
+manifest_schema: dap.dap_dataset_specific_stabilization.core.v4
 matrix_row_id: STABILIZATION-SMOKE-V4
 datasets: [gentd26]
 horizon: 16

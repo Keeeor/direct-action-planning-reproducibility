@@ -7,11 +7,11 @@ import pandas as pd
 import torch
 import yaml
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.data import load_trace_dataset
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.evaluation import evaluate_methods
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.experiment import _train_b4
-from stage2_dynamic_budget.utils.artifacts import sha256_file, write_json
-from stage2_dynamic_budget.utils.seed import set_global_seed
+from dap.direct_action_planning_dataset_validation.data import load_trace_dataset
+from dap.direct_action_planning_dataset_validation.evaluation import evaluate_methods
+from dap.direct_action_planning_dataset_validation.experiment import _train_b4
+from dap.utils.artifacts import sha256_file, write_json
+from dap.utils.seed import set_global_seed
 
 
 def main() -> None:

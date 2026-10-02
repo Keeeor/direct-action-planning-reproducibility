@@ -1,8 +1,8 @@
 import numpy as np
 import pytest
 
-from stage2_dynamic_budget.dynamic_shadow_price.dp_env import DiscreteBudgetGymEnv
-from stage2_dynamic_budget.dynamic_shadow_price.dp_reference import DiscreteDPConfig
+from dap.dynamic_shadow_price.dp_env import DiscreteBudgetGymEnv
+from dap.dynamic_shadow_price.dp_reference import DiscreteDPConfig
 
 
 def test_dp_gym_env_matches_budget_accounting_and_canonical_observation():

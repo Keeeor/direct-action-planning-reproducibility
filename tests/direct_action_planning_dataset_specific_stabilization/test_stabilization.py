@@ -4,45 +4,45 @@ import numpy as np
 import pytest
 import torch
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.data import TraceDataset
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.training import (
+from dap.direct_action_planning_dataset_validation.data import TraceDataset
+from dap.direct_action_planning_dataset_validation.training import (
     collect_branch_dataset,
 )
-from stage2_dynamic_budget.envs.synthetic_queue_env import SyntheticQueueConfig
-from stage2_dynamic_budget.envs.trace_driven_env import TraceDrivenQueueEnv
+from dap.envs.synthetic_queue_env import SyntheticQueueConfig
+from dap.envs.trace_driven_env import TraceDrivenQueueEnv
 
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.planning import (
+from dap.direct_action_planning_dataset_specific_stabilization.planning import (
     make_scaled_planner,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.selection import (
+from dap.direct_action_planning_dataset_specific_stabilization.selection import (
     SelectionGuardrails,
     select_planning_candidate,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.training import (
+from dap.direct_action_planning_dataset_specific_stabilization.training import (
     compute_value_target_scale,
     train_value_candidates,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.models import (
+from dap.direct_action_planning_dataset_specific_stabilization.models import (
     ScaledEvidenceValueNetwork,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.environment import (
+from dap.direct_action_planning_dataset_specific_stabilization.environment import (
     DomainActionCalibration,
     calibrate_domain_actions,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.baseline_adapter import (
+from dap.direct_action_planning_dataset_specific_stabilization.baseline_adapter import (
     TrainingConstraintEnv,
     calibrated_baseline_runtime,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.baseline_experiment import (
+from dap.direct_action_planning_dataset_specific_stabilization.baseline_experiment import (
     _policy_train_config,
     load_baseline_protocol,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.experiment import (
+from dap.direct_action_planning_dataset_specific_stabilization.experiment import (
     build_checkpoint_payload,
     candidate_grid,
     load_protocol,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_specific_stabilization.analysis import (
+from dap.direct_action_planning_dataset_specific_stabilization.analysis import (
     assess_dataset_gate,
 )
 
@@ -108,7 +108,7 @@ def test_scaled_planner_rejects_out_of_range_weight() -> None:
 
 def test_scaled_value_network_restores_declared_output_scale() -> None:
     normalizer = __import__(
-        "stage2_dynamic_budget.direct_action_planning_dataset_validation.models",
+        "dap.direct_action_planning_dataset_validation.models",
         fromlist=["FeatureNormalizer"],
     ).FeatureNormalizer.fit(np.zeros((2, 14), dtype=np.float32))
     torch.manual_seed(7)
@@ -126,7 +126,7 @@ def test_scaled_value_network_restores_declared_output_scale() -> None:
 
 def test_scaled_value_network_can_start_from_zero_continuation() -> None:
     normalizer = __import__(
-        "stage2_dynamic_budget.direct_action_planning_dataset_validation.models",
+        "dap.direct_action_planning_dataset_validation.models",
         fromlist=["FeatureNormalizer"],
     ).FeatureNormalizer.fit(np.zeros((2, 14), dtype=np.float32))
     model = ScaledEvidenceValueNetwork(
@@ -184,7 +184,7 @@ def test_domain_action_calibration_scales_high_load_domain() -> None:
 
 
 def test_calibrated_baseline_runtime_is_reversible() -> None:
-    from stage2_dynamic_budget.direct_action_planning_dataset_benchmark import rl
+    from dap.direct_action_planning_dataset_benchmark import rl
 
     original = rl._factory
     dataset = TraceDataset(

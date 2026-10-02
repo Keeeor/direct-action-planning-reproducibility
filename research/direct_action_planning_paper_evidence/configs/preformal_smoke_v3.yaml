@@ -1,7 +1,7 @@
 tier: paper_evidence_preformal_smoke_v3
 sensitivity_tier: paper_evidence_preformal_sensitivity_smoke_v3
-core_manifest_schema: stage2.dap_paper_evidence.core.v3
-sensitivity_manifest_schema: stage2.dap_paper_evidence.sensitivity.v3
+core_manifest_schema: dap.dap_paper_evidence.core.v3
+sensitivity_manifest_schema: dap.dap_paper_evidence.sensitivity.v3
 datasets: [gentd26]
 horizon: 16
 budgets: [8.0]

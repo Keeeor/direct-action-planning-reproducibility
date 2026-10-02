@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from dataclasses import replace
 
-from stage2_dynamic_budget.direct_action_planning_k8s_robustness.perturbations import (
+from dap.direct_action_planning_k8s_robustness.perturbations import (
     PerturbedCollector,
     dropout_steps,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_robustness.prototype_api import (
+from dap.direct_action_planning_k8s_robustness.prototype_api import (
     FieldEvidence,
     StateSnapshot,
 )

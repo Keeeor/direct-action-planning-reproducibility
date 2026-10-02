@@ -3,13 +3,13 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
-from stage2_dynamic_budget.direct_action_planning_k8s_cost_calibration.model import (
+from dap.direct_action_planning_k8s_cost_calibration.model import (
     CostWeightedSystemModel,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.prototype_api import (
+from dap.direct_action_planning_k8s_service_repair.prototype_api import (
     ActionMapper,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.transition import (
+from dap.direct_action_planning_k8s_service_repair.transition import (
     RuntimeConsistentSystemModel,
 )
 

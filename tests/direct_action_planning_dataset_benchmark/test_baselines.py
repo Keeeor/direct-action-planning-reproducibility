@@ -3,24 +3,24 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.envs.synthetic_queue_env import SyntheticQueueConfig
-from stage2_dynamic_budget.envs.trace_driven_env import TraceDrivenQueueEnv
+from dap.envs.synthetic_queue_env import SyntheticQueueConfig
+from dap.envs.trace_driven_env import TraceDrivenQueueEnv
 
-from stage2_dynamic_budget.direct_action_planning_dataset_benchmark.controllers import (
+from dap.direct_action_planning_dataset_benchmark.controllers import (
     CausalMPCController,
     LyapunovDPPController,
     PIDBudgetController,
     ReactiveThresholdController,
     feasible_actions,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_benchmark.analysis import (
+from dap.direct_action_planning_dataset_benchmark.analysis import (
     _claim_unit_metrics,
     _method_role,
 )
-from stage2_dynamic_budget.direct_action_planning_dataset_benchmark.evaluation import evaluate_agent
-from stage2_dynamic_budget.direct_action_planning_dataset_benchmark.cpo import CPOConfig, train_cpo
-from stage2_dynamic_budget.direct_action_planning_dataset_benchmark.rl import RLTrainConfig, train_policy
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.data import TraceDataset
+from dap.direct_action_planning_dataset_benchmark.evaluation import evaluate_agent
+from dap.direct_action_planning_dataset_benchmark.cpo import CPOConfig, train_cpo
+from dap.direct_action_planning_dataset_benchmark.rl import RLTrainConfig, train_policy
+from dap.direct_action_planning_dataset_validation.data import TraceDataset
 
 
 def _dataset() -> TraceDataset:

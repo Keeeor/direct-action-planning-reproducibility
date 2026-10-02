@@ -1,5 +1,5 @@
 tier: dataset_specific_stabilization_core_v2
-manifest_schema: stage2.dap_dataset_specific_stabilization.core.v2
+manifest_schema: dap.dap_dataset_specific_stabilization.core.v2
 matrix_row_id: STABILIZATION-CORE-V2
 datasets: [azure2019, gentd26]
 horizon: 64

@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.analysis.aggregation import paired_comparisons, pareto_table
-from stage2_dynamic_budget.analysis.statistics import benjamini_hochberg
-from stage2_dynamic_budget.utils.artifacts import sha256_file, write_json
+from dap.analysis.aggregation import paired_comparisons, pareto_table
+from dap.analysis.statistics import benjamini_hochberg
+from dap.utils.artifacts import sha256_file, write_json
 
 
 def collect(root: Path, pattern: str) -> pd.DataFrame:

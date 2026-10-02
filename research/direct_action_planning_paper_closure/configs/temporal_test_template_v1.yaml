@@ -1,5 +1,5 @@
 tier: paper_closure_temporal_test_v1
-manifest_schema: stage2.dap_paper_closure.temporal_test.v1
+manifest_schema: dap.dap_paper_closure.temporal_test.v1
 matrix_row_id: FRONTIER-01-TEMPORAL
 datasets: [azure2019, gentd26]
 horizon: 64

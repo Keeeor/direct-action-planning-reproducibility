@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.training import (
+from dap.direct_action_planning_k8s_service_repair.training import (
     select_validation_candidate,
 )
 

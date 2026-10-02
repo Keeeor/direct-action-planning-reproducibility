@@ -2,11 +2,11 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_pds_adp.planning import (
+from dap.direct_action_planning_pds_adp.planning import (
     make_postdecision_planner,
     postdecision_state,
 )
-from stage2_dynamic_budget.envs.synthetic_queue_env import (
+from dap.envs.synthetic_queue_env import (
     DynamicBudgetSchedulingEnv,
     SyntheticQueueConfig,
 )

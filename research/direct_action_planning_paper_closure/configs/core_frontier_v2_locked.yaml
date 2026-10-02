@@ -1,5 +1,5 @@
 tier: paper_closure_core_v2_locked
-manifest_schema: stage2.dap_paper_closure.core.v2_locked
+manifest_schema: dap.dap_paper_closure.core.v2_locked
 matrix_row_id: FRONTIER-01-DAP-LOCKED
 expected_code_tree_sha256: sha256:14b39b42755580aa94b1d7344eb7965225b690cc03ea062a69154184224c69e7
 datasets: [azure2019, gentd26]

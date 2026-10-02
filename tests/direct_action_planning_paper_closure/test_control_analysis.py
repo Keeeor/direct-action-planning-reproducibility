@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_paper_closure.analysis import _bh, _pareto
+from dap.direct_action_planning_paper_closure.analysis import _bh, _pareto
 
 
 def test_bh_is_monotonic_after_pvalue_sorting():

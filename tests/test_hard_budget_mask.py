@@ -1,6 +1,6 @@
 import numpy as np
 
-from stage2_dynamic_budget.envs.wrappers import hard_budget_action_mask
+from dap.envs.wrappers import hard_budget_action_mask
 
 
 def test_over_budget_actions_are_masked_and_noop_remains() -> None:

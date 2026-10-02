@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from dataclasses import replace
 
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.collector import (
+from dap.direct_action_planning_k8s_service_repair.collector import (
     RuntimeSemanticCollector,
     stale_system_with_current_safety,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.prototype_api import (
+from dap.direct_action_planning_k8s_service_repair.prototype_api import (
     FieldEvidence,
     StateSnapshot,
 )

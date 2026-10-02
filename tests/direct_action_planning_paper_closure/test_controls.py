@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_paper_closure.controls import (
+from dap.direct_action_planning_paper_closure.controls import (
     make_mpc_planner,
 )
-from stage2_dynamic_budget.envs.synthetic_queue_env import (
+from dap.envs.synthetic_queue_env import (
     SyntheticQueueConfig,
 )
-from stage2_dynamic_budget.envs.trace_driven_env import TraceDrivenQueueEnv
+from dap.envs.trace_driven_env import TraceDrivenQueueEnv
 
 
 class ConstantForecaster:

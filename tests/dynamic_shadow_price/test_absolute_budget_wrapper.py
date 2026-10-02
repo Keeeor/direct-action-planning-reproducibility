@@ -1,9 +1,9 @@
 import numpy as np
 
-from stage2_dynamic_budget.dynamic_shadow_price.synthetic_joint import (
+from dap.dynamic_shadow_price.synthetic_joint import (
     AbsoluteBudgetObservationWrapper,
 )
-from stage2_dynamic_budget.envs.synthetic_queue_env import (
+from dap.envs.synthetic_queue_env import (
     DynamicBudgetSchedulingEnv,
     SyntheticQueueConfig,
 )

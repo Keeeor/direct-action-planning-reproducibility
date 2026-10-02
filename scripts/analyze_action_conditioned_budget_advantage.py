@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.analysis import run_analysis
+from dap.action_conditioned_budget_advantage.analysis import run_analysis
 
 
 ROOT = Path(__file__).resolve().parents[1]

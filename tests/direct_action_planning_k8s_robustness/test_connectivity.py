@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 
-from stage2_dynamic_budget.direct_action_planning_k8s_robustness.connectivity import (
+from dap.direct_action_planning_k8s_robustness.connectivity import (
     LocalServiceForward,
     ProxyBypassedPrepare,
 )

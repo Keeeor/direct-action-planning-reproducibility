@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_k8s_native_comparison.analysis import (
+from dap.direct_action_planning_k8s_native_comparison.analysis import (
     bootstrap_ci,
     exact_sign_flip_p,
     holm_adjust,

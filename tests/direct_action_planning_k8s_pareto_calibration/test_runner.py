@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_k8s_pareto_calibration.runner import (
+from dap.direct_action_planning_k8s_pareto_calibration.runner import (
     audit_candidate_action_log,
     run_directory_matches,
 )

@@ -3,7 +3,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.data.azure_functions import (
+from dap.data.azure_functions import (
     aggregate_invocation_file,
     fit_and_scale_chronological,
     select_bursty_functions,

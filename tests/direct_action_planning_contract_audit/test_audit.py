@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import copy
 
-from stage2_dynamic_budget.direct_action_planning_contract_audit.audit import (
+from dap.direct_action_planning_contract_audit.audit import (
     ACTION_ORDER,
     EXPECTED_MUTATION_CATEGORY,
     mutate_record,

@@ -11,19 +11,19 @@ from typing import Any, Iterable
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.direct_action_planning_k8s_robustness.analysis import (
+from dap.direct_action_planning_k8s_robustness.analysis import (
     audit_matrix,
     pair_with_historical,
     read_json,
     select_completed_runs,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_robustness.protocol import (
+from dap.direct_action_planning_k8s_robustness.protocol import (
     resolve_path,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_robustness.prototype_api import (
+from dap.direct_action_planning_k8s_robustness.prototype_api import (
     PROTOTYPE_ROOT,  # noqa: F401 - makes the frozen prototype importable
 )
-from stage2_dynamic_budget.utils.artifacts import sha256_file, write_json
+from dap.utils.artifacts import sha256_file, write_json
 
 from analysis.aggregate import aggregate_run
 

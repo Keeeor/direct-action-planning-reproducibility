@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
-from stage2_dynamic_budget.utils.artifacts import sha256_file, write_json
+from dap.utils.artifacts import sha256_file, write_json
 
 
 DAP = "dap_calibrated"
@@ -388,7 +388,7 @@ def analyze(project_root: str | Path, output_dir: str | Path) -> Path:
         )
     evidence = {
         "schema": "light.evidence_strength.v1",
-        "project": "stage2_dynamic_budget",
+        "project": "dap",
         "analysis": "direct_action_planning_recent_sota",
         "claims": evidence_claims,
     }
@@ -423,7 +423,7 @@ def analyze(project_root: str | Path, output_dir: str | Path) -> Path:
     write_json(
         output / "manifest.json",
         {
-            "schema": "stage2.dap_recent_sota.analysis.v1",
+            "schema": "dap.dap_recent_sota.analysis.v1",
             "status": "completed",
             "post_hoc_extension": True,
             "episode_rows": int(len(episodes)),

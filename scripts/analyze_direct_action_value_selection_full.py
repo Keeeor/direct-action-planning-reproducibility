@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import argparse
 
-from stage2_dynamic_budget.direct_action_value_selection.full_analysis import (
+from dap.direct_action_value_selection.full_analysis import (
     run_full_analysis,
 )
 

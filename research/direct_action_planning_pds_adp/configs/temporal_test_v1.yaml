@@ -1,5 +1,5 @@
 tier: pds_adp_temporal_test_v1_locked
-manifest_schema: stage2.dap_pds_adp.temporal_test.v1_locked
+manifest_schema: dap.dap_pds_adp.temporal_test.v1_locked
 matrix_row_id: FSE-PDS-TEMPORAL-01
 datasets: [azure2019, gentd26]
 horizon: 64

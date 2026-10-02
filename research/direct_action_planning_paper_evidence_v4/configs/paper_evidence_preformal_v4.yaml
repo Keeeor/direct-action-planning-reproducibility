@@ -1,7 +1,7 @@
 tier: paper_evidence_core_preformal_v4
 sensitivity_tier: paper_evidence_sensitivity_preformal_v4
-core_manifest_schema: stage2.dap_paper_evidence.core.v4
-sensitivity_manifest_schema: stage2.dap_paper_evidence.sensitivity.v4
+core_manifest_schema: dap.dap_paper_evidence.core.v4
+sensitivity_manifest_schema: dap.dap_paper_evidence.sensitivity.v4
 datasets: [azure2019, gentd26]
 horizon: 64
 budgets: [48.0, 96.0, 144.0]

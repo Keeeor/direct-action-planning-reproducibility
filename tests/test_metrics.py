@@ -2,7 +2,7 @@ import math
 
 import pytest
 
-from stage2_dynamic_budget.evaluation.metrics import summarize_episode
+from dap.evaluation.metrics import summarize_episode
 
 
 def test_episode_metrics_match_small_fixture() -> None:

@@ -1,6 +1,6 @@
 import numpy as np
 
-from stage2_dynamic_budget.data.trace_windows import select_trace_window
+from dap.data.trace_windows import select_trace_window
 
 
 def test_trace_window_is_deterministic_and_contained() -> None:

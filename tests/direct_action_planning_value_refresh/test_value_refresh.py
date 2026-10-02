@@ -5,26 +5,26 @@ import pandas as pd
 import pytest
 import torch
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.direct_action_planning.planning import BudgetValueTable
-from stage2_dynamic_budget.direct_action_planning_repair.model import (
+from dap.direct_action_planning.planning import BudgetValueTable
+from dap.direct_action_planning_repair.model import (
     StructuredActionEffectModel,
 )
-from stage2_dynamic_budget.direct_action_planning_value_refresh.causal import (
+from dap.direct_action_planning_value_refresh.causal import (
     causal_decomposition,
 )
-from stage2_dynamic_budget.direct_action_planning_value_refresh.data import (
+from dap.direct_action_planning_value_refresh.data import (
     build_anchor_states,
     value_state_targets,
 )
-from stage2_dynamic_budget.direct_action_planning_value_refresh.protocol import (
+from dap.direct_action_planning_value_refresh.protocol import (
     FinalTestLedger,
 )
-from stage2_dynamic_budget.direct_action_planning_value_refresh.value import (
+from dap.direct_action_planning_value_refresh.value import (
     ResidualBudgetValueModel,
     budget_monotonic_loss,
     planning_rank_loss,

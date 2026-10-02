@@ -1,5 +1,5 @@
 tier: pds_adp_smoke_v1
-manifest_schema: stage2.dap_pds_adp.development.v1
+manifest_schema: dap.dap_pds_adp.development.v1
 matrix_row_id: FSE-PDS-SMOKE-01
 datasets: [azure2019]
 horizon: 64

@@ -1,5 +1,5 @@
 tier: paper_closure_baselines_v2_parallel
-manifest_schema: stage2.dap_paper_closure.baselines.v2
+manifest_schema: dap.dap_paper_closure.baselines.v2
 matrix_row_id: FRONTIER-01-RL-PARALLEL
 datasets: [azure2019, gentd26]
 horizon: 64

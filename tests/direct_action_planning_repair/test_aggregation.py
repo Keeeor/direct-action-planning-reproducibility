@@ -3,28 +3,28 @@ from __future__ import annotations
 import numpy as np
 import torch
 
-from stage2_dynamic_budget.action_conditioned_budget_advantage.dp import (
+from dap.action_conditioned_budget_advantage.dp import (
     ACBADPConfig,
     ActionConditionedBudgetMDP,
     solve_action_dp,
 )
-from stage2_dynamic_budget.direct_action_planning.learning import (
+from dap.direct_action_planning.learning import (
     collect_transition_samples,
     fit_empirical_action_model,
     solve_empirical_value,
 )
-from stage2_dynamic_budget.direct_action_planning_repair.aggregation import (
+from dap.direct_action_planning_repair.aggregation import (
     aggregate_branch_labels,
     collect_closed_loop_branch_labels,
     visitation_distribution_distance,
 )
-from stage2_dynamic_budget.direct_action_planning_repair.data import (
+from dap.direct_action_planning_repair.data import (
     collect_common_random_branch_data,
 )
-from stage2_dynamic_budget.direct_action_planning_repair.model import (
+from dap.direct_action_planning_repair.model import (
     StructuredActionEffectModel,
 )
-from stage2_dynamic_budget.direct_action_planning_repair.planning import (
+from dap.direct_action_planning_repair.planning import (
     StructuredPlanningAgent,
 )
 

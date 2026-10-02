@@ -2,12 +2,12 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.transition import (
+from dap.direct_action_planning_k8s_service_repair.transition import (
     RuntimeConsistentSystemModel,
     conservative_commitment_seconds,
     target_is_feasible,
 )
-from stage2_dynamic_budget.direct_action_planning_k8s_service_repair.prototype_api import (
+from dap.direct_action_planning_k8s_service_repair.prototype_api import (
     ActionMapper,
 )
 

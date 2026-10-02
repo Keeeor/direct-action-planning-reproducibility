@@ -16,47 +16,47 @@
         "sha256": "sha256:170285f5b01e64d7f2456e2dc1f236b97aedb49a8e91e275af068226231a62ea"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/audit.py",
+        "path": "src/dap/direct_action_planning_k8s_cost_calibration/audit.py",
         "sha256": "sha256:bdee92a5ce623c4e98d261309ac5249710bef2599256ddb6e80bae88c7d7bf42"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/model.py",
+        "path": "src/dap/direct_action_planning_k8s_cost_calibration/model.py",
         "sha256": "sha256:13d95144282a600e03a5bf4bdc6746cbcb767de6e0ad6e6d1c1d3cd8ce0e1374"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runner.py",
+        "path": "src/dap/direct_action_planning_k8s_cost_calibration/runner.py",
         "sha256": "sha256:9b52dbc01c3e4c218efc8e4f9aebc068af9f3e45bfa8cfafbfbd08adfb561bc0"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runtime.py",
+        "path": "src/dap/direct_action_planning_k8s_cost_calibration/runtime.py",
         "sha256": "sha256:e5ac148a6ab44303aeec3790c9aea9844eaa075440fce163c5875f945328f80d"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_cost_calibration/runtime_audit.py",
+        "path": "src/dap/direct_action_planning_k8s_cost_calibration/runtime_audit.py",
         "sha256": "sha256:98d1380f906f6386c9d6010daae7afa58f9ee48669426628a40c40fef95de150"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/collector.py",
+        "path": "src/dap/direct_action_planning_k8s_service_repair/collector.py",
         "sha256": "sha256:4f8f2175841fafc9264e2262a1df209fadd2d544f3eefebbb13a3570df1dcc64"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/planner.py",
+        "path": "src/dap/direct_action_planning_k8s_service_repair/planner.py",
         "sha256": "sha256:26672ebfa6a3d775c13bc3affa09d08c76f634510b9cfa037297dfd9a008be50"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/prototype_api.py",
+        "path": "src/dap/direct_action_planning_k8s_service_repair/prototype_api.py",
         "sha256": "sha256:791a4a61a874d500075cf358e129563fcf54cb74976a784c20e15f56d13ba1cb"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime.py",
+        "path": "src/dap/direct_action_planning_k8s_service_repair/runtime.py",
         "sha256": "sha256:d74e4ea599dcc5b96ec25187d227f69772a8505f7c93c6b792b4a5b064460403"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/runtime_audit.py",
+        "path": "src/dap/direct_action_planning_k8s_service_repair/runtime_audit.py",
         "sha256": "sha256:4275185eb52e90aa9f4dbe3fcaf6bd2d213f3b47ee596550afdf2574c5f7ddb6"
       },
       {
-        "path": "src/stage2_dynamic_budget/direct_action_planning_k8s_service_repair/transition.py",
+        "path": "src/dap/direct_action_planning_k8s_service_repair/transition.py",
         "sha256": "sha256:052b109a0bbdfa15150475b6fa0e8532d95a65821e849212b22c3a4edfa6414b"
       },
       {

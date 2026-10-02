@@ -3,11 +3,11 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_value_refresh.experiment import (
+from dap.direct_action_planning_value_refresh.experiment import (
     run_frozen_causal_diagnosis,
     run_minimal_value_refresh,
 )
-from stage2_dynamic_budget.direct_action_planning_value_refresh.analysis import run_analysis
+from dap.direct_action_planning_value_refresh.analysis import run_analysis
 
 
 def main() -> None:

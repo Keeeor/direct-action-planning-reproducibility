@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import argparse
 
-from stage2_dynamic_budget.direct_action_planning.analysis import run_analysis
+from dap.direct_action_planning.analysis import run_analysis
 
 
 def main() -> None:

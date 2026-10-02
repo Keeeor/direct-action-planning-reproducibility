@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_pds_adp.temporal_evaluation import (
+from dap.direct_action_planning_pds_adp.temporal_evaluation import (
     freeze_temporal_contract,
     run_temporal_test_matrix,
     run_temporal_test_unit,

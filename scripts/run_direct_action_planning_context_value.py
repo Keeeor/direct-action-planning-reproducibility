@@ -3,11 +3,11 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from stage2_dynamic_budget.direct_action_planning_context_value.experiment import (
+from dap.direct_action_planning_context_value.experiment import (
     run_alias_oracle_diagnosis,
     run_minimal_context_value,
 )
-from stage2_dynamic_budget.direct_action_planning_context_value.analysis import run_analysis
+from dap.direct_action_planning_context_value.analysis import run_analysis
 
 
 def main() -> None:

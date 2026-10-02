@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_dataset_validation.training import (
+from dap.direct_action_planning_dataset_validation.training import (
     BranchDataset,
 )
-from stage2_dynamic_budget.direct_action_planning_pds_adp.training import (
+from dap.direct_action_planning_pds_adp.training import (
     build_postdecision_regression,
     train_postdecision_candidates,
 )

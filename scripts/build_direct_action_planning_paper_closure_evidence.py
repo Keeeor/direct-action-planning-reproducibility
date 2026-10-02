@@ -310,7 +310,7 @@ def main() -> None:
         if path.is_file() and path.name != "manifest.json"
     }
     manifest = {
-        "schema": "stage2.dap_paper_closure.claim_evidence.v1",
+        "schema": "dap.dap_paper_closure.claim_evidence.v1",
         "status": "completed",
         "source_artifacts": {name: {"path": str(path.relative_to(root)), "sha256": _sha256(path)} for name, path in sources.items()},
         "coverage": {"external_comparisons": len(external), "control_return_comparisons": len(control)},

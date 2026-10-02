@@ -11,14 +11,14 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from stage2_dynamic_budget.analysis.aggregation import (  # noqa: E402
+from dap.analysis.aggregation import (  # noqa: E402
     collect_runs,
     paired_comparisons,
     pareto_table,
     seed_aggregate,
     summary_table,
 )
-from stage2_dynamic_budget.analysis.statistics import benjamini_hochberg  # noqa: E402
+from dap.analysis.statistics import benjamini_hochberg  # noqa: E402
 
 
 OUT = ROOT / "results" / "summaries"

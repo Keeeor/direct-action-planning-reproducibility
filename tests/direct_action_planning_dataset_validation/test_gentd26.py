@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
-from stage2_dynamic_budget.data.gentd26 import (
+from dap.data.gentd26 import (
     GenTD26Grid,
     aggregate_request_arrivals,
     aggregate_qps_domain,

@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 import numpy as np
 
-from stage2_dynamic_budget.direct_action_planning_k8s_cost_calibration.training import (
+from dap.direct_action_planning_k8s_cost_calibration.training import (
     aggregate_by_activity,
     stratified_windows,
 )
