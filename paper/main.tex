@@ -29,28 +29,29 @@ Finite-Budget Resource Scheduling}
 \affiliation{\institution{Anonymous Institution}\country{Anonymous}}
 
 \begin{abstract}
-Finite-budget resource schedulers must choose concrete capacity commands while
-preserving resources for uncertain future demand. When candidate effects,
-affordability, scores, and command delivery are recorded separately, verifying
-how an optimizer's choice becomes an executed action requires additional
-integration evidence. We introduce
-Direct Action Planning (DAP), an action-comparison contract that applies
-explicit resource effects to candidate states, evaluates affordable post-cost
-states under one causal forecast, and sends the feasible score maximizer
-directly to the actuator. We evaluate DAP on two public workload traces with
-matched mechanism controls and exact dynamic-programming diagnostics, then
-instantiate the same contract in a Kubernetes controller. Against a matched
-learned-transition control, explicit action effects raise completion by
-0.65/3.79 percentage points while using 7.73/19.09 fewer resource units on
-Azure/GenTD26. Planning takes 0.81/0.95 ms per decision. The verification
-interface transfers to both DAP and PDS: it detects and localizes all 3,554
-activated contract violations, with zero false positives in 640 clean contexts
-and a median checking cost of 7.80 microseconds. In matched Kubernetes
-controls, DAP raises Azure completion by 6.77 points and lowers Ready cost by
-54.4\% versus immediate scoring; 160 runs verify direct command mapping and
-sampled-ledger compliance. DAP makes planning
-decisions independently checkable across software boundaries while retaining
-efficient, action-aware resource allocation.
+Finite-budget resource schedulers allocate capacity under uncertain demand
+while reserving resources for future work. Making these decisions auditable
+requires a common interface between candidate evaluation, action selection,
+and resource accounting. We present Direct Action Planning (DAP), an
+action-comparison contract that carries a decision's rationale through
+execution. DAP constructs explicit action effects under one causal forecast,
+evaluates the continuation value of affordable post-cost states, and sends the
+feasible score maximizer directly to the actuator. Its decision record links
+candidate consequences, resource commitments, scores, and execution receipts,
+enabling independent checks across software components. We evaluate DAP on
+two public workload traces, an exhaustive dynamic-programming diagnostic,
+executable fault injections, and a Kubernetes implementation. On GenTD26,
+explicit action effects raise completion by 3.79 percentage points and save
+19.09 resource units relative to a matched learned-transition control.
+The checker detects and localizes all 3,554 activated contract violations
+across two value representations, with zero false positives in 640 clean
+contexts and a median checking cost of 7.80 microseconds. In 160 matched
+Kubernetes runs, DAP delivers every logged feasible maximizer; on Azure, it
+raises completion by 6.77 points and reduces Ready-resource cost by 54.4\%
+relative to immediate scoring. These results show how explicit action
+semantics can support efficient resource allocation and independently
+checkable execution within one scheduling interface.
+
 \end{abstract}
 
 \keywords{resource scheduling, finite budget, approximate dynamic programming,
@@ -79,71 +80,76 @@ action-comparable planning, Kubernetes, autoscaling}
 
 \section{Introduction}
 
-A production resource scheduler must do more than predict future demand. On
-every control cycle, it must choose one concrete capacity command, establish
-why that command is preferable to the other affordable candidates, and
-preserve enough resource for future demand. This action-level decision recurs
-in autoscaling, admission control, and queue management, where immediate action
-effects are often exposed by an API or calibrated model but future workload
-remains uncertain. A finite intervention budget couples the decisions over
-time: the central problem is action comparison under scarcity.
+Resource scheduling connects software decisions to capacity. In autoscaling,
+admission control, and queue management, a controller chooses a concrete
+command while preserving resources for future demand. Capacity used to clear
+a queue now is unavailable for a later burst. Finite-budget scheduling
+therefore requires both an estimate of future opportunity and an explicit
+account of what each affordable action changes.
 
-Existing approaches solve complementary parts of this problem through
-different runtime abstractions. Model-free policies and value functions learn
-long-run choices from interaction
-\cite{schulman2017ppo,sutton2018rl,vanhasselt2016double}; constrained
-reinforcement learning incorporates resource costs or policy constraints
-\cite{achiam2017cpo,chow2018lyapunov,stooke2020pid,tessler2019rcpo,zhang2022p3o};
-MPC exposes model structure through online lookahead \cite{mesbah2016smpc}; and
-PDS/ADP separates controlled action effects from subsequent exogenous
-uncertainty \cite{bhat2026pds,jiang2015monotoneadp,powell2011adp}. What remains
-to be specified at integration time is a decision object that keeps candidate
-consequences, hard affordability, comparable scores, and the final actuator
-command connected and inspectable throughout one control cycle.
+Deployment adds a second requirement: the choice must remain identifiable
+across forecasting, value estimation, actuation, and accounting. Consider a
+controller choosing among absolute replica targets. Two targets may both
+satisfy a local API check and the budget, yet only one maximizes the planner's
+score. Verifying execution requires connecting those scores to the delivered
+command and its resource charge. An action-level record makes that
+relationship observable throughout the control cycle.
 
-DAP treats action comparison itself as the deployed software interface. In each
-control cycle, it constructs explicit action-conditioned branches, supplies one
-shared causal forecast to every candidate, applies the external resource ledger
-before scoring, and sends the feasible maximizer directly to the actuator. The
-decision record retains each candidate's consequence, scoring charge,
-post-cost state, score, feasibility status, delivered command, and ledger update.
-Learning is confined to the exogenous forecast and downstream value, while
-action effects are supplied by explicit equations or frozen calibrations. This
-record connects three forms of evidence: service--resource frontiers evaluate
-productivity, exact dynamic programming tests action ordering, and live
-Kubernetes runs verify delivery and ledger fidelity. The same contract spans
-datasets and deployment environments even when fitted parameters differ. We
-position DAP as a runtime contract and verification interface built on the
-post-decision decomposition.
+Existing approaches provide complementary foundations. Model-free policies
+learn long-run choices from interaction
+\cite{schulman2017ppo,sutton2018rl,vanhasselt2016double}, and constrained
+reinforcement learning (RL) incorporates resource costs and policy constraints
+\cite{achiam2017cpo,chow2018lyapunov,stooke2020pid,tessler2019rcpo,zhang2022p3o}.
+Model predictive control (MPC) exposes model structure through online
+lookahead \cite{mesbah2016smpc}; post-decision-state approximate dynamic
+programming (PDS/ADP) separates controlled effects from subsequent exogenous
+uncertainty \cite{bhat2026pds,jiang2015monotoneadp,powell2011adp}.
+Our focus is their connection to execution: candidate consequences,
+affordability, scores, and actuator identity must describe the same choice.
+Resource effects available as equations or calibrated API semantics provide
+a basis for making that connection explicit.
 
-This paper makes three contributions:
+We introduce Direct Action Planning (DAP), an action-comparison contract for
+finite-budget scheduling. Its central idea is to make the feasible action
+comparison an explicit software object. Every candidate receives one common
+causal forecast; its known resource effect constructs a post-cost state;
+and a learned continuation value estimates the opportunity remaining after
+that action. The feasible maximizer is sent directly to the actuator. The
+record binds these computations to the delivered command and measured ledger
+update, enabling a checker to reconstruct the selection and localize a
+disagreement at a software boundary.
 
+Explicit effects preserve action semantics, while continuation value amortizes
+longer-horizon reasoning into one-step comparisons. A PDS adapter reuses the
+record with a different value representation. Two public traces, exact
+dynamic programming (DP), fault injections, and Kubernetes runs evaluate these
+capabilities: matched controls test service productivity and action ordering,
+and independent receipts verify delivery.
+
+The paper makes three contributions:
 \begin{enumerate}
-  \item \textbf{An auditable action-comparison contract.} DAP binds one causal
-  forecast, explicit candidate effects, hard external affordability, the complete
-  feasible score vector, and the delivered actuator command in a single runtime
-  record. An executable fault study detects all 3,554 activated in-scope
-  violations across DAP and PDS, with no false positives in 640 clean contexts and a median checking
-  cost of 7.80 microseconds.
-  \item \textbf{Service--resource evidence for action ordering.} DAP combines
-  budget-conditioned continuation with explicit action effects to compare
-  affordable capacity choices under a shared causal context. It yields a
-  Pareto-nondominated GenTD26 operating profile and a favorable Azure
-  service--cost frontier. An exhaustive small-state diagnostic attributes a
-  large part of the ordering error of a black-box transition to omitted action
-  effects (69.33\% lower Q-star regret and 99.49\% fewer errors in the
-  registered large-regret subset); this diagnostic isolates the mechanism on the
-  registered grid, with workload-scale evidence reported separately.
-  \item \textbf{A deployable controller with verified execution.}
-  DAP maps the same decision contract to the Deployment API, an independently
-  measured Ready-time ledger, and direct command delivery. The deployed path
-  achieves complete logged execution fidelity and zero violations of the
-  sampled ledger under the registered lifecycle guard, while raising Azure
-  completion by 6.77 percentage points and reducing Ready cost by 54.4\%
-  over immediate scoring under the same model and execution path.
+  \item \textbf{An action-comparison contract for resource scheduling.}
+  We formalize a decision record that connects causal context, explicit
+  candidate effects, external affordability, action scores, and execution
+  identity. The contract makes feasibility, service productivity, and
+  planner-to-actuator correctness separately measurable
+  (Section~\ref{sec:problem}).
+  \item \textbf{Efficient planning with explicit resource effects.}
+  We develop a structured planner that evaluates affordable post-cost states
+  with a shared forecast and budget-conditioned continuation. Matched trace
+  controls and exact-DP diagnostics establish its action-ordering benefits,
+  alongside sub-millisecond mean planning in the matched evaluation
+  (Sections~\ref{sec:method} and~\ref{sec:mechanisms}).
+  \item \textbf{Reusable verification and a deployed realization.}
+  Cross-boundary checks support both DAP and PDS. A Kubernetes controller
+  realizes the contract through direct actuation and independent Ready-time
+  accounting. Fault injections test detection and localization; paired live
+  runs demonstrate service--resource gains and command fidelity
+  (Sections~\ref{sec:k8s} and~\ref{sec:deployment}).
 \end{enumerate}
 
-\section{Background and Motivation}
+\section{Problem and Design Requirements}
+\label{sec:problem}
 
 \begin{figure*}[t]
   \centering
@@ -166,7 +172,8 @@ This paper makes three contributions:
 
 At time \(t\), a controller observes causal system state \(s_t\), remaining
 budget \(b_t\), and remaining horizon \(h_t\).  Candidate \(a\) denotes a
-resource level \(C_t(a)\) for the next control interval.  We distinguish three
+resource level \(C_t(a)\) for the next control interval. Service is evaluated
+against a service-level objective (SLO). We distinguish three
 cost objects: the branch charge \(c_t^{\mathrm{score}}(s_t,a)\) used to form the
 post-action value state, a conservative commitment
 \(\bar c_t(s_t,a)\) used by the pre-actuation mask, and the measured ledger
@@ -201,12 +208,11 @@ horizon equations, and let \(x_{t+1}\) denote future demand.  Then
   s_{t+1}=F(s_t,a_t,x_{t+1})
   =f_{\mathrm{exo}}\!\left(g(s_t,a_t),x_{t+1}\right).
 \end{equation}
-The scheduling software already implements \(g\): it knows the resource target,
-the action price, and represents how available capacity drains a queue through
-an equation or calibration.  Learning a full black-box \(F\) discards that
-interface and asks data to identify effects that are already explicit.  \method
-instead learns only the uncertain quantity and
-the long-run value that cannot be computed in one step.
+The scheduling software already implements \(g\): the resource target and
+action price are explicit, and an equation or calibration describes how
+capacity drains a queue. This structure provides a useful division of labor.
+Explicit branches compute the controlled effects, while learning estimates
+exogenous demand and the continuation value of the resulting state.
 
 The trace constraint is pathwise rather than an expected-cost objective.  With
 nonnegative exact token costs, \(b_0=B\), and
@@ -220,12 +226,18 @@ Section~\ref{sec:k8s}.
 
 \subsection{Why Finite Budgets Require Direct Action Comparison}
 
-Figure~\ref{fig:motivation} summarizes the service--opportunity trade-off at
-the two ends of the affordable action set.  Its \emph{keep/wait} and
-\emph{scale now} labels show the low- and high-resource endpoints, while
-\method compares all four concrete capacity levels under the shared causal
-context.  The runtime requirements below specify how this comparison becomes
-explicit and auditable.
+Figure~\ref{fig:motivation} illustrates why the same current queue can justify
+different capacity choices. A high-resource action clears more work now; a
+lower-resource action leaves more budget for later demand. Their relative
+value depends on the remaining budget and horizon as well as the current
+service gain. DAP exposes this comparison by constructing each candidate's
+queue, service, and post-cost budget before evaluating its continuation.
+
+A shared causal forecast holds the assumed future workload fixed across
+candidate branches. Together with explicit action effects, it gives each
+score a concrete interpretation: immediate service plus the opportunity
+remaining after this affordable action. The fields in Table~\ref{tab:state}
+supply this comparison.
 
 \begin{table}[t]
 \caption{Causal observation contract used by the trace environments and the
@@ -247,7 +259,7 @@ of preserving resource for future decisions.\\
 \end{tabular}
 \end{table}
 
-\subsection{Runtime Requirements and Execution Fidelity}
+\subsection{Action-Comparison Contract and Execution Fidelity}
 \label{sec:requirements}
 
 These are requirements on the deployed decision path.  They complement the
@@ -281,26 +293,11 @@ Q_{\method}(o_t,a)\); and (C4) the
 delivered command, observed resource use, and next ledger state are recorded so
 that \(a_t^{\mathrm{exec}}=a_t^{\mathrm{plan}}\) can be checked.
 
-The implementation writes JSONL state, action, and event records keyed by
-control step.  These contain raw and normalized observations with field
-timestamps and missing-data policies, one branch object per action, feasible
-bits and scores, the selected target, API latency, and sampled ledger
-intervals.  A per-Pod metrics read is retried three times; if it still fails,
-that Pod is marked missing and omitted from service metrics while the
-independent Deployment Ready count continues to govern affordability.  An
-uncaught planning or API error triggers base-target cleanup and marks the run
-incomplete.  Replay checks shared-forecast equality, feasible argmax, target
-mapping, delivered identity, selected-action feasibility, and ledger closure.
-These are checkable runtime invariants for the registered controller lifecycle
-and fault suite.
-
-That contract has four requirements, which map one-to-one to the modules in
-Figure~\ref{fig:framework}: (R1) all candidates receive the same causal
-information about exogenous uncertainty; (R2) computable or calibrated action
-effects remain explicit rather than being relearned by a black-box model; (R3) remaining
-budget and horizon enter the continuation state after the branch charge; and
-(R4) the feasible ordering reaches the actuator without a second learned
-decision boundary.
+Four design requirements follow: (R1) shared causal context; (R2) explicit
+action effects; (R3) continuation at the post-cost budget and horizon; and
+(R4) preservation of action identity through delivery and accounting.
+Figure~\ref{fig:framework} maps them to planner modules. Step-keyed state,
+action, and event records expose the resulting invariants for replay.
 
 These requirements separate three properties that are often conflated.
 \emph{Feasibility} asks whether a decision respects the resource ledger.
@@ -312,15 +309,13 @@ candidate ordering intended by the value computation:
  \mathbf 1\!\left[a_t^{\mathrm{exec}}=
  \arg\max_{a\in\mathcal A_t(b_t,s_t)}Q_{\method}(o_t,a)\right].
 \end{equation}
-Execution fidelity isolates planner-to-actuator correctness from value quality.
-Because the planner itself computes the argmax, \(F_{\mathrm{exec}}\) is a
-delivery invariant; value quality is evaluated separately by productivity
-metrics and the exact-DP diagnostic.
-Overspend, observed API responses, effective targets, and \(F_{\mathrm{exec}}\)
-audit whether the selected action remains feasible and reaches the actuator
-unchanged; completion, SLO, cost, and service--resource frontiers evaluate the
-productivity of that decision. This separation makes optimization quality and
-deployment integrity independently testable.
+Execution fidelity measures the preservation of a planned decision through
+delivery. Service completion, SLO outcomes, and resource use evaluate the
+quality of that decision; ledger closure and feasibility evaluate accounting.
+Keeping these quantities distinct lets an evaluator locate a discrepancy in
+action valuation, selection, actuation, or resource measurement. The native
+interfaces in Table~\ref{tab:contract-compare} motivate bringing these
+relations together in one runtime object.
 
 \begin{table*}[t]
 \caption{Native decision interfaces of common controller abstractions.
@@ -345,11 +340,12 @@ Actor distillation & Planner supplies offline labels & Runtime mask external & A
 \end{table*}
 
 \section{Direct Action Planning}
+\label{sec:method}
 
-Figure~\ref{fig:framework} realizes the contract as four modules: causal
-sensing, explicit candidate branches, affordable post-cost scoring, and direct
-actuation with ledger feedback. The trace evaluator and Kubernetes controller
-retain the same record through their respective actuators.
+DAP combines learned exogenous demand and continuation value with explicit
+resource-transition equations. Figure~\ref{fig:framework} shows how shared
+context, candidate branches, post-cost scoring, and direct actuation implement
+the four requirements. Measured resource feedback closes the decision loop.
 
 \begin{figure*}[t]
   \centering
@@ -369,7 +365,7 @@ retain the same record through their respective actuators.
   \label{fig:framework}
 \end{figure*}
 
-\subsection{Module 1: causal sensing and common forecast}
+\subsection{Causal Context Shared across Actions}
 
 The controller forms the 14-dimensional observation in
 Table~\ref{tab:state} from causal current/history system measurements together
@@ -398,13 +394,11 @@ training feasible-Q standard deviation (floored at one).
 Q differences, with the target ordering supplying the sign. Adam uses
 learning rate \(10^{-3}\), batches of 256, and gradient clipping at 5.
 
-Sharing the forecast establishes a common basis for action comparison.  Independent candidate forecasts would mix the endogenous
-effect of a resource action with exogenous prediction variation.  One common
-forecast makes candidate differences attributable to the action, its cost,
-and continuation-value error.  The decision record stores both the forecast
-and its observation timestamp.
+The shared prediction implements R1: every branch is compared under the same
+assumed workload. Its timestamp is retained in the decision record, allowing
+replay to check that each score used the same causal context.
 
-\subsection{Module 2: structured action-conditioned branches}
+\subsection{Explicit Action-Conditioned Transitions}
 
 The trace action is a one-step capacity level, not a persistent increment:
 \(C_t(a)=C_{\mathrm{base}}+\delta(a)\), with token costs
@@ -413,7 +407,7 @@ current trace step and the next decision chooses a fresh level.  Dataset-specifi
 capacity calibration is fitted on training data and shared by all methods.  In
 the Kubernetes instantiation the same ordered action identifiers map instead
 to absolute Deployment targets \((1,2,3,5)\), which persist until the next
-command; its legacy \texttt{no\_op} identifier denotes the base/recovery target
+command; its \texttt{no\_op} identifier denotes the base/recovery target
 1, so it requests scale-down when the current target is larger.  For current arrival \(x_t\),
 queue \(q_t\), and candidate capacity \(C_t(a)\), each copied branch applies
 \begin{align}
@@ -440,7 +434,7 @@ Thus queue, service, cost, budget, and horizon differ only through the
 candidate action; explicit scheduler semantics are not relearned by a transition
 network.
 
-\subsection{Module 3: affordability and post-cost opportunity scoring}
+\subsection{Budget-Conditioned Continuation}
 
 A \(14\!\rightarrow\!64\!\rightarrow\!64\!\rightarrow\!1\) Tanh network learns
 the continuation value \(V_\theta(o)\).  Fitted value iteration regresses
@@ -448,7 +442,8 @@ the continuation value \(V_\theta(o)\).  Fitted value iteration regresses
   y_i=\max_{a\in\mathcal A_i(b_i,s_i)}
   \left[r_i(a)+\gamma(1-d_i)V_{\bar\theta}(o'_{i,a})\right]
 \end{equation}
-for 18 FVI target-update rounds indexed 0--17.  At deployment, each affordable candidate receives
+for 18 fitted-value-iteration (FVI) rounds indexed 0--17. At deployment,
+each affordable candidate receives
 \begin{equation}
   Q_{\method}(o_t,a)=r_t(a)+\gamma\lambda
   (1-d_t(a))V_\theta(\widehat o'_{t,a}),
@@ -470,7 +465,7 @@ immediate planner \((\lambda=0)\) as a candidate and applies fixed validation
 guardrails: completion within 0.005, SLO violation within 0.01, and added cost
 no greater than \(0.10B\) relative to that reference.  Eligible candidates are
 ordered by return, completion, SLO, cost, and deterministic tie breaks.  These
-rules select an operating point; they do not modify the deployed score.
+rules freeze the operating point before evaluation.
 
 For each fitting state, data collection copies the environment and executes
 every affordable action, storing its reward, next observation, feasibility,
@@ -483,16 +478,13 @@ branch using the known transition equations; these branch evaluations are
 model computations, not additional environment interactions.  The network
 width is 64, output scaling is fitted from training-reward RMS, and checkpoints
 \(\{0,2,4,6,8,10,12,14,16,17\}\) are the ten prespecified rounds retained for
-validation selection.  Thus ``18 rounds'' denotes Bellman target updates, not
-18 retained checkpoints or optimizer epochs.  All external learned baselines
-receive 102,400 environment interactions, the same 64-unit width,
-observation/action contract, temporal splits, and common hard safety mask.  The
-native constraint losses remain active, but the mask prevents any method from
-spending an unaffordable action; this isolates productivity after safety
-admission and is a protocol choice.  Complete search and training
-configurations are included in the frozen manifests.
+validation selection. Each round therefore combines a Bellman target update
+with two optimizer epochs. The resulting value amortizes future planning into
+a single evaluation of each feasible branch. Section~\ref{sec:evaluation}
+specifies the shared interaction and safety protocol used to compare this
+planner with learned policies.
 
-\subsection{Module 4: direct execution and accountable feedback}
+\subsection{Direct Selection and Accountable Execution}
 
 The controller executes the deterministically tie-broken feasible maximizer,
 \begin{equation}
@@ -500,11 +492,15 @@ The controller executes the deterministically tie-broken feasible maximizer,
   \arg\max_{a\in\mathcal A_t(b_t,s_t)}Q_{\method}(o_t,a),
 \end{equation}
 and issues it directly, so \(a_t^{\mathrm{exec}}=a_t^{\mathrm{plan}}\),
-without actor distillation or a second policy boundary.  Every cycle records
+preserving the selected candidate as the delivered command. Every cycle records
 the causal observation, affordable set, common forecast, per-action immediate
 reward, continuation value, total score, delivered action, and updated ledger.
-The emitted decision and budget use can consequently be recomputed from the
-log.
+State, action, and event records are keyed by control step and include raw
+and normalized observations, field timestamps, missing-data policies, branch
+charges, feasible bits, API latency, and sampled ledger intervals. Replay
+checks shared context, post-cost states, feasible argmax, target mapping,
+delivery identity, selected-action feasibility, and ledger closure. These
+relations make the decision and its budget use independently recomputable.
 
 For \(|\mathcal A|=4\), online work is one forecast plus
 \(O(|\mathcal A|)\) one-step transition and value calls.  A depth-\(K\),
@@ -515,64 +511,43 @@ Section~\ref{sec:k8s} maps
 this module to a Kubernetes Deployment actuator and an independently measured
 Ready-Pod-time ledger.
 
-\paragraph{From post-decision value to a deployed action contract.}
-PDS/ADP provides the core decomposition between an action-controlled afterstate
-and subsequent exogenous uncertainty \cite{jiang2015monotoneadp,bhat2026pds}.
-DAP advances this decomposition across the deployment boundary: it materializes
-every candidate under one shared causal forecast, applies external
-pre-actuation feasibility, evaluates the affordable post-cost branches, retains
-the complete score vector, and preserves the selected
-candidate's identity through actuation and ledger closure. This turns an
-effective value representation into an executable and testable
-action-comparison interface. Section~\ref{sec:pds} evaluates the nearest
-PDS/ADP representation under matched data and capacity, while
-Table~\ref{tab:contract-compare} identifies the additional runtime artifacts
-exposed by DAP.
-
-\paragraph{AI-assistance disclosure.}
-A generative-AI coding assistant assisted with controller and adapter code,
-tests, experiment-record parsing, statistical analysis, exact-DP diagnostics,
-and figure/layout scripts. For the matched evaluation, it also proposed
-and implemented the experimental protocols, executed trace, GPU-training, and
-Kubernetes jobs on the research server, inspected their raw outputs, and
-drafted the resulting analysis and manuscript revisions. Protocols, code,
-checkpoints, failed attempts, and measurements are retained for verification.
-Numerical results are computed from the archived experimental measurements. The assistant also assisted with literature lookup and prose.
-The named authors remain responsible for the research design, verification
-of measurements and citations, interpretation, and final submitted content.
+\paragraph{Relation to post-decision value.}
+PDS/ADP separates the controlled afterstate from subsequent exogenous
+uncertainty \cite{jiang2015monotoneadp,bhat2026pds}. DAP carries this
+decomposition through deployment by retaining candidate effects, affordability,
+scores, and actuator identity in one record. This makes the comparison
+executable and replayable. Section~\ref{sec:pds} tests a matched PDS/ADP
+representation, and Table~\ref{tab:contract-compare} identifies the exposed
+runtime artifacts.
 
 \section{Kubernetes Realization}
 \label{sec:k8s}
 
-The simulator provides controlled action-level comparisons, but a resource
-controller must also map those actions into a real orchestration loop.  We
-implemented \method as an external Python controller for a local Kubernetes
-cluster.  Each 5-second cycle reads Deployment status, Pod readiness,
+The Kubernetes realization maps the contract to three concrete interfaces:
+telemetry supplies causal state, the Deployment API receives absolute resource
+targets, and an independent Ready-time ledger measures consumption. We
+implement \method as an external Python controller for a local cluster.  Each 5-second cycle reads Deployment status, Pod readiness,
 per-Pod Prometheus counters, queue depth, request rate, latency, CPU, SLO, and
 remaining budget.  The planner maps its four actions to absolute replica
 targets \(\{1,2,3,5\}\) and issues a Deployment scale request through
-\texttt{kubectl}.  A target remains in force until the next cycle; the legacy
+\texttt{kubectl}.  A target remains in force until the next cycle; the
 ``no-op'' identifier is explicitly the base/recovery action, not a hold-current
 command.  Thus a base action
 issued from target 5 requests scale-down.  The controller does not modify the
 application or Kubernetes scheduler.
 
-The system budget is denominated in Ready replicas above one base replica, not
-in requested replicas.  A separate tracker samples actual Ready state
-approximately every 0.25 seconds and a pre-actuation reserve removes candidates
-that do not fit the remaining sampled ledger.  After each run, the controller
+The budget charges Ready replicas above one base replica. A separate tracker
+samples readiness approximately every 0.25 seconds; the pre-actuation reserve
+admits candidates that fit the remaining sampled ledger.  After each run, the controller
 returns to the base target and continues accounting until scale-down is
 observed.  Kubernetes readiness probes ensure that a new Pod is charged and
 used only once it becomes Ready; Pending or non-Ready Pods are excluded from
 Service traffic \cite{kubernetesprobes}, while the target-based reserve still
 accounts for their possibility of becoming Ready during the next interval.
-This external control path uses the
-same Deployment scale interface exposed to Kubernetes' native periodic
-Horizontal Pod Autoscaler \cite{kuberneteshpa}; the difference is the
-finite-horizon Ready-time ledger and action-level planner placed before that
-interface.  The design follows the controller-oriented lineage from Borg to
-Kubernetes \cite{verma2015borg,burns2016kubernetes} without modifying either
-the scheduler or application.
+The controller uses the Deployment scale interface exposed to the native
+Horizontal Pod Autoscaler (HPA) \cite{kuberneteshpa}, preceded by DAP's planner
+and Ready-time ledger. It follows the controller-oriented design of Borg and
+Kubernetes \cite{verma2015borg,burns2016kubernetes}.
 
 Let \(R(\tau)\) be the Ready-replica process and let one replica be the
 uncharged base capacity.  The target continuous-time cost is
@@ -604,23 +579,18 @@ endpoint is sampled-ledger compliance. Exact token affordability applies to
 the trace environment; continuous-time accounting additionally requires
 independently bounded command delays, Ready tails, and pending commitments.
 
-The original controller used startup-derived guards \(G=3.2768\) seconds
-(Azure) and \(3.2632\) seconds (GenTD26). A direct lifecycle study measures 60
-scale-up/return-to-base pairs across both profiles and targets 2, 3, and 5.
-The first five repetitions per profile--target calibrate the maximum observed
-Ready-withdrawal delay plus its sampling gap and a one-second margin; the next
-five validate that rule. The resulting guards are 3.068/3.015 seconds, and all
-30 validation withdrawals fit them (maxima 1.847/1.867 seconds). Pod deletion
-is measured separately (maxima 2.530/2.549 seconds). These measurements use one
-shared node under background activity. The paired
-runs retain the larger original guard
-and continue accounting through observed return to base.
+The guard is calibrated from scale-up and return-to-base observations.
+For each workload profile and target, the calibration takes the maximum
+observed Ready-withdrawal delay, adds its sampling gap and a one-second margin,
+and validates the result on separate repetitions. Section~\ref{sec:deployment}
+reports these measurements and the guards used in live comparisons.
 
 This architecture separates three concerns: live metric collection constructs
 the 14-field observation with provenance; the planner ranks feasible actions;
 and the actuator plus budget ledger enforce deployment and resource semantics.
 The runtime uses one timestamped snapshot per cycle.  Missing Pod metrics are
-recorded and omitted from service features; the independent current Ready
+retried three times, then recorded as missing and omitted from service
+features if unavailable; the independent current Ready
 channel is read from Deployment status and remains separate from stale learned
 features in the lag fault experiment.  If the Deployment query itself fails,
 the run is marked incomplete and the cleanup path requests the base target.
@@ -629,7 +599,8 @@ pre-actuation mask remain separate from the learned score.
 
 The live implementation preserves the learned transition semantics: the value
 branch receives interval-average Ready capacity, while an independent current-
-Ready channel supplies the hard affordability mask.  Utilization and EWMA
+Ready channel supplies the hard affordability mask. Utilization and
+exponentially weighted moving-average (EWMA)
 features use the same causal windows as training.  To keep burst estimates
 causal and action-comparable, the runtime computes one envelope for all actions:
 \[
@@ -642,19 +613,18 @@ dataset- and deployment-specific fitted parameters.  Trace checkpoints are fitte
 and frozen before temporal testing.  Kubernetes uses separate checkpoints and
 an independently measured Ready-capacity/startup/scale-down calibration,
 selects controller settings on chronological validation inputs, and freezes
-both before live test plans.  The later GenTD26 continuation coefficient is
-likewise selected on disjoint validation plans; it does not change the state,
-actions, branch equations, hard mask, or actuator path.
+both before live test plans.  The GenTD26 continuation coefficient is selected on disjoint validation
+plans within the same state, action, branch, mask, and actuator interfaces.
 
-The runtime is deliberately external to the scheduler.  The workload driver
+Component ownership follows the same interfaces.  The workload driver
 owns a frozen request plan and client-side outcomes; the worker service owns
 admission, bounded queueing, CPU work, timeout accounting, and Prometheus
 metrics; Kubernetes owns Pod lifecycle and Service routing; and the controller
 owns state construction, planning, budget accounting, and replica patches.
 Only one controller is active in a run.  A planner, checkpoint, or API failure
 triggers the base-replica cleanup path and prevents the run from being marked
-complete.  This separation lets the experiment distinguish a planning error
-from an actuator or request-accounting error.
+complete.  This separation attributes planning, actuation, and request-accounting
+outcomes to the responsible component.
 
 Observation records retain raw and normalized values, timestamps, freshness,
 and missing-data policies. Tests cover transition consistency, causal inputs,
@@ -662,19 +632,21 @@ terminal values, absolute targets, stale safety data, and delivered argmax
 before formal runs are admitted to analysis.
 
 \section{Evaluation}
+\label{sec:evaluation}
 
-We evaluate three questions:
-
+The evaluation examines the contract from three complementary perspectives:
+service productivity, the mechanism of action comparison, and deployed
+execution. These perspectives correspond to the following research questions.
 \begin{description}
-  \item[RQ1 --- Effectiveness:] How does a finite-budget scheduler balance
-  service quality and resource use across workloads and budget conditions?
-  \item[RQ2 --- Mechanism:] Which decision mechanisms improve the timing and
-  ordering of resource actions?
-  \item[RQ3 --- Deployment:] Can planned actions be executed faithfully with
-  measured budget compliance and practical control latency in a live system?
+  \item[RQ1 --- Effectiveness:] How does DAP translate a fixed resource budget
+  into service quality compared with learned scheduling policies?
+  \item[RQ2 --- Mechanism:] How do explicit action effects and continuation
+  value contribute to action ordering and planning efficiency?
+  \item[RQ3 --- Deployment:] How does the contract support independent
+  verification and effective resource control in a deployed system?
 \end{description}
 
-\subsection{Datasets and chronological protocol}
+\subsection{Workloads and Experimental Design}
 
 Azure Functions 2019 provides per-minute invocations in HTTP and
 asynchronous domains \cite{azurefunctions2019,shahrad2020serverless}; days 1--8,
@@ -691,25 +663,24 @@ checkpoint, and window hashes bind their provenance.
 The horizon is 64, \(\gamma=0.99\), and budgets are
 \(\{48,72,96,120,144\}\).  The main matrix contains two datasets, five budgets,
 and ten training seeds (820--829) with five evaluation episodes per domain.
-All methods share observations, action semantics, rewards, trace windows,
-interaction budget, normalization, and the hard affordability mask. We report
-mask-binding frequency to quantify how often scarcity enters the decision path,
-alongside the zero-overspend invariant.
+Mask-binding frequency measures how often scarcity restricts the candidate
+set, alongside the zero-overspend invariant.
 GenTD26's domains are text-to-image and image-conditioned serving. Every
 method records zero token overspend under the common mask.
 
-\subsection{Comparators and statistics}
+\subsection{Comparators and Statistical Analysis}
 
 External comparators include Double DQN, PPO, PPO-Lagrangian, CPO, P3O,
 Budgeted Fitted-Q, A2C, PID-Lagrangian, and a disclosed port of LCPO
 \cite{vanhasselt2016double,schulman2017ppo,achiam2017cpo,stooke2020pid,zhang2022p3o,carrara2019budgeted,hamadanian2025lcpo}.
 The baselines span model-free, constrained, budget-conditioned, and
-context-aware learning. Immediate planning, MPC-2/4/8, black-box transitions,
+context-aware learning. Each receives 102,400 environment interactions and
+a 64-unit network width. Immediate planning, MPC-2/4/8, black-box transitions,
 actor distillation, budget/horizon removal, and PDS/ADP are information-matched
 controls. All methods share observations, interactions, actions, rewards, trace
 windows, normalization, and the affordability mask; native policy and dual
-losses remain unchanged. The mask is an explicit safety-admission protocol, so
-the comparison measures productivity after the same feasibility decision. DAP
+losses remain unchanged. This common safety-admission protocol measures the service productivity
+of choices within the same feasible action set. DAP
 and MPC expose computable effects, while model-free methods infer them. Frozen
 manifests record optimizer settings, update counts, search ranges, branch
 counts, and wall-clock summaries.
@@ -720,14 +691,14 @@ two-sided Wilcoxon tests, and Benjamini--Hochberg correction
 \cite{arcuri2011statistics,agarwal2021precipice,benjamini1995fdr}; cost matching
 stays within observed budget frontiers. Kubernetes uses paired request plans,
 paired-bootstrap intervals, exact sign-flip tests, and the registered Holm
-family, retaining all seeds and failures. Matched trace, learned-model,
-and same-initialization controls use exact sign flips and Holm families of
+family, retaining all seeds and failures. Matched trace, learned-transition,
+and same-initialization feature controls use exact sign flips and Holm families of
 24, 16, and eight endpoints; the matched live family contains 18 endpoints.
 Budgets are averaged within each of ten paired seed or plan blocks. The
 matched studies enumerate all $2^{10}$ sign assignments and use bootstrap
 seed 20261002; intervals are pointwise and tests carry familywise correction.
 
-\subsection{Metrics and artifact integrity}
+\subsection{Measures and Reproducibility}
 
 Return is the optimization objective. Episode completion is
 \(\sum_t y_t/\max(\sum_t x_t,1)\), whereas \(\rho_t\) is the per-step
@@ -752,24 +723,30 @@ overspend, Pareto cell counts, matched-frontier effects, action disagreement,
 Q-star regret, execution fidelity \(F_{\mathrm{exec}}\), and decision latency
 within their corresponding evaluation families.
 
-The temporal evaluator loads frozen checkpoints for inference.  Manifests bind the
-dataset slice, configuration, checkpoint, code, and output hashes.  The main
-trace matrix completed 100/100 cells; PDS completed 100/100 development and
-100/100 temporal cells; and the original Kubernetes studies completed 260/260 runs; the matched
-live extension adds 160/160 runs and 5,120 verified action records.
-Every registered seed and outcome appears in its corresponding table.  This artifact
-contract makes each number in the paper traceable without treating repeated
-steps or requests as additional independent samples.
-For each primary paired comparison, the replication package retains the paired
-mean difference, 95\% seed- or plan-block interval, Cohen's \(d_z\),
-wins/ties/losses, and corrected test result; the compact main tables show the
-corresponding means and the figures show the intervals.  Kubernetes reports
-plan-level rather than request-level uncertainty.
+Frozen inference manifests bind dataset slices, configurations, checkpoints,
+code, and outputs. The main trace matrix comprises 100 cells; PDS covers
+100 development and 100 temporal cells. Kubernetes comparison and robustness
+studies contain 260 runs; matched controls contain 160 runs and 5,120 action
+records. All specified seeds and outcomes are retained with the paired
+statistics defined above. Repeated steps and requests remain observations
+within their seed or plan block.
 
-\subsection{Service--resource effectiveness}
+\paragraph{AI-assistance disclosure.}
+A generative-AI coding assistant supported controller and adapter code,
+tests, record parsing, statistical analysis, exact-DP diagnostics, and
+figure/layout scripts. For the matched studies, it proposed and implemented
+protocols, executed trace, GPU-training, and Kubernetes jobs, inspected raw
+outputs, and drafted analysis and manuscript revisions. It also supported
+literature lookup and prose. Protocols, code, checkpoints, failed attempts,
+and measurements are retained; numerical results derive from archived
+measurements. The authors remain responsible for research design,
+measurement and citation verification, interpretation, and submitted content.
 
-Table~\ref{tab:main} and Figure~\ref{fig:frontier} show complementary
-service--resource regimes. On GenTD26, DAP has the best mean return,
+\subsection{RQ1: Service--Resource Effectiveness}
+
+DAP produces favorable service--resource operating points on both workloads,
+with the form of the gain depending on workload demand
+(Table~\ref{tab:main} and Figure~\ref{fig:frontier}). On GenTD26, DAP has the best mean return,
 completion, SLO violation, and cost among the compared methods. Relative to Double DQN, it
 gains 45.764 return and 6.61 completion points while reducing SLO violation by
 5.27 points and cost by 36.186 units. Relative to CPO, the corresponding
@@ -857,17 +834,22 @@ after averaging budgets within each trained seed.
   \label{fig:external-effects}
 \end{figure*}
 
-\noindent\textbf{Finding 1.} DAP converts finite budgets into two
-operator-relevant regimes: a GenTD26 mean operating profile that improves all
-four outcomes relative to every comparator, and an Azure frontier that
-improves return, SLO, and cost over CPO while offering a return--SLO operating point
-alongside cost-lean model-free control.
+These results connect finite-budget planning to an operator's choice of
+service--resource regime. On GenTD26, the DAP mean operating point improves
+all four outcomes relative to every comparator. On Azure, DAP combines a
+favorable return--SLO frontier with lower cost than CPO, while the DAP and
+Double DQN points offer different allocations of service and resource.
+The frontiers make this choice explicit across the evaluated budgets.
 
-\subsection{Mechanisms of action ordering}
+\subsection{RQ2: Mechanisms of Action Comparison}
+\label{sec:mechanisms}
 
-RQ2 isolates action ordering through matched controls, exhaustive exact DP,
-and a PDS/ADP comparator.
+The mechanism study separates the representation of action effects from the
+estimation of future value. Matched controls test these components on workload
+traces, and an exhaustive dynamic-programming diagnostic directly measures
+the resulting action order.
 
+\paragraph{Explicit effects and continuation.}
 Matched temporal controls cover all 100 dataset--budget--seed cells,
 with the original checkpoints and matched windows. Table~\ref{tab:revision-trace}
 shows that Azure DAP improves return, completion, and proxy SLO over immediate
@@ -876,9 +858,9 @@ the same frozen continuation weight, both datasets improve on all four
 endpoints. DAP's mean
 decision times are 0.81/0.95 ms, versus 144.88/189.04 ms for MPC-8 in this run.
 
-Removing budget/horizon features requires retraining. We therefore also train
-a full-feature control with the same initialization, data, batches, GPU, and
-selected round as the masked value. Table~\ref{tab:revision-trace} reports this
+The budget/horizon comparison pairs a full-feature value model with a masked
+model trained from the same initialization, data, batches, GPU, and selected
+round. This pairing isolates the information available to the value model. Table~\ref{tab:revision-trace} reports this
 paired control alongside the frozen-checkpoint comparisons. The learned
 transition has width 96 and trains for 24 epochs; feature controls retain
 18 FVI rounds, two epochs per round, and the frozen continuation weight.
@@ -887,7 +869,9 @@ Training uses PyTorch 2.11 on an RTX 5090; planning runs on CPU. Frozen selectio
 
 \input{tables/revision_trace_contrasts}
 
-Exact DP separately evaluates every feasible state--budget--horizon--action tuple.
+\paragraph{Action-ordering accuracy.}
+Exact DP supplies an exhaustive reference for the branch comparison by
+evaluating every feasible state--budget--horizon--action tuple.
 
 For state \(s\), budget \(b\), horizon \(h\), and candidate \(a\), backward DP
 defines \(Q^\star(s,b,h,a)\) and regret
@@ -927,10 +911,10 @@ black-box-model disagreements: threshold 0.7073, 1,365 states, and
 behavior is reported in the trace and live evaluations, with independent paired
 Kubernetes runs.
 
-\paragraph{Registered PDS/ADP nearest neighbor.}
+\paragraph{Alternative post-decision value representation.}
 \label{sec:pds}
 
-We include a preregistered post-decision-state comparator. It applies the exact
+The preregistered PDS comparator tests a closely related value representation. It applies the exact
 action, reward, queue, budget, and horizon transition, then removes next-load
 fields before the exogenous value is revealed. The afterstate network scores
 feasible actions as immediate reward plus discounted post-decision value. It
@@ -945,43 +929,24 @@ test: the same execution interface carries a different value representation
 while preserving its clean scores and actions. This separates the reusable
 verification capability from the choice of continuation model.
 
-\noindent\textbf{Finding 2.} Explicit action effects improve temporal outcomes
-over the matched learned-transition control and reduce exact-DP Q-star regret.
-On Azure, learned continuation further improves service over immediate
-planning and MPC-8. DAP combines these action-ordering gains with sub-millisecond
-mean planning, and its execution contract accommodates both DAP and PDS values.
+The matched-transition and exact-DP results support the same interpretation:
+exposing known action effects improves the ordering on which the controller
+acts. Azure's continuation gains show how the post-cost value can further
+improve service beyond immediate scoring. DAP obtains these gains with
+sub-millisecond mean planning in the matched study, while the PDS adapter
+demonstrates that the verification interface also accommodates an alternative
+value representation.
 
-\subsection{Kubernetes execution and control overhead}
+\subsection{RQ3: Verification and Deployed Resource Control}
+\label{sec:deployment}
 
-Trace inference averages
-0.630/0.613 ms (Azure/GenTD26), versus 46.46/37.84 ms for MPC-4 and
-181.24/142.23 ms for MPC-8.
+RQ3 connects independent checks across DAP and PDS with live resource control.
+Paired Kubernetes plans measure service outcomes, delivered commands, and
+resource accounting through a real orchestration API.
 
-The Kubernetes runs use Prometheus telemetry, a five-second period, 32-cycle
-horizon, and 128/256 Ready-replica-second ceilings. DAP aligns model capacity with
-an independent current-Ready safety channel under a frozen forecast envelope.
-
-Four protocols cover scheduler comparison, fault runs, a binding GenTD26 replay,
-and a same-plan HPA/KEDA comparison. Configurations are frozen on disjoint
-inputs; the single local cluster and paired plans validate contract fidelity and
-characterize tested operating points. HPA/KEDA parameters and stabilization
-windows are fixed in the executable manifests and specified below.
-
-The original studies contain 260 runs and 3,840 DAP decisions, all with exact
-request closure, restored base readiness, and delivered feasible argmax.
-No sampled-budget violation or controller deadline miss occurs. The mask
-activates in 33/120 runs and 248 decisions, removing 606 opportunities; mean
-inference/full-loop latency is 0.98/0.90 ms and 0.248/0.282 s, below 5 s.
-Deadlines are checked every run; tail latency and controller resource use are
-retained as artifact diagnostics for subsequent capacity analysis.
-
-A deterministic verifier replays six boundaries (forecast, feasible argmax,
-delivery identity, target mapping, feasibility, and ledger closure). It finds no
-clean-record violation and localizes all six single-field mutations in the
-3,200-record suite (19,200/19,200).
-
-\paragraph{Executable faults and checker controls.}
-An executable trace adapter injects faults before branch construction,
+\paragraph{Independent verification across representations.}
+The contract makes relationships between software components executable.
+To test this capability, a trace adapter injects faults before branch construction,
 selection, mapping, delivery, or ledger updates take effect. The seven fault
 types are stale cycle context, inconsistent forecast, incorrect post-cost
 budget, nonmaximal selection, target remapping, delivery override, and omitted
@@ -1005,20 +970,72 @@ excluded from the applicable-fault denominator.
 The executable specification is implemented through cross-boundary assertions,
 with the same checks supporting both planning representations.
 
+\paragraph{Matched live design.}
+The matched study separates value, lookahead, and reserve effects by fixing the model and execution path and
+pairing DAP, immediate scoring, MPC-4, and a 45-second DAP reserve at budgets
+128 and 256, using ten request plans per profile (160 completed runs).
+Plans map 32 consecutive trace bins to 32 five-second intervals using a
+training-fitted rate conversion and ten fixed activity strata. Plan seeds are
+2026100201--2026100210; method order rotates across seeds and reverses at the
+second budget, whose order also alternates. Azure/GenTD26 use frozen
+continuation weights 1/.05 and HTTP SLOs .25/1 seconds. MPC uses depth four
+and zero terminal value; the 45-second arm changes DAP's mask reserve alone.
+The shared kind node runs Kubernetes 1.35.1 and Python 3.11.6. Each worker
+requests .25 CPU/96 MiB and is limited to one CPU/256 MiB, with one-second
+readiness probes and a bounded queue/CPU-work HTTP service.
 
+\input{tables/revision_live_means.tex}
 
+\paragraph{Service gains under matched execution.}
+Table~\ref{tab:revision-live} holds the calibrated model and execution path
+fixed. Averaged over both budgets within each of ten paired Azure plans, DAP
+increases completion over immediate scoring by 6.77 points (95\% CI
+[5.62, 7.88]) and reduces cost by 73.95 Ready-replica-seconds (CI
+[-85.51, -62.96]), a 54.4\% saving. Against matched MPC-4, cost falls by
+71.15 (CI [-85.86, -56.68]), or 53.4\%. All three effects have
+Holm-adjusted $p=.0352$ across the fixed 18-endpoint family. A scheduling amendment resolved exact run identifiers and retained every
+completed run; the interrupted preparation produced no requests or actions.
+An eight-plan sensitivity omitting the two earlier plan seeds retains the
+Azure completion--cost pattern (+6.79 points and -70.83 seconds versus immediate).
+The 45-second control exposes the reserve's effect on the feasible set:
+Azure/GenTD26 binding rises from 0/14.06\% to 57.66/66.72\%.
+These comparisons show how continuation and the reserve shape different
+parts of a decision: the former scores remaining opportunity, while the
+latter determines which commands can be considered.
 
+\paragraph{Execution fidelity and control cost.}
+Across all 160 matched runs, 3,390,344 requests reconcile exactly and all 5,120
+logged actions maximize their feasible score vectors with the specified target
+mapping. Every sampled ledger recomputes exactly, with zero budget violations
+or controller deadline misses. The complementary 260-run controller and
+robustness studies verify 3,840 DAP decisions, request closure, and restored
+base readiness. Their affordability mask activates in 33/120 controller runs
+and 248 decisions, removing 606 candidate opportunities. A replay verifier
+additionally localizes each of six single-field mutations in 3,200 decision
+records (19,200/19,200), checking forecast equality, feasible argmax, delivery
+identity, target mapping, affordability, and ledger closure.
 
-In the original scheduler comparison, Azure DAP raises completion by 7.97 points (95\% CI [6.48, 9.52]) and
-reduces Ready cost by 49.53 replica-seconds (CI [-64.75, -35.18]) over MPC-4.
-Under binding GenTD26, completion rises 3.68 points (CI [1.40, 6.15],
-Holm-adjusted \(p=0.0264\)), with a mean cost difference of +0.049
-(CI [-11.40, 10.39]). The two profiles provide service gains at lower or
-nearly equal mean cost;
-SLO intervals accompany both.
+The Kubernetes loop uses Prometheus telemetry, a five-second period, a
+32-cycle horizon, and 128/256 Ready-replica-second ceilings. Mean
+inference/full-loop times in the controller study are 0.98/0.90 ms and
+0.248/0.282 s for Azure/GenTD26. The corresponding trace timing benchmark
+measures 0.630/0.613 ms for DAP, 46.46/37.84 ms for MPC-4, and
+181.24/142.23 ms for MPC-8; Section~\ref{sec:mechanisms} reports timing in
+the matched mechanism study. The amortized value keeps online comparison
+small relative to the control period. Deadline checks cover every run, and
+the artifact records tail latency and controller resource use.
 
-MPC-4 and Threshold were selected on a disjoint 180-run screen. The
-native-controller study evaluates DAP, HPA, and KEDA on common frozen plans
+\paragraph{Controller operating points.}
+In the scheduler comparison, Azure DAP raises completion by 7.97 points
+(95\% CI [6.48, 9.52]) and reduces Ready cost by 49.53 replica-seconds
+(CI [-64.75, -35.18]) over MPC-4. Under binding GenTD26, completion rises
+3.68 points (CI [1.40, 6.15], Holm-adjusted \(p=0.0264\)), with a mean cost
+difference of +0.049 (CI [-11.40, 10.39]). The two profiles provide service
+gains at lower or nearly equal mean cost; SLO intervals accompany both.
+
+MPC-4 and Threshold use settings selected on a disjoint 180-run screen.
+The native-controller study evaluates DAP, HPA, and Kubernetes Event-Driven
+Autoscaling (KEDA) on common frozen plans
 (Table~\ref{tab:k8s-cross}).
 Both use one to five replicas and zero scale-up/down stabilization. HPA
 targets 65\% CPU with a two-Pod/10-second scale-up policy; KEDA polls
@@ -1037,41 +1054,18 @@ means describe the configured operating points ($p=.0625$--$.2227$).
 
 \input{tables/native_comparison.tex}
 
-To separate value, lookahead, and reserve
-effects, a matched protocol fixes the model and execution path and
-pairs DAP, immediate scoring, MPC-4, and a 45-second DAP reserve at budgets
-128 and 256, using ten request plans per profile (160 completed runs).
-Plans map 32 consecutive trace bins to 32 five-second intervals using a
-training-fitted rate conversion and ten fixed activity strata. Plan seeds are
-2026100201--2026100210; method order rotates across seeds and reverses at the
-second budget, whose order also alternates. Azure/GenTD26 use frozen
-continuation weights 1/.05 and HTTP SLOs .25/1 seconds. MPC uses depth four
-and zero terminal value; the 45-second arm changes DAP's mask reserve alone.
-The shared kind node runs Kubernetes 1.35.1 and Python 3.11.6. Each worker
-requests .25 CPU/96 MiB and is limited to one CPU/256 MiB, with one-second
-readiness probes and a bounded queue/CPU-work HTTP service.
-
-\input{tables/revision_live_means.tex}
-
-\paragraph{Matched live attribution.}
-Table~\ref{tab:revision-live} holds the calibrated model and execution path
-fixed. Averaged over both budgets within each of ten paired Azure plans, DAP
-increases completion over immediate scoring by 6.77 points (95\% CI
-[5.62, 7.88]) and reduces cost by 73.95 Ready-replica-seconds (CI
-[-85.51, -62.96]), a 54.4\% saving. Against matched MPC-4, cost falls by
-71.15 (CI [-85.86, -56.68]), or 53.4\%. All three effects have
-Holm-adjusted $p=.0352$ across the fixed 18-endpoint family. An exact-run-ID scheduling amendment retained all completed runs; the
-one interrupted preparation generated no requests or actions. Omitting the
-two pre-amendment plan seeds gives an eight-plan sensitivity that retains the Azure
-completion--cost pattern (+6.79 points and -70.83 seconds versus immediate).
-The 45-second control exposes the reserve's effect on the feasible set:
-Azure/GenTD26 binding rises from 0/14.06\% to 57.66/66.72\%.
-Across all 160 runs, 3,390,344 requests reconcile exactly and all 5,120
-logged actions maximize their feasible score vectors with the specified target
-mapping; every sampled ledger recomputes exactly, with zero budget violations
-and controller deadline misses.
-
-
+\paragraph{Lifecycle calibration and sensitivity.}
+The deployed controller uses startup-derived guards \(G=3.2768\) seconds
+(Azure) and \(3.2632\) seconds (GenTD26). A direct lifecycle study measures 60
+scale-up/return-to-base pairs across both profiles and targets 2, 3, and 5.
+For each profile--target combination, the first five repetitions calibrate the maximum observed
+Ready-withdrawal delay plus its sampling gap and a one-second margin; the next
+five validate that rule. The resulting guards are 3.068/3.015 seconds, and all
+30 validation withdrawals fit them (maxima 1.847/1.867 seconds). Pod deletion
+is measured separately (maxima 2.530/2.549 seconds). These measurements use one
+shared node under background activity. The paired
+runs use the larger startup-derived guard
+and continue accounting through observed return to base.
 
 DAP preserves its registered service bounds under deterministic 10\%
 sample-and-hold dropout on both profiles, while the independent Ready channel
@@ -1079,41 +1073,40 @@ remains intact. Across dropout, one-cycle observation lag, and five-second
 readiness delay, all 60 fault runs preserve deadline, delivery, cleanup,
 restoration, and sampled-ledger invariants.
 
-\paragraph{Robustness to calibrated action effects.}
 DAP remains stable when explicit action-effect estimates are perturbed. Across
 96,000 chronological development decisions, \(\pm5\%\) changes at most 6.91\%
 of actions and 0.56 completion points; \(\pm10\%\) changes 10.55\% and 0.62
-points. The mask records zero trace-token overspend. This diagnostic isolates
-capacity-effect error; forecast, lifecycle-guard, and cluster-shift sensitivity
-are separate evaluation dimensions.
-
-\noindent\textbf{Finding 3.} DAP turns action-comparable planning into an
-auditable Kubernetes control path. The 160-run matched extension establishes
-an Azure completion--cost gain over immediate scoring and lower cost than
-matched MPC-4, alongside 5,120 verified feasible-argmax mappings and zero
-sampled-ledger violations. The original 260 runs additionally cover native
-controllers and telemetry/readiness faults. Together with the executable
-fault study, these results connect efficient planning, independently checkable
-execution, and measured resource allocation.
+points. The mask records zero trace-token overspend. This sensitivity characterizes the action-effect calibration used to
+construct the branches.
 
 \section{Discussion and Applicability}
 
-The PDS adapter reuses the candidate, commitment, command, and receipt
-fields with its original scores. Cross-boundary checks connect these fields: independently valid targets can still violate
-the selected action's identity. Model-quality diagnostics and execution checks
-therefore have complementary roles in the same evaluation workflow.
+The results support a software design principle: preserve explicit action
+semantics where resource decisions are compared, delivered, and charged.
+Matched-transition controls connect this structure to service productivity;
+the PDS adapter demonstrates reusable verification across value
+representations. An independently witnessed command can reveal a selection
+discrepancy even when both targets are locally valid. The separate ledger
+similarly connects admission to measured consumption. These relations help
+locate selection, delivery, and accounting discrepancies at their software
+boundaries.
 
-Deployment adapts two components: the action-effect calibration and the
-resource ledger. The tested realization uses one shared cluster, paired HTTP
-plans, sampled Ready accounting, and directly measured lifecycle reserves.
-Porting retains the causal comparison and receipt checks while calibrating
-capacity and recovery timing for the destination. Within the conditions in
-Section~\ref{sec:k8s}, the reserve couples each admitted action to its return
-to base. The trace realization supplies exact token accounting. Together these
-realizations make the interface useful for both discrete resource allocations
-and measured service capacity.
-Boundary-specific diagnostics connect delivery, accounting, and selection
-failures to the corresponding software component.
+Applying the contract requires an action-effect model, a resource ledger,
+and an observable actuator. Trace scheduling uses exact token costs;
+Kubernetes uses calibrated capacity, recovery timing, and sampled Ready
+accounting. A new deployment calibrates these quantities while preserving
+common-context, feasible-selection, and receipt checks. Under the conditions
+in Section~\ref{sec:k8s}, the reserve connects each admitted command to its
+return to base. Thus the interface transfers with workload- and
+deployment-specific models and resource semantics.
+
+Each evaluation supplies a distinct form of evidence. Paired trace seeds
+measure service productivity; exact DP isolates action ordering; and paired
+HTTP plans measure live service and Ready cost on the tested cluster.
+Trace SLO measures describe the queue model, while live outcomes use request
+receipts. Pairing and disjoint selection inputs make mechanism contrasts
+interpretable within those conditions. Together, these designs separate
+the quality of a resource decision from its preservation through execution.
 
 \section{Related Work}
 
@@ -1145,9 +1138,8 @@ regions, Lyapunov bounds, or penalty updates
 \cite{mao2016deeprm,mao2019decima,altman1999cmdp,achiam2017cpo,
 tessler2019rcpo,stooke2020pid,chow2018lyapunov,zhang2022p3o}. Budgeted RL
 and LCPO address available budgets and changing contexts
-\cite{carrara2019budgeted,hamadanian2025lcpo}. These are strong policy and
-value baselines; DAP adds branch provenance, hard affordability, and
-planner-to-actuator identity.
+\cite{carrara2019budgeted,hamadanian2025lcpo}. DAP complements these policy and value representations with explicit
+branch provenance, hard affordability, and planner-to-actuator identity.
 
 \paragraph{Planning, post-decision value, and action ordering.}
 Dyna, MPC, and ADP combine learning, constrained search, and value approximation
@@ -1162,15 +1154,14 @@ and search components, while exact DP measures ordering directly.
 
 \section{Conclusion}
 
-Direct Action Planning connects explicit action effects, post-cost values,
-hard affordability, and direct execution in one auditable interface. Explicit
-branches improve completion and resource use over matched learned transitions,
-with sub-millisecond mean planning. The low-overhead checker detects and
-localizes execution inconsistencies across DAP and PDS, supporting reuse across
-value representations. Matched Kubernetes runs demonstrate Azure completion
-and cost gains together with faithful command delivery and sampled-ledger
-compliance. DAP makes finite-budget resource planning executable, inspectable,
-and replayable across software boundaries.
+Direct Action Planning makes affordable action comparison an explicit
+interface between learning and execution. Structured branches combine known
+resource effects with post-cost continuation, while decision records connect
+selection to actuation and accounting. Matched controls demonstrate resource
+productivity and efficient planning; DAP/PDS checks establish reusable
+verification; and Kubernetes runs demonstrate faithful deployment. Preserving
+action semantics across these boundaries makes finite-budget scheduling both
+effective and independently inspectable.
 
 \clearpage
 \section{Data Availability}
@@ -1190,7 +1181,6 @@ Azure acquisition and GenTD26's pinned source, preprocessing recipe, and access
 instructions are documented under \texttt{data/}; redistribution follows the
 source datasets' terms. A public release will be maintained upon acceptance.
 \end{sloppypar}
-
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
