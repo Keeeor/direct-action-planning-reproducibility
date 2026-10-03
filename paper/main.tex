@@ -85,7 +85,28 @@ admission control, and queue management, a controller chooses a concrete
 command while preserving resources for future demand. Capacity used to clear
 a queue now is unavailable for a later burst. Finite-budget scheduling
 therefore requires both an estimate of future opportunity and an explicit
-account of what each affordable action changes.
+account of what each affordable action changes. Figure~\ref{fig:motivation}
+illustrates two candidate consequences: serving more work now consumes future
+opportunity, whereas waiting preserves resource while accepting queue pressure.
+The scheduler compares these consequences under the same remaining budget
+and horizon.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=.78\textwidth]{figures/MOTIVATION_v4.pdf}
+  \caption{Motivation for direct action planning.  The schematic endpoints show
+  how a lower-resource action preserves later opportunity, while a
+  higher-resource action can improve current service at the cost of future
+  budget.  \method compares the affordable consequences among four capacity
+  levels and executes the best now--later trade-off.}
+  \Description{A finite-budget decision is shown beside low- and high-resource
+  action consequences.  The lower-resource endpoint preserves budget while
+  accepting current queue pressure; the higher-resource endpoint relieves the
+  current queue while consuming later opportunity.  Direct Action Planning
+  compares affordable consequences, chooses the feasible best action, and
+  executes that action.}
+  \label{fig:motivation}
+\end{figure*}
 
 Deployment adds a second requirement: the choice must remain identifiable
 across forecasting, value estimation, actuation, and accounting. Consider a
@@ -151,23 +172,6 @@ The paper makes three contributions:
 \section{Problem and Design Requirements}
 \label{sec:problem}
 
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=.78\textwidth]{figures/MOTIVATION_v4.pdf}
-  \caption{Motivation for direct action planning.  The schematic endpoints show
-  how a lower-resource action preserves later opportunity, while a
-  higher-resource action can improve current service at the cost of future
-  budget.  \method compares the affordable consequences among four capacity
-  levels and executes the best now--later trade-off.}
-  \Description{A finite-budget decision is shown beside low- and high-resource
-  action consequences.  The lower-resource endpoint preserves budget while
-  accepting current queue pressure; the higher-resource endpoint relieves the
-  current queue while consuming later opportunity.  Direct Action Planning
-  compares affordable consequences, chooses the feasible best action, and
-  executes that action.}
-  \label{fig:motivation}
-\end{figure*}
-
 \subsection{Finite-Budget Resource Scheduling}
 
 At time \(t\), a controller observes causal system state \(s_t\), remaining
@@ -202,8 +206,9 @@ Ready-Pod-time consumption.  In both realizations, \(s_t,b_t,h_t\) form one
 14-dimensional observation \(o_t\).
 
 We split the transition into an action-controlled component and an exogenous
-component.  Let \(g\) contain the queue, capacity, service, cost, budget, and
-horizon equations, and let \(x_{t+1}\) denote future demand.  Then
+component.  Let \(g\) encode the controlled queue, capacity, service, and action-cost
+effects, and let \(x_{t+1}\) denote future demand. Budget and horizon are
+tracked separately.  Then
 \begin{equation}
   s_{t+1}=F(s_t,a_t,x_{t+1})
   =f_{\mathrm{exo}}\!\left(g(s_t,a_t),x_{t+1}\right).
@@ -226,12 +231,10 @@ Section~\ref{sec:k8s}.
 
 \subsection{Why Finite Budgets Require Direct Action Comparison}
 
-Figure~\ref{fig:motivation} illustrates why the same current queue can justify
-different capacity choices. A high-resource action clears more work now; a
-lower-resource action leaves more budget for later demand. Their relative
-value depends on the remaining budget and horizon as well as the current
-service gain. DAP exposes this comparison by constructing each candidate's
-queue, service, and post-cost budget before evaluating its continuation.
+The relative value of the choices in Figure~\ref{fig:motivation} depends on
+remaining budget and horizon as well as current service gain. DAP makes this
+comparison explicit by constructing each candidate's queue, service, and
+post-cost budget before evaluating its continuation.
 
 A shared causal forecast holds the assumed future workload fixed across
 candidate branches. Together with explicit action effects, it gives each
@@ -325,16 +328,17 @@ one runtime record.}
 \label{tab:contract-compare}
 \scriptsize
 \setlength{\tabcolsep}{3pt}
-\begin{tabular}{p{.12\textwidth}p{.22\textwidth}p{.19\textwidth}p{.18\textwidth}p{.18\textwidth}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash\hyphenpenalty=10000\exhyphenpenalty=10000}p{#1}}
+\begin{tabular}{L{.12\textwidth}L{.22\textwidth}L{.19\textwidth}L{.18\textwidth}L{.18\textwidth}}
 \toprule
 Abstraction & Candidate comparison & Budget semantics & Decision artifact & Actuator boundary\\
 \midrule
 Learned policy controller & Policy logits or learned action values; explicit effects not intrinsic & External mask or learned constraint & Policy output & Integration layer\\
-Lagrangian RL & Cost enters reward/dual update & Expected or penalized cost; hard mask external & Policy output plus multiplier & Integration layer\\
+Lagrangian RL & Cost enters reward or dual update & Expected or penalized cost; hard mask external & Policy output plus multiplier & Integration layer\\
 PDS/ADP & Exact controlled afterstate; exogenous effect in expectation & External constraint interface & Afterstate values & Selection and actuation may be external\\
-MPC & Explicit online sequence tree under a model & Constraints inside optimizer & Plan can expose action or sequence scores & Deployment separately records first-command identity\\
+MPC & Explicit online sequence tree under a model & Constraints inside optimizer & Plan can expose action or sequence scores & Deployment records identity of first command\\
 Actor distillation & Planner supplies offline labels & Runtime mask external & Actor output can differ from teacher & Actor command\\
-\method & Shared forecast plus structured action branches & External pre-actuation feasible set & Complete feasible score vector & Logged feasible argmax delivered directly\\
+\method & Shared forecast plus structured action branches & External feasible set before actuation & Complete feasible score vector & Logged feasible argmax delivered directly\\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -367,13 +371,11 @@ the four requirements. Measured resource feedback closes the decision loop.
 
 \subsection{Causal Context Shared across Actions}
 
-The controller forms the 14-dimensional observation in
-Table~\ref{tab:state} from causal current/history system measurements together
-with the remaining budget and decision horizon.  Current and recent load,
-burst intensity, queue pressure, capacity, service indicators, remaining
-budget, and remaining horizon are normalized with statistics fitted
-on the training split.  The current reward uses observed load \(x_t\); only
-next exogenous load is unknown.  A compact forecaster predicts it once,
+Module 1 in Figure~\ref{fig:framework} combines causal telemetry \(s_t\),
+budget \(b_t\), and horizon \(h_t\) into \(o_t=\phi(s_t,b_t,h_t)\).
+Here \(\phi\) constructs the 14 features in Table~\ref{tab:state} using
+training-fitted normalization. Current reward uses observed load \(x_t\);
+the forecaster, with parameters \(\psi\), predicts next load once,
 \begin{equation}
   \widehat x_{t+1}=f_\psi(o_t),
 \end{equation}
@@ -386,17 +388,18 @@ Smooth-L1 log-load error, normalized feasible-branch Q error, and pairwise
 ranking loss with margin 0.02.  Validation selects the epoch by action error
 plus 0.25 normalized Q error and 0.05 load error.
 The value is fitted first and frozen during 24 forecast-training epochs.
-Targets \mbox{\(Q_i^\mathrm{target}(a)=r_i(a)+\gamma(1-d_i)V(o'_{i,a})\)}
+For training state \(j\), targets
+\mbox{\(Q_j^\mathrm{target}(a)=r_j(a)+\gamma(1-d_j)V_\theta(o'_{j,a})\)}
 use observed next-load branches; predictions substitute the common forecast.
+The recorded terminal bit is \(d_j\).
 \(\mathcal L_Q\) is Smooth-L1 error after dividing both Q vectors by the
 training feasible-Q standard deviation (floored at one).
 \(\mathcal L_{\mathrm{rank}}\) is the pairwise hinge loss on normalized
 Q differences, with the target ordering supplying the sign. Adam uses
 learning rate \(10^{-3}\), batches of 256, and gradient clipping at 5.
 
-The shared prediction implements R1: every branch is compared under the same
-assumed workload. Its timestamp is retained in the decision record, allowing
-replay to check that each score used the same causal context.
+The shared forecast implements R1; its recorded timestamp supports independent
+checks of causal context across all branches.
 
 \subsection{Explicit Action-Conditioned Transitions}
 
@@ -430,31 +433,37 @@ After inserting the shared forecast, the branch emits
   \widehat o'_{t,a}=\phi(s'_{t,a}(\widehat x_{t+1}),
   b_t-c_t^{\mathrm{score}}(s_t,a),h_t-1).
 \end{equation}
-Thus queue, service, cost, budget, and horizon differ only through the
-candidate action; explicit scheduler semantics are not relearned by a transition
-network.
+Here \(s'_{t,a}(x)=f_{\mathrm{exo}}(g(s_t,a),x)\). The hat marks predicted
+load; training branches \(o'_{j,a}\) use observed transitions.
+Figure~\ref{fig:framework} labels candidates \(a_0,\ldots,a_3\):
+\(g\) supplies their effects, and \(\phi\) inserts the updated budget and horizon.
 
-\subsection{Budget-Conditioned Continuation}
+\subsection{Affordability and Continuation Value}
 
 A \(14\!\rightarrow\!64\!\rightarrow\!64\!\rightarrow\!1\) Tanh network learns
-the continuation value \(V_\theta(o)\).  Fitted value iteration regresses
+the continuation value \(V_\theta(o)\), with parameters \(\theta\).
+For fitting state \(j\), fitted value iteration (FVI) regresses the target
 \begin{equation}
-  y_i=\max_{a\in\mathcal A_i(b_i,s_i)}
-  \left[r_i(a)+\gamma(1-d_i)V_{\bar\theta}(o'_{i,a})\right]
+  Y_j=\max_{a\in\mathcal A_j(b_j,s_j)}
+  \left[r_j(a)+\gamma(1-d_j)V_{\bar\theta}(o'_{j,a})\right],
 \end{equation}
-for 18 fitted-value-iteration (FVI) rounds indexed 0--17. At deployment,
-each affordable candidate receives
+where \(\bar\theta\) is the frozen preceding-round parameter vector.
+Training uses 18 rounds indexed 0--17. At deployment, each affordable
+candidate receives
 \begin{equation}
   Q_{\method}(o_t,a)=r_t(a)+\gamma\lambda
   (1-d_t(a))V_\theta(\widehat o'_{t,a}),
-  \qquad d_t(a)=\mathbf 1[h_t=1];
+  \qquad d_t(a)=\mathbf 1[h_t=1].
 \end{equation}
-  unaffordable actions receive \(-\infty\) and bypass the continuation-value
-  call.  The exact action cost therefore
-changes both feasibility and the budget-conditioned continuation state in the
-trace realization; Kubernetes uses the separate reserve defined below.  Both
-deployed planners bypass \(V_\theta\) on the final decision, and terminal-mask
-tests assert that no value call can reorder the \(h_t=1\) action scores.
+Here \(\lambda\) weights continuation, and \(d_t(a)\) suppresses it at
+the final decision. Figure~\ref{fig:framework} abbreviates
+\(Q_\method(o_t,a_i)\) as \(Q_i\). Its gate uses \(\bar c_t\),
+whereas \(c_t^{\mathrm{score}}\) sets the branch's post-cost budget.
+These charges coincide for trace tokens; Kubernetes distinguishes them.
+Unaffordable actions receive \(-\infty\) and bypass \(V_\theta\);
+the masked \(a_3\) row illustrates a state-dependent outcome. Both deployed
+planners bypass \(V_\theta\) at \(h_t=1\); terminal-mask tests verify that
+immediate rewards determine the final scores.
 
 Training has three non-overlapping chronological roles.  The fitting block
 trains forecast and value candidates; the selection block chooses a retained
@@ -478,13 +487,10 @@ branch using the known transition equations; these branch evaluations are
 model computations, not additional environment interactions.  The network
 width is 64, output scaling is fitted from training-reward RMS, and checkpoints
 \(\{0,2,4,6,8,10,12,14,16,17\}\) are the ten prespecified rounds retained for
-validation selection. Each round therefore combines a Bellman target update
-with two optimizer epochs. The resulting value amortizes future planning into
-a single evaluation of each feasible branch. Section~\ref{sec:evaluation}
-specifies the shared interaction and safety protocol used to compare this
-planner with learned policies.
+validation selection. Section~\ref{sec:evaluation} specifies the shared
+interaction and safety protocol for comparisons with learned policies.
 
-\subsection{Direct Selection and Accountable Execution}
+\subsection{Feasible Selection and Direct Actuation}
 
 The controller executes the deterministically tie-broken feasible maximizer,
 \begin{equation}
@@ -492,15 +498,16 @@ The controller executes the deterministically tie-broken feasible maximizer,
   \arg\max_{a\in\mathcal A_t(b_t,s_t)}Q_{\method}(o_t,a),
 \end{equation}
 and issues it directly, so \(a_t^{\mathrm{exec}}=a_t^{\mathrm{plan}}\),
-preserving the selected candidate as the delivered command. Every cycle records
-the causal observation, affordable set, common forecast, per-action immediate
-reward, continuation value, total score, delivered action, and updated ledger.
-State, action, and event records are keyed by control step and include raw
+preserving the selected candidate as the delivered command. The cycle record
+in Definition~1 includes step-keyed state, action, and event entries with raw
 and normalized observations, field timestamps, missing-data policies, branch
 charges, feasible bits, API latency, and sampled ledger intervals. Replay
 checks shared context, post-cost states, feasible argmax, target mapping,
-delivery identity, selected-action feasibility, and ledger closure. These
-relations make the decision and its budget use independently recomputable.
+delivery identity, selected-action feasibility, and ledger closure.
+Figure~\ref{fig:framework} shows separate feedback for telemetry \(s_{t+1}\)
+and measured cost \(\Delta C_t^{\mathrm{led}}\). Its update
+\(b_{t+1}=b_t-\Delta C_t^{\mathrm{led}}\) is equivalent to the cumulative
+ledger equation in Section~\ref{sec:problem}.
 
 For \(|\mathcal A|=4\), online work is one forecast plus
 \(O(|\mathcal A|)\) one-step transition and value calls.  A depth-\(K\),
@@ -703,8 +710,8 @@ seed 20261002; intervals are pointwise and tests carry familywise correction.
 Return is the optimization objective. Episode completion is
 \(\sum_t y_t/\max(\sum_t x_t,1)\), whereas \(\rho_t\) is the per-step
 clearance term used only in reward. With initial queue zero, overflow
-\(d_t=(q_t+x_t-y_t-q_{t+1})_+\) makes the conservation identity
-\(\sum_t x_t=\sum_t y_t+\sum_t d_t+q_H\) explicit; unfinished and dropped
+\(w_t=(q_t+x_t-y_t-q_{t+1})_+\) makes the conservation identity
+\(\sum_t x_t=\sum_t y_t+\sum_t w_t+q_H\) explicit; unfinished and dropped
 work are not completions. Trace latency and SLO are queue-model proxies,
 not measured request percentiles. Kubernetes completion counts successful
 HTTP requests over all scheduled requests; latency percentiles condition on
@@ -732,15 +739,14 @@ statistics defined above. Repeated steps and requests remain observations
 within their seed or plan block.
 
 \paragraph{AI-assistance disclosure.}
-A generative-AI coding assistant supported controller and adapter code,
-tests, record parsing, statistical analysis, exact-DP diagnostics, and
-figure/layout scripts. For the matched studies, it proposed and implemented
-protocols, executed trace, GPU-training, and Kubernetes jobs, inspected raw
-outputs, and drafted analysis and manuscript revisions. It also supported
-literature lookup and prose. Protocols, code, checkpoints, failed attempts,
-and measurements are retained; numerical results derive from archived
-measurements. The authors remain responsible for research design,
-measurement and citation verification, interpretation, and submitted content.
+The authors formulated the research questions and DAP design, planned the
+experiments, and interpreted the results. Under their instructions, an AI
+coding assistant supported controller and adapter implementation, testing,
+translation of experimental protocols into runnable scripts,
+trace/GPU/Kubernetes execution, statistical and exact-DP computations from
+recorded outputs, and visualization. Code, protocols, checkpoints, and
+measurements retain the provenance of this assistance. The authors are
+responsible for validating these artifacts and the final conclusions.
 
 \subsection{RQ1: Service--Resource Effectiveness}
 
