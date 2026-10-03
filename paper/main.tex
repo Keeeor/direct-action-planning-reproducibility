@@ -547,10 +547,10 @@ The budget charges Ready replicas above one base replica. A separate tracker
 samples readiness approximately every 0.25 seconds; the pre-actuation reserve
 admits candidates that fit the remaining sampled ledger.  After each run, the controller
 returns to the base target and continues accounting until scale-down is
-observed.  Kubernetes readiness probes ensure that a new Pod is charged and
-used only once it becomes Ready; Pending or non-Ready Pods are excluded from
-Service traffic \cite{kubernetesprobes}, while the target-based reserve still
-accounts for their possibility of becoming Ready during the next interval.
+observed. The ledger charges Ready-Pod time. Kubernetes readiness probes
+exclude non-Ready Pods from Service traffic \cite{kubernetesprobes}; the
+target-based reserve accounts for Pending Pods that may become Ready during
+the next interval.
 The controller uses the Deployment scale interface exposed to the native
 Horizontal Pod Autoscaler (HPA) \cite{kuberneteshpa}, preceded by DAP's planner
 and Ready-time ledger. It follows the controller-oriented design of Borg and
@@ -657,9 +657,9 @@ execution. These perspectives correspond to the following research questions.
 
 Azure Functions 2019 provides per-minute invocations in HTTP and
 asynchronous domains \cite{azurefunctions2019,shahrad2020serverless}; days 1--8,
-9--11, and 12--14 form train, validation, and test. GenTD26 is drawn from the
-Alibaba clusterdata trace and aggregated into ten-minute serving-demand bins
-\cite{lin2025gentd}; its split is 60\%/20\%/20\%. Each validation segment is further
+9--11, and 12--14 form train, validation, and test. GenTD26 provides Alibaba
+diffusion-serving traces \cite{lin2025gentd}; we aggregate demand into ten-minute
+bins and use a 60\%/20\%/20\% split. Each validation segment is further
 partitioned chronologically into 40\% model validation, 30\% checkpoint
 selection, and 30\% development evaluation. Clipping, normalization, and
 capacity calibration use training data only. Each dataset fits its own
@@ -692,18 +692,19 @@ and MPC expose computable effects, while model-free methods infer them. Frozen
 manifests record optimizer settings, update counts, search ranges, branch
 counts, and wall-clock summaries.
 
-The trained seed is the trace unit. We use 20,000 paired seed-block bootstrap
-resamples for 95\% intervals, paired Cohen's \(d_z\), wins/ties/losses,
-two-sided Wilcoxon tests, and Benjamini--Hochberg correction
-\cite{arcuri2011statistics,agarwal2021precipice,benjamini1995fdr}; cost matching
-stays within observed budget frontiers. Kubernetes uses paired request plans,
+Trained seeds are the trace units. We report bootstrap intervals
+\cite{agarwal2021precipice} using 20,000 paired seed-block resamples at 95\%,
+paired Cohen's \(d_z\), wins, ties, losses, and two-sided Wilcoxon tests
+\cite{arcuri2011statistics} with Benjamini--Hochberg correction
+\cite{benjamini1995fdr}. Cost matching stays within observed frontiers.
+Kubernetes uses paired request plans,
 paired-bootstrap intervals, exact sign-flip tests, and the registered Holm
 family, retaining all seeds and failures. Matched trace, learned-transition,
 and same-initialization feature controls use exact sign flips and Holm families of
 24, 16, and eight endpoints; the matched live family contains 18 endpoints.
-Budgets are averaged within each of ten paired seed or plan blocks. The
-matched studies enumerate all $2^{10}$ sign assignments and use bootstrap
-seed 20261002; intervals are pointwise and tests carry familywise correction.
+Budgets are averaged within ten paired seed or plan blocks. Matched studies
+enumerate all $2^{10}$ sign assignments and use bootstrap seed 20261002;
+intervals are pointwise and tests carry familywise correction.
 
 \subsection{Measures and Reproducibility}
 
@@ -1118,45 +1119,44 @@ the quality of a resource decision from its preservation through execution.
 
 \paragraph{Autonomic control and cloud resource management.}
 Autonomic software frames adaptation as a monitored feedback loop
-\cite{kephart2003autonomic}. Cloud controllers combine queue models,
-forecasting, and autoscaling: AutoControl, AutoScale, Autopilot, Sinan, and
-Autothrottle cover virtualized capacity and microservice SLOs
+\cite{kephart2003autonomic}. AutoControl, AutoScale, Autopilot, Sinan, and
+Autothrottle manage virtualized capacity and application SLOs
 \cite{padala2009autocontrol,gandhi2012autoscale,rzadca2020autopilot,
-zhang2021sinan,wang2024autothrottle}. Recent FSE systems add knowledge loops,
-predictive PID, content-aware signals, and LLM-assisted Kubernetes operations
-\cite{sanwouo2025aware,xiao2025tepid,duan2026aims,vitui2026aiops}. They expose
-state and commands, whereas DAP records candidate consequences, budget
-commitment, comparable scores, delivered command, and actuator/ledger evidence.
-Kubernetes separates desired state, readiness, and reconciliation
-\cite{burns2016kubernetes,kuberneteshpa,kubernetesprobes}; DAP makes the
-resulting boundaries auditable through forecast equality, feasible selection,
-target mapping, delivered identity, and ledger closure.
+zhang2021sinan,wang2024autothrottle}. Recent FSE work explores agent-based
+adaptation \cite{sanwouo2025aware}, predictive PID \cite{xiao2025tepid},
+content-aware resource management \cite{duan2026aims}, and LLM-assisted
+Kubernetes operations \cite{vitui2026aiops}. Kubernetes provides desired-state
+reconciliation and readiness \cite{burns2016kubernetes,kuberneteshpa,kubernetesprobes}.
+DAP makes these control boundaries auditable through candidate consequences,
+budget commitments, scores, and command/ledger evidence.
 
 \paragraph{Cluster scheduling and learned policies.}
-Cluster and serving systems optimize placement, packing, interference, and tail
-behavior \cite{hindman2011mesos,schwarzkopf2013omega,vavilapalli2013yarn,
-verma2015borg,delimitrou2013paragon,delimitrou2014quasar,grandl2014tetris,
-grandl2016graphene,gog2016firmament,crankshaw2017clipper,
-gujarati2020clockwork,alipourfard2017cherrypick,shahrad2020serverless,
-akkus2018sand,oakes2018sock,kaffes2019core,dean2013tail}. DeepRM and Decima
-learn policies from interaction, while constrained methods add costs, trust
-regions, Lyapunov bounds, or penalty updates
-\cite{mao2016deeprm,mao2019decima,altman1999cmdp,achiam2017cpo,
+Cluster schedulers address sharing and placement
+\cite{hindman2011mesos,schwarzkopf2013omega,vavilapalli2013yarn,verma2015borg,gog2016firmament},
+packing and dependencies \cite{grandl2014tetris,grandl2016graphene}, and
+heterogeneity and interference \cite{delimitrou2013paragon,delimitrou2014quasar}.
+Serving systems address prediction latency \cite{crankshaw2017clipper,gujarati2020clockwork},
+tail behavior \cite{dean2013tail}, serverless provisioning and scheduling
+\cite{akkus2018sand,oakes2018sock,kaffes2019core,shahrad2020serverless}, and
+cloud configuration \cite{alipourfard2017cherrypick}. DeepRM and Decima learn
+scheduling policies \cite{mao2016deeprm,mao2019decima}; constrained methods add
+costs, trust regions, Lyapunov bounds, or penalty updates
+\cite{altman1999cmdp,achiam2017cpo,
 tessler2019rcpo,stooke2020pid,chow2018lyapunov,zhang2022p3o}. Budgeted RL
 and LCPO address available budgets and changing contexts
-\cite{carrara2019budgeted,hamadanian2025lcpo}. DAP complements these policy and value representations with explicit
-branch provenance, hard affordability, and planner-to-actuator identity.
+\cite{carrara2019budgeted,hamadanian2025lcpo}. DAP complements these representations
+with branch provenance, hard affordability, and planner-to-actuator identity.
 
 \paragraph{Planning, post-decision value, and action ordering.}
-Dyna, MPC, and ADP combine learning, constrained search, and value approximation
-\cite{sutton1991dyna,mesbah2016smpc,
-powell2011adp}. Post-decision-state methods separate the action-controlled
+Dyna integrates learning and planning \cite{sutton1991dyna}; MPC uses constrained
+lookahead \cite{mesbah2016smpc}, and ADP approximates future value
+\cite{powell2011adp}. Post-decision-state methods separate the action-controlled
 transition from subsequent exogenous uncertainty and can impose structural
-value properties \cite{jiang2015monotoneadp,bhat2026pds}. DAP carries this
-decomposition into deployment: every affordable candidate receives one causal
-realization, an explicit post-cost state and score, and a preserved identity
-through argmax, actuation, and ledger closure. PDS/ADP and MPC isolate value
-and search components, while exact DP measures ordering directly.
+value properties \cite{jiang2015monotoneadp,bhat2026pds}. DAP extends this
+decomposition with affordable candidate records containing explicit post-cost
+states and continuation scores; identity persists through selection, actuation,
+and ledger closure. Matched PDS/ADP and MPC controls
+isolate value and search, while exact DP measures action ordering.
 
 \section{Conclusion}
 
